@@ -9,9 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.106.2",
+    "@turf/turf": "^7.3.5",
+    "@types/mapbox-gl": "^3.4.1",
+    "lucide-react": "^1.17.0",
+    "mapbox-gl": "^3.24.0",
     "next": "16.2.6",
+    "puppeteer": "^25.1.0",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "resend": "^6.12.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,7 +27,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "pg": "^8.21.0",
     "tailwindcss": "^4",
+    "tsx": "^4.22.4",
     "typescript": "^5"
   }
 }

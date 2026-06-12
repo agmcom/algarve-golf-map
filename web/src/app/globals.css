@@ -1,0 +1,297 @@
+@import 'mapbox-gl/dist/mapbox-gl.css';
+@import 'tailwindcss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-body: var(--font-figtree), system-ui, sans-serif;
+
+  /* Fresh Modern palette */
+  --color-page-bg: #ffffff;
+  --color-panel-bg: #ffffff;
+  --color-panel-border: #ebebeb;
+  --color-text: #222222;
+  --color-text-muted: #6a6a6a;
+  --color-text-faint: #b0b0b0;
+  --color-accent: #2A6B4A;
+  --color-accent-text: #ffffff;
+  --color-accent-soft: #eef7f2;
+  --color-chip: #f4f4f4;
+  --color-chip-text: #4a4a4a;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-page-bg);
+  color: var(--color-text);
+}
+
+/* Remove mapbox attribution branding */
+.mapboxgl-ctrl-attrib-inner a[href*='mapbox'] {
+  display: none;
+}
+
+/* ---- Map pins (course / hotel / shop) ---- */
+
+.map-pin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+/* Default state: small emoji circle */
+.map-pin__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  transition: transform 0.18s;
+}
+
+.map-pin__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-top: -2px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+
+/* Selected state: text bubble */
+.map-pin__bubble {
+  padding: 6px 12px 7px;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  user-select: none;
+  text-align: center;
+  display: none;
+}
+
+.map-pin__name {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.map-pin__sub {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  margin-top: 1px;
+  opacity: 0.85;
+}
+
+.map-pin__arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  margin-top: -1px;
+  display: none;
+}
+
+/* Default: bubble always visible (name only), dot visible, no circle icon */
+.map-pin__bubble { display: block; }
+.map-pin__arrow  { display: none; }
+.map-pin__icon   { display: none; }
+.map-pin__dot    { display: block; }
+.map-pin__sub    { display: none; }   /* price/info hidden until selected */
+
+/* Selected: bubble + arrow visible, dot hidden, icon hidden, sub text shown */
+.map-pin--selected .map-pin__icon   { display: none; }
+.map-pin--selected .map-pin__dot    { display: none; }
+.map-pin--selected .map-pin__bubble { display: block; }
+.map-pin--selected .map-pin__arrow  { display: block; }
+.map-pin--selected .map-pin__sub    { display: block; }
+.map-pin--selected                  { z-index: 10; }
+
+/* ---- Type colours ---- */
+
+/* Base bubble — clean white pill, Airbnb style */
+.map-pin__bubble {
+  background: #ffffff;
+  color: #222;
+  border: 1.5px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+/* Hover state — scale only the bubble, not the full pin */
+.map-pin__bubble {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.map-pin--hovered .map-pin__bubble {
+  transform: scale(1.25);
+  transform-origin: bottom center;
+  box-shadow: 0 6px 20px rgba(0,0,0,.22);
+}
+
+/* Planned heart badge */
+.map-pin__name-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.map-pin__heart {
+  display: none;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.map-pin--planned .map-pin__heart {
+  display: inline-flex;
+}
+.map-pin--planned .map-pin__bubble {
+  border-color: #2A6B4A;
+}
+.map-pin--planned.map-pin--course.map-pin--selected .map-pin__bubble {
+  background: #2A6B4A;
+  border-color: #2A6B4A;
+}
+.map-pin--planned.map-pin--course.map-pin--selected .map-pin__arrow {
+  border-top-color: #2A6B4A;
+}
+
+
+/* Course — no dot, no colored border */
+.map-pin--course .map-pin__icon   { background: #222; }
+.map-pin--course .map-pin__dot    { display: none; }
+.map-pin--course .map-pin__bubble { border-color: #ddd; display: block; }
+.map-pin--course.map-pin--selected .map-pin__bubble { background: #222; color: #fff; border-color: #222; box-shadow: 0 4px 16px rgba(0,0,0,.25); }
+.map-pin--course.map-pin--selected .map-pin__arrow  { border-top: 9px solid #222; }
+
+/* Hotel: blue */
+.map-pin--hotel .map-pin__icon   { background: #1a6fe8; }
+.map-pin--hotel .map-pin__dot    { background: #1a6fe8; }
+.map-pin--hotel .map-pin__bubble { border-left: 3px solid #1a6fe8; }
+.map-pin--hotel.map-pin--selected .map-pin__bubble { background: #1a6fe8; color: #fff; border-color: #1a6fe8; }
+.map-pin--hotel.map-pin--selected .map-pin__arrow  { border-top: 9px solid #1a6fe8; }
+
+/* Shop: amber */
+.map-pin--shop .map-pin__icon   { background: #e07b1a; }
+.map-pin--shop .map-pin__dot    { background: #e07b1a; }
+.map-pin--shop .map-pin__bubble { border-left: 3px solid #e07b1a; }
+.map-pin--shop.map-pin--selected .map-pin__bubble { background: #e07b1a; color: #fff; border-color: #e07b1a; }
+.map-pin--shop.map-pin--selected .map-pin__arrow  { border-top: 9px solid #e07b1a; }
+
+/* Airport: same white pill as course, not selectable */
+.map-pin--airport { cursor: default; }
+.map-pin--airport .map-pin__dot    { display: none; }
+.map-pin--airport .map-pin__bubble { border-color: #ddd; display: block; }
+.map-pin--airport .map-pin__sub    { display: none; }
+
+/* Faro distance hover popup */
+.faro-popup {
+  z-index: 10;
+}
+.mapboxgl-popup.faro-popup .mapboxgl-popup-content {
+  padding: 6px 11px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-body), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: #2d7a3a !important;
+  white-space: nowrap;
+}
+.faro-popup .mapboxgl-popup-tip {
+  display: none;
+}
+
+/* Scrollbar hide utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ---- CoursePanel (sidebar on desktop / bottom sheet on mobile) ---- */
+
+.course-panel-backdrop {
+  display: none;
+}
+
+/* Desktop: sidebar from the left */
+.course-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  width: 380px;
+  background: #ffffff;
+  border-right: 1px solid #ebebeb;
+  box-shadow: 4px 0 24px rgba(0,0,0,.10);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--font-body);
+  animation: slideInLeft 0.22s ease;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+/* Mobile: bottom sheet */
+@media (max-width: 639px) {
+  .course-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 72vh;
+    border-right: none;
+    border-top: 1px solid #ebebeb;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -8px 32px rgba(0,0,0,.15);
+    animation: slideInUp 0.25s ease;
+  }
+
+  @keyframes slideInUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+
+  /* Dark backdrop behind bottom sheet */
+  .course-panel-backdrop {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 19;
+    background: rgba(0,0,0,.35);
+  }
+
+  /* Drag handle */
+  .course-panel::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 4px;
+    background: #d0d0d0;
+    border-radius: 2px;
+    margin: 12px auto 0;
+    flex-shrink: 0;
+  }
+}
