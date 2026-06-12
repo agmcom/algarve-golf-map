@@ -68,7 +68,7 @@ export default async function AdminCoursesPage() {
   const byRegion: Record<string, typeof courses> = {}
   for (const c of courses ?? []) {
     if (!byRegion[c.region]) byRegion[c.region] = []
-    byRegion[c.region].push(c)
+    byRegion[c.region]!.push(c)
   }
 
   const regionLabel: Record<string, string> = {
