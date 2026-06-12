@@ -74,10 +74,10 @@ export interface Course {
   pro_shop: boolean
   restaurant: boolean
   dress_code: string | null
-  languages: string[]
+  languages: readonly string[]
 
   offers_rental: boolean
-  rental_brands: string[]
+  rental_brands: readonly string[]
   rental_price_per_round: number | null
 
   price_from: number | null
@@ -86,8 +86,8 @@ export interface Course {
   email: string | null
   booking_url: string | null
 
-  tags: string[]
-  amenities: string[]
+  tags: readonly string[]
+  amenities: readonly string[]
   featured: boolean
   active: boolean
   rating: number | null
@@ -154,7 +154,7 @@ export interface Hotel {
   has_golf_package: boolean
   golf_package_desc: string | null
   has_shuttle: boolean
-  shuttle_courses: string[]
+  shuttle_courses: readonly string[]
   club_storage: boolean
   club_cleaning: boolean
   drying_room: boolean
@@ -166,10 +166,11 @@ export interface Hotel {
   phone: string | null
   booking_url: string | null
 
-  amenities: string[]
+  amenities: readonly string[]
   active: boolean
   featured: boolean
   rating: number | null
+  google_rating?: number | null
   review_count: number
 
   created_at: string
@@ -252,7 +253,7 @@ export interface Academy {
   course_id: string | null      // linked course (if on-site)
 
   head_pro: string | null
-  languages: string[]
+  languages: readonly string[]
 
   private_lessons: boolean
   group_lessons: boolean

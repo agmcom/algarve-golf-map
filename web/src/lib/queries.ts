@@ -87,7 +87,7 @@ export async function getCourseBySlug(slug: string): Promise<(Course & { prices:
     ...mock,
     ...dbNonNull,
     prices: prices ?? [],
-  }
+  } as Course & { prices: CoursePrice[] }
 }
 
 export async function getHotelsNear(lat: number, lng: number, radiusKm = 50): Promise<(Hotel & { distance_km: number })[]> {

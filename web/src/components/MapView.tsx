@@ -202,7 +202,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
       if (!map || !plannerHotels.length) return
 
       plannerHotels.forEach(hotel => {
-        const el = createPlannerHotelPin(hotel.name, hotel.google_rating)
+        const el = createPlannerHotelPin(hotel.name, hotel.google_rating ?? null)
         const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
           .setLngLat([hotel.lng, hotel.lat])
           .addTo(map)

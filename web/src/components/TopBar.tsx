@@ -395,7 +395,7 @@ interface FilterChipProps {
   active: boolean
   onClick: () => void
   suffix?: React.ReactNode
-  buttonRef?: React.RefObject<HTMLButtonElement>
+  buttonRef?: React.RefObject<HTMLButtonElement | null>
 }
 
 function FilterChip({ label, active, onClick, suffix, buttonRef }: FilterChipProps) {

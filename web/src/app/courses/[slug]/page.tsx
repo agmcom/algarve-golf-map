@@ -683,7 +683,7 @@ function bookingSearchUrl(town: string): string {
 }
 
 function HotelCard({ hotel, courseTown }: {
-  hotel: { id: string; name: string; stars: number | null; price_from: number | null; town: string; booking_url: string | null; has_golf_package: boolean; distance_km: number; google_rating: number | null }
+  hotel: { id: string; name: string; stars: number | null; price_from: number | null; town: string; booking_url: string | null; has_golf_package: boolean; distance_km: number; google_rating?: number | null }
   courseTown: string
 }) {
   const stars = hotel.stars ?? 0
