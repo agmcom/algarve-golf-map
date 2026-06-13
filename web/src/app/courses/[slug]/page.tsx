@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear } from '@/lib/queries'
 import type { CoursePrice } from '@/types/database'
 import { CourseMapImage } from '@/components/CourseMapImage'
+import { PageViewTracker } from '@/components/PageViewTracker'
 import { CourseNav } from '@/components/CourseNav'
 import { SiteHeader } from '@/components/SiteHeader'
 import { Goal, ShoppingBag, UtensilsCrossed, BedDouble, User, Store, PlaneLanding, Flag, Hash, Ruler, Award, Gauge, CircleDot, GraduationCap } from 'lucide-react'
@@ -181,6 +182,7 @@ export default async function CoursePage(
 
   return (
     <>
+      <PageViewTracker page="course" slug={slug} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/<\//g, '<\\/') }}

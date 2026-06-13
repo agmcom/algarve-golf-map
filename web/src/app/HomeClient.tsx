@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useRef, useCallback, useMemo } from 'react'
+import { useState, useRef, useCallback, useMemo, useEffect } from 'react'
 import { BedDouble } from 'lucide-react'
+import { trackPageView, trackFilter } from '@/lib/analytics'
 import { MapView, type MapViewHandle } from '@/components/MapView'
 import { TopBar } from '@/components/TopBar'
 import { BottomCarousel, type BottomCarouselHandle } from '@/components/BottomCarousel'
@@ -126,6 +127,8 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
   const mapRef = useRef<MapViewHandle | null>(null)
   const carouselRef = useRef<BottomCarouselHandle | null>(null)
 
+  useEffect(() => { trackPageView('home') }, [])
+
   const fao = airports.find(a => a.code === 'FAO') ?? FAO_FALLBACK
   const showTop10 = courses.filter(c => (c.review_count ?? 0) >= 3).length > 10
 
@@ -137,8 +140,12 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
   const handleToggleFilter = useCallback((key: string) => {
     setActiveFilters(prev => {
       const next = new Set(prev)
-      if (next.has(key)) next.delete(key)
-      else next.add(key)
+      if (next.has(key)) {
+        next.delete(key)
+      } else {
+        next.add(key)
+        trackFilter(key)
+      }
       return next
     })
   }, [])
