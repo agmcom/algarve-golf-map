@@ -48,12 +48,12 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
         map.addSource(ZONE_SOURCE, { type: 'geojson', data: zone })
         map.addLayer({
           id: 'zone-fill', type: 'fill', source: ZONE_SOURCE,
-          paint: { 'fill-color': '#2A6B4A', 'fill-opacity': type === 'intersection' ? 0.12 : 0.07 },
+          paint: { 'fill-color': '#2B6090', 'fill-opacity': type === 'intersection' ? 0.12 : 0.07 },
         })
         map.addLayer({
           id: 'zone-line', type: 'line', source: ZONE_SOURCE,
           paint: {
-            'line-color': '#2A6B4A', 'line-width': 2, 'line-opacity': 0.8,
+            'line-color': '#2B6090', 'line-width': 2, 'line-opacity': 0.8,
             'line-dasharray': type === 'fallback' ? [4, 3] : [1],
           },
         })
@@ -309,8 +309,8 @@ function createPin(
   heartEl.setAttribute('width', '11')
   heartEl.setAttribute('height', '11')
   heartEl.setAttribute('viewBox', '0 0 24 24')
-  heartEl.setAttribute('fill', '#2A6B4A')
-  heartEl.setAttribute('stroke', '#2A6B4A')
+  heartEl.setAttribute('fill', '#2B6090')
+  heartEl.setAttribute('stroke', '#2B6090')
   heartEl.setAttribute('stroke-width', '2')
   const heartPath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
   heartPath.setAttribute('d', 'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z')

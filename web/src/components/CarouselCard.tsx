@@ -42,7 +42,7 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
         borderRadius: 16,
         overflow: 'hidden',
         cursor: 'pointer',
-        border: `${selected ? '2.5px' : '1.5px'} solid ${selected ? '#2A6B4A' : '#ebebeb'}`,
+        border: `${selected ? '2.5px' : '1.5px'} solid ${selected ? '#2B6090' : '#ebebeb'}`,
         boxShadow: selected
           ? '0 8px 24px rgba(0,0,0,.16)'
           : '0 4px 16px rgba(0,0,0,.10)',
@@ -70,7 +70,7 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
             style={{
               position: 'absolute', top: 8, left: 8,
               width: 30, height: 30, borderRadius: '50%',
-              background: compared ? '#2A6B4A' : 'rgba(255,255,255,.92)',
+              background: compared ? '#2B6090' : 'rgba(255,255,255,.92)',
               border: 'none', cursor: 'pointer',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               boxShadow: '0 1px 4px rgba(0,0,0,.18)',
@@ -151,7 +151,7 @@ function CompareIcon({ active }: { active: boolean }) {
 function StarRating({ value }: { value: number }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 3, flexShrink: 0 }}>
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="#2A6B4A">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="#2B6090">
         <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z" />
       </svg>
       <span style={{ fontSize: 11, fontWeight: 600, color: '#222' }}>{value.toFixed(2)}</span>

@@ -102,7 +102,7 @@ export function ContactModal({ onClose }: ContactModalProps) {
               onClick={onClose}
               style={{
                 padding: '10px 24px', borderRadius: 10, border: 'none',
-                background: '#2A6B4A', color: '#fff',
+                background: '#2B6090', color: '#fff',
                 fontSize: 14, fontWeight: 600, cursor: 'pointer',
                 fontFamily: 'var(--font-body)',
               }}
@@ -144,7 +144,7 @@ export function ContactModal({ onClose }: ContactModalProps) {
             </Field>
 
             {status === 'error' && (
-              <div style={{ fontSize: 13, color: '#2A6B4A', marginBottom: 12 }}>
+              <div style={{ fontSize: 13, color: '#2B6090', marginBottom: 12 }}>
                 Something went wrong. Please try again or email us directly.
               </div>
             )}
@@ -154,7 +154,7 @@ export function ContactModal({ onClose }: ContactModalProps) {
               disabled={status === 'sending'}
               style={{
                 width: '100%', height: 44, borderRadius: 10, border: 'none',
-                background: '#2A6B4A', color: '#fff',
+                background: '#2B6090', color: '#fff',
                 fontSize: 14, fontWeight: 700, cursor: status === 'sending' ? 'default' : 'pointer',
                 fontFamily: 'var(--font-body)',
                 opacity: status === 'sending' ? .7 : 1,
@@ -179,7 +179,7 @@ function Field({ label, children, required, style }: {
   return (
     <div style={style}>
       <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6a6a6a', marginBottom: 5 }}>
-        {label}{required && <span style={{ color: '#2A6B4A' }}> *</span>}
+        {label}{required && <span style={{ color: '#2B6090' }}> *</span>}
       </label>
       {children}
     </div>

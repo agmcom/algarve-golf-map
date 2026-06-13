@@ -226,7 +226,7 @@ function MobileCards({ courses, onRemove }: { courses: Course[]; onRemove: (id: 
           style={{
             position: 'absolute', top: 8, right: 8,
             background: 'rgba(255,255,255,.9)', border: 'none', borderRadius: 12,
-            padding: '4px 10px', fontSize: 11, color: '#2A6B4A', cursor: 'pointer', fontWeight: 600,
+            padding: '4px 10px', fontSize: 11, color: '#2B6090', cursor: 'pointer', fontWeight: 600,
           }}
         >Remove</button>
       </div>

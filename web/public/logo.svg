@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 115" fill="none">
+  <!-- Pin outline -->
+  <path
+    d="M50 5C28.46 5 11 22.46 11 44C11 68.5 50 110 50 110C50 110 89 68.5 89 44C89 22.46 71.54 5 50 5Z"
+    fill="white"
+    stroke="#2B6090"
+    stroke-width="6"
+  />
+  <!-- Golf ball circle -->
+  <circle cx="50" cy="44" r="28" fill="#3B7AB8"/>
+  <!-- Golf ball shine/gradient overlay -->
+  <circle cx="50" cy="44" r="28" fill="url(#ballGradient)"/>
+  <!-- Dimples (curved arcs) -->
+  <g stroke="#1a5580" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.7">
+    <!-- Top row -->
+    <path d="M38 28 Q41 26 44 28"/>
+    <path d="M50 26 Q53 24 56 26"/>
+    <path d="M62 30 Q64 28 67 30"/>
+    <!-- Second row -->
+    <path d="M30 37 Q33 35 36 37"/>
+    <path d="M43 34 Q46 32 49 34"/>
+    <path d="M56 34 Q59 32 62 34"/>
+    <path d="M68 38 Q70 36 73 38"/>
+    <!-- Middle row -->
+    <path d="M27 46 Q30 44 33 46"/>
+    <path d="M38 43 Q41 41 44 43"/>
+    <path d="M50 42 Q53 40 56 42"/>
+    <path d="M62 43 Q65 41 68 43"/>
+    <path d="M72 47 Q74 45 77 47"/>
+    <!-- Fourth row -->
+    <path d="M30 56 Q33 54 36 56"/>
+    <path d="M43 53 Q46 51 49 53"/>
+    <path d="M56 53 Q59 51 62 53"/>
+    <path d="M68 56 Q70 54 73 56"/>
+    <!-- Bottom row -->
+    <path d="M38 62 Q41 60 44 62"/>
+    <path d="M50 63 Q53 61 56 63"/>
+    <path d="M62 60 Q65 58 68 60"/>
+  </g>
+  <defs>
+    <radialGradient id="ballGradient" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#7ab3d8" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#3B7AB8" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1a5080" stop-opacity="0.35"/>
+    </radialGradient>
+  </defs>
+</svg>

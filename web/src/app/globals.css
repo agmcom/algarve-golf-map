@@ -17,7 +17,7 @@
   --color-text: #222222;
   --color-text-muted: #6a6a6a;
   --color-text-faint: #b0b0b0;
-  --color-accent: #2A6B4A;
+  --color-accent: #2B6090;
   --color-accent-text: #ffffff;
   --color-accent-soft: #eef7f2;
   --color-chip: #f4f4f4;
@@ -158,14 +158,14 @@ body {
   display: inline-flex;
 }
 .map-pin--planned .map-pin__bubble {
-  border-color: #2A6B4A;
+  border-color: #2B6090;
 }
 .map-pin--planned.map-pin--course.map-pin--selected .map-pin__bubble {
-  background: #2A6B4A;
-  border-color: #2A6B4A;
+  background: #2B6090;
+  border-color: #2B6090;
 }
 .map-pin--planned.map-pin--course.map-pin--selected .map-pin__arrow {
-  border-top-color: #2A6B4A;
+  border-top-color: #2B6090;
 }
 
 

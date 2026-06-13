@@ -82,7 +82,7 @@ export function PlannerPanel({ courses, selectedIds, onToggle, onClear, onResult
                     type="checkbox"
                     checked={checked}
                     onChange={() => toggleCourse(course.id)}
-                    style={{ accentColor: '#2A6B4A', width: 16, height: 16, flexShrink: 0 }}
+                    style={{ accentColor: '#2B6090', width: 16, height: 16, flexShrink: 0 }}
                   />
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontSize: 13, fontWeight: checked ? 600 : 400, color: '#222', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -226,7 +226,7 @@ const sectionLabel: React.CSSProperties = {
 }
 
 const resetBtn: React.CSSProperties = {
-  fontSize: 11, color: '#2A6B4A', background: 'none', border: 'none',
+  fontSize: 11, color: '#2B6090', background: 'none', border: 'none',
   cursor: 'pointer', fontWeight: 500, padding: 0,
 }
 
@@ -241,7 +241,7 @@ function courseRow(checked: boolean): React.CSSProperties {
     display: 'flex', alignItems: 'center', gap: 10, padding: '9px 11px',
     borderRadius: 10, cursor: 'pointer',
     background: checked ? '#eef7f2' : '#fafafa',
-    border: `1px solid ${checked ? '#2A6B4A' : '#ebebeb'}`,
+    border: `1px solid ${checked ? '#2B6090' : '#ebebeb'}`,
     transition: 'background .12s, border-color .12s',
   }
 }
@@ -250,7 +250,7 @@ function timeBtn(active: boolean): React.CSSProperties {
   return {
     flex: 1, height: 36, borderRadius: 8, border: 'none', cursor: 'pointer',
     fontSize: 13, fontWeight: 600,
-    background: active ? '#2A6B4A' : '#f4f4f4',
+    background: active ? '#2B6090' : '#f4f4f4',
     color: active ? '#fff' : '#4a4a4a',
     transition: 'background .12s, color .12s',
   }
@@ -260,7 +260,7 @@ function calcBtn(enabled: boolean): React.CSSProperties {
   return {
     width: '100%', height: 44, borderRadius: 10, border: 'none',
     cursor: enabled ? 'pointer' : 'not-allowed',
-    background: enabled ? '#2A6B4A' : '#f4f4f4',
+    background: enabled ? '#2B6090' : '#f4f4f4',
     color: enabled ? '#fff' : '#b0b0b0',
     fontSize: 14, fontWeight: 700,
     transition: 'background .15s, color .15s',

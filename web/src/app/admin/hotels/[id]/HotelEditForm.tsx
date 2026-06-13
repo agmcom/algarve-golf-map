@@ -49,7 +49,7 @@ function Toggle({ name, label, defaultChecked }: { name: string; label: string; 
   return (
     <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer' }}>
       <input type="checkbox" name={name} defaultChecked={defaultChecked}
-        style={{ width: 16, height: 16, accentColor: '#2A6B4A', cursor: 'pointer' }} />
+        style={{ width: 16, height: 16, accentColor: '#2B6090', cursor: 'pointer' }} />
       <span style={{ fontSize: 14, color: '#333' }}>{label}</span>
     </label>
   )

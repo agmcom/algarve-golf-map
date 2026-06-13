@@ -26,8 +26,8 @@ export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
         }}>
           {/* Left: logo + back link */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ fontSize: 18 }}>⛳️</span>
+            <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
+              <img src="/logo.svg" alt="" style={{ width: 24, height: 24, flexShrink: 0 }} />
               <span style={{ fontSize: 14, fontWeight: 700, color: '#222', whiteSpace: 'nowrap' }}>
                 Algarve Golf Map
               </span>
@@ -57,7 +57,7 @@ export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
               whiteSpace: 'nowrap',
               transition: 'border-color .15s',
             }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = '#2A6B4A')}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = '#2B6090')}
             onMouseLeave={e => (e.currentTarget.style.borderColor = '#ebebeb')}
           >
             Contact

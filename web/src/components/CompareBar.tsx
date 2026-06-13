@@ -40,7 +40,7 @@ export function CompareButton({ count, onClick }: CompareButtonProps) {
       <Scale size={15} strokeWidth={2.2} />
       Compare courses
       <span style={{
-        background: '#2A6B4A',
+        background: '#2B6090',
         color: '#fff',
         borderRadius: '50%',
         width: 20,
@@ -160,7 +160,7 @@ export function ComparePopup({ courses, onRemove, onCompare, onClose, anchorRect
         disabled={courses.length < 2}
         style={{
           width: '100%', height: 38, borderRadius: 10,
-          background: courses.length >= 2 ? '#2A6B4A' : '#f0f0f0',
+          background: courses.length >= 2 ? '#2B6090' : '#f0f0f0',
           color: courses.length >= 2 ? '#fff' : '#b0b0b0',
           border: 'none',
           cursor: courses.length >= 2 ? 'pointer' : 'default',

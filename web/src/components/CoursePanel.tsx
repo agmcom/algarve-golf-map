@@ -72,7 +72,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
               background: 'rgba(0,0,0,.55)', borderRadius: 20,
               padding: '4px 10px',
             }}>
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="#2A6B4A">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="#2B6090">
                 <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z" />
               </svg>
               <span style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>{course.rating.toFixed(2)}</span>
@@ -195,7 +195,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
               style={{
                 display: 'block', textAlign: 'center',
                 padding: '12px 0', borderRadius: 12,
-                background: '#2A6B4A', color: '#fff',
+                background: '#2B6090', color: '#fff',
                 fontSize: 14, fontWeight: 700, textDecoration: 'none',
               }}
             >

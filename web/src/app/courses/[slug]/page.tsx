@@ -231,7 +231,7 @@ export default async function CoursePage(
               </span>
               {course.rating != null && (
                 <span style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#fff' }}>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#2A6B4A">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#2B6090">
                     <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z" />
                   </svg>
                   <strong style={{ fontSize: 15, fontWeight: 700 }}>{course.rating.toFixed(2)}</strong>
@@ -444,7 +444,7 @@ export default async function CoursePage(
                           rel="noopener noreferrer"
                           style={{
                             display: 'inline-flex', alignItems: 'center', gap: 6,
-                            fontSize: 13.5, fontWeight: 600, color: '#2A6B4A',
+                            fontSize: 13.5, fontWeight: 600, color: '#2B6090',
                             textDecoration: 'none',
                           }}
                         >
@@ -525,7 +525,7 @@ export default async function CoursePage(
                     style={{
                       display: 'block', textAlign: 'center', marginTop: 14,
                       padding: '12px 0', borderRadius: 12,
-                      border: '1.5px solid #2A6B4A', color: '#2A6B4A',
+                      border: '1.5px solid #2B6090', color: '#2B6090',
                       fontSize: 14, fontWeight: 600, textDecoration: 'none',
                       background: '#eef7f2',
                     }}
@@ -585,7 +585,7 @@ export default async function CoursePage(
                           }}>
                             <span style={{
                               fontSize: 12, fontWeight: isCurrent ? 700 : 500,
-                              color: isCurrent ? '#2A6B4A' : '#888',
+                              color: isCurrent ? '#2B6090' : '#888',
                             }}>
                               {MONTH_LABELS[m - 1]}
                             </span>
@@ -635,7 +635,7 @@ export default async function CoursePage(
                     href={course.booking_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={ctaBtn('#2A6B4A', '#fff')}
+                    style={ctaBtn('#2B6090', '#fff')}
                   >
                     Book Tee Time
                   </a>
@@ -646,7 +646,7 @@ export default async function CoursePage(
                     href={course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ ...ctaBtn('#2A6B4A', '#fff'), marginTop: course.booking_url ? 10 : 0 }}
+                    style={{ ...ctaBtn('#2B6090', '#fff'), marginTop: course.booking_url ? 10 : 0 }}
                   >
                     Official website ↗
                   </a>
@@ -742,7 +742,7 @@ function HotelCard({ hotel, courseTown }: {
         )}
         <div style={{
           marginTop: 6, padding: '5px 12px', borderRadius: 8,
-          background: '#2A6B4A', color: '#fff',
+          background: '#2B6090', color: '#fff',
           fontSize: 12, fontWeight: 600,
         }}>
           See prices →

@@ -194,15 +194,16 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
             className="flex items-center gap-2"
             style={{
               height: 44,
-              padding: '0 20px',
+              padding: '0 16px',
               background: '#ffffff',
               border: '1px solid #ebebeb',
               borderRadius: 24,
               boxShadow: '0 2px 12px rgba(0,0,0,.08)',
             }}
           >
+            <img src="/logo.svg" alt="" style={{ width: 26, height: 26, flexShrink: 0 }} />
             <span style={{ font: '700 15px var(--font-body)', color: '#222', whiteSpace: 'nowrap' }}>
-              ⛳️ Algarve Golf Map
+              Algarve Golf Map
             </span>
           </div>
         </div>
@@ -309,7 +310,7 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
                     style={{
                       display: 'flex', alignItems: 'center', gap: 10,
                       padding: '8px 12px', borderRadius: 10, border: 'none',
-                      background: isActive ? '#2A6B4A' : 'transparent',
+                      background: isActive ? '#2B6090' : 'transparent',
                       color: isActive ? '#fff' : '#222',
                       fontSize: 13, fontWeight: 500, cursor: 'pointer',
                       textAlign: 'left', fontFamily: 'var(--font-body)',
@@ -327,7 +328,7 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
                   style={{
                     marginTop: 4, padding: '6px 12px', borderRadius: 10,
                     border: 'none', background: 'none', cursor: 'pointer',
-                    fontSize: 12, fontWeight: 500, color: '#2A6B4A',
+                    fontSize: 12, fontWeight: 500, color: '#2B6090',
                     textAlign: 'left', fontFamily: 'var(--font-body)',
                     borderTop: '1px solid #f0f0f0', paddingTop: 10,
                   }}
@@ -414,9 +415,9 @@ function FilterChip({ label, active, onClick, suffix, buttonRef }: FilterChipPro
         whiteSpace: 'nowrap',
         cursor: 'pointer',
         boxShadow: '0 1px 6px rgba(0,0,0,.06)',
-        background: active ? '#2A6B4A' : '#ffffff',
+        background: active ? '#2B6090' : '#ffffff',
         color: active ? '#ffffff' : '#222222',
-        border: `1px solid ${active ? '#2A6B4A' : '#ebebeb'}`,
+        border: `1px solid ${active ? '#2B6090' : '#ebebeb'}`,
         fontFamily: 'var(--font-body)',
         transition: 'background .12s, color .12s, border-color .12s',
       }}
@@ -484,7 +485,7 @@ function MoreDropdown({ sections, activeFilters, onToggle, onClearAll, onClose }
               cursor: 'pointer',
               fontSize: 12,
               fontWeight: 500,
-              color: '#2A6B4A',
+              color: '#2B6090',
               padding: 0,
               fontFamily: 'var(--font-body)',
             }}
@@ -546,7 +547,7 @@ function HcpInputPanel({ title, subtitle, value, onChange, onClose }: {
           boxSizing: 'border-box',
           fontFamily: 'var(--font-body)',
         }}
-        onFocus={e => { e.target.style.borderColor = '#2A6B4A' }}
+        onFocus={e => { e.target.style.borderColor = '#2B6090' }}
         onBlur={e => { e.target.style.borderColor = '#ebebeb' }}
       />
       {value != null && (
@@ -554,7 +555,7 @@ function HcpInputPanel({ title, subtitle, value, onChange, onClose }: {
           onClick={() => { onChange(null); setRaw(''); onClose() }}
           style={{
             marginTop: 10, padding: 0, border: 'none', background: 'none',
-            cursor: 'pointer', fontSize: 12, fontWeight: 500, color: '#2A6B4A',
+            cursor: 'pointer', fontSize: 12, fontWeight: 500, color: '#2B6090',
             fontFamily: 'var(--font-body)',
           }}
         >

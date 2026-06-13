@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Figtree } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const figtree = Figtree({
@@ -74,7 +75,26 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB" className={`${figtree.variable} h-full`}>
-      <body className="h-full antialiased">{children}</body>
+      <body className="h-full antialiased">
+        {children}
+        <Script
+          id="stay22"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function (s, t, a, y, twenty, two) {
+                s.Stay22 = s.Stay22 || {};
+                s.Stay22.params = { lmaID: '6a2dc17dc9f8953830746ec2' };
+                twenty = t.createElement(a);
+                two = t.getElementsByTagName(a)[0];
+                twenty.async = 1;
+                twenty.src = y;
+                two.parentNode.insertBefore(twenty, two);
+              })(window, document, 'script', 'https://scripts.stay22.com/letmeallez.js');
+            `,
+          }}
+        />
+      </body>
     </html>
   )
 }

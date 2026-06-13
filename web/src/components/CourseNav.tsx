@@ -64,7 +64,7 @@ export function CourseNav({ sections }: { sections: Section[] }) {
                 padding: '0 16px',
                 height: 52,
                 border: 'none',
-                borderBottom: active ? '2px solid #2A6B4A' : '2px solid transparent',
+                borderBottom: active ? '2px solid #2B6090' : '2px solid transparent',
                 background: 'transparent',
                 color: active ? '#222' : '#6a6a6a',
                 fontSize: 14,

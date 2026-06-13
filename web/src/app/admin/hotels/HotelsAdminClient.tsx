@@ -183,7 +183,7 @@ export default function HotelsAdminClient({ hotels }: { hotels: Hotel[] }) {
                 style={{
                   fontSize: 12, padding: '4px 10px', borderRadius: 6,
                   border: '1px solid #fca5a5',
-                  background: '#fff', color: deletingId === hotel.id ? '#ccc' : '#2A6B4A',
+                  background: '#fff', color: deletingId === hotel.id ? '#ccc' : '#2B6090',
                   cursor: deletingId === hotel.id ? 'not-allowed' : 'pointer',
                   whiteSpace: 'nowrap',
                 }}

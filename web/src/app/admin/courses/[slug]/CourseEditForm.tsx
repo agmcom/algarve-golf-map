@@ -37,7 +37,7 @@ function Toggle({ name, label, defaultChecked }: { name: string; label: string; 
         type="checkbox"
         name={name}
         defaultChecked={defaultChecked}
-        style={{ width: 16, height: 16, accentColor: '#2A6B4A', cursor: 'pointer' }}
+        style={{ width: 16, height: 16, accentColor: '#2B6090', cursor: 'pointer' }}
       />
       <span style={{ fontSize: 14, color: '#333' }}>{label}</span>
     </label>
@@ -314,7 +314,7 @@ export function CourseEditForm({ course }: { course: Course }) {
 
 const saveBtn: React.CSSProperties = {
   padding: '10px 28px', borderRadius: 9, border: 'none',
-  background: '#2A6B4A', color: '#fff', fontSize: 14, fontWeight: 700, cursor: 'pointer',
+  background: '#2B6090', color: '#fff', fontSize: 14, fontWeight: 700, cursor: 'pointer',
 }
 
 function SaveBar({ pending, result }: { pending: boolean; result: SaveResult | null }) {
