@@ -138,17 +138,14 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
   )
 
   const handleToggleFilter = useCallback((key: string) => {
+    if (!activeFilters.has(key)) trackFilter(key)
     setActiveFilters(prev => {
       const next = new Set(prev)
-      if (next.has(key)) {
-        next.delete(key)
-      } else {
-        next.add(key)
-        trackFilter(key)
-      }
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
       return next
     })
-  }, [])
+  }, [activeFilters])
 
   const handleClearFilters = useCallback(() => {
     setActiveFilters(new Set())
