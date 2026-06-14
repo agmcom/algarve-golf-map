@@ -295,3 +295,18 @@ body {
     flex-shrink: 0;
   }
 }
+
+/* Course detail — pricing section responsive */
+.course-booking-mobile { display: none; }
+
+@media (max-width: 900px) {
+  .course-detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .course-booking-desktop {
+    display: none !important;
+  }
+  .course-booking-mobile {
+    display: block;
+  }
+}

@@ -17,38 +17,39 @@ interface CompareButtonProps {
 
 export function CompareButton({ count, onClick }: CompareButtonProps) {
   if (count === 0) return null
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
   return (
     <button
       onClick={onClick}
       style={{
-        height: 44,
-        padding: '0 18px',
+        height: isMobile ? 40 : 44,
+        padding: isMobile ? '0 12px' : '0 18px',
         background: '#222',
         color: '#fff',
         border: 'none',
         borderRadius: 22,
-        fontSize: 14,
+        fontSize: isMobile ? 13 : 14,
         fontWeight: 700,
         cursor: 'pointer',
         boxShadow: '0 4px 14px rgba(0,0,0,.25)',
         fontFamily: 'var(--font-body)',
         display: 'flex',
         alignItems: 'center',
-        gap: 8,
+        gap: isMobile ? 6 : 8,
       }}
     >
-      <Scale size={15} strokeWidth={2.2} />
-      Compare courses
+      <Scale size={isMobile ? 13 : 15} strokeWidth={2.2} />
+      {isMobile ? 'Compare' : 'Compare courses'}
       <span style={{
         background: '#2B6090',
         color: '#fff',
         borderRadius: '50%',
-        width: 20,
-        height: 20,
+        width: 18,
+        height: 18,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: 12,
+        fontSize: 11,
         fontWeight: 800,
       }}>
         {count}

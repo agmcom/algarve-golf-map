@@ -1,12 +1,17 @@
+import { useState, useEffect } from 'react'
 import type { Course } from '@/types/database'
 import { faroDistance, formatDriveTime } from '@/lib/distance'
 import { Scale } from 'lucide-react'
 
-interface NearbyItem {
-  id: string
-  name: string
-  slug: string
-  distanceKm: number
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false)
+  useEffect(() => {
+    const fn = () => setMobile(window.innerWidth < 640)
+    fn()
+    window.addEventListener('resize', fn)
+    return () => window.removeEventListener('resize', fn)
+  }, [])
+  return mobile
 }
 
 interface CarouselCardProps {
@@ -17,7 +22,6 @@ interface CarouselCardProps {
   onTogglePlan?: (id: string) => void
   compared?: boolean
   onToggleCompare?: (id: string) => void
-  nearbyCourses?: NearbyItem[]
 }
 
 const PEXELS_FALLBACK = 'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop'
@@ -26,16 +30,16 @@ function heroUrl(course: Course): string {
   return course.photos?.find(p => p.is_hero)?.url ?? PEXELS_FALLBACK
 }
 
-export function CarouselCard({ course, selected, onSelect, planned = false, onTogglePlan, compared = false, onToggleCompare, nearbyCourses }: CarouselCardProps) {
+export function CarouselCard({ course, selected, onSelect, planned = false, onTogglePlan, compared = false, onToggleCompare }: CarouselCardProps) {
   const { km, mins } = faroDistance(course.lat, course.lng)
+  const isMobile = useIsMobile()
 
   return (
     <div
       onClick={() => onSelect(course.id)}
       style={{
         flexShrink: 0,
-        width: 250,
-        height: 316,
+        width: 240,
         display: 'flex',
         flexDirection: 'column',
         background: '#ffffff',
@@ -52,7 +56,7 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
       }}
     >
       {/* Photo */}
-      <div style={{ position: 'relative', height: 116, flexShrink: 0, background: '#d4e6c3', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', height: 130, flexShrink: 0, background: '#d4e6c3', overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={heroUrl(course)}
@@ -69,7 +73,7 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
             onClick={(e) => { e.stopPropagation(); onToggleCompare(course.id) }}
             style={{
               position: 'absolute', top: 8, left: 8,
-              width: 30, height: 30, borderRadius: '50%',
+              width: 28, height: 28, borderRadius: '50%',
               background: compared ? '#2B6090' : 'rgba(255,255,255,.92)',
               border: 'none', cursor: 'pointer',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -91,54 +95,52 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
             {course.tags[0]}
           </span>
         )}
+        {course.rating != null && (
+          <span style={{
+            position: 'absolute', bottom: 8, right: 8,
+            display: 'flex', alignItems: 'center', gap: 3,
+            background: 'rgba(0,0,0,.52)', borderRadius: 10,
+            padding: '3px 7px',
+          }}>
+            <StarRating value={course.rating} />
+          </span>
+        )}
       </div>
 
       {/* Body */}
-      <div style={{ padding: '10px 12px 12px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'flex-start' }}>
-          <div style={{
-            fontSize: 13, fontWeight: 600, lineHeight: 1.2, color: '#222',
-            overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', flex: 1,
-          }}>
-            {course.name}
+      <div style={{ padding: '10px 12px 12px', display: 'flex', flexDirection: 'column', gap: 6 }}>
+        {/* Name */}
+        <div style={{
+          fontSize: 13.5, fontWeight: 700, lineHeight: 1.2, color: '#222',
+          overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis',
+        }}>
+          {course.name}
+        </div>
+
+        {/* Location + distance */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+          <div style={{ fontSize: 11.5, color: '#6a6a6a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            {course.town}
           </div>
-          {course.rating != null && <StarRating value={course.rating} />}
+          <div style={{ fontSize: 11, color: '#b0b0b0', whiteSpace: 'nowrap' }}>
+            ✈ Faro · ~{km} km · {formatDriveTime(mins)}
+          </div>
         </div>
 
-        <div style={{ marginTop: 3 }}>
-          <div style={{ fontSize: 11, color: '#6a6a6a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{course.town}</div>
-          <div style={{ fontSize: 11, color: '#b0b0b0', whiteSpace: 'nowrap' }}>✈ Faro · ~{km} km · {formatDriveTime(mins)}</div>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 9 }}>
-          <span style={{ fontSize: 11, color: '#6a6a6a' }}>
-            {course.holes} holes · par {course.par}
+        {/* Footer: holes + price */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 4, borderTop: '1px solid #f4f4f4' }}>
+          <span style={{ fontSize: 11, color: '#888' }}>
+            {course.holes}h · par {course.par}
           </span>
           {course.price_from != null && (
-            <span style={{ fontSize: 12, color: '#222' }}>
+            <span style={{ fontSize: 11.5, color: '#222' }}>
               <strong style={{ fontWeight: 700, fontSize: 14 }}>€{course.price_from}</strong>
-              <span style={{ color: '#6a6a6a' }}> / round</span>
+              <span style={{ color: '#999' }}> /round</span>
             </span>
           )}
         </div>
       </div>
 
-      {/* Nearby */}
-      {nearbyCourses && nearbyCourses.length > 0 && (
-        <div style={{ borderTop: '1px solid #f0f0f0', padding: '8px 12px 16px', flexShrink: 0 }}>
-          <div style={{ fontSize: 9, fontWeight: 700, color: '#c0c0c0', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: 5 }}>
-            ⛳ Nearby
-          </div>
-          {nearbyCourses.map(n => (
-            <div key={n.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '2px 0' }}>
-              <span style={{ fontSize: 11, color: '#555', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>
-                {n.name}
-              </span>
-              <span style={{ fontSize: 10, color: '#b0b0b0', flexShrink: 0, marginLeft: 8 }}>{n.distanceKm} km</span>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   )
 }
@@ -151,10 +153,10 @@ function CompareIcon({ active }: { active: boolean }) {
 function StarRating({ value }: { value: number }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 3, flexShrink: 0 }}>
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="#2B6090">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="#f5c842">
         <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z" />
       </svg>
-      <span style={{ fontSize: 11, fontWeight: 600, color: '#222' }}>{value.toFixed(2)}</span>
+      <span style={{ fontSize: 11, fontWeight: 700, color: '#fff' }}>{value.toFixed(1)}</span>
     </div>
   )
 }

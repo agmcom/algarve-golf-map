@@ -298,7 +298,7 @@ export default async function CoursePage(
           })()}
 
           {/* Two-column layout */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 32, alignItems: 'start' }}>
+          <div className="course-detail-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 32, alignItems: 'start' }}>
 
             {/* Left column */}
             <div>
@@ -466,6 +466,68 @@ export default async function CoursePage(
                 </section>
               )}
 
+              {/* Prices & Booking — mobile only (desktop shows in right column) */}
+              <section className="course-booking-mobile" id="booking" style={{ marginBottom: 36 }}>
+                <h2 style={sectionTitle}>Prices & Booking</h2>
+                {course.price_from != null && (
+                  <div style={{ marginBottom: 20 }}>
+                    <div style={{ fontSize: 12, color: '#6a6a6a' }}>From</div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+                      <span style={{ fontSize: 34, fontWeight: 800, color: '#222' }}>€{course.price_from}</span>
+                      <span style={{ fontSize: 14, color: '#6a6a6a' }}>/ round</span>
+                    </div>
+                  </div>
+                )}
+                {hasPrices && (
+                  <div style={{ marginBottom: 20 }}>
+                    <div style={{ border: '1px solid #ebebeb', borderRadius: 12, overflow: 'hidden' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: hasTwilight ? '44px 1fr 1fr' : '44px 1fr', padding: '7px 12px', background: '#f9f9f9', borderBottom: '1px solid #ebebeb' }}>
+                        <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em' }}></span>
+                        <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em', textAlign: 'right' }}>Standard</span>
+                        {hasTwilight && <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em', textAlign: 'right' }}>Twilight</span>}
+                      </div>
+                      {monthsWithPrices.map(m => {
+                        const { standard, twilight } = pricesByMonth[m]
+                        const isCurrent = m === currentMonth
+                        return (
+                          <div key={m} style={{ display: 'grid', gridTemplateColumns: hasTwilight ? '44px 1fr 1fr' : '44px 1fr', padding: '8px 12px', borderBottom: '1px solid #f4f4f4', background: isCurrent ? '#fff8f0' : '#fff' }}>
+                            <span style={{ fontSize: 12, fontWeight: isCurrent ? 700 : 500, color: isCurrent ? '#2B6090' : '#888' }}>{MONTH_LABELS[m - 1]}</span>
+                            <span style={{ fontSize: 13, fontWeight: 700, color: isCurrent ? '#222' : '#444', textAlign: 'right' }}>
+                              {standard ? <>€{standard.price_eur}{standard.buggy_included && <span style={{ fontSize: 10, color: '#888', fontWeight: 400 }}> incl. buggy</span>}</> : '—'}
+                            </span>
+                            {hasTwilight && (
+                              <span style={{ fontSize: 13, fontWeight: 700, color: isCurrent ? '#555' : '#aaa', textAlign: 'right' }}>
+                                {twilight ? <>€{twilight.price_eur}{twilight.buggy_included && <span style={{ fontSize: 10, color: '#888', fontWeight: 400 }}> incl.</span>}</> : '—'}
+                              </span>
+                            )}
+                          </div>
+                        )
+                      })}
+                      {(() => {
+                        const sample = course.prices.find(p => !p.buggy_included && p.buggy_price)
+                        return sample ? <div style={{ padding: '7px 12px', fontSize: 11, color: '#888', background: '#fafafa' }}>+ buggy €{sample.buggy_price} optional</div> : null
+                      })()}
+                    </div>
+                    <p style={{ fontSize: 10, color: '#b0b0b0', margin: '6px 0 0', textAlign: 'right' }}>Prices indicative · source: algarvegolf.net</p>
+                  </div>
+                )}
+                {course.booking_url && (
+                  <a href={course.booking_url} target="_blank" rel="noopener noreferrer" style={ctaBtn('#2B6090', '#fff')}>
+                    Book Tee Time
+                  </a>
+                )}
+                {course.website && (
+                  <a href={course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`} target="_blank" rel="noopener noreferrer" style={{ ...ctaBtn('#2B6090', '#fff'), marginTop: course.booking_url ? 10 : 0 }}>
+                    Official website ↗
+                  </a>
+                )}
+                {course.phone && (
+                  <a href={`tel:${course.phone}`} style={{ display: 'block', textAlign: 'center', marginTop: 14, fontSize: 13, color: '#6a6a6a', textDecoration: 'none' }}>
+                    📞 {course.phone}
+                  </a>
+                )}
+              </section>
+
               {/* Course Map */}
               {course.course_map_url && (
                 <section id="course-map" style={{ marginBottom: 36 }}>
@@ -535,10 +597,11 @@ export default async function CoursePage(
                 </section>
               )}
 
+
             </div>
 
-            {/* Right column — sticky booking card */}
-            <div style={{ position: 'sticky', top: 76 }}>
+            {/* Right column — sticky booking card (desktop only) */}
+            <div className="course-booking-desktop" style={{ position: 'sticky', top: 76 }}>
               <div style={{
                 background: '#fff', border: '1px solid #ebebeb',
                 borderRadius: 20, padding: '24px 22px',

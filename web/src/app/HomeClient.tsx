@@ -54,6 +54,11 @@ function matchFilter(course: Course, key: string, fao: { lat: number; lng: numbe
     case 'holes_27':     return course.holes === 27
     case 'signature':    return course.tags.some(t => SIGNATURE_TAGS.has(t))
     case 'driving_range':return course.driving_range
+    case 'putting_green':return course.putting_green
+    case 'golf_academy': return course.golf_academy
+    case 'pro_shop':     return course.pro_shop
+    case 'restaurant':   return course.restaurant
+    case 'caddie':       return course.caddie_service
     case 'easy':         return course.difficulty === 'easy'
     case 'moderate':     return course.difficulty === 'moderate'
     case 'challenging':  return course.difficulty === 'challenging'
@@ -126,8 +131,15 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
   const compareButtonRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<MapViewHandle | null>(null)
   const carouselRef = useRef<BottomCarouselHandle | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => { trackPageView('home') }, [])
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 640)
+    fn()
+    window.addEventListener('resize', fn)
+    return () => window.removeEventListener('resize', fn)
+  }, [])
 
   const fao = airports.find(a => a.code === 'FAO') ?? FAO_FALLBACK
   const showTop10 = courses.filter(c => (c.review_count ?? 0) >= 3).length > 10
@@ -270,41 +282,44 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
                   </div>
                 </>
               )}
-              <button
-                onClick={() => setContactOpen(true)}
-                style={{
-                  height: 44, padding: '0 16px',
-                  background: '#fff', color: '#222',
-                  border: '1px solid #ebebeb', borderRadius: 22,
-                  fontSize: 13, fontWeight: 600,
-                  cursor: 'pointer', fontFamily: 'var(--font-body)',
-                  boxShadow: '0 1px 6px rgba(0,0,0,.06)',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                Contact
-              </button>
+              {!isMobile && (
+                <button
+                  onClick={() => setContactOpen(true)}
+                  style={{
+                    height: 44, padding: '0 16px',
+                    background: '#fff', color: '#222',
+                    border: '1px solid #ebebeb', borderRadius: 22,
+                    fontSize: 13, fontWeight: 600,
+                    cursor: 'pointer', fontFamily: 'var(--font-body)',
+                    boxShadow: '0 1px 6px rgba(0,0,0,.06)',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Contact
+                </button>
+              )}
               <button
                 onClick={handleOpenPlanner}
                 style={{
-                  height: 44,
-                  padding: '0 18px',
+                  height: isMobile ? 40 : 44,
+                  padding: isMobile ? '0 14px' : '0 18px',
                   background: '#2B6090',
                   color: '#fff',
                   border: 'none',
                   borderRadius: 22,
-                  fontSize: 14,
+                  fontSize: isMobile ? 13 : 14,
                   fontWeight: 700,
                   cursor: 'pointer',
                   boxShadow: '0 4px 14px rgba(43,96,144,.35)',
                   fontFamily: 'var(--font-body)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 7,
+                  gap: 6,
                   whiteSpace: 'nowrap',
                 }}
               >
-                <BedDouble size={16} strokeWidth={2.2} /> Find Your Base
+                <BedDouble size={isMobile ? 14 : 16} strokeWidth={2.2} />
+                {isMobile ? 'Base' : 'Find Your Base'}
               </button>
             </>
           }

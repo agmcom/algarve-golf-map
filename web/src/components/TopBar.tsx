@@ -48,15 +48,32 @@ const MORE_SECTIONS = [
   {
     title: 'Features',
     filters: [
-      { key: 'signature',    label: 'Signature' },
+      { key: 'signature',     label: 'Signature' },
       { key: 'driving_range', label: 'Driving range' },
+      { key: 'putting_green', label: 'Putting green' },
+      { key: 'golf_academy',  label: 'Golf academy' },
+      { key: 'pro_shop',      label: 'Pro shop' },
+      { key: 'restaurant',    label: 'Restaurant' },
+      { key: 'caddie',        label: 'Caddie service' },
     ],
   },
 ]
 
 const MORE_KEYS = MORE_SECTIONS.flatMap(s => s.filters.map(f => f.key))
 
+function useIsMobile(bp = 640) {
+  const [mobile, setMobile] = useState(false)
+  useEffect(() => {
+    const fn = () => setMobile(window.innerWidth < bp)
+    fn()
+    window.addEventListener('resize', fn)
+    return () => window.removeEventListener('resize', fn)
+  }, [bp])
+  return mobile
+}
+
 export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, hcpLadies, onSetHcpMen, onSetHcpLadies, showTop10 = false, rightSlot }: TopBarProps) {
+  const isMobile = useIsMobile()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [dropdownPos, setDropdownPos] = useState<{ top: number; right: number } | null>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
@@ -173,112 +190,109 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
         className="absolute top-0 left-0 right-0 z-10 pointer-events-none"
         style={{
           background: 'linear-gradient(to bottom, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.6) 72%, transparent 100%)',
-          paddingTop: 20,
-          paddingBottom: 36,
+          paddingTop: isMobile ? 10 : 20,
+          paddingBottom: isMobile ? 24 : 36,
         }}
       >
-        <div
-          className="pointer-events-none"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'auto 1fr auto',
-            alignItems: 'center',
-            gap: 16,
-            paddingLeft: 48,
-            paddingRight: 48,
-          }}
-        >
-        {/* Logo */}
-        <div className="pointer-events-auto">
-          <div
-            className="flex items-center gap-2"
-            style={{
-              height: 44,
-              padding: '0 16px',
-              background: '#ffffff',
-              border: '1px solid #ebebeb',
-              borderRadius: 24,
-              boxShadow: '0 2px 12px rgba(0,0,0,.08)',
-            }}
-          >
-            <img src="/logo.svg" alt="" style={{ width: 26, height: 26, flexShrink: 0 }} />
-            <span style={{ font: '700 15px var(--font-body)', color: '#222', whiteSpace: 'nowrap' }}>
-              Algarve Golf Map
-            </span>
-          </div>
-        </div>
+        <div className="pointer-events-none" style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 8 : 10, paddingLeft: isMobile ? 12 : 20, paddingRight: isMobile ? 12 : 20 }}>
 
-        {/* All filter chips + More filters in one scrollable row */}
-        <div className="pointer-events-auto overflow-hidden">
-          <div className="flex gap-2 no-scrollbar items-center" style={{ overflowX: 'auto' }}>
-            {QUICK_FILTERS.filter(f => f.key !== 'top_rated' || showTop10).map(f => (
+          {/* Row 1: Logo + action buttons */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+            {/* Logo */}
+            <div className="pointer-events-auto" style={{ flexShrink: 0 }}>
+              <div
+                className="flex items-center"
+                style={{
+                  height: isMobile ? 40 : 44,
+                  gap: isMobile ? 6 : 8,
+                  padding: isMobile ? '0 12px' : '0 16px',
+                  background: '#ffffff',
+                  border: '1px solid #ebebeb',
+                  borderRadius: 24,
+                  boxShadow: '0 2px 12px rgba(0,0,0,.08)',
+                }}
+              >
+                <img src="/logo.svg" alt="" style={{ width: isMobile ? 22 : 26, height: isMobile ? 22 : 26, flexShrink: 0 }} />
+                <span style={{ font: `700 ${isMobile ? 13 : 15}px var(--font-body)`, color: '#222', whiteSpace: 'nowrap' }}>
+                  Algarve Golf Map
+                </span>
+              </div>
+            </div>
+
+            {/* Action buttons */}
+            {rightSlot && (
+              <div className="pointer-events-auto flex items-center" style={{ gap: isMobile ? 6 : 8, flexShrink: 0 }}>
+                {rightSlot}
+              </div>
+            )}
+          </div>
+
+          {/* Row 2: Filter chips */}
+          <div className="pointer-events-auto overflow-hidden">
+            <div className="flex no-scrollbar items-center" style={{ overflowX: 'auto', gap: isMobile ? 6 : 8 }}>
+              {QUICK_FILTERS.filter(f => f.key !== 'top_rated' || showTop10).map(f => (
+                <FilterChip
+                  key={f.key}
+                  label={f.label}
+                  active={activeFilters.has(f.key)}
+                  onClick={() => onToggleFilter(f.key)}
+                />
+              ))}
+
+              {/* Faro Airport distance filter */}
               <FilterChip
-                key={f.key}
-                label={f.label}
-                active={activeFilters.has(f.key)}
-                onClick={() => onToggleFilter(f.key)}
+                label={activeFaroKey ? `✈ Faro · ${FARO_OPTIONS.find(o => o.key === activeFaroKey)?.label}` : '✈ Faro Airport'}
+                active={!!activeFaroKey}
+                onClick={openFaro}
+                buttonRef={faroButtonRef}
+                suffix={
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: faroOpen ? 'rotate(180deg)' : 'none' }}>
+                    <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                }
               />
-            ))}
 
-            {/* Faro Airport distance filter */}
-            <FilterChip
-              label={activeFaroKey ? `✈ Faro · ${FARO_OPTIONS.find(o => o.key === activeFaroKey)?.label}` : '✈ Faro Airport'}
-              active={!!activeFaroKey}
-              onClick={openFaro}
-              buttonRef={faroButtonRef}
-              suffix={
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: faroOpen ? 'rotate(180deg)' : 'none' }}>
-                  <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              }
-            />
+              {/* Men's handicap filter */}
+              <FilterChip
+                label={hcpMen != null ? `Men HCP ${hcpMen}` : 'Men handicap'}
+                active={hcpMen != null}
+                onClick={openHcpMen}
+                buttonRef={hcpMenButtonRef}
+                suffix={
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: hcpMenOpen ? 'rotate(180deg)' : 'none' }}>
+                    <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                }
+              />
 
-            {/* Men's handicap filter */}
-            <FilterChip
-              label={hcpMen != null ? `Men HCP ${hcpMen}` : 'Men handicap'}
-              active={hcpMen != null}
-              onClick={openHcpMen}
-              buttonRef={hcpMenButtonRef}
-              suffix={
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: hcpMenOpen ? 'rotate(180deg)' : 'none' }}>
-                  <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              }
-            />
+              {/* Ladies' handicap filter */}
+              <FilterChip
+                label={hcpLadies != null ? `Ladies HCP ${hcpLadies}` : 'Ladies handicap'}
+                active={hcpLadies != null}
+                onClick={openHcpLadies}
+                buttonRef={hcpLadiesButtonRef}
+                suffix={
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: hcpLadiesOpen ? 'rotate(180deg)' : 'none' }}>
+                    <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                }
+              />
 
-            {/* Ladies' handicap filter */}
-            <FilterChip
-              label={hcpLadies != null ? `Ladies HCP ${hcpLadies}` : 'Ladies handicap'}
-              active={hcpLadies != null}
-              onClick={openHcpLadies}
-              buttonRef={hcpLadiesButtonRef}
-              suffix={
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: hcpLadiesOpen ? 'rotate(180deg)' : 'none' }}>
-                  <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              }
-            />
-
-            {/* More filters chip — dropdown rendered as fixed portal to escape overflow clip */}
-            <FilterChip
-              label={moreActiveCount > 0 ? `Filters · ${moreActiveCount}` : 'More filters'}
-              active={moreActiveCount > 0}
-              onClick={openDropdown}
-              buttonRef={buttonRef}
-              suffix={
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: dropdownOpen ? 'rotate(180deg)' : 'none' }}>
-                  <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              }
-            />
+              {/* More filters chip */}
+              <FilterChip
+                label={moreActiveCount > 0 ? `Filters · ${moreActiveCount}` : 'More filters'}
+                active={moreActiveCount > 0}
+                onClick={openDropdown}
+                buttonRef={buttonRef}
+                suffix={
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: dropdownOpen ? 'rotate(180deg)' : 'none' }}>
+                    <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                }
+              />
+            </div>
           </div>
-        </div>
 
-        {rightSlot && (
-          <div className="pointer-events-auto flex items-center gap-2">
-            {rightSlot}
-          </div>
-        )}
         </div>
       </div>
 
