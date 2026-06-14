@@ -38,6 +38,9 @@ export const metadata: Metadata = {
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
+  verification: {
+    other: { 'msvalidate.01': 'E48F87A8CAA873FD3D1286775E6B3C6C' },
+  },
   robots: {
     index: true,
     follow: true,
