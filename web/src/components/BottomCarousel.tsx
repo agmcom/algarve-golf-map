@@ -1,6 +1,6 @@
 'use client'
 
-import { forwardRef, useImperativeHandle, useRef, useState, useEffect } from 'react'
+import { forwardRef, useImperativeHandle, useRef, useState, useEffect, useCallback } from 'react'
 import { CarouselCard } from './CarouselCard'
 import type { Course } from '@/types/database'
 
@@ -34,6 +34,13 @@ export const BottomCarousel = forwardRef<BottomCarouselHandle, BottomCarouselPro
     }, [])
 
     const px = isMobile ? 12 : 22
+
+    const scrollBy = useCallback((dir: 1 | -1) => {
+      const el = scrollerRef.current
+      if (!el) return
+      const step = (CARD_WIDTH + CARD_GAP) * 3
+      el.scrollBy({ left: dir * step, behavior: 'smooth' })
+    }, [])
 
     useImperativeHandle(ref, () => ({
       scrollToId(id: string) {
@@ -70,34 +77,72 @@ export const BottomCarousel = forwardRef<BottomCarouselHandle, BottomCarouselPro
           </span>
         </div>
 
-        {/* Scrollable cards */}
-        <div
-          ref={scrollerRef}
-          className="no-scrollbar"
-          style={{
-            display: 'flex',
-            gap: CARD_GAP,
-            overflowX: 'auto',
-            padding: `16px ${px}px 6px`,
-            scrollSnapType: 'x mandatory',
-          }}
-        >
-          {courses.map((course) => (
-            <div key={course.id} style={{ scrollSnapAlign: 'start' }}>
-              <CarouselCard
-                course={course}
-                selected={selectedId === course.id}
-                onSelect={onSelect}
-                planned={plannedIds.has(course.id)}
-                onTogglePlan={onTogglePlan}
-                compared={compareIds.includes(course.id)}
-                onToggleCompare={compareIds.length < 4 || compareIds.includes(course.id) ? onToggleCompare : undefined}
-              />
-            </div>
-          ))}
-          <div style={{ flexShrink: 0, width: 4 }} />
+        {/* Scrollable cards + floating arrows */}
+        <div style={{ position: 'relative' }}>
+          {!isMobile && (
+            <>
+              <div style={{ position: 'absolute', left: 4, top: '50%', transform: 'translateY(-50%)', zIndex: 2 }}>
+                <ArrowButton dir="left" onClick={() => scrollBy(-1)} />
+              </div>
+              <div style={{ position: 'absolute', right: 4, top: '50%', transform: 'translateY(-50%)', zIndex: 2 }}>
+                <ArrowButton dir="right" onClick={() => scrollBy(1)} />
+              </div>
+            </>
+          )}
+          <div
+            ref={scrollerRef}
+            className="no-scrollbar"
+            style={{
+              display: 'flex',
+              gap: CARD_GAP,
+              overflowX: 'auto',
+              padding: `16px ${px}px 6px`,
+              scrollSnapType: 'x mandatory',
+            }}
+          >
+            {courses.map((course) => (
+              <div key={course.id} style={{ scrollSnapAlign: 'start' }}>
+                <CarouselCard
+                  course={course}
+                  selected={selectedId === course.id}
+                  onSelect={onSelect}
+                  planned={plannedIds.has(course.id)}
+                  onTogglePlan={onTogglePlan}
+                  compared={compareIds.includes(course.id)}
+                  onToggleCompare={compareIds.length < 4 || compareIds.includes(course.id) ? onToggleCompare : undefined}
+                />
+              </div>
+            ))}
+            <div style={{ flexShrink: 0, width: 4 }} />
+          </div>
         </div>
       </div>
     )
   }
 )
+
+function ArrowButton({ dir, onClick }: { dir: 'left' | 'right'; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        width: 34, height: 34,
+        borderRadius: '50%',
+        background: '#2B6090',
+        border: 'none',
+        boxShadow: '0 4px 14px rgba(43,96,144,.35)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        cursor: 'pointer', color: '#ffffff',
+        transition: 'box-shadow 0.15s ease, opacity 0.15s ease',
+      }}
+      onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+      onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        {dir === 'left'
+          ? <polyline points="15 18 9 12 15 6" />
+          : <polyline points="9 18 15 12 9 6" />}
+      </svg>
+    </button>
+  )
+}

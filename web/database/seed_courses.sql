@@ -203,13 +203,13 @@ insert into courses (
 
 -- ── AMENDOEIRA ───────────────────────────────────────────────────────────────
 
-('Amendoeira Faldo Course',      'amendoeira-faldo',    'Amendoeira · Silves', 'central', make_point(-8.448, 37.220),
+('Amendoeira Faldo Course',      'amendoeira-faldo',    'Silves', 'central', make_point(-8.448, 37.220),
   18, 72, 'Nick Faldo', 2008,
   false, false, false, false, false, false, '{}', null,
   null, false, true, null, 0,
   '{}', '{}', ARRAY['en','pt']),
 
-('Amendoeira O''Connor Jr Course', 'amendoeira-oconnor', 'Amendoeira · Silves', 'central', make_point(-8.445, 37.218),
+('Amendoeira O''Connor Jr Course', 'amendoeira-oconnor', 'Silves', 'central', make_point(-8.445, 37.218),
   18, 72, 'Christy O''Connor Jr.', 2008,
   false, false, false, false, false, false, '{}', null,
   null, false, true, null, 0,
