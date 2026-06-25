@@ -183,7 +183,7 @@ insert into courses (
   null, false, true, 4.30, 184,
   ARRAY['Hillside','Sea view'], '{}', ARRAY['en','pt']),
 
-('Palmares Ocean & Lakes',  'palmares',                'Lagos · Meia Praia', 'west', make_point(-8.702, 37.109),
+('Palmares Ocean & Lakes',  'palmares',                'Lagos',              'west', make_point(-8.702, 37.109),
   27, 72, 'Robert Trent Jones Jr.', 1975,
   false, true, false, true, true, false, '{}', null,
   null, false, true, 4.70, 298,
@@ -262,7 +262,7 @@ insert into courses (
   '{}', '{}', ARRAY['en','pt']),
 
 ('Pestana Ferragudo',       'pestana-ferragudo',       'Ferragudo', 'west', make_point(-8.527, 37.117),
-  18, 72, null, null,
+  18, 73, null, null,
   false, false, false, false, false, false, '{}', null,
   null, false, true, null, 0,
   '{}', '{}', ARRAY['en','pt']);

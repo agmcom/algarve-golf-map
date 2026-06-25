@@ -346,7 +346,7 @@ const RAW_COURSES: Course[] = [
     name: 'Palmares Ocean & Lakes',
     blurb: "One of the Algarve's most scenic layouts, Palmares spreads across 27 holes of clifftop and lakeside terrain above Meia Praia beach near Lagos. Robert Trent Jones Jr. redesigned and extended the original 1975 course, adding sweeping Atlantic views and memorable holes above the bay.",
     lat: 37.109, lng: -8.702,
-    town: 'Lagos · Meia Praia', region: 'west',
+    town: 'Lagos', region: 'west',
     holes: 27, par: 72,
     designer: 'Robert Trent Jones Jr.', year_opened: 1975,
     has_own_hotel: true, onsite_hotel_id: 'palmares-beach-house', onsite_hotel: h('palmares-beach-house'),
@@ -479,11 +479,11 @@ const RAW_COURSES: Course[] = [
     ...DEFAULTS,
     id: 'pestana-ferragudo', slug: 'pestana-ferragudo',
     name: 'Pestana Ferragudo',
-    active: false, // course not yet open — projected soft opening June 2026
-    blurb: "Part of the Pestana resort group, this 18-hole par-72 course sits near the picturesque fishing village of Ferragudo, across the river from Portimão. Well-maintained fairways and easy access from the N125 make it a practical choice for golfers based in the Portimão–Lagoa area.",
+    active: true,
+    blurb: "The Pestana Group's newest course, opened June 2026 as part of the Pestana Ferragudo Village residential resort. This par-73 parkland layout near the traditional fishing village of Ferragudo features an old chapel as a focal point where several holes converge. Design emphasizes routing and shot selection over elevation drama.",
     lat: 37.117, lng: -8.527,
     town: 'Ferragudo', region: 'west',
-    holes: 18, par: 72,
+    holes: 18, par: 73,
   },
 ]
 

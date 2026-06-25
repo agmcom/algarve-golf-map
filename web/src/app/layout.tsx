@@ -22,7 +22,12 @@ export const metadata: Metadata = {
   },
   description: DEFAULT_DESCRIPTION,
   icons: {
-    icon: '/logo.svg',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: '/logo.svg',
+    shortcut: '/favicon.ico',
   },
   keywords: [
     'Algarve golf courses',
@@ -77,8 +82,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${figtree.variable} h-full`}>
-      <body className="h-full antialiased">
+    <html lang="en-GB" className={`${figtree.variable}`}>
+      <body className="antialiased">
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-95WX0L3Z7W"

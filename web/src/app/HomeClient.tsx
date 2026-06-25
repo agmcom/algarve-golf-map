@@ -235,7 +235,7 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
   const compareCourses = compareIds.map(id => courses.find(c => c.id === id)).filter(Boolean) as typeof courses
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden">
+    <main className="relative w-full h-full overflow-hidden">
       <MapView
         ref={mapRef}
         courses={filteredCourses}
