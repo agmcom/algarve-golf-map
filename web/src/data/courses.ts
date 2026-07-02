@@ -3,36 +3,27 @@ import { ONSITE_HOTELS } from '@/data/hotels'
 
 const h = (id: string) => ONSITE_HOTELS.find(h => h.id === id)!
 
-// Course map images — sourced from official sites or teetimes.pt / algarvepackage.com
+// Course map images — ONLY sourced from each course's own official website.
 // The upload-course-maps script downloads these and stores them in Supabase Storage
 const MAP: Record<string, string> = {
-  'vilamoura-old-course':    'https://www.teetimes.pt/slideshow/pictures/course/39/portugal-golf-vilamoura-old-course-cmap.webp',
-  'vilamoura-pinhal':        'https://www.teetimes.pt/slideshow/pictures/course/40/portugal-golf-vilamoura-pinhal-cmap.webp',
-  'vilamoura-laguna':        'https://www.teetimes.pt/slideshow/pictures/course/41/portugal-golf-vilamoura-laguna-cmap.webp',
-  'vilamoura-millennium':    'https://www.teetimes.pt/slideshow/pictures/course/42/portugal-golf-vilamoura-millennium-cmap.webp',
-  'vila-sol':                'https://www.teetimes.pt/slideshow/pictures/course/38/portugal-golf-vila-sol-cmap.webp',
-  'quinta-do-lago-south':    'https://www.teetimes.pt/slideshow/pictures/course/37/portugal-golf-quinta-lago-south-cmap.webp',
-  'quinta-do-lago-north':    'https://www.teetimes.pt/slideshow/pictures/course/36/portugal-golf-quinta-lago-north-cmap.webp',
-  'quinta-do-lago-laranjal': 'https://www.teetimes.pt/slideshow/pictures/course/98/portugal-golf-laranjal-cmap.webp',
-  'pinheiros-altos':         'https://www.teetimes.pt/slideshow/pictures/course/48/portugal-golf-pinheiros-altos-cmap.webp',
-  'san-lorenzo':             'https://www.teetimes.pt/slideshow/pictures/course/47/portugal-golf-san-lorenzo-cmap.webp',
   'vale-do-lobo-royal':      'https://www.valedolobo.com/wp-content/uploads/2024/05/Map_royal_course-scaled.webp',
   'vale-do-lobo-ocean':      'https://www.valedolobo.com/wp-content/uploads/2024/05/ff8f8924531fa250ff7555113bc8a3b2.png',
-  'balaia':                  'https://www.algarvepackage.com/slideshow/pictures/course/50/portugal-golf-balaia-cmap.webp',
-  'pine-cliffs':             'https://www.algarvepackage.com/slideshow/pictures/course/49/portugal-golf-pine-cliffs-golf-cmap.webp',
-  'salgados':                'https://www.algarvepackage.com/slideshow/pictures/course/32/portugal-golf-salgados-cmap.webp',
-  'gramacho':                'https://www.algarvepackage.com/slideshow/pictures/course/30/portugal-golf-gramacho-cmap.webp',
-  'vale-da-pinta':           'https://www.algarvepackage.com/slideshow/pictures/course/29/portugal-golf-vale-pinta-cmap.webp',
-  'silves':                  'https://www.algarvepackage.com/slideshow/pictures/course/31/portugal-golf-silves-cmap.webp',
-  'alto-golf':               'https://www.algarvepackage.com/slideshow/pictures/course/28/portugal-golf-alto-cmap.webp',
-  'alamos':                  'https://www.algarvepackage.com/slideshow/pictures/course/26/portugal-golf-alamos-cmap.webp',
-  'morgado':                 'https://www.algarvepackage.com/slideshow/pictures/course/25/portugal-golf-morgado-cmap.webp',
   'ombria':                  'https://www.ombria.com/static/images/ombria_maps/golf-desktop-2.svg',
   'benamor':                 'http://www.benamorgolf.com/upload/photologue/photos/Course%20Map.png',
   'monte-rei':               'https://www.monte-rei.com/media/1592/coursemap.jpg',
   'quinta-da-ria':           'https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/course-maps/quinta-da-ria.jpg',
   'quinta-de-cima':          'https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/course-maps/quinta-de-cima.jpg',
-  // No map found: penina-resort, vale-de-milho, santo-antonio, espiche, palmares, quinta-do-vale, boavista
+  'amendoeira-faldo':        'https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/course-maps/amendoeira-faldo.png',
+  'amendoeira-oconnor':      'https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/course-maps/amendoeira-oconnor.png',
+  'vila-sol':                'https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/course-maps/vila-sol.png',
+  'vilamoura-old-course':    'https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/course-maps/vilamoura-old-course.png',
+  'boavista':                'https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/course-maps/boavista.png',
+  // No official-site map found: vilamoura-pinhal, vilamoura-laguna, vilamoura-millennium,
+  // quinta-do-lago-south, quinta-do-lago-north, quinta-do-lago-laranjal, pinheiros-altos, san-lorenzo
+  // (only a low-res 221x90 icon), pine-cliffs (site blocks automated access), salgados, gramacho,
+  // vale-da-pinta, silves, pestana-ferragudo (only hole-tip diagram PDFs, rejected as non-map),
+  // alto-golf, alamos, morgado, penina-resort, vale-de-milho, santo-antonio, espiche, palmares,
+  // quinta-do-vale, castro-marim, penina-championship
 }
 
 const DEFAULTS = {

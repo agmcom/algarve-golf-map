@@ -167,15 +167,6 @@ export default async function CoursePage(
     numberOfHoles: course.holes,
     ...(course.par        && { courseLength: course.length_meters ? `${course.length_meters}m` : undefined }),
     ...(amenityFeatures.length > 0 && { amenityFeature: amenityFeatures }),
-    ...(course.rating != null && course.review_count > 0 && {
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: course.rating.toFixed(1),
-        reviewCount: course.review_count,
-        bestRating: '5',
-        worstRating: '1',
-      },
-    }),
     currenciesAccepted: 'EUR',
     touristType: 'Golf Tourists',
   }
@@ -229,17 +220,6 @@ export default async function CoursePage(
               <span style={{ fontSize: 15, color: 'rgba(255,255,255,.85)' }}>
                 📍 {course.town}, Algarve
               </span>
-              {course.rating != null && (
-                <span style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#fff' }}>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#2B6090">
-                    <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z" />
-                  </svg>
-                  <strong style={{ fontSize: 15, fontWeight: 700 }}>{course.rating.toFixed(2)}</strong>
-                  {course.review_count > 0 && (
-                    <span style={{ fontSize: 13, opacity: .75 }}>({course.review_count} reviews)</span>
-                  )}
-                </span>
-              )}
             </div>
           </div>
         </div>
@@ -251,7 +231,7 @@ export default async function CoursePage(
           { id: 'getting-there', label: 'Getting There' },
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
           ...(course.dress_code ? [{ id: 'dress-code', label: 'Dress Code' }] : []),
-          ...(course.course_map_url ? [{ id: 'course-map', label: 'Course Map' }] : []),
+          { id: 'course-map', label: 'Course Map' },
           { id: 'nearby-courses', label: 'Nearby Courses' },
           { id: 'nearby-hotels', label: 'Nearby Hotels' },
         ]} />
@@ -529,15 +509,23 @@ export default async function CoursePage(
               </section>
 
               {/* Course Map */}
-              {course.course_map_url && (
-                <section id="course-map" style={{ marginBottom: 36 }}>
-                  <h2 style={sectionTitle}>Course Map</h2>
+              <section id="course-map" style={{ marginBottom: 36 }}>
+                <h2 style={sectionTitle}>Course Map</h2>
+                {course.course_map_url ? (
                   <CourseMapImage
                     src={course.course_map_url}
                     alt={`${course.name} course map`}
                   />
-                </section>
-              )}
+                ) : (
+                  <div style={{
+                    padding: '28px 20px', borderRadius: 14,
+                    border: '1px solid #ebebeb', background: '#fafafa',
+                    textAlign: 'center', color: '#8a8a8a', fontSize: 14,
+                  }}>
+                    Map not available
+                  </div>
+                )}
+              </section>
 
               {/* Nearby Courses */}
               {nearbyCourses.length > 0 && (
@@ -748,7 +736,7 @@ function bookingSearchUrl(town: string): string {
 }
 
 function HotelCard({ hotel, courseTown }: {
-  hotel: { id: string; name: string; stars: number | null; price_from: number | null; town: string; booking_url: string | null; has_golf_package: boolean; distance_km: number; google_rating?: number | null }
+  hotel: { id: string; name: string; stars: number | null; price_from: number | null; town: string; booking_url: string | null; has_golf_package: boolean; onsite: boolean; distance_km: number; google_rating?: number | null }
   courseTown: string
 }) {
   const stars = hotel.stars ?? 0
@@ -773,20 +761,20 @@ function HotelCard({ hotel, courseTown }: {
           <span style={{ fontSize: 14, fontWeight: 700, color: '#222', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {hotel.name}
           </span>
-          {hotel.has_golf_package && (
+          {hotel.onsite && (
             <span style={{
               fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 10,
-              background: '#f4fbf6', color: '#22a06b', border: '1px solid #d4edda',
-              flexShrink: 0,
+              background: '#edf7f2', color: '#22a06b', border: '1px solid #c3e6cb',
+              flexShrink: 0, whiteSpace: 'nowrap',
             }}>
-              ⛳ Golf pkg
+              ⛳ On-site
             </span>
           )}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 12, color: '#f5a623' }}>{'★'.repeat(stars)}</span>
           <span style={{ fontSize: 12, color: '#6a6a6a' }}>
-            {hotel.town} · {hotel.distance_km.toFixed(1)} km away
+            {hotel.town}{hotel.onsite ? '' : ` · ${hotel.distance_km.toFixed(1)} km away`}
           </span>
           {hotel.google_rating != null && (
             <span style={{ fontSize: 12, color: '#6a6a6a' }}>
