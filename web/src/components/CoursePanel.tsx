@@ -42,7 +42,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
   return (
     <>
       {/* Desktop: sidebar — Mobile: bottom sheet */}
-      <div className="course-panel" style={{ position: 'relative' }}>
+      <div className="course-panel">
 
         {/* Close button — pinned in place, scrolls with nothing */}
         <button onClick={onClose} style={{
