@@ -96,7 +96,7 @@ export const BottomCarousel = forwardRef<BottomCarouselHandle, BottomCarouselPro
               display: 'flex',
               gap: CARD_GAP,
               overflowX: 'auto',
-              padding: `16px ${px}px 6px`,
+              padding: `28px ${px}px 6px`,
               scrollSnapType: 'x mandatory',
             }}
           >

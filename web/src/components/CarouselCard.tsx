@@ -50,9 +50,9 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
         boxShadow: selected
           ? '0 8px 24px rgba(0,0,0,.16)'
           : '0 4px 16px rgba(0,0,0,.10)',
-        transform: selected ? 'scale(1.06) translateY(-4px)' : 'none',
+        transform: selected ? 'scale(1.06)' : 'none',
         transition: 'transform .2s ease, box-shadow .2s, border-color .15s',
-        transformOrigin: 'bottom center',
+        transformOrigin: 'center center',
       }}
     >
       {/* Photo */}
@@ -93,16 +93,6 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
             padding: '3px 8px', borderRadius: 12,
           }}>
             {course.tags[0]}
-          </span>
-        )}
-        {course.rating != null && (
-          <span style={{
-            position: 'absolute', bottom: 8, right: 8,
-            display: 'flex', alignItems: 'center', gap: 3,
-            background: 'rgba(0,0,0,.52)', borderRadius: 10,
-            padding: '3px 7px',
-          }}>
-            <StarRating value={course.rating} />
           </span>
         )}
       </div>
@@ -150,14 +140,4 @@ function CompareIcon({ active }: { active: boolean }) {
 }
 
 
-function StarRating({ value }: { value: number }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 3, flexShrink: 0 }}>
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="#f5c842">
-        <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z" />
-      </svg>
-      <span style={{ fontSize: 11, fontWeight: 700, color: '#fff' }}>{value.toFixed(1)}</span>
-    </div>
-  )
-}
 
