@@ -54,7 +54,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
         }}>✕</button>
 
         {/* Scrollable content — hero photo scrolls away with the rest */}
-        <div style={{ flex: 1, overflowY: 'auto' }}>
+        <div style={{ flex: 1, overflowY: 'auto', overscrollBehavior: 'contain' }}>
 
           {/* Hero photo */}
           <div style={{ position: 'relative', height: 200, background: '#d4e6c3', flexShrink: 0 }}>
