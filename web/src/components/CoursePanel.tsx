@@ -42,49 +42,36 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
   return (
     <>
       {/* Desktop: sidebar — Mobile: bottom sheet */}
-      <div className="course-panel">
+      <div className="course-panel" style={{ position: 'relative' }}>
 
-        {/* Hero photo */}
-        <div style={{ position: 'relative', height: 200, background: '#d4e6c3', flexShrink: 0 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={heroUrl(course)}
-            alt={course.name}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          />
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 50%)',
-          }} />
-          {/* Close button */}
-          <button onClick={onClose} style={{
-            position: 'absolute', top: 12, right: 12,
-            width: 32, height: 32, borderRadius: '50%',
-            background: 'rgba(0,0,0,.45)', border: 'none',
-            color: '#fff', fontSize: 16, cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>✕</button>
-          {/* Rating badge */}
-          {course.rating != null && (
+        {/* Close button — pinned in place, scrolls with nothing */}
+        <button onClick={onClose} style={{
+          position: 'absolute', top: 12, right: 12, zIndex: 1,
+          width: 32, height: 32, borderRadius: '50%',
+          background: 'rgba(0,0,0,.45)', border: 'none',
+          color: '#fff', fontSize: 16, cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>✕</button>
+
+        {/* Scrollable content — hero photo scrolls away with the rest */}
+        <div style={{ flex: 1, overflowY: 'auto' }}>
+
+          {/* Hero photo */}
+          <div style={{ position: 'relative', height: 200, background: '#d4e6c3', flexShrink: 0 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={heroUrl(course)}
+              alt={course.name}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
             <div style={{
-              position: 'absolute', bottom: 12, left: 14,
-              display: 'flex', alignItems: 'center', gap: 5,
-              background: 'rgba(0,0,0,.55)', borderRadius: 20,
-              padding: '4px 10px',
-            }}>
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="#2B6090">
-                <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z" />
-              </svg>
-              <span style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>{course.rating.toFixed(2)}</span>
-              {course.review_count > 0 && (
-                <span style={{ fontSize: 11, color: 'rgba(255,255,255,.75)' }}>({course.review_count})</span>
-              )}
-            </div>
-          )}
-        </div>
+              position: 'absolute', inset: 0,
+              background: 'linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 50%)',
+            }} />
+          </div>
 
-        {/* Body */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '16px 18px 24px' }}>
+          {/* Body */}
+          <div style={{ padding: '16px 18px 24px' }}>
 
           {/* Name + location */}
           <div style={{ marginBottom: 14 }}>
@@ -217,6 +204,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
               </a>
             )}
           </div>
+        </div>
         </div>
       </div>
 

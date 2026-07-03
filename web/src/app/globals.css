@@ -296,7 +296,7 @@ body {
     height: 4px;
     background: #d0d0d0;
     border-radius: 2px;
-    margin: 12px auto 0;
+    margin: 12px auto 10px;
     flex-shrink: 0;
   }
 }
