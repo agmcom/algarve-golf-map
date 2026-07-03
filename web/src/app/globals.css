@@ -24,6 +24,11 @@
   --color-chip-text: #4a4a4a;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--color-page-bg);
@@ -425,12 +430,38 @@ body {
   }
 }
 
+/* ---- Site header responsive (avoid overflow on narrow phones) ---- */
+
+.site-header__wordmark {
+  display: inline;
+}
+
+.site-header__back-short {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .site-header__wordmark {
+    display: none;
+  }
+  .site-header__back-full {
+    display: none;
+  }
+  .site-header__back-short {
+    display: inline;
+  }
+  .site-header__contact {
+    padding: 0 12px !important;
+    font-size: 12px !important;
+  }
+}
+
 /* Course detail — pricing section responsive */
 .course-booking-mobile { display: none; }
 
 @media (max-width: 900px) {
   .course-detail-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
   }
   .course-booking-desktop {
     display: none !important;

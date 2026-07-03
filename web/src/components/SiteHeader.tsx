@@ -28,18 +28,19 @@ export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
               <img src="/logo.svg" alt="" style={{ width: 24, height: 24, flexShrink: 0 }} />
-              <span style={{ fontSize: 14, fontWeight: 700, color: '#222', whiteSpace: 'nowrap' }}>
+              <span className="site-header__wordmark" style={{ fontSize: 14, fontWeight: 700, color: '#222', whiteSpace: 'nowrap' }}>
                 Algarve Golf Map
               </span>
             </a>
             {showBackToMap && (
               <>
-                <span style={{ color: '#d0d0d0', fontSize: 16 }}>|</span>
+                <span className="site-header__wordmark" style={{ color: '#d0d0d0', fontSize: 16 }}>|</span>
                 <a href="/" style={{
                   fontSize: 13, fontWeight: 500, color: '#6a6a6a',
                   textDecoration: 'none', whiteSpace: 'nowrap',
                 }}>
-                  ← Back to map
+                  <span className="site-header__back-full">← Back to map</span>
+                  <span className="site-header__back-short">← Map</span>
                 </a>
               </>
             )}
@@ -47,6 +48,7 @@ export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
 
           {/* Right: contact button */}
           <button
+            className="site-header__contact"
             onClick={() => setContactOpen(true)}
             style={{
               height: 34, padding: '0 16px',
