@@ -565,7 +565,7 @@ export default async function CoursePage(
                   <h2 style={sectionTitle}>Nearby Hotels</h2>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                     {hotels.map(hotel => (
-                      <HotelCard key={hotel.id} hotel={hotel} courseTown={course.town} />
+                      <HotelCard key={hotel.id} hotel={hotel} courseTown={course.town} isOnsiteForCourse={hotel.id === course.onsite_hotel_id} />
                     ))}
                   </div>
                   <a
@@ -735,9 +735,10 @@ function bookingSearchUrl(town: string): string {
   return `https://www.booking.com/searchresults.html?ss=${query}&aid=${BOOKING_AID}`
 }
 
-function HotelCard({ hotel, courseTown }: {
+function HotelCard({ hotel, courseTown, isOnsiteForCourse }: {
   hotel: { id: string; name: string; stars: number | null; price_from: number | null; town: string; booking_url: string | null; has_golf_package: boolean; onsite: boolean; distance_km: number; google_rating?: number | null }
   courseTown: string
+  isOnsiteForCourse: boolean
 }) {
   const stars = hotel.stars ?? 0
   const url = hotel.booking_url
@@ -761,7 +762,7 @@ function HotelCard({ hotel, courseTown }: {
           <span style={{ flex: '1 1 0%', minWidth: 0, fontSize: 14, fontWeight: 700, color: '#222', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {hotel.name}
           </span>
-          {hotel.onsite && (
+          {isOnsiteForCourse && (
             <span style={{
               fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 10,
               background: '#edf7f2', color: '#22a06b', border: '1px solid #c3e6cb',
@@ -774,7 +775,7 @@ function HotelCard({ hotel, courseTown }: {
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 12, color: '#f5a623' }}>{'★'.repeat(stars)}</span>
           <span style={{ fontSize: 12, color: '#6a6a6a' }}>
-            {hotel.town}{hotel.onsite ? '' : ` · ${hotel.distance_km.toFixed(1)} km away`}
+            {hotel.town}{isOnsiteForCourse ? '' : ` · ${hotel.distance_km.toFixed(1)} km away`}
           </span>
           {hotel.google_rating != null && (
             <span style={{ fontSize: 12, color: '#6a6a6a' }}>
