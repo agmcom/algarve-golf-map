@@ -59,7 +59,7 @@ export async function getShops(): Promise<Shop[]> {
 export async function getCourseBySlug(slug: string): Promise<(Course & { prices: CoursePrice[] }) | null> {
   const { data: course, error } = await supabase
     .from('courses')
-    .select('*, photos:course_photos(url, alt, is_hero, position)')
+    .select('*, photos:course_photos(url, alt, is_hero, position), onsite_hotel:hotels!onsite_hotel_id(*)')
     .eq('slug', slug)
     .eq('active', true)
     .single()
@@ -77,11 +77,14 @@ export async function getCourseBySlug(slug: string): Promise<(Course & { prices:
     .order('month')
     .order('time_slot')
 
-  // Fill fields missing from DB (e.g. columns added after last migration)
-  // Only override mock values with DB values that are non-null
   const mock = MOCK_COURSES.find(c => c.slug === slug)
   const dbNonNull = Object.fromEntries(
-    Object.entries(course).filter(([, v]) => v !== null && v !== undefined)
+    Object.entries(course).filter(([k, v]) => {
+      if (v === null || v === undefined) return false
+      if (Array.isArray(v) && v.length === 0) return false
+      // Always prefer DB onsite_hotel (joined) over mock — even if mock had one
+      return true
+    })
   )
   return {
     ...mock,

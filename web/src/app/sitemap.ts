@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllCourseSlugs } from '@/lib/queries'
+import { TOWN_PAGES } from '@/lib/towns'
 
 const BASE = 'https://algarvegolfmap.com'
 
@@ -13,6 +14,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }))
 
+  const townUrls: MetadataRoute.Sitemap = TOWN_PAGES.map(t => ({
+    url: `${BASE}/${t.slug}/golf-courses`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }))
+
   return [
     {
       url: BASE,
@@ -20,6 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 1.0,
     },
+    ...townUrls,
     ...courseUrls,
   ]
 }

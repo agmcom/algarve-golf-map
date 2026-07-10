@@ -1,4 +1,5 @@
 import type { Course } from '@/types/database'
+import { townSlug } from '@/lib/towns'
 
 interface Props {
   courses: Course[]
@@ -39,9 +40,16 @@ export function CourseDirectory({ courses }: Props) {
         </p>
       </div>
 
-      {groups.map(({ town, courses: townCourses }) => (
+      {groups.map(({ town, courses: townCourses }) => {
+        const slug = townSlug(town)
+        return (
         <div key={town}>
-          <h3 className="course-directory__town">Golf Courses in {town}</h3>
+          <h3 className="course-directory__town">
+            {slug
+              ? <a href={`/${slug}/golf-courses`} style={{ color: 'inherit', textDecoration: 'none' }}>Golf Courses in {town}</a>
+              : <>Golf Courses in {town}</>
+            }
+          </h3>
           <ul className="course-list">
             {townCourses.map(course => (
               <li key={course.id} className="course-list-item">
@@ -61,14 +69,9 @@ export function CourseDirectory({ courses }: Props) {
                       {course.par != null && ` · Par ${course.par}`}
                       {course.difficulty && ` · ${course.difficulty.charAt(0).toUpperCase() + course.difficulty.slice(1)}`}
                     </span>
-                    {(course.rating != null || course.price_from != null) && (
+                    {course.price_from != null && (
                       <span className="course-list-item__badges">
-                        {course.rating != null && (
-                          <span className="course-list-item__rating">★ {course.rating.toFixed(1)}</span>
-                        )}
-                        {course.price_from != null && (
-                          <span className="course-list-item__price">From €{course.price_from}</span>
-                        )}
+                        <span className="course-list-item__price">From €{course.price_from}</span>
                       </span>
                     )}
                     {course.blurb && (
@@ -80,7 +83,8 @@ export function CourseDirectory({ courses }: Props) {
             ))}
           </ul>
         </div>
-      ))}
+        )}
+      )}
     </section>
   )
 }

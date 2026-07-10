@@ -356,7 +356,11 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
       )}
 
       {panelCourse && !plannerOpen && (
-        <CoursePanel course={panelCourse} allCourses={courses} onClose={handleClosePanel} />
+        <div style={{ position: 'fixed', top: 0, left: 0, bottom: 0, zIndex: 200, width: 380, pointerEvents: 'none' }}>
+          <div style={{ position: 'relative', height: '100%', pointerEvents: 'auto' }}>
+            <CoursePanel course={panelCourse} allCourses={courses} onClose={handleClosePanel} />
+          </div>
+        </div>
       )}
 
       {compareOpen && compareCourses.length >= 2 && (
