@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { BedDouble } from 'lucide-react'
-import { calculateZone, type PlannerResult } from '@/lib/planner'
+import { calculateZone, maxMinutesToCourses, type PlannerResult } from '@/lib/planner'
 import { getHotelsNear } from '@/lib/queries'
 import type { Course, Hotel } from '@/types/database'
 
@@ -163,10 +163,17 @@ function Results({ result, onHotels }: { result: PlannerResult; onHotels?: (hote
         {hotels.length > 0 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 12 }}>
             {hotels.map(h => (
-              <div key={h.id} style={{
-                padding: '10px 12px', borderRadius: 10,
-                border: '1px solid #ebebeb', background: '#fafafa',
-              }}>
+              <a
+                key={h.id}
+                href={h.booking_url ?? `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(h.name + ' Algarve')}&utm_source=algarvegolfmap.com`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'block', padding: '10px 12px', borderRadius: 10,
+                  border: '1px solid #ebebeb', background: '#fafafa',
+                  textDecoration: 'none',
+                }}
+              >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
@@ -190,11 +197,12 @@ function Results({ result, onHotels }: { result: PlannerResult; onHotels?: (hote
                       </div>
                     )}
                   </div>
-                  <div style={{ fontSize: 11, color: '#6a6a6a', flexShrink: 0, marginLeft: 8, marginTop: 2 }}>
-                    ~{Math.round(h.distance_km)} km
+                  <div style={{ fontSize: 11, color: '#6a6a6a', flexShrink: 0, marginLeft: 8, marginTop: 2, textAlign: 'right' }}>
+                    <div>~{maxMinutesToCourses(h.lat, h.lng, result.courseTimes.map(ct => ct.course))} min</div>
+                    <div style={{ fontSize: 9, color: '#b0b0b0' }}>max to ⛳</div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         )}

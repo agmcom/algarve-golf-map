@@ -13,6 +13,12 @@ export function distanceToMinutes(distanceKm: number): number {
   return Math.round((distanceKm / (SPEED_KMH * ROAD_FACTOR)) * 60)
 }
 
+// Drive time from a point (e.g. a hotel) to the farthest of the selected courses
+export function maxMinutesToCourses(lat: number, lng: number, courses: Course[]): number {
+  const distances = courses.map(c => turf.distance([lng, lat], [c.lng, c.lat]))
+  return distanceToMinutes(Math.max(...distances))
+}
+
 export interface CourseTime {
   course: Course
   minutes: number
