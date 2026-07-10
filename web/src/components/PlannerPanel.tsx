@@ -162,7 +162,9 @@ function Results({ result, onHotels }: { result: PlannerResult; onHotels?: (hote
 
         {hotels.length > 0 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 12 }}>
-            {hotels.map(h => (
+            {hotels.map(h => {
+              const isOnsiteForSelection = result.courseTimes.some(ct => ct.course.onsite_hotel_id === h.id)
+              return (
               <a
                 key={h.id}
                 href={h.booking_url ?? `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(h.name + ' Algarve')}&utm_source=algarvegolfmap.com`}
@@ -180,7 +182,7 @@ function Results({ result, onHotels }: { result: PlannerResult; onHotels?: (hote
                       <span style={{ fontSize: 13, fontWeight: 600, color: '#222', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                         {h.name}
                       </span>
-                      {h.onsite && (
+                      {isOnsiteForSelection && (
                         <span style={{
                           fontSize: 10, fontWeight: 700, color: '#22a06b',
                           background: '#edf7f2', border: '1px solid #b8e8d0',
@@ -203,7 +205,8 @@ function Results({ result, onHotels }: { result: PlannerResult; onHotels?: (hote
                   </div>
                 </div>
               </a>
-            ))}
+              )
+            })}
           </div>
         )}
 
