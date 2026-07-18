@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear } from '@/lib/queries'
+import { RESORT_PAGES, resortSlugForCourse } from '@/lib/resorts'
 import type { CoursePrice } from '@/types/database'
 import { CourseMapImage } from '@/components/CourseMapImage'
 import { PageViewTracker } from '@/components/PageViewTracker'
@@ -119,6 +120,9 @@ export default async function CoursePage(
   const hasPrices = monthsWithPrices.length > 0
   const hasTwilight = course.prices.some(p => p.time_slot === 'twilight' || p.time_slot === 'sunset')
 
+  const resortSlug = resortSlugForCourse(course.slug)
+  const resort = resortSlug ? RESORT_PAGES.find(r => r.slug === resortSlug) ?? null : null
+
   const facilities = [
     { label: 'Driving range',  active: course.driving_range },
     { label: 'Pro shop',       active: course.pro_shop },
@@ -169,6 +173,13 @@ export default async function CoursePage(
     ...(amenityFeatures.length > 0 && { amenityFeature: amenityFeatures }),
     currenciesAccepted: 'EUR',
     touristType: 'Golf Tourists',
+    ...(resort && {
+      isPartOf: {
+        '@type': 'Resort',
+        name: `${resort.label} Golf Resort`,
+        url: `${SITE_URL}/golf-resorts/${resort.slug}`,
+      },
+    }),
   }
 
   return (
@@ -216,10 +227,22 @@ export default async function CoursePage(
             <h1 style={{ fontSize: 36, fontWeight: 800, color: '#fff', margin: 0, lineHeight: 1.15 }}>
               {course.name}
             </h1>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginTop: 10 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginTop: 10, flexWrap: 'wrap' }}>
               <span style={{ fontSize: 15, color: 'rgba(255,255,255,.85)' }}>
                 📍 {course.town}, Algarve
               </span>
+              {resort && (
+                <a
+                  href={`/golf-resorts/${resort.slug}`}
+                  style={{
+                    fontSize: 13, fontWeight: 600, color: '#fff',
+                    background: 'rgba(255,255,255,.18)', backdropFilter: 'blur(4px)',
+                    padding: '4px 12px', borderRadius: 12, textDecoration: 'none',
+                  }}
+                >
+                  Part of {resort.label} Golf Resort →
+                </a>
+              )}
             </div>
           </div>
         </div>

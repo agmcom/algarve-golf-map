@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getAllCourseSlugs } from '@/lib/queries'
 import { TOWN_PAGES } from '@/lib/towns'
+import { RESORT_PAGES } from '@/lib/resorts'
 
 const BASE = 'https://algarvegolfmap.com'
 
@@ -21,6 +22,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }))
 
+  const resortUrls: MetadataRoute.Sitemap = RESORT_PAGES.map(r => ({
+    url: `${BASE}/golf-resorts/${r.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }))
+
+  const hotelUrls: MetadataRoute.Sitemap = RESORT_PAGES.map(r => ({
+    url: `${BASE}/hotels/${r.hotelSlug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }))
+
   return [
     {
       url: BASE,
@@ -28,7 +43,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 1.0,
     },
+    {
+      url: `${BASE}/golf-resorts`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
     ...townUrls,
     ...courseUrls,
+    ...resortUrls,
+    ...hotelUrls,
   ]
 }

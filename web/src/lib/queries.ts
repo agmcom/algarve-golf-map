@@ -93,6 +93,18 @@ export async function getCourseBySlug(slug: string): Promise<(Course & { prices:
   } as Course & { prices: CoursePrice[] }
 }
 
+export async function getHotelBySlug(slug: string): Promise<Hotel | null> {
+  const { data, error } = await supabase
+    .from('hotels')
+    .select('*')
+    .eq('slug', slug)
+    .eq('active', true)
+    .single()
+
+  if (error || !data) return null
+  return data
+}
+
 export async function getHotelsNear(lat: number, lng: number, radiusKm = 50): Promise<(Hotel & { distance_km: number })[]> {
   const { data, error } = await supabase
     .from('hotels')

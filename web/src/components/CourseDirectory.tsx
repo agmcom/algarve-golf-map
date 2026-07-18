@@ -38,6 +38,9 @@ export function CourseDirectory({ courses }: Props) {
         <p className="course-directory__subtitle">
           {courses.length} courses across the Algarve — from Lagos to Vila Real de Santo António
         </p>
+        <a href="/golf-resorts" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+          Browse Golf Resorts in the Algarve →
+        </a>
       </div>
 
       {groups.map(({ town, courses: townCourses }) => {
