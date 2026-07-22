@@ -167,3 +167,25 @@ export async function getAllCourseSlugs(): Promise<string[]> {
   if (data?.length) return data.map(c => c.slug)
   return MOCK_COURSES.map(c => c.slug)
 }
+
+export async function getShopBySlug(slug: string): Promise<Shop | null> {
+  const { data, error } = await supabase
+    .from('shops')
+    .select('*, course:courses(*)')
+    .eq('slug', slug)
+    .eq('active', true)
+    .single()
+
+  if (error || !data) return null
+  return data
+}
+
+export async function getAllShopSlugs(): Promise<string[]> {
+  const { data } = await supabase
+    .from('shops')
+    .select('slug')
+    .eq('active', true)
+    .not('slug', 'is', null)
+
+  return data?.map(s => s.slug as string) ?? []
+}

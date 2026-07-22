@@ -258,6 +258,7 @@ create table shops (
   id          uuid primary key default gen_random_uuid(),
 
   name        text not null,
+  slug        text unique,
   type        shop_type not null,
   description text,
 

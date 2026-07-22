@@ -205,6 +205,7 @@ export interface HotelCourse {
 export interface Shop {
   id: string
   name: string
+  slug: string | null
   type: ShopType
   description: string | null
 
