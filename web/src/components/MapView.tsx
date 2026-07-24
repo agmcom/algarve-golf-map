@@ -159,10 +159,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
 
         // Shop pins
         shops.forEach(shop => {
-          const typeLabel: Record<string, string> = {
-            pro_shop: 'Pro Shop', retail: 'Retail', rental: 'Rental', fitting: 'Fitting',
-          }
-          const el = createPin('shop', `🛍️ ${shop.name}`, typeLabel[shop.type] ?? shop.type, false, () => {
+          const el = createPin('shop', `🛍️ ${shop.name}`, shop.town, false, () => {
             onSelectRef.current(shop.id)
           })
           const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })

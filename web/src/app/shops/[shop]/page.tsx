@@ -4,13 +4,6 @@ import { getShopBySlug, getAllShopSlugs } from '@/lib/queries'
 
 const BASE = 'https://algarvegolfmap.com'
 
-const TYPE_LABEL: Record<string, string> = {
-  retail: 'Golf Shop',
-  pro_shop: 'Pro Shop',
-  rental: 'Club Rental',
-  fitting: 'Club Fitting Studio',
-}
-
 export async function generateStaticParams() {
   const slugs = await getAllShopSlugs()
   return slugs.map(slug => ({ shop: slug }))
@@ -25,10 +18,9 @@ export async function generateMetadata({
   const shop = await getShopBySlug(slug)
   if (!shop) return {}
 
-  const typeLabel = TYPE_LABEL[shop.type] ?? 'Golf Shop'
-  const title = `${shop.name} — ${typeLabel} in ${shop.town}, Algarve`
+  const title = `${shop.name} — Golf Shop in ${shop.town}, Algarve`
   const description = shop.description
-    ?? `${shop.name}, a ${typeLabel.toLowerCase()} in ${shop.town}, Algarve.${shop.brands.length ? ` Stocking ${shop.brands.join(', ')}.` : ''}`
+    ?? `${shop.name}, a golf shop in ${shop.town}, Algarve.${shop.brands.length ? ` Stocking ${shop.brands.join(', ')}.` : ''}${shop.course ? ` On-site at ${shop.course.name}.` : ''}`
 
   const url = `${BASE}/shops/${slug}`
 
@@ -49,7 +41,6 @@ export default async function ShopPage({
   const shop = await getShopBySlug(slug)
   if (!shop) notFound()
 
-  const typeLabel = TYPE_LABEL[shop.type] ?? 'Golf Shop'
   const shopUrl = `${BASE}/shops/${slug}`
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${shop.lat},${shop.lng}`
 
@@ -65,7 +56,7 @@ export default async function ShopPage({
 
   const storeLd = {
     '@context': 'https://schema.org',
-    '@type': shop.type === 'rental' ? 'LocalBusiness' : 'Store',
+    '@type': 'Store',
     name: shop.name,
     description: shop.description ?? undefined,
     url: shopUrl,
@@ -110,12 +101,14 @@ export default async function ShopPage({
             {shop.name}
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-            <span style={{
-              fontSize: 12, fontWeight: 700, color: '#2B6090',
-              background: '#eaf2f8', padding: '3px 9px', borderRadius: 6,
-            }}>
-              {typeLabel}
-            </span>
+            {shop.course && (
+              <span style={{
+                fontSize: 12, fontWeight: 700, color: '#2B6090',
+                background: '#eaf2f8', padding: '3px 9px', borderRadius: 6,
+              }}>
+                On-site
+              </span>
+            )}
             <span style={{ fontSize: 14, color: '#6a6a6a' }}>{shop.town}, Algarve</span>
           </div>
         </div>
@@ -173,7 +166,7 @@ export default async function ShopPage({
           {shop.course && (
             <div style={{ padding: '16px 22px', borderBottom: shop.website || shop.phone ? '1px solid #f0f0f0' : 'none' }}>
               <span style={{ fontSize: 13, color: '#555' }}>
-                Located at{' '}
+                On-site at{' '}
                 <a href={`/courses/${shop.course.slug}`} style={{ color: '#2B6090', fontWeight: 600, textDecoration: 'none' }}>
                   {shop.course.name}
                 </a>

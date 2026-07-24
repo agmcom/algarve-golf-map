@@ -19,7 +19,6 @@ export interface Airport {
   active: boolean
 }
 export type CourseDifficulty = 'easy' | 'moderate' | 'challenging'
-export type ShopType         = 'retail' | 'pro_shop' | 'rental' | 'fitting'
 export type PriceTimeSlot    = 'early_bird' | 'standard' | 'twilight' | 'sunset'
 export type PriceRateType    = 'visitor' | 'resident'
 
@@ -206,7 +205,6 @@ export interface Shop {
   id: string
   name: string
   slug: string | null
-  type: ShopType
   description: string | null
 
   lat: number

@@ -13,7 +13,6 @@ create extension if not exists "postgis";
 
 create type algarve_region    as enum ('west', 'central', 'east');
 create type course_difficulty as enum ('easy', 'moderate', 'challenging');
-create type shop_type         as enum ('retail', 'pro_shop', 'rental', 'fitting');
 create type price_time_slot   as enum ('early_bird', 'standard', 'twilight', 'sunset');
 create type price_rate_type   as enum ('visitor', 'resident');
 
@@ -259,7 +258,6 @@ create table shops (
 
   name        text not null,
   slug        text unique,
-  type        shop_type not null,
   description text,
 
   -- Location

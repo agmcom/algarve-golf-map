@@ -3,16 +3,9 @@ import { getShops } from '@/lib/queries'
 
 const BASE = 'https://algarvegolfmap.com'
 
-const TYPE_LABEL: Record<string, string> = {
-  retail: 'Golf Shop',
-  pro_shop: 'Pro Shop',
-  rental: 'Club Rental',
-  fitting: 'Club Fitting Studio',
-}
-
 export const metadata: Metadata = {
-  title: 'Golf Shops in the Algarve — Retail, Pro Shops, Rental & Fitting',
-  description: 'Golf equipment shops, on-course pro shops, club rental and fitting studios across the Algarve.',
+  title: 'Golf Shops in the Algarve — Retail, Pro Shops & Club Fitting',
+  description: 'Golf equipment shops across the Algarve, including on-course pro shops and club fitting studios.',
   alternates: { canonical: `${BASE}/shops` },
 }
 
@@ -39,7 +32,7 @@ export default async function ShopsIndexPage() {
         Golf Shops in the Algarve
       </h1>
       <p style={{ fontSize: 15, color: '#6a6a6a', margin: '0 0 32px' }}>
-        Retail stores, on-course pro shops, club rental and fitting studios.
+        Retail stores, on-course pro shops and club fitting studios.
       </p>
 
       {[...byTown.entries()].map(([town, townShops]) => (
@@ -53,12 +46,16 @@ export default async function ShopsIndexPage() {
                 {shop.slug ? (
                   <a href={`/shops/${shop.slug}`} style={{ display: 'flex', justifyContent: 'space-between', gap: 12, textDecoration: 'none', color: 'inherit', padding: '10px 14px', border: '1px solid #eee', borderRadius: 10 }}>
                     <span style={{ fontWeight: 600, color: '#222' }}>{shop.name}</span>
-                    <span style={{ fontSize: 12, color: '#2B6090', fontWeight: 700 }}>{TYPE_LABEL[shop.type] ?? shop.type}</span>
+                    {shop.course_id && (
+                      <span style={{ fontSize: 12, color: '#2B6090', fontWeight: 700 }}>On-site</span>
+                    )}
                   </a>
                 ) : (
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, padding: '10px 14px', border: '1px solid #eee', borderRadius: 10 }}>
                     <span style={{ fontWeight: 600, color: '#222' }}>{shop.name}</span>
-                    <span style={{ fontSize: 12, color: '#2B6090', fontWeight: 700 }}>{TYPE_LABEL[shop.type] ?? shop.type}</span>
+                    {shop.course_id && (
+                      <span style={{ fontSize: 12, color: '#2B6090', fontWeight: 700 }}>On-site</span>
+                    )}
                   </div>
                 )}
               </li>
