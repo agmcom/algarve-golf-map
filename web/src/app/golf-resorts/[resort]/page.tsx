@@ -17,6 +17,26 @@ function heroUrl(course: { photos?: { url: string; is_hero?: boolean }[] }): str
   )
 }
 
+function resortFullName(resort: { label: string }): string {
+  return resort.label.toLowerCase().endsWith('golf resort')
+    ? resort.label
+    : `${resort.label} Golf Resort`
+}
+
+const META_DESCRIPTION_MAX = 155
+
+function metaDescription(text: string): string {
+  if (text.length <= META_DESCRIPTION_MAX) return text
+
+  const firstSentenceEnd = text.indexOf('. ')
+  if (firstSentenceEnd !== -1 && firstSentenceEnd + 1 <= META_DESCRIPTION_MAX) {
+    return text.slice(0, firstSentenceEnd + 1)
+  }
+
+  const truncated = text.slice(0, META_DESCRIPTION_MAX)
+  return `${truncated.slice(0, truncated.lastIndexOf(' '))}…`
+}
+
 export const revalidate = 3600
 
 export async function generateStaticParams() {
@@ -32,16 +52,17 @@ export async function generateMetadata({
   const resort = RESORT_PAGES.find(r => r.slug === slug)
   if (!resort) return {}
 
-  const title = `${resort.label} Golf Resort`
+  const title = resortFullName(resort)
   const url = `${BASE}/golf-resorts/${slug}`
+  const description = metaDescription(resort.description)
 
   return {
     title,
-    description: resort.description,
+    description,
     alternates: { canonical: url },
     openGraph: {
       title,
-      description: resort.description,
+      description,
       url,
       siteName: 'Algarve Golf Map',
       type: 'website',
@@ -80,7 +101,7 @@ export default async function ResortPage({
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
       { '@type': 'ListItem', position: 2, name: 'Golf Resorts in the Algarve', item: `${BASE}/golf-resorts` },
-      { '@type': 'ListItem', position: 3, name: `${resort.label} Golf Resort`, item: pageUrl },
+      { '@type': 'ListItem', position: 3, name: resortFullName(resort), item: pageUrl },
     ],
   }
 
@@ -97,7 +118,7 @@ export default async function ResortPage({
   const itemListLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: `${resort.label} Golf Resort`,
+    name: resortFullName(resort),
     numberOfItems: itemListElements.length,
     itemListElement: itemListElements,
   }
@@ -140,7 +161,7 @@ export default async function ResortPage({
         </nav>
 
         <div className="course-directory__header" style={{ marginTop: 16 }}>
-          <h1 className="course-directory__title">{resort.label} Golf Resort</h1>
+          <h1 className="course-directory__title">{resortFullName(resort)}</h1>
           <p className="course-directory__subtitle">
             {courses.length} golf {courses.length === 1 ? 'course' : 'courses'}
             {hotel ? ` · ${hotel.name}` : ''}
@@ -152,36 +173,34 @@ export default async function ResortPage({
         </p>
 
         {hotel && (
-          <a
-            href={`/hotels/${hotel.slug}`}
-            style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12,
-              padding: '18px 22px', marginBottom: 32,
-              border: '1.5px solid #e8e8e8', borderRadius: 16,
-              textDecoration: 'none', color: 'inherit',
-            }}
-          >
-            <div>
-              <div style={{ fontSize: 12, color: '#888', marginBottom: 4, textTransform: 'uppercase', letterSpacing: 0.4 }}>
-                On-site hotel
+          <>
+            <h2 className="resort-section-title">Hotels in {resortFullName(resort)}</h2>
+            <a href={`/hotels/${hotel.slug}`} className="resort-hotel-card">
+              <div className="resort-hotel-card__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a8a8a8" strokeWidth="1.5">
+                  <path d="M3 21V8l9-5 9 5v13" strokeLinejoin="round" />
+                  <path d="M9 21v-6h6v6" strokeLinejoin="round" />
+                  <path d="M7 12h.01M12 12h.01M17 12h.01M7 9h.01M12 9h.01M17 9h.01" strokeLinecap="round" />
+                </svg>
               </div>
-              <div style={{ fontSize: 17, fontWeight: 700, color: '#222' }}>{hotel.name}</div>
-              {hotel.stars && (
-                <div style={{ marginTop: 4, display: 'flex', gap: 2 }}>
-                  {Array.from({ length: hotel.stars }).map((_, i) => (
-                    <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#f4b942" stroke="none">
-                      <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z"/>
-                    </svg>
-                  ))}
-                </div>
-              )}
-            </div>
-            <span style={{ fontSize: 13.5, fontWeight: 600, color: '#2B6090', whiteSpace: 'nowrap' }}>
-              View hotel details →
-            </span>
-          </a>
+              <div className="resort-hotel-card__body">
+                <h3 className="resort-hotel-card__name">{hotel.name}</h3>
+                <div className="resort-hotel-card__label">On-site hotel</div>
+                {hotel.stars && (
+                  <div className="resort-hotel-card__stars">
+                    {Array.from({ length: hotel.stars }).map((_, i) => (
+                      <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#f4b942" stroke="none">
+                        <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.8l1.2-6.6L2.5 9l6.6-.9z"/>
+                      </svg>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </a>
+          </>
         )}
 
+        <h2 className="resort-section-title">Golf Courses in {resortFullName(resort)}</h2>
         <ul className="course-list">
           {courses.map(course => (
             <li key={course.id} className="course-list-item">
@@ -195,7 +214,7 @@ export default async function ResortPage({
                   loading="lazy"
                 />
                 <div className="course-list-item__body">
-                  <strong className="course-list-item__name">{course.name}</strong>
+                  <h3 className="course-list-item__name">{course.name}</h3>
                   <span className="course-list-item__meta">
                     {course.holes} holes
                     {course.par != null && ` · Par ${course.par}`}

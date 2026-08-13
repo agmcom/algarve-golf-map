@@ -114,7 +114,7 @@ export default async function GolfResortsHubPage() {
                     loading="lazy"
                   />
                   <div className="course-list-item__body">
-                    <strong className="course-list-item__name">{resort.label}</strong>
+                    <h2 className="course-list-item__name">{resort.label}</h2>
                     <span className="course-list-item__meta">
                       {resort.courseSlugs.length} golf {resort.courseSlugs.length === 1 ? 'course' : 'courses'}
                       {hotel?.stars && ` · ${hotel.stars}-star hotel`}

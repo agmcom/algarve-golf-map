@@ -153,7 +153,7 @@ export default async function TownPage({
                   loading="lazy"
                 />
                 <div className="course-list-item__body">
-                  <strong className="course-list-item__name">{course.name}</strong>
+                  <h2 className="course-list-item__name">{course.name}</h2>
                   <span className="course-list-item__meta">
                     {course.holes} holes
                     {course.par != null && ` · Par ${course.par}`}

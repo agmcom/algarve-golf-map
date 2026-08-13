@@ -336,11 +336,21 @@ body {
   border-bottom: 1px solid var(--color-panel-border);
 }
 
+.resort-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ebebeb;
+}
+
 .course-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 32px;
 }
 
 .course-list-item a {
@@ -357,6 +367,62 @@ body {
 .course-list-item a:hover {
   border-color: #ccc;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resort-hotel-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  margin-bottom: 48px;
+  border: 1px solid var(--color-panel-border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.resort-hotel-card:hover {
+  border-color: #ccc;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resort-hotel-card__icon {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resort-hotel-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.resort-hotel-card__label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-top: 4px;
+}
+
+.resort-hotel-card__name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.resort-hotel-card__stars {
+  margin-top: 4px;
+  display: flex;
+  gap: 2px;
 }
 
 .course-list-item img {
@@ -376,6 +442,7 @@ body {
 }
 
 .course-list-item__name {
+  margin: 0;
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-text);
@@ -425,6 +492,10 @@ body {
     font-size: 1.4rem;
   }
   .course-list-item img {
+    width: 64px;
+    height: 64px;
+  }
+  .resort-hotel-card__icon {
     width: 64px;
     height: 64px;
   }
