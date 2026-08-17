@@ -3,7 +3,7 @@ import { getAllCourseSlugs, getAllShopSlugs } from '@/lib/queries'
 import { TOWN_PAGES } from '@/lib/towns'
 import { RESORT_PAGES } from '@/lib/resorts'
 
-const BASE = 'https://algarvegolfmap.com'
+const BASE = 'https://www.algarvegolfmap.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getAllCourseSlugs()
@@ -59,6 +59,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE}/shops`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/club-rental`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,

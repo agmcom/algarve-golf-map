@@ -42,7 +42,7 @@ export async function generateStaticParams() {
   return slugs.map(slug => ({ slug }))
 }
 
-const SITE_URL = 'https://algarvegolfmap.com'
+const SITE_URL = 'https://www.algarvegolfmap.com'
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }

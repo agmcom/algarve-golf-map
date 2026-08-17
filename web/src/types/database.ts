@@ -222,10 +222,27 @@ export interface Shop {
   rental_price_per_day: number | null
   rental_set_types: string[]
   delivery_to_course: boolean
+  rental_pickup_location: string | null
+  rental_delivery_areas: string[]
+  rental_price_notes: string | null
 
   website: string | null
   phone: string | null
+  email: string | null
   active: boolean
+
+  opening_hours: string | null
+  google_maps_url: string | null
+  instagram_url: string | null
+  facebook_url: string | null
+  parking: string | null
+
+  languages_spoken: string[]
+  accepts_trade_in: boolean | null
+  fitting_technology: string | null
+
+  photo_url: string | null
+  photo_alt: string | null
 
   created_at: string
   updated_at: string

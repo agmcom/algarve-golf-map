@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { getCourses, getHotels } from '@/lib/queries'
 import { RESORT_PAGES } from '@/lib/resorts'
 
-const BASE = 'https://algarvegolfmap.com'
+const BASE = 'https://www.algarvegolfmap.com'
 
 const PEXELS_FALLBACK =
   'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=320&h=200&fit=crop'

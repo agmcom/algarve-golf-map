@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin/', '/api/'],
       },
     ],
-    sitemap: 'https://algarvegolfmap.com/sitemap.xml',
-    host: 'https://algarvegolfmap.com',
+    sitemap: 'https://www.algarvegolfmap.com/sitemap.xml',
+    host: 'https://www.algarvegolfmap.com',
   }
 }

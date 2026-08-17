@@ -2,21 +2,20 @@ import type { Metadata } from 'next'
 import { getShops } from '@/lib/queries'
 
 const BASE = 'https://www.algarvegolfmap.com'
-// Generic golf club display, no people and no visible shop branding — used
-// only when a shop has no real photo of its own, so it never implies this
-// is a photo of that specific shop.
+// Generic golf club display, no people and no visible branding — used only
+// when a rental provider has no real photo of its own.
 const GENERIC_SHOP_FALLBACK =
   'https://images.pexels.com/photos/26890727/pexels-photo-26890727.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop'
 const GENERIC_SHOP_ALT = 'Golf clubs on display'
 
-const TITLE = 'Golf Shops in the Algarve'
+const TITLE = 'Golf Club Rental in the Algarve'
 const DESCRIPTION =
-  'Golf equipment shops across the Algarve — on-course pro shops, retail stores and club-fitting studios. Find where to buy gear or rent clubs near your course.'
+  'Where to hire golf clubs in the Algarve — at Faro Airport and at courses and shops across the region. Prices, brands and delivery-to-course options.'
 
 export const revalidate = 3600
 
 export function generateMetadata(): Metadata {
-  const url = `${BASE}/shops`
+  const url = `${BASE}/club-rental`
   return {
     title: TITLE,
     description: DESCRIPTION,
@@ -36,10 +35,11 @@ function groupByTown<T extends { town: string }>(items: T[]): { town: string; it
     .map(([town, items]) => ({ town, items }))
 }
 
-export default async function ShopsIndexPage() {
+export default async function ClubRentalIndexPage() {
   const shops = await getShops()
-  const groups = groupByTown(shops)
-  const pageUrl = `${BASE}/shops`
+  const rentalProviders = shops.filter(s => s.offers_rental)
+  const groups = groupByTown(rentalProviders)
+  const pageUrl = `${BASE}/club-rental`
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -54,8 +54,8 @@ export default async function ShopsIndexPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: TITLE,
-    numberOfItems: shops.length,
-    itemListElement: shops
+    numberOfItems: rentalProviders.length,
+    itemListElement: rentalProviders
       .filter(s => s.slug)
       .map((s, i) => ({
         '@type': 'ListItem',
@@ -70,7 +70,7 @@ export default async function ShopsIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
 
-      <section className="course-directory" id="golf-shops">
+      <section className="course-directory" id="club-rental">
         <nav aria-label="Breadcrumb" style={{ marginBottom: 8 }}>
           <ol style={{ display: 'flex', gap: 8, listStyle: 'none', padding: 0, margin: 0, fontSize: 13, color: '#6a6a6a' }}>
             <li><a href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</a></li>
@@ -82,24 +82,26 @@ export default async function ShopsIndexPage() {
         <div className="course-directory__header" style={{ marginTop: 16 }}>
           <h1 className="course-directory__title">{TITLE}</h1>
           <p className="course-directory__subtitle">
-            {shops.length} golf shops across the Algarve — pro shops, retail stores and club-fitting studios
+            {rentalProviders.length} places to hire golf clubs — at Faro Airport, at courses and at golf shops
           </p>
-          <a href="/club-rental" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
-            Browse Golf Club Rental in the Algarve →
+          <a href="/shops" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+            Browse All Golf Shops in the Algarve →
           </a>
         </div>
 
         <p style={{ maxWidth: 700, fontSize: 15, lineHeight: 1.7, color: '#444', margin: '16px 0 32px' }}>
-          {DESCRIPTION}
+          {DESCRIPTION} Most providers rent by the day, offer men&apos;s, ladies&apos; and left-handed
+          sets, and many deliver directly to your hotel or golf course so you don&apos;t have to
+          carry clubs through the airport.
         </p>
 
         {groups.map(({ town, items }) => (
           <div key={town}>
-            <h2 className="course-directory__town">Golf Shops in {town}</h2>
+            <h2 className="course-directory__town">Golf Club Rental in {town}</h2>
             <ul className="course-list">
               {items.map(shop => {
                 const image = shop.photo_url ?? GENERIC_SHOP_FALLBACK
-                const imageAlt = shop.photo_url ? (shop.photo_alt ?? `${shop.name} golf shop`) : GENERIC_SHOP_ALT
+                const imageAlt = shop.photo_url ? (shop.photo_alt ?? `${shop.name} golf club rental`) : GENERIC_SHOP_ALT
                 const card = (
                   <>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -113,17 +115,22 @@ export default async function ShopsIndexPage() {
                     <div className="course-list-item__body">
                       <strong className="course-list-item__name">{shop.name}</strong>
                       <span className="course-list-item__meta">
-                        {shop.services.length > 0 ? shop.services.slice(0, 2).map(s => s.replace(/_/g, ' ')).join(' · ') : shop.town}
-                        {shop.brands.length > 0 && ` · ${shop.brands.length} brands`}
+                        {shop.rental_price_per_day != null ? `From €${shop.rental_price_per_day}/day` : shop.town}
+                        {shop.delivery_to_course && ' · delivers to course'}
                       </span>
-                      {(shop.course_id || shop.offers_rental) && (
+                      {shop.rental_set_types.length > 0 && (
                         <span className="course-list-item__badges">
-                          {shop.course_id && <span className="course-list-item__price">On-site</span>}
-                          {shop.offers_rental && (
-                            <span style={{ fontSize: 12, color: '#6a6a6a' }}>
-                              Club rental{shop.rental_price_per_day ? ` from €${shop.rental_price_per_day}/day` : ''}
-                            </span>
-                          )}
+                          <span style={{ fontSize: 12, color: '#6a6a6a' }}>
+                            {shop.rental_set_types.slice(0, 3).map(t => t.replace(/_/g, ' ')).join(', ')}
+                          </span>
+                        </span>
+                      )}
+                      {shop.rental_delivery_areas.length > 0 && (
+                        <span className="course-list-item__badges">
+                          <span style={{ fontSize: 12, color: '#6a6a6a' }}>
+                            Delivers to {shop.rental_delivery_areas.slice(0, 2).join(', ')}
+                            {shop.rental_delivery_areas.length > 2 && ` +${shop.rental_delivery_areas.length - 2} more`}
+                          </span>
                         </span>
                       )}
                     </div>

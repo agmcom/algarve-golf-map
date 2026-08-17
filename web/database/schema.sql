@@ -281,9 +281,30 @@ create table shops (
   rental_set_types      text[] default '{}',  -- ['full_set','half_set','ladies','junior','left_handed']
   delivery_to_course    boolean not null default false,
 
+  -- Dedicated rental-provider fields (e.g. airport-based or delivery-only
+  -- companies whose core business is rental, not a shop with an address)
+  rental_pickup_location text,               -- free text; where clubs are collected, when not `address`
+  rental_delivery_areas  text[] default '{}', -- towns/resorts named as delivery coverage
+  rental_price_notes     text,               -- tiers, delivery-radius caveats, surcharges
+
   -- Contact
   website     text,
   phone       text,
+  email       text,
+
+  -- Practical / profile info
+  opening_hours     text,
+  google_maps_url   text,
+  instagram_url     text,
+  facebook_url      text,
+  parking           text,
+  languages_spoken  text[] default '{}',
+  accepts_trade_in  boolean,
+  fitting_technology text,
+
+  -- Photo
+  photo_url   text,
+  photo_alt   text,
 
   active      boolean not null default true,
 

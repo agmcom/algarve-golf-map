@@ -9,7 +9,7 @@ const figtree = Figtree({
   display: 'swap',
 })
 
-const SITE_URL = 'https://algarvegolfmap.com'
+const SITE_URL = 'https://www.algarvegolfmap.com'
 const SITE_NAME = 'Algarve Golf Map'
 const DEFAULT_DESCRIPTION =
   'Explore and compare every golf course in the Algarve on an interactive map. Filter by price, difficulty, ocean views, and facilities. Plan your perfect golf holiday in Portugal.'

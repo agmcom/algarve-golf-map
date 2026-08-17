@@ -4,7 +4,7 @@ import { getCourses, getHotelBySlug, getAirports } from '@/lib/queries'
 import { RESORT_PAGES } from '@/lib/resorts'
 import { TownMapClient } from '@/components/TownMapClient'
 
-const BASE = 'https://algarvegolfmap.com'
+const BASE = 'https://www.algarvegolfmap.com'
 
 const PEXELS_FALLBACK =
   'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop'
