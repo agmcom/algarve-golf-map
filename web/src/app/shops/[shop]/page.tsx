@@ -28,13 +28,29 @@ const SERVICE_META: Record<string, { icon: React.ReactNode; label: string }> = {
   club_cleaning:  { icon: <Droplets size={26} strokeWidth={1.8} />,     label: 'Club Cleaning' },
 }
 
+// A shop whose only tagged service is rental, with no on-course link, is a
+// dedicated rental company (e.g. ClubsToHire, Green-Tee) rather than a
+// retail/pro shop that also happens to rent clubs — worth its own copy since
+// "club rental/hire" is the higher-intent search term for these businesses.
+function isDedicatedRentalShop(shop: ShopWithJoins): boolean {
+  return shop.offers_rental && !shop.course_id && shop.services.length === 1 && shop.services[0] === 'rental'
+}
+
 function buildMetaDescription(shop: ShopWithJoins): string {
   const MAX = 155
-  let text = `${shop.name} — golf shop in ${shop.town}, Algarve.`
+  const dedicatedRental = isDedicatedRentalShop(shop)
+  let text = dedicatedRental
+    ? `${shop.name} — golf club rental company in ${shop.town}, Algarve.`
+    : `${shop.name} — golf shop in ${shop.town}, Algarve.`
 
   const extras: string[] = []
   if (shop.course) extras.push(`On-site at ${shop.course.name}.`)
-  if (shop.offers_rental) extras.push('Club rental available.')
+  if (dedicatedRental) {
+    if (shop.rental_pickup_location) extras.push(`Collect at ${shop.rental_pickup_location}.`)
+    if (shop.delivery_to_course) extras.push('Delivers to your hotel or course.')
+  } else if (shop.offers_rental) {
+    extras.push('Club rental available.')
+  }
   if (shop.services.includes('custom_fitting')) extras.push('Custom club fitting.')
   if (shop.brands.length) extras.push(`Stocking ${shop.brands.slice(0, 3).join(', ')}.`)
 
@@ -64,7 +80,15 @@ export async function generateMetadata({
   // locations) — avoid repeating it in the title, which pushes past Google's
   // ~60-char safe length and reads as keyword-stuffed.
   const nameHasTown = shop.name.toLowerCase().includes(shop.town.toLowerCase())
-  const title = nameHasTown ? shop.name : `${shop.name} – ${shop.town}`
+  // Dedicated rental companies whose own name doesn't already say so (e.g.
+  // "ClubsToHire" vs. "Faro Golf Club Hire") get "Golf Club Rental" spelled
+  // out in the title — that's the higher-intent search term for them.
+  const nameHasRentalKeyword = /rental|hire/i.test(shop.name)
+  const title = nameHasTown
+    ? shop.name
+    : isDedicatedRentalShop(shop) && !nameHasRentalKeyword
+      ? `${shop.name} – Golf Club Rental in ${shop.town}`
+      : `${shop.name} – ${shop.town}`
 
   // Meta description is purpose-built and length-capped (~155 chars) rather
   // than reusing the full on-page body text, which is written for readers
