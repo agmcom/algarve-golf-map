@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import { getShops } from '@/lib/queries'
 
 const BASE = 'https://www.algarvegolfmap.com'
-// Generic golf club display, no people and no visible branding — used only
-// when a rental provider has no real photo of its own.
+// Generic golf club display, no people — used only when a rental provider
+// has no real photo of its own. Shows Titleist/Cleveland/Odyssey club heads;
+// not a claim that every shop using this fallback stocks those brands.
 const GENERIC_SHOP_FALLBACK =
-  'https://images.pexels.com/photos/26890727/pexels-photo-26890727.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop'
+  'https://images.unsplash.com/photo-1530028828-25e8270793c5?auto=format&fit=crop&w=160&h=160&q=80'
 const GENERIC_SHOP_ALT = 'Golf clubs on display'
 
 const TITLE = 'Golf Club Rental in the Algarve'
