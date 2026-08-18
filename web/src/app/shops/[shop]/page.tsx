@@ -10,11 +10,11 @@ import {
 } from 'lucide-react'
 
 const BASE = 'https://www.algarvegolfmap.com'
-// Generic golf club display, no people — used only when a shop has no real
-// photo of its own. Shows Titleist/Cleveland/Odyssey club heads; not a claim
-// that every shop using this fallback stocks those brands.
+// Generic golf club display, no people and no visible branding — used only
+// when a shop has no real photo of its own, so it never implies this is a
+// photo of that specific shop.
 const GENERIC_SHOP_FALLBACK =
-  'https://images.unsplash.com/photo-1530028828-25e8270793c5?auto=format&fit=crop&w=1400&h=600&q=80'
+  'https://images.unsplash.com/photo-1593111774642-a746f5006b7b?auto=format&fit=crop&w=1400&h=600&q=80'
 const GENERIC_SHOP_ALT = 'Golf clubs on display'
 
 type ShopWithJoins = NonNullable<Awaited<ReturnType<typeof getShopBySlug>>>
