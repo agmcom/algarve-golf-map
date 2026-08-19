@@ -114,7 +114,23 @@ function applyFilters(
 
 const FAO_FALLBACK: FaoLike = { lat: 37.0144, lng: -7.9659, road_factor: 1.35, avg_speed_kmh: 75 }
 
+function readFiltersFromUrl(): { filters: Set<string>; hcpMen: number | null; hcpLadies: number | null } {
+  const params = new URLSearchParams(window.location.search)
+  const filtersParam = params.get('filters')
+  const filters = new Set(filtersParam ? filtersParam.split(',').filter(Boolean) : [])
+  const hcpMenParam = params.get('hcp_m')
+  const hcpLadiesParam = params.get('hcp_l')
+  const hcpMen = hcpMenParam ? Number(hcpMenParam) : null
+  const hcpLadies = hcpLadiesParam ? Number(hcpLadiesParam) : null
+  return {
+    filters,
+    hcpMen: hcpMen != null && Number.isFinite(hcpMen) ? hcpMen : null,
+    hcpLadies: hcpLadies != null && Number.isFinite(hcpLadies) ? hcpLadies : null,
+  }
+}
+
 export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps) {
+  const skipUrlWrite = useRef(true)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [panelId, setPanelId] = useState<string | null>(null)
   const [plannerOpen, setPlannerOpen] = useState(false)
@@ -140,6 +156,35 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
     window.addEventListener('resize', fn)
     return () => window.removeEventListener('resize', fn)
   }, [])
+
+  useEffect(() => {
+    const { filters, hcpMen: urlHcpMen, hcpLadies: urlHcpLadies } = readFiltersFromUrl()
+    if (filters.size > 0) setActiveFilters(filters)
+    if (urlHcpMen != null) setHcpMen(urlHcpMen)
+    if (urlHcpLadies != null) setHcpLadies(urlHcpLadies)
+  }, [])
+
+  useEffect(() => {
+    if (skipUrlWrite.current) {
+      skipUrlWrite.current = false
+      return
+    }
+
+    const params = new URLSearchParams(window.location.search)
+
+    if (activeFilters.size > 0) params.set('filters', [...activeFilters].join(','))
+    else params.delete('filters')
+
+    if (hcpMen != null) params.set('hcp_m', String(hcpMen))
+    else params.delete('hcp_m')
+
+    if (hcpLadies != null) params.set('hcp_l', String(hcpLadies))
+    else params.delete('hcp_l')
+
+    const query = params.toString()
+    const url = query ? `${window.location.pathname}?${query}` : window.location.pathname
+    window.history.replaceState(window.history.state, '', url)
+  }, [activeFilters, hcpMen, hcpLadies])
 
   const fao = airports.find(a => a.code === 'FAO') ?? FAO_FALLBACK
   const showTop10 = courses.filter(c => (c.review_count ?? 0) >= 3).length > 10
