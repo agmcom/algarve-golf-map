@@ -120,6 +120,21 @@ export async function getHotelsNear(lat: number, lng: number, radiusKm = 50): Pr
     .slice(0, 10)
 }
 
+export async function getShopsNear(lat: number, lng: number, n = 5, radiusKm = 50): Promise<(Shop & { distance_km: number })[]> {
+  const { data, error } = await supabase
+    .from('shops')
+    .select('*')
+    .eq('active', true)
+
+  if (error || !data) return []
+
+  return data
+    .map(s => ({ ...s, distance_km: haversineKm(lat, lng, s.lat, s.lng) }))
+    .filter(s => s.distance_km <= radiusKm)
+    .sort((a, b) => a.distance_km - b.distance_km)
+    .slice(0, n)
+}
+
 function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
   const R = 6371
   const dLat = ((lat2 - lat1) * Math.PI) / 180

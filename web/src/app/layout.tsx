@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Figtree } from 'next/font/google'
 import Script from 'next/script'
+import { SiteFooter } from '@/components/SiteFooter'
 import './globals.css'
 
 const figtree = Figtree({
@@ -81,6 +82,7 @@ export default function RootLayout({
     <html lang="en-GB" className={`${figtree.variable}`}>
       <body className="antialiased">
         {children}
+        <SiteFooter />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-95WX0L3Z7W"
           strategy="afterInteractive"

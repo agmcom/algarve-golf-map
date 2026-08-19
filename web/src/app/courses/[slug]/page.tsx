@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear } from '@/lib/queries'
+import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear, getShopsNear } from '@/lib/queries'
 import { RESORT_PAGES, resortSlugForCourse } from '@/lib/resorts'
 import type { CoursePrice } from '@/types/database'
 import { CourseMapImage } from '@/components/CourseMapImage'
@@ -101,10 +101,11 @@ export default async function CoursePage(
   const course = await getCourseBySlug(slug)
   if (!course) notFound()
 
-  const [hotels, airportList, nearbyCourses] = await Promise.all([
+  const [hotels, airportList, nearbyCourses, nearbyShops] = await Promise.all([
     getHotelsNear(course.lat, course.lng),
     getAirports(),
     getCoursesNear(course.lat, course.lng, course.id, 5),
+    getShopsNear(course.lat, course.lng, 5),
   ])
   const airports = airportDistances(course.lat, course.lng, airportList).sort((a, b) => a.roadKm - b.roadKm)
 
@@ -255,8 +256,9 @@ export default async function CoursePage(
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
           ...(course.dress_code ? [{ id: 'dress-code', label: 'Dress Code' }] : []),
           { id: 'course-map', label: 'Course Map' },
-          { id: 'nearby-courses', label: 'Nearby Courses' },
           { id: 'nearby-hotels', label: 'Nearby Hotels' },
+          { id: 'nearby-courses', label: 'Nearby Courses' },
+          { id: 'nearby-shops', label: 'Nearby Shops' },
         ]} />
 
         {/* Content */}
@@ -550,6 +552,32 @@ export default async function CoursePage(
                 )}
               </section>
 
+              {/* Nearby Hotels */}
+              {hotels.length > 0 && (
+                <section id="nearby-hotels" style={{ marginBottom: 36 }}>
+                  <h2 style={sectionTitle}>Nearby Hotels</h2>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    {hotels.map(hotel => (
+                      <HotelCard key={hotel.id} hotel={hotel} courseTown={course.town} isOnsiteForCourse={hotel.id === course.onsite_hotel_id} />
+                    ))}
+                  </div>
+                  <a
+                    href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent('hotels near ' + course.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'block', textAlign: 'center', marginTop: 14,
+                      padding: '12px 0', borderRadius: 12,
+                      border: '1.5px solid #2B6090', color: '#2B6090',
+                      fontSize: 14, fontWeight: 600, textDecoration: 'none',
+                      background: '#eef7f2',
+                    }}
+                  >
+                    Search all hotels near {course.town} →
+                  </a>
+                </section>
+              )}
+
               {/* Nearby Courses */}
               {nearbyCourses.length > 0 && (
                 <section id="nearby-courses" style={{ marginBottom: 36 }}>
@@ -582,32 +610,43 @@ export default async function CoursePage(
                 </section>
               )}
 
-              {/* Nearby Hotels */}
-              {hotels.length > 0 && (
-                <section id="nearby-hotels" style={{ marginBottom: 36 }}>
-                  <h2 style={sectionTitle}>Nearby Hotels</h2>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    {hotels.map(hotel => (
-                      <HotelCard key={hotel.id} hotel={hotel} courseTown={course.town} isOnsiteForCourse={hotel.id === course.onsite_hotel_id} />
-                    ))}
+              {/* Nearby Shops */}
+              {nearbyShops.length > 0 && (
+                <section id="nearby-shops" style={{ marginBottom: 36 }}>
+                  <h2 style={sectionTitle}>Nearby Shops</h2>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {nearbyShops.map(shop => {
+                      const card = (
+                        <>
+                          <div style={{ flex: 1, minWidth: 0 }}>
+                            <div style={{ fontSize: 14, fontWeight: 700, color: '#222', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                              🛍️ {shop.name}
+                            </div>
+                            <div style={{ fontSize: 12, color: '#6a6a6a', marginTop: 3 }}>
+                              {shop.town}
+                              {shop.offers_rental && ' · Club rental'}
+                            </div>
+                          </div>
+                          <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                            <div style={{ fontSize: 13, fontWeight: 700, color: '#222' }}>{Math.round(shop.distance_km)} km away</div>
+                          </div>
+                        </>
+                      )
+                      const rowStyle: React.CSSProperties = {
+                        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                        padding: '14px 16px', borderRadius: 14,
+                        border: '1px solid #ebebeb', background: '#fff',
+                        textDecoration: 'none', gap: 12,
+                      }
+                      return shop.slug ? (
+                        <a key={shop.id} href={`/shops/${shop.slug}`} style={rowStyle}>{card}</a>
+                      ) : (
+                        <div key={shop.id} style={rowStyle}>{card}</div>
+                      )
+                    })}
                   </div>
-                  <a
-                    href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent('hotels near ' + course.name)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'block', textAlign: 'center', marginTop: 14,
-                      padding: '12px 0', borderRadius: 12,
-                      border: '1.5px solid #2B6090', color: '#2B6090',
-                      fontSize: 14, fontWeight: 600, textDecoration: 'none',
-                      background: '#eef7f2',
-                    }}
-                  >
-                    Search all hotels near {course.town} →
-                  </a>
                 </section>
               )}
-
 
             </div>
 
