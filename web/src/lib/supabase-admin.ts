@@ -10,5 +10,6 @@ function getAdminClient() {
 }
 
 export const supabaseAdmin = {
-  from: (...args: Parameters<ReturnType<typeof getAdminClient>['from']>) => getAdminClient().from(...args)
+  from: (...args: Parameters<ReturnType<typeof getAdminClient>['from']>) => getAdminClient().from(...args),
+  get storage() { return getAdminClient().storage },
 }

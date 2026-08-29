@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllCourseSlugs, getAllShopSlugs } from '@/lib/queries'
+import { getAllCourseSlugs, getAllShopSlugs, getPublishedGuidePosts } from '@/lib/queries'
 import { TOWN_PAGES } from '@/lib/towns'
 import { RESORT_PAGES } from '@/lib/resorts'
 
@@ -8,6 +8,7 @@ const BASE = 'https://www.algarvegolfmap.com'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getAllCourseSlugs()
   const shopSlugs = await getAllShopSlugs()
+  const guidePosts = await getPublishedGuidePosts()
 
   const shopUrls: MetadataRoute.Sitemap = shopSlugs.map(slug => ({
     url: `${BASE}/shops/${slug}`,
@@ -44,6 +45,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
+  const guideUrls: MetadataRoute.Sitemap = guidePosts.map(post => ({
+    url: `${BASE}/guide/${post.slug}`,
+    lastModified: new Date(post.updated_at),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
+
   return [
     {
       url: BASE,
@@ -69,10 +77,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    {
+      url: `${BASE}/guide`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
     ...townUrls,
     ...courseUrls,
     ...resortUrls,
     ...hotelUrls,
     ...shopUrls,
+    ...guideUrls,
   ]
 }

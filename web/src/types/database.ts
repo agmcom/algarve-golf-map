@@ -329,3 +329,28 @@ export interface TripDay {
   course?: Course
   hotel?: Hotel
 }
+
+
+// ---- Guide (content hub) ----
+
+export type GuideCardRefType = 'course' | 'hotel' | 'shop'
+
+export type GuideBlock =
+  | { type: 'heading'; level: 2 | 3; text: string }
+  | { type: 'paragraph'; text: string }
+  | { type: 'image'; url: string; alt: string }
+  | { type: 'card'; refType: GuideCardRefType; slug: string; withPhoto: boolean }
+
+export interface GuidePost {
+  id: string
+  title: string
+  slug: string
+  categories: string[]
+  excerpt: string | null
+  content: GuideBlock[]
+  hero_image_url: string | null
+  hero_image_alt: string | null
+  published: boolean
+  created_at: string
+  updated_at: string
+}

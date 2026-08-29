@@ -1,5 +1,5 @@
 import { supabase } from './supabase'
-import type { Course, CoursePrice, Hotel, Shop, Airport } from '@/types/database'
+import type { Course, CoursePrice, Hotel, Shop, Airport, GuidePost } from '@/types/database'
 import { MOCK_COURSES } from '@/data/courses'
 import { FALLBACK_AIRPORTS } from '@/data/airports'
 
@@ -96,7 +96,7 @@ export async function getCourseBySlug(slug: string): Promise<(Course & { prices:
 export async function getHotelBySlug(slug: string): Promise<Hotel | null> {
   const { data, error } = await supabase
     .from('hotels')
-    .select('*')
+    .select('*, photos:hotel_photos(url, alt, is_hero, position)')
     .eq('slug', slug)
     .eq('active', true)
     .single()
@@ -203,4 +203,52 @@ export async function getAllShopSlugs(): Promise<string[]> {
     .not('slug', 'is', null)
 
   return data?.map(s => s.slug as string) ?? []
+}
+
+export async function getPublishedGuidePosts(): Promise<GuidePost[]> {
+  const { data, error } = await supabase
+    .from('guide_posts')
+    .select('*')
+    .eq('published', true)
+    .order('created_at', { ascending: false })
+
+  if (error || !data) return []
+  return data
+}
+
+export async function getGuidePostBySlug(slug: string): Promise<GuidePost | null> {
+  const { data, error } = await supabase
+    .from('guide_posts')
+    .select('*')
+    .eq('slug', slug)
+    .eq('published', true)
+    .single()
+
+  if (error || !data) return null
+  return data
+}
+
+export async function getAllGuidePostSlugs(): Promise<string[]> {
+  const { data } = await supabase
+    .from('guide_posts')
+    .select('slug')
+    .eq('published', true)
+
+  return data?.map(p => p.slug as string) ?? []
+}
+
+export async function getRelatedGuidePosts(postId: string, categories: string[], limit = 3): Promise<GuidePost[]> {
+  if (categories.length === 0) return []
+
+  const { data, error } = await supabase
+    .from('guide_posts')
+    .select('*')
+    .eq('published', true)
+    .neq('id', postId)
+    .overlaps('categories', categories)
+    .order('created_at', { ascending: false })
+    .limit(limit)
+
+  if (error || !data) return []
+  return data
 }
