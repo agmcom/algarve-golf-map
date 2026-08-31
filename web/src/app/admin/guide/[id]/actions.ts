@@ -43,6 +43,7 @@ export async function savePost(id: string, _prevState: SaveResult | null, formDa
   revalidatePath(`/admin/guide/${id}`)
   revalidatePath(`/guide/${payload.slug}`)
   revalidatePath('/guide')
+  revalidatePath('/sitemap.xml')
   return { ok: true }
 }
 

@@ -5,6 +5,9 @@ import { RESORT_PAGES } from '@/lib/resorts'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
+// Regenerate hourly so guide/course/shop slug changes reach the sitemap without a redeploy.
+export const revalidate = 3600
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getAllCourseSlugs()
   const shopSlugs = await getAllShopSlugs()
