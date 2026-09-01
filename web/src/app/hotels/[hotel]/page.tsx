@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getHotelBySlug, getCourses } from '@/lib/queries'
 import { RESORT_PAGES, resortSlugForHotel } from '@/lib/resorts'
 
@@ -126,13 +127,13 @@ export default async function HotelPage({
             listStyle: 'none', padding: 0, margin: 0,
             fontSize: 13, color: '#6a6a6a',
           }}>
-            <li><a href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</a></li>
+            <li><Link href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</Link></li>
             <li aria-hidden="true">›</li>
             {resort && (
               <>
-                <li><a href="/golf-resorts" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Golf Resorts</a></li>
+                <li><Link href="/golf-resorts" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Golf Resorts</Link></li>
                 <li aria-hidden="true">›</li>
-                <li><a href={`/golf-resorts/${resort.slug}`} style={{ color: '#6a6a6a', textDecoration: 'none' }}>{resort.label}</a></li>
+                <li><Link href={`/golf-resorts/${resort.slug}`} style={{ color: '#6a6a6a', textDecoration: 'none' }}>{resort.label}</Link></li>
                 <li aria-hidden="true">›</li>
               </>
             )}
@@ -220,7 +221,7 @@ export default async function HotelPage({
             <ul className="course-list">
               {courses.map(course => (
                 <li key={course.id} className="course-list-item">
-                  <a href={`/courses/${course.slug}`}>
+                  <Link href={`/courses/${course.slug}`}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={heroUrl(course)}
@@ -245,7 +246,7 @@ export default async function HotelPage({
                         <p className="course-list-item__blurb">{course.blurb}</p>
                       )}
                     </div>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

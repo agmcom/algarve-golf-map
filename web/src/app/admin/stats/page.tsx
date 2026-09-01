@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { supabaseAdmin } from '@/lib/supabase-admin'
 
 async function getStats() {
@@ -42,8 +43,8 @@ export default async function AdminStatsPage() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32 }}>
           <h1 style={{ fontSize: 24, fontWeight: 700, color: '#111', margin: 0 }}>Statistics</h1>
           <div style={{ display: 'flex', gap: 12 }}>
-            <a href="/admin/courses" style={{ fontSize: 13, color: '#2B6090', textDecoration: 'none', fontWeight: 500 }}>Courses</a>
-            <a href="/admin/hotels" style={{ fontSize: 13, color: '#2B6090', textDecoration: 'none', fontWeight: 500 }}>Hotels</a>
+            <Link href="/admin/courses" style={{ fontSize: 13, color: '#2B6090', textDecoration: 'none', fontWeight: 500 }}>Courses</Link>
+            <Link href="/admin/hotels" style={{ fontSize: 13, color: '#2B6090', textDecoration: 'none', fontWeight: 500 }}>Hotels</Link>
           </div>
         </div>
 

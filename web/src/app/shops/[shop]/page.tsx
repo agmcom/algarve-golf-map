@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getShopBySlug, getAllShopSlugs, getCoursesNear } from '@/lib/queries'
 import { SiteHeader } from '@/components/SiteHeader'
 import { CourseNav } from '@/components/CourseNav'
@@ -490,7 +491,7 @@ export default async function ShopPage({
                     {nearbyCourses.map(n => {
                       const isOnsite = n.id === shop.course_id
                       return (
-                        <a key={n.id} href={`/courses/${n.slug}`} style={{
+                        <Link key={n.id} href={`/courses/${n.slug}`} style={{
                           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                           padding: '14px 16px', borderRadius: 14,
                           border: '1px solid #ebebeb', background: '#fff',
@@ -522,7 +523,7 @@ export default async function ShopPage({
                               <div style={{ fontSize: 12, color: '#6a6a6a' }}>from €{n.price_from}</div>
                             )}
                           </div>
-                        </a>
+                        </Link>
                       )
                     })}
                   </div>

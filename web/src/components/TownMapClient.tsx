@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import mapboxgl from 'mapbox-gl'
 import type { Course, Airport } from '@/types/database'
 import { CoursePanel } from './CoursePanel'
@@ -80,7 +81,7 @@ export function TownMapClient({ courses, centerLat, centerLng, zoom = 11.5, faro
     <div style={{ position: 'relative', height: 'min(65vh, 600px)' }}>
       <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
       <div style={{ position: 'absolute', top: 16, left: 16, zIndex: 10, display: 'flex', alignItems: 'center', gap: 8 }}>
-        <a
+        <Link
           href="/"
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 7,
@@ -95,8 +96,8 @@ export function TownMapClient({ courses, centerLat, centerLng, zoom = 11.5, faro
           <span style={{ fontSize: 13, fontWeight: 700, color: '#222', whiteSpace: 'nowrap' }}>
             Algarve Golf Map
           </span>
-        </a>
-        <a
+        </Link>
+        <Link
           href="/"
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -108,7 +109,7 @@ export function TownMapClient({ courses, centerLat, centerLng, zoom = 11.5, faro
           }}
         >
           ← All Algarve courses
-        </a>
+        </Link>
       </div>
       {selectedCourse && (
         <div style={{ position: 'fixed', top: 0, left: 0, bottom: 0, zIndex: 200, width: 380, pointerEvents: 'none' }}>

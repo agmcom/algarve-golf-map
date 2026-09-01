@@ -57,7 +57,7 @@ export function PlannerPanel({ courses, selectedIds, onToggle, onClear, onResult
               <BedDouble size={18} strokeWidth={2} color="#222" />
               <span style={{ fontSize: 17, fontWeight: 700, color: '#222' }}>Find Your Base</span>
             </div>
-            <div style={{ fontSize: 12, color: '#6a6a6a', marginTop: 4 }}>Select courses to play — we'll find the ideal area to stay</div>
+            <div style={{ fontSize: 12, color: '#6a6a6a', marginTop: 4 }}>Select courses to play — we&apos;ll find the ideal area to stay</div>
           </div>
           <button onClick={onClose} style={closeBtn}>✕</button>
         </div>

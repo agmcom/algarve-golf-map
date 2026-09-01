@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getCourses, getAirports } from '@/lib/queries'
 import { TOWN_PAGES } from '@/lib/towns'
 import { TownMapClient } from '@/components/TownMapClient'
@@ -119,9 +120,9 @@ export default async function TownPage({
             listStyle: 'none', padding: 0, margin: 0,
             fontSize: 13, color: '#6a6a6a',
           }}>
-            <li><a href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</a></li>
+            <li><Link href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</Link></li>
             <li aria-hidden="true">›</li>
-            <li><a href="/#courses" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Golf Courses in the Algarve</a></li>
+            <li><Link href="/#courses" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Golf Courses in the Algarve</Link></li>
             <li aria-hidden="true">›</li>
             <li aria-current="page" style={{ color: '#222', fontWeight: 600 }}>
               {townPage.label}
@@ -143,7 +144,7 @@ export default async function TownPage({
         <ul className="course-list">
           {courses.map(course => (
             <li key={course.id} className="course-list-item">
-              <a href={`/courses/${course.slug}`}>
+              <Link href={`/courses/${course.slug}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={heroUrl(course)}
@@ -168,7 +169,7 @@ export default async function TownPage({
                     <p className="course-list-item__blurb">{course.blurb}</p>
                   )}
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

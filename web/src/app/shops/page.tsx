@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getShops } from '@/lib/queries'
 
 const BASE = 'https://www.algarvegolfmap.com'
@@ -73,7 +74,7 @@ export default async function ShopsIndexPage() {
       <section className="course-directory" id="golf-shops">
         <nav aria-label="Breadcrumb" style={{ marginBottom: 8 }}>
           <ol style={{ display: 'flex', gap: 8, listStyle: 'none', padding: 0, margin: 0, fontSize: 13, color: '#6a6a6a' }}>
-            <li><a href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</a></li>
+            <li><Link href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</Link></li>
             <li aria-hidden="true">›</li>
             <li aria-current="page" style={{ color: '#222', fontWeight: 600 }}>{TITLE}</li>
           </ol>
@@ -84,9 +85,9 @@ export default async function ShopsIndexPage() {
           <p className="course-directory__subtitle">
             {shops.length} golf shops across the Algarve — pro shops, retail stores and club-fitting studios
           </p>
-          <a href="/club-rental" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+          <Link href="/club-rental" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
             Browse Golf Club Rental in the Algarve →
-          </a>
+          </Link>
         </div>
 
         <p style={{ maxWidth: 700, fontSize: 15, lineHeight: 1.7, color: '#444', margin: '16px 0 32px' }}>
@@ -131,7 +132,7 @@ export default async function ShopsIndexPage() {
                 )
                 return (
                   <li key={shop.id} className="course-list-item">
-                    {shop.slug ? <a href={`/shops/${shop.slug}`}>{card}</a> : <div style={{ display: 'flex', gap: 16, padding: 14 }}>{card}</div>}
+                    {shop.slug ? <Link href={`/shops/${shop.slug}`}>{card}</Link> : <div style={{ display: 'flex', gap: 16, padding: 14 }}>{card}</div>}
                   </li>
                 )
               })}

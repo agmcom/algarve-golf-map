@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import type { Course } from '@/types/database'
 import { faroDistance, formatDriveTime, nearestCourses } from '@/lib/distance'
 
@@ -147,7 +148,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                   {nearby.map(n => (
-                    <a key={n.id} href={`/courses/${n.slug}`} style={{
+                    <Link key={n.id} href={`/courses/${n.slug}`} style={{
                       display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                       padding: '7px 10px', borderRadius: 9,
                       border: '1px solid #ebebeb', background: '#fafafa',
@@ -157,7 +158,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
                         ⛳ {n.name}
                       </span>
                       <span style={{ fontSize: 11, color: '#b0b0b0', flexShrink: 0, marginLeft: 8 }}>{n.distanceKm} km</span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>

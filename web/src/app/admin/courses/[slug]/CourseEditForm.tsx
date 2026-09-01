@@ -1,6 +1,7 @@
 'use client'
 
 import { useActionState, useRef } from 'react'
+import Link from 'next/link'
 import { saveCourse, saveHeroPhoto, type SaveResult } from './actions'
 
 interface Photo { id: string; url: string; alt: string | null; is_hero: boolean; position: number }
@@ -84,7 +85,7 @@ export function CourseEditForm({ course }: { course: Course }) {
       {/* Header */}
       <div style={{ background: '#1a1a2e', padding: '16px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, zIndex: 10 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <a href="/admin/courses" style={{ color: '#aaa', fontSize: 13, textDecoration: 'none' }}>← All courses</a>
+          <Link href="/admin/courses" style={{ color: '#aaa', fontSize: 13, textDecoration: 'none' }}>← All courses</Link>
           <span style={{ color: '#555' }}>/</span>
           <span style={{ color: '#fff', fontWeight: 700 }}>{course.name as string}</span>
         </div>

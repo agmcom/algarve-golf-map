@@ -76,7 +76,7 @@ export function ContactModal({ onClose }: ContactModalProps) {
         }}>
           <div>
             <div style={{ fontSize: 17, fontWeight: 700, color: '#222' }}>Get in touch</div>
-            <div style={{ fontSize: 13, color: '#6a6a6a', marginTop: 2 }}>We'll get back to you as soon as possible</div>
+            <div style={{ fontSize: 13, color: '#6a6a6a', marginTop: 2 }}>We&apos;ll get back to you as soon as possible</div>
           </div>
           <button
             onClick={onClose}
@@ -96,7 +96,7 @@ export function ContactModal({ onClose }: ContactModalProps) {
             <div style={{ fontSize: 36, marginBottom: 12 }}>✅</div>
             <div style={{ fontSize: 16, fontWeight: 700, color: '#222', marginBottom: 8 }}>Message sent!</div>
             <div style={{ fontSize: 14, color: '#6a6a6a', marginBottom: 24 }}>
-              Thanks for reaching out. We'll reply to {email} shortly.
+              Thanks for reaching out. We&apos;ll reply to {email} shortly.
             </div>
             <button
               onClick={onClose}

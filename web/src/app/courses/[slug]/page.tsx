@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear, getShopsNear } from '@/lib/queries'
 import { RESORT_PAGES, resortSlugForCourse } from '@/lib/resorts'
 import type { CoursePrice } from '@/types/database'
@@ -584,7 +585,7 @@ export default async function CoursePage(
                   <h2 style={sectionTitle}>Nearby Courses</h2>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {nearbyCourses.map(n => (
-                      <a key={n.id} href={`/courses/${n.slug}`} style={{
+                      <Link key={n.id} href={`/courses/${n.slug}`} style={{
                         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                         padding: '14px 16px', borderRadius: 14,
                         border: '1px solid #ebebeb', background: '#fff',
@@ -604,7 +605,7 @@ export default async function CoursePage(
                             <div style={{ fontSize: 12, color: '#6a6a6a' }}>from €{n.price_from}</div>
                           )}
                         </div>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </section>
@@ -639,7 +640,7 @@ export default async function CoursePage(
                         textDecoration: 'none', gap: 12,
                       }
                       return shop.slug ? (
-                        <a key={shop.id} href={`/shops/${shop.slug}`} style={rowStyle}>{card}</a>
+                        <Link key={shop.id} href={`/shops/${shop.slug}`} style={rowStyle}>{card}</Link>
                       ) : (
                         <div key={shop.id} style={rowStyle}>{card}</div>
                       )

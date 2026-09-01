@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Course } from '@/types/database'
 import { townSlug } from '@/lib/towns'
 
@@ -39,12 +40,12 @@ export function CourseDirectory({ courses }: Props) {
           {courses.length} courses across the Algarve — from Lagos to Vila Real de Santo António
         </p>
         <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-          <a href="/golf-resorts" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+          <Link href="/golf-resorts" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
             Browse Golf Resorts in the Algarve →
-          </a>
-          <a href="/club-rental" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+          </Link>
+          <Link href="/club-rental" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
             Browse Golf Club Rental in the Algarve →
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -54,14 +55,14 @@ export function CourseDirectory({ courses }: Props) {
         <div key={town}>
           <h3 className="course-directory__town">
             {slug
-              ? <a href={`/${slug}/golf-courses`} style={{ color: 'inherit', textDecoration: 'none' }}>Golf Courses in {town}</a>
+              ? <Link href={`/${slug}/golf-courses`} style={{ color: 'inherit', textDecoration: 'none' }}>Golf Courses in {town}</Link>
               : <>Golf Courses in {town}</>
             }
           </h3>
           <ul className="course-list">
             {townCourses.map(course => (
               <li key={course.id} className="course-list-item">
-                <a href={`/courses/${course.slug}`}>
+                <Link href={`/courses/${course.slug}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={heroUrl(course)}
@@ -86,7 +87,7 @@ export function CourseDirectory({ courses }: Props) {
                       <p className="course-list-item__blurb">{course.blurb}</p>
                     )}
                   </div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -158,10 +158,16 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
   }, [])
 
   useEffect(() => {
+    // Hydrate filter state from the URL on mount only. This has to run in an
+    // effect (not a lazy useState initializer) because readFiltersFromUrl()
+    // touches window.location — unavailable during SSR — and starting from an
+    // empty set keeps the first client render matching the server markup.
+    /* eslint-disable react-hooks/set-state-in-effect */
     const { filters, hcpMen: urlHcpMen, hcpLadies: urlHcpLadies } = readFiltersFromUrl()
     if (filters.size > 0) setActiveFilters(filters)
     if (urlHcpMen != null) setHcpMen(urlHcpMen)
     if (urlHcpLadies != null) setHcpLadies(urlHcpLadies)
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, [])
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getCourses, getHotelBySlug, getAirports } from '@/lib/queries'
 import { RESORT_PAGES } from '@/lib/resorts'
 import { TownMapClient } from '@/components/TownMapClient'
@@ -150,9 +151,9 @@ export default async function ResortPage({
             listStyle: 'none', padding: 0, margin: 0,
             fontSize: 13, color: '#6a6a6a',
           }}>
-            <li><a href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</a></li>
+            <li><Link href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</Link></li>
             <li aria-hidden="true">›</li>
-            <li><a href="/golf-resorts" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Golf Resorts</a></li>
+            <li><Link href="/golf-resorts" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Golf Resorts</Link></li>
             <li aria-hidden="true">›</li>
             <li aria-current="page" style={{ color: '#222', fontWeight: 600 }}>
               {resort.label}
@@ -175,7 +176,7 @@ export default async function ResortPage({
         {hotel && (
           <>
             <h2 className="resort-section-title">Hotels in {resortFullName(resort)}</h2>
-            <a href={`/hotels/${hotel.slug}`} className="resort-hotel-card">
+            <Link href={`/hotels/${hotel.slug}`} className="resort-hotel-card">
               <div className="resort-hotel-card__icon" aria-hidden="true">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a8a8a8" strokeWidth="1.5">
                   <path d="M3 21V8l9-5 9 5v13" strokeLinejoin="round" />
@@ -196,7 +197,7 @@ export default async function ResortPage({
                   </div>
                 )}
               </div>
-            </a>
+            </Link>
           </>
         )}
 
@@ -204,7 +205,7 @@ export default async function ResortPage({
         <ul className="course-list">
           {courses.map(course => (
             <li key={course.id} className="course-list-item">
-              <a href={`/courses/${course.slug}`}>
+              <Link href={`/courses/${course.slug}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={heroUrl(course)}
@@ -229,7 +230,7 @@ export default async function ResortPage({
                     <p className="course-list-item__blurb">{course.blurb}</p>
                   )}
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

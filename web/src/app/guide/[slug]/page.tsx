@@ -242,7 +242,7 @@ export default async function GuidePostPage(
                 if (!card) return null
                 const showPhoto = block.withPhoto && card.image
                 return (
-                  <a key={i} href={card.href} style={{
+                  <Link key={i} href={card.href} style={{
                     display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                     padding: showPhoto ? 10 : '14px 16px', borderRadius: 14, margin: '8px 0 28px',
                     border: '1px solid #ebebeb', background: '#fff',
@@ -267,7 +267,7 @@ export default async function GuidePostPage(
                     {card.meta && (
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#222', flexShrink: 0, paddingRight: showPhoto ? 6 : 0 }}>{card.meta}</div>
                     )}
-                  </a>
+                  </Link>
                 )
               }
               return null
