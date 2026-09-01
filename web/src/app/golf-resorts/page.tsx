@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getCourses, getHotels } from '@/lib/queries'
 import { RESORT_PAGES } from '@/lib/resorts'
 
@@ -8,6 +9,11 @@ const PEXELS_FALLBACK =
   'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=320&h=200&fit=crop'
 
 const TITLE = 'Golf Resorts in the Algarve'
+// Short form for the <meta name="description"> / OG / Twitter tags — kept under
+// ~155 characters so Google doesn't truncate it in the SERP.
+const META_DESCRIPTION =
+  'Compare 15 Algarve golf resorts — Quinta do Lago, Vale do Lobo, Monte Rei and more. Each pairs an on-site hotel with its own courses, star rating and nightly price.'
+// Longer form used as the visible intro paragraph on the page.
 const DESCRIPTION =
   'Explore the Algarve\'s best golf resorts — from Quinta do Lago and Vale do Lobo in the Golden Triangle to Monte Rei and Robinson Quinta da Ria in the east. Each resort page pairs the on-site hotel with its golf course details and prices.'
 
@@ -17,14 +23,19 @@ export function generateMetadata(): Metadata {
   const url = `${BASE}/golf-resorts`
   return {
     title: TITLE,
-    description: DESCRIPTION,
+    description: META_DESCRIPTION,
     alternates: { canonical: url },
     openGraph: {
       title: TITLE,
-      description: DESCRIPTION,
+      description: META_DESCRIPTION,
       url,
       siteName: 'Algarve Golf Map',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: TITLE,
+      description: META_DESCRIPTION,
     },
   }
 }
@@ -76,7 +87,7 @@ export default async function GolfResortsHubPage() {
             listStyle: 'none', padding: 0, margin: 0,
             fontSize: 13, color: '#6a6a6a',
           }}>
-            <li><a href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</a></li>
+            <li><Link href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</Link></li>
             <li aria-hidden="true">›</li>
             <li aria-current="page" style={{ color: '#222', fontWeight: 600 }}>{TITLE}</li>
           </ol>
@@ -104,11 +115,15 @@ export default async function GolfResortsHubPage() {
 
             return (
               <li key={resort.slug} className="course-list-item">
-                <a href={`/golf-resorts/${resort.slug}`}>
+                <Link href={`/golf-resorts/${resort.slug}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={heroImage}
-                    alt={`${resort.label} golf resort`}
+                    alt={
+                      firstCourse
+                        ? `${resort.label} golf resort — ${firstCourse.name}`
+                        : `${resort.label} golf resort`
+                    }
                     width={80}
                     height={80}
                     loading="lazy"
@@ -124,8 +139,9 @@ export default async function GolfResortsHubPage() {
                         <span className="course-list-item__price">From €{hotel.price_from}/night</span>
                       </span>
                     )}
+                    <p className="course-list-item__blurb">{resort.description}</p>
                   </div>
-                </a>
+                </Link>
               </li>
             )
           })}
