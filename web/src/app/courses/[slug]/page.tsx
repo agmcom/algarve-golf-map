@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear, getShopsNear } from '@/lib/queries'
 import { RESORT_PAGES, resortSlugForCourse } from '@/lib/resorts'
-import type { CoursePrice } from '@/types/database'
+import { summarizePrices } from '@/lib/prices'
+import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { CourseMapImage } from '@/components/CourseMapImage'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { CourseNav } from '@/components/CourseNav'
@@ -87,8 +88,6 @@ export async function generateMetadata(
   }
 }
 
-const MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
 const DIFFICULTY_LABEL: Record<string, string> = {
   easy:        'Easy',
   moderate:    'Moderate',
@@ -110,17 +109,8 @@ export default async function CoursePage(
   ])
   const airports = airportDistances(course.lat, course.lng, airportList).sort((a, b) => a.roadKm - b.roadKm)
 
-  // Index prices by month for quick lookup
-  const currentMonth = new Date().getMonth() + 1  // 1–12
-  const pricesByMonth: Record<number, { standard?: CoursePrice; twilight?: CoursePrice }> = {}
-  for (const p of course.prices) {
-    if (!pricesByMonth[p.month]) pricesByMonth[p.month] = {}
-    if (p.time_slot === 'standard' || p.time_slot === 'early_bird') pricesByMonth[p.month].standard = p
-    else if (p.time_slot === 'twilight' || p.time_slot === 'sunset') pricesByMonth[p.month].twilight = p
-  }
-  const monthsWithPrices = Object.keys(pricesByMonth).map(Number).sort((a, b) => a - b)
-  const hasPrices = monthsWithPrices.length > 0
-  const hasTwilight = course.prices.some(p => p.time_slot === 'twilight' || p.time_slot === 'sunset')
+  const priceSummary = summarizePrices(course.prices)
+  const showGreenFeesLink = priceSummary.hasPrices || course.price_from != null
 
   const resortSlug = resortSlugForCourse(course.slug)
   const resort = resortSlug ? RESORT_PAGES.find(r => r.slug === resortSlug) ?? null : null
@@ -484,38 +474,11 @@ export default async function CoursePage(
                     </div>
                   </div>
                 )}
-                {hasPrices && (
-                  <div style={{ marginBottom: 20 }}>
-                    <div style={{ border: '1px solid #ebebeb', borderRadius: 12, overflow: 'hidden' }}>
-                      <div style={{ display: 'grid', gridTemplateColumns: hasTwilight ? '44px 1fr 1fr' : '44px 1fr', padding: '7px 12px', background: '#f9f9f9', borderBottom: '1px solid #ebebeb' }}>
-                        <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em' }}></span>
-                        <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em', textAlign: 'right' }}>Standard</span>
-                        {hasTwilight && <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em', textAlign: 'right' }}>Twilight</span>}
-                      </div>
-                      {monthsWithPrices.map(m => {
-                        const { standard, twilight } = pricesByMonth[m]
-                        const isCurrent = m === currentMonth
-                        return (
-                          <div key={m} style={{ display: 'grid', gridTemplateColumns: hasTwilight ? '44px 1fr 1fr' : '44px 1fr', padding: '8px 12px', borderBottom: '1px solid #f4f4f4', background: isCurrent ? '#fff8f0' : '#fff' }}>
-                            <span style={{ fontSize: 12, fontWeight: isCurrent ? 700 : 500, color: isCurrent ? '#2B6090' : '#888' }}>{MONTH_LABELS[m - 1]}</span>
-                            <span style={{ fontSize: 13, fontWeight: 700, color: isCurrent ? '#222' : '#444', textAlign: 'right' }}>
-                              {standard ? <>€{standard.price_eur}{standard.buggy_included && <span style={{ fontSize: 10, color: '#888', fontWeight: 400 }}> incl. buggy</span>}</> : '—'}
-                            </span>
-                            {hasTwilight && (
-                              <span style={{ fontSize: 13, fontWeight: 700, color: isCurrent ? '#555' : '#aaa', textAlign: 'right' }}>
-                                {twilight ? <>€{twilight.price_eur}{twilight.buggy_included && <span style={{ fontSize: 10, color: '#888', fontWeight: 400 }}> incl.</span>}</> : '—'}
-                              </span>
-                            )}
-                          </div>
-                        )
-                      })}
-                      {(() => {
-                        const sample = course.prices.find(p => !p.buggy_included && p.buggy_price)
-                        return sample ? <div style={{ padding: '7px 12px', fontSize: 11, color: '#888', background: '#fafafa' }}>+ buggy €{sample.buggy_price} optional</div> : null
-                      })()}
-                    </div>
-                    <p style={{ fontSize: 10, color: '#b0b0b0', margin: '6px 0 0', textAlign: 'right' }}>Prices indicative · source: algarvegolf.net</p>
-                  </div>
+                {priceSummary.hasPrices && <CoursePriceTable summary={priceSummary} />}
+                {showGreenFeesLink && (
+                  <Link href={`/courses/${slug}/green-fees`} style={{ display: 'inline-block', marginBottom: 20, fontSize: 13, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+                    See full green fee breakdown →
+                  </Link>
                 )}
                 {course.booking_url && (
                   <a href={course.booking_url} target="_blank" rel="noopener noreferrer" style={ctaBtn('#2B6090', '#fff')}>
@@ -669,79 +632,12 @@ export default async function CoursePage(
                 )}
 
                 {/* Price breakdown by month */}
-                {hasPrices && (
-                  <div style={{ marginBottom: 20 }}>
-                    <div style={{ border: '1px solid #ebebeb', borderRadius: 12, overflow: 'hidden' }}>
-                      {/* Header */}
-                      <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: hasTwilight ? '44px 1fr 1fr' : '44px 1fr',
-                        padding: '7px 12px', background: '#f9f9f9',
-                        borderBottom: '1px solid #ebebeb',
-                      }}>
-                        <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em' }}></span>
-                        <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em', textAlign: 'right' }}>Standard</span>
-                        {hasTwilight && (
-                          <span style={{ fontSize: 10, fontWeight: 600, color: '#aaa', textTransform: 'uppercase', letterSpacing: '.05em', textAlign: 'right' }}>Twilight</span>
-                        )}
-                      </div>
-                      {/* One row per month that has data */}
-                      {monthsWithPrices.map(m => {
-                        const { standard, twilight } = pricesByMonth[m]
-                        const isCurrent = m === currentMonth
-                        return (
-                          <div key={m} style={{
-                            display: 'grid',
-                            gridTemplateColumns: hasTwilight ? '44px 1fr 1fr' : '44px 1fr',
-                            padding: '8px 12px',
-                            borderBottom: '1px solid #f4f4f4',
-                            background: isCurrent ? '#fff8f0' : '#fff',
-                          }}>
-                            <span style={{
-                              fontSize: 12, fontWeight: isCurrent ? 700 : 500,
-                              color: isCurrent ? '#2B6090' : '#888',
-                            }}>
-                              {MONTH_LABELS[m - 1]}
-                            </span>
-                            <span style={{
-                              fontSize: 13, fontWeight: 700,
-                              color: isCurrent ? '#222' : '#444',
-                              textAlign: 'right',
-                            }}>
-                              {standard
-                                ? <>€{standard.price_eur}{standard.buggy_included && <span style={{ fontSize: 10, color: '#888', fontWeight: 400 }}> incl. buggy</span>}</>
-                                : '—'
-                              }
-                            </span>
-                            {hasTwilight && (
-                              <span style={{
-                                fontSize: 13, fontWeight: 700,
-                                color: isCurrent ? '#555' : '#aaa',
-                                textAlign: 'right',
-                              }}>
-                                {twilight
-                                  ? <>€{twilight.price_eur}{twilight.buggy_included && <span style={{ fontSize: 10, color: '#888', fontWeight: 400 }}> incl.</span>}</>
-                                  : '—'
-                                }
-                              </span>
-                            )}
-                          </div>
-                        )
-                      })}
-                      {/* Buggy add-on note */}
-                      {(() => {
-                        const sample = course.prices.find(p => !p.buggy_included && p.buggy_price)
-                        return sample ? (
-                          <div style={{ padding: '7px 12px', fontSize: 11, color: '#888', background: '#fafafa' }}>
-                            + buggy €{sample.buggy_price} optional
-                          </div>
-                        ) : null
-                      })()}
-                    </div>
-                    <p style={{ fontSize: 10, color: '#b0b0b0', margin: '6px 0 0', textAlign: 'right' }}>
-                      Prices indicative · source: algarvegolf.net
-                    </p>
-                  </div>
+                {priceSummary.hasPrices && <CoursePriceTable summary={priceSummary} />}
+
+                {showGreenFeesLink && (
+                  <Link href={`/courses/${slug}/green-fees`} style={{ display: 'inline-block', marginBottom: 20, fontSize: 13, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+                    See full green fee breakdown →
+                  </Link>
                 )}
 
                 {course.booking_url && (

@@ -183,6 +183,75 @@ export async function getAllCourseSlugs(): Promise<string[]> {
   return MOCK_COURSES.map(c => c.slug)
 }
 
+// Active courses that have enough pricing data to warrant a standalone
+// /courses/[slug]/green-fees page — a month-by-month visitor rate table,
+// or at least a `price_from`.
+export async function getCourseSlugsWithGreenFees(): Promise<string[]> {
+  const { data: courses } = await supabase
+    .from('courses')
+    .select('id, slug, price_from')
+    .eq('active', true)
+
+  if (!courses?.length) {
+    return MOCK_COURSES.filter(c => c.price_from != null).map(c => c.slug)
+  }
+
+  const { data: priceRows } = await supabase
+    .from('course_prices')
+    .select('course_id')
+    .eq('rate_type', 'visitor')
+
+  const priced = new Set((priceRows ?? []).map(r => r.course_id))
+  return courses
+    .filter(c => priced.has(c.id) || c.price_from != null)
+    .map(c => c.slug)
+}
+
+export interface GreenFeeComparable {
+  slug: string
+  name: string
+  town: string
+  // Lowest visitor rate we can quote: cheapest standard month, else cheapest
+  // twilight month (covers the twilight-only courses), else the course `price_from`.
+  priceFrom: number
+}
+
+// Every course that has a /courses/[slug]/green-fees page, with a single
+// comparable "from" price — used to list courses in a similar price bracket.
+export async function getGreenFeeComparables(): Promise<GreenFeeComparable[]> {
+  const { data: courses } = await supabase
+    .from('courses')
+    .select('id, slug, name, town, price_from')
+    .eq('active', true)
+
+  if (!courses?.length) {
+    return MOCK_COURSES
+      .filter(c => c.price_from != null)
+      .map(c => ({ slug: c.slug, name: c.name, town: c.town, priceFrom: c.price_from as number }))
+  }
+
+  const { data: priceRows } = await supabase
+    .from('course_prices')
+    .select('course_id, price_eur, time_slot')
+    .eq('rate_type', 'visitor')
+
+  const standardMin = new Map<string, number>()
+  const twilightMin = new Map<string, number>()
+  for (const r of priceRows ?? []) {
+    const bucket = r.time_slot === 'twilight' || r.time_slot === 'sunset' ? twilightMin : standardMin
+    const cur = bucket.get(r.course_id)
+    if (cur == null || r.price_eur < cur) bucket.set(r.course_id, r.price_eur)
+  }
+
+  const out: GreenFeeComparable[] = []
+  for (const c of courses) {
+    const price = standardMin.get(c.id) ?? twilightMin.get(c.id) ?? c.price_from
+    if (price == null) continue
+    out.push({ slug: c.slug, name: c.name, town: c.town, priceFrom: price })
+  }
+  return out
+}
+
 export async function getShopBySlug(slug: string): Promise<Shop | null> {
   const { data, error } = await supabase
     .from('shops')

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllCourseSlugs, getAllShopSlugs, getPublishedGuidePosts } from '@/lib/queries'
+import { getAllCourseSlugs, getAllShopSlugs, getPublishedGuidePosts, getCourseSlugsWithGreenFees } from '@/lib/queries'
 import { TOWN_PAGES } from '@/lib/towns'
 import { RESORT_PAGES } from '@/lib/resorts'
 
@@ -10,6 +10,7 @@ export const revalidate = 3600
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getAllCourseSlugs()
+  const greenFeeSlugs = await getCourseSlugsWithGreenFees()
   const shopSlugs = await getAllShopSlugs()
   const guidePosts = await getPublishedGuidePosts()
 
@@ -25,6 +26,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.8,
+  }))
+
+  const greenFeeUrls: MetadataRoute.Sitemap = greenFeeSlugs.map(slug => ({
+    url: `${BASE}/courses/${slug}/green-fees`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
   }))
 
   const townUrls: MetadataRoute.Sitemap = TOWN_PAGES.map(t => ({
@@ -100,6 +108,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...townUrls,
     ...courseUrls,
+    ...greenFeeUrls,
     ...resortUrls,
     ...hotelUrls,
     ...shopUrls,
