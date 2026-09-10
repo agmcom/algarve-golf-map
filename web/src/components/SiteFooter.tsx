@@ -1,6 +1,7 @@
 const LINKS = [
   { href: '/', label: 'Golf Courses in the Algarve' },
   { href: '/algarve-9-hole-courses', label: 'Algarve 9 Hole Golf Courses' },
+  { href: '/driving-ranges', label: 'Driving Ranges in the Algarve' },
   { href: '/club-rental', label: 'Golf Club Rental in the Algarve' },
   { href: '/golf-resorts', label: 'Golf Resorts in the Algarve' },
   { href: '/shops', label: 'Golf Shops in the Algarve' },
