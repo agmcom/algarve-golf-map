@@ -424,7 +424,9 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
 
       {plannerOpen && (
         <PlannerPanel
-          courses={courses}
+          courses={filteredCourses}
+          allCourses={courses}
+          hasActiveFilters={activeFilters.size > 0 || hcpMen != null || hcpLadies != null}
           selectedIds={plannedIds}
           onToggle={handleTogglePlan}
           onClear={handleClearPlan}

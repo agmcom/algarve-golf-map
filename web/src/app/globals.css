@@ -182,11 +182,11 @@ body {
 .map-pin--course.map-pin--selected .map-pin__arrow  { border-top: 9px solid #222; }
 
 /* Hotel: blue */
-.map-pin--hotel .map-pin__icon   { background: #1a6fe8; }
-.map-pin--hotel .map-pin__dot    { background: #1a6fe8; }
-.map-pin--hotel .map-pin__bubble { border-left: 3px solid #1a6fe8; }
-.map-pin--hotel.map-pin--selected .map-pin__bubble { background: #1a6fe8; color: #fff; border-color: #1a6fe8; }
-.map-pin--hotel.map-pin--selected .map-pin__arrow  { border-top: 9px solid #1a6fe8; }
+.map-pin--hotel .map-pin__icon   { background: #2B6090; }
+.map-pin--hotel .map-pin__dot    { background: #2B6090; }
+.map-pin--hotel .map-pin__bubble { border: 1.5px solid #2B6090; }
+.map-pin--hotel.map-pin--selected .map-pin__bubble { background: #2B6090; color: #fff; border-color: #2B6090; }
+.map-pin--hotel.map-pin--selected .map-pin__arrow  { border-top: 9px solid #2B6090; }
 
 /* Shop: amber */
 .map-pin--shop .map-pin__icon   { background: #e07b1a; }

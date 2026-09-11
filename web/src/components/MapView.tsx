@@ -33,7 +33,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
     const mapRef = useRef<mapboxgl.Map | null>(null)
     const markersRef = useRef<Map<string, { marker: mapboxgl.Marker; el: HTMLDivElement }>>(new Map())
     const courseMarkerIdsRef = useRef<Set<string>>(new Set())
-    const plannerHotelMarkersRef = useRef<mapboxgl.Marker[]>([])
+    const plannerHotelIdsRef = useRef<Set<string>>(new Set())
     const onSelectRef = useRef(onSelect)
     onSelectRef.current = onSelect
 
@@ -174,9 +174,9 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
       mapRef.current = map
 
       return () => {
+        plannerHotelIdsRef.current.forEach(id => markersRef.current.get(id)?.marker.remove())
+        plannerHotelIdsRef.current.clear()
         markersRef.current.clear()
-        plannerHotelMarkersRef.current.forEach(m => m.remove())
-        plannerHotelMarkersRef.current = []
         map.remove()
         mapRef.current = null
       }
@@ -190,20 +190,25 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
       })
     }, [plannedIds])
 
-    // Planner hotel markers
+    // Planner hotel markers — same pin style as courses, just the blue "hotel" variant
     useEffect(() => {
       const map = mapRef.current
+
       // Remove previous
-      plannerHotelMarkersRef.current.forEach(m => m.remove())
-      plannerHotelMarkersRef.current = []
-      if (!map || !plannerHotels.length) return
+      plannerHotelIdsRef.current.forEach(id => markersRef.current.get(id)?.marker.remove())
+      plannerHotelIdsRef.current.forEach(id => markersRef.current.delete(id))
+      plannerHotelIdsRef.current.clear()
+      if (!map) return
 
       plannerHotels.forEach(hotel => {
-        const el = createPlannerHotelPin(hotel.name, hotel.google_rating ?? null)
+        const el = createPin('hotel', `🏨 ${hotel.name}`, `from €${hotel.price_from ?? '—'}/night`, false, () => {
+          onSelectRef.current(hotel.id)
+        })
         const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
           .setLngLat([hotel.lng, hotel.lat])
           .addTo(map)
-        plannerHotelMarkersRef.current.push(marker)
+        markersRef.current.set(hotel.id, { marker, el })
+        plannerHotelIdsRef.current.add(hotel.id)
       })
     }, [plannerHotels])
 
@@ -229,7 +234,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
 
       if (selectedId && mapRef.current) {
         const course = courses.find(c => c.id === selectedId)
-        const hotel  = hotels.find(h => h.id === selectedId)
+        const hotel  = hotels.find(h => h.id === selectedId) ?? plannerHotels.find(h => h.id === selectedId)
         const shop   = shops.find(s => s.id === selectedId)
         const entity = course ?? hotel ?? shop
         if (entity) {
@@ -241,7 +246,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
           })
         }
       }
-    }, [selectedId, courses, hotels, shops])
+    }, [selectedId, courses, hotels, shops, plannerHotels])
 
     const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
 
@@ -333,45 +338,6 @@ function createPin(
   wrapper.appendChild(dot)
 
   wrapper.addEventListener('click', e => { e.stopPropagation(); onClick() })
-  return wrapper
-}
-
-
-function createPlannerHotelPin(name: string, rating: number | null): HTMLDivElement {
-  const wrapper = document.createElement('div')
-  wrapper.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:default'
-
-  const bubble = document.createElement('div')
-  bubble.style.cssText = `
-    padding: 5px 10px 6px;
-    border-radius: 10px;
-    background: #003580;
-    color: #fff;
-    border: 2px solid #fff;
-    box-shadow: 0 3px 12px rgba(0,53,128,.35);
-    white-space: nowrap;
-    font-family: var(--font-body, system-ui);
-    text-align: center;
-  `
-
-  const nameEl = document.createElement('div')
-  nameEl.style.cssText = 'font-size:11px;font-weight:700;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'
-  nameEl.textContent = name
-
-  bubble.appendChild(nameEl)
-
-  if (rating != null) {
-    const ratingEl = document.createElement('div')
-    ratingEl.style.cssText = 'font-size:10px;opacity:.85;margin-top:1px'
-    ratingEl.textContent = `⭐ ${rating.toFixed(1)}`
-    bubble.appendChild(ratingEl)
-  }
-
-  const arrow = document.createElement('div')
-  arrow.style.cssText = 'width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #003580;margin-top:-1px'
-
-  wrapper.appendChild(bubble)
-  wrapper.appendChild(arrow)
   return wrapper
 }
 

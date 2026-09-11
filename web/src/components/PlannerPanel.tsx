@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { BedDouble } from 'lucide-react'
-import { calculateZone, maxMinutesToCourses, type PlannerResult } from '@/lib/planner'
+import { calculateZone, maxMinutesToCourses, timeToRadiusKm, type PlannerResult } from '@/lib/planner'
 import { getHotelsNear } from '@/lib/queries'
 import type { Course, Hotel } from '@/types/database'
 
@@ -10,6 +10,8 @@ const TIME_OPTIONS = [15, 30, 45, 60]
 
 interface PlannerPanelProps {
   courses: Course[]
+  allCourses: Course[]
+  hasActiveFilters: boolean
   selectedIds: Set<string>
   onToggle: (id: string) => void
   onClear: () => void
@@ -18,28 +20,31 @@ interface PlannerPanelProps {
   onClose: () => void
 }
 
-export function PlannerPanel({ courses, selectedIds, onToggle, onClear, onResult, onHotels, onClose }: PlannerPanelProps) {
+export function PlannerPanel({ courses, allCourses, hasActiveFilters, selectedIds, onToggle, onClear, onResult, onHotels, onClose }: PlannerPanelProps) {
   const [maxMinutes, setMaxMinutes] = useState(30)
-  const [result, setResult] = useState<PlannerResult | null>(null)
+  const [showAll, setShowAll] = useState(false)
+
+  const displayCourses = hasActiveFilters && !showAll ? courses : allCourses
+
+  // Zone is derived live from the selected courses and max travel time
+  const result = useMemo<PlannerResult | null>(() => {
+    if (selectedIds.size === 0) return null
+    const selected = allCourses.filter(c => selectedIds.has(c.id))
+    return calculateZone(selected, maxMinutes)
+  }, [selectedIds, maxMinutes, allCourses])
+
+  // Sync the derived zone out to the map (external system)
+  useEffect(() => {
+    onResult(result)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [result])
 
   function toggleCourse(id: string) {
     onToggle(id)
-    setResult(null)
-    onResult(null)
-  }
-
-  function calculate() {
-    const selected = courses.filter(c => selectedIds.has(c.id))
-    if (selected.length === 0) return
-    const res = calculateZone(selected, maxMinutes)
-    setResult(res)
-    onResult(res)
   }
 
   function reset() {
     onClear()
-    setResult(null)
-    onResult(null)
   }
 
   return (
@@ -73,8 +78,22 @@ export function PlannerPanel({ courses, selectedIds, onToggle, onClear, onResult
               <button onClick={reset} style={resetBtn}>Clear</button>
             )}
           </div>
+
+          {hasActiveFilters && (
+            <div style={filterNotice}>
+              <span>
+                {showAll
+                  ? `Showing all ${allCourses.length} courses`
+                  : `Showing ${courses.length} of ${allCourses.length} courses matching your filters`}
+              </span>
+              <button onClick={() => setShowAll(v => !v)} style={resetBtn}>
+                {showAll ? 'Show filtered' : 'Show all'}
+              </button>
+            </div>
+          )}
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-            {courses.map(course => {
+            {displayCourses.map(course => {
               const checked = selectedIds.has(course.id)
               return (
                 <label key={course.id} style={courseRow(checked)}>
@@ -104,7 +123,7 @@ export function PlannerPanel({ courses, selectedIds, onToggle, onClear, onResult
             {TIME_OPTIONS.map(min => (
               <button
                 key={min}
-                onClick={() => { setMaxMinutes(min); setResult(null); onResult(null) }}
+                onClick={() => setMaxMinutes(min)}
                 style={timeBtn(maxMinutes === min)}
               >
                 {min} min
@@ -113,32 +132,61 @@ export function PlannerPanel({ courses, selectedIds, onToggle, onClear, onResult
           </div>
         </div>
 
-        {/* Calculate */}
-        <button
-          onClick={calculate}
-          disabled={selectedIds.size === 0}
-          style={calcBtn(selectedIds.size > 0)}
-        >
-          Find my zone →
-        </button>
+        {selectedIds.size === 0 && (
+          <div style={{ fontSize: 12, color: '#b0b0b0', textAlign: 'center', padding: '12px 0' }}>
+            Select at least one course to see hotel options
+          </div>
+        )}
 
         {/* Results */}
-        {result && <Results result={result} onHotels={onHotels} />}
+        {result && <Results result={result} maxMinutes={maxMinutes} onHotels={onHotels} />}
 
       </div>
     </div>
   )
 }
 
-function Results({ result, onHotels }: { result: PlannerResult; onHotels?: (hotels: (Hotel & { distance_km: number })[]) => void }) {
+const NO_MATCH_SEARCH_RADIUS_KM = 100
+const NO_MATCH_HOTEL_COUNT = 5
+
+function Results({ result, maxMinutes, onHotels }: { result: PlannerResult; maxMinutes: number; onHotels?: (hotels: (Hotel & { distance_km: number })[]) => void }) {
   const [hotels, setHotels] = useState<(Hotel & { distance_km: number })[]>([])
+  const [noExactMatch, setNoExactMatch] = useState(false)
 
   useEffect(() => {
-    getHotelsNear(result.center[1], result.center[0], 20).then(h => {
-      setHotels(h)
-      onHotels?.(h)
-    })
-  }, [result.center]) // eslint-disable-line react-hooks/exhaustive-deps
+    let cancelled = false
+    const courses = result.courseTimes.map(ct => ct.course)
+
+    async function run() {
+      const searchRadiusKm = Math.max(timeToRadiusKm(maxMinutes), 10)
+      const nearby = await getHotelsNear(result.center[1], result.center[0], searchRadiusKm)
+      const qualifying = nearby.filter(hotel => maxMinutesToCourses(hotel.lat, hotel.lng, courses) <= maxMinutes)
+
+      if (qualifying.length > 0) {
+        if (cancelled) return
+        setHotels(qualifying)
+        setNoExactMatch(false)
+        onHotels?.(qualifying)
+        return
+      }
+
+      // Nothing meets the requirement — widen the search and fall back to the closest options
+      const wide = await getHotelsNear(result.center[1], result.center[0], NO_MATCH_SEARCH_RADIUS_KM)
+      const closest = wide
+        .map(hotel => ({ hotel, minutes: maxMinutesToCourses(hotel.lat, hotel.lng, courses) }))
+        .sort((a, b) => a.minutes - b.minutes)
+        .slice(0, NO_MATCH_HOTEL_COUNT)
+        .map(r => r.hotel)
+
+      if (cancelled) return
+      setHotels(closest)
+      setNoExactMatch(true)
+      onHotels?.(closest)
+    }
+
+    run()
+    return () => { cancelled = true }
+  }, [result.center, result.courseTimes, maxMinutes]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div style={{ marginTop: 24 }}>
@@ -151,6 +199,16 @@ function Results({ result, onHotels }: { result: PlannerResult; onHotels?: (hote
           padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#7a5c00', lineHeight: 1.5,
         }}>
           ⚠️ {result.warning}
+        </div>
+      )}
+
+      {/* Warning if no hotel meets the max travel time */}
+      {noExactMatch && (
+        <div style={{
+          background: '#fff8e6', border: '1px solid #f5d87a', borderRadius: 10,
+          padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#7a5c00', lineHeight: 1.5,
+        }}>
+          ⚠️ No hotels found within {maxMinutes} min of all selected courses. Showing the closest options instead.
         </div>
       )}
 
@@ -217,7 +275,7 @@ function Results({ result, onHotels }: { result: PlannerResult; onHotels?: (hote
           style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
             padding: '13px 16px', borderRadius: 10,
-            background: '#003580', color: '#fff',
+            background: '#2B6090', color: '#fff',
             textDecoration: 'none', fontSize: 14, fontWeight: 700,
           }}
         >
@@ -234,6 +292,13 @@ const sectionLabel: React.CSSProperties = {
   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
   fontSize: 11, fontWeight: 600, color: '#b0b0b0',
   letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: 10,
+}
+
+const filterNotice: React.CSSProperties = {
+  display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8,
+  fontSize: 12, color: '#2B6090', background: '#eef4f9',
+  border: '1px solid #d6e6f2', borderRadius: 8,
+  padding: '8px 10px', marginBottom: 10, lineHeight: 1.4,
 }
 
 const resetBtn: React.CSSProperties = {
@@ -264,17 +329,6 @@ function timeBtn(active: boolean): React.CSSProperties {
     background: active ? '#2B6090' : '#f4f4f4',
     color: active ? '#fff' : '#4a4a4a',
     transition: 'background .12s, color .12s',
-  }
-}
-
-function calcBtn(enabled: boolean): React.CSSProperties {
-  return {
-    width: '100%', height: 44, borderRadius: 10, border: 'none',
-    cursor: enabled ? 'pointer' : 'not-allowed',
-    background: enabled ? '#2B6090' : '#f4f4f4',
-    color: enabled ? '#fff' : '#b0b0b0',
-    fontSize: 14, fontWeight: 700,
-    transition: 'background .15s, color .15s',
   }
 }
 
