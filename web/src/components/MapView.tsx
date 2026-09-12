@@ -202,7 +202,9 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
 
       plannerHotels.forEach(hotel => {
         const el = createPin('hotel', `🏨 ${hotel.name}`, `from €${hotel.price_from ?? '—'}/night`, false, () => {
-          onSelectRef.current(hotel.id)
+          const url = hotel.booking_url
+            ?? `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(hotel.name + ' Algarve')}&utm_source=algarvegolfmap.com`
+          window.open(url, '_blank', 'noopener,noreferrer')
         })
         const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
           .setLngLat([hotel.lng, hotel.lat])
@@ -234,7 +236,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
 
       if (selectedId && mapRef.current) {
         const course = courses.find(c => c.id === selectedId)
-        const hotel  = hotels.find(h => h.id === selectedId) ?? plannerHotels.find(h => h.id === selectedId)
+        const hotel  = hotels.find(h => h.id === selectedId)
         const shop   = shops.find(s => s.id === selectedId)
         const entity = course ?? hotel ?? shop
         if (entity) {
@@ -246,7 +248,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
           })
         }
       }
-    }, [selectedId, courses, hotels, shops, plannerHotels])
+    }, [selectedId, courses, hotels, shops])
 
     const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
 
