@@ -522,7 +522,8 @@ export default async function GreenFeesPage(
           <div style={{ maxWidth: 700, fontSize: 14.5, lineHeight: 1.7, color: '#444', borderTop: '1px solid #ebebeb', paddingTop: 20 }}>
             <p style={{ margin: '0 0 10px' }}>
               For everything else about the course — layout, designer, facilities, nearby hotels and how to get there — see the full
-              {' '}<Link href={`/courses/${slug}`} style={link}>{course.name} course guide</Link>.
+              {' '}<Link href={`/courses/${slug}`} style={link}>{course.name} course guide</Link>, and read what golfers say about
+              {' '}the course condition in the <Link href={`/courses/${slug}/reviews`} style={link}>{course.name} reviews</Link>.
               {townPath ? <> More options in the area are on the <Link href={`/${townPath}/golf-courses`} style={link}>{course.town} golf courses</Link> page.</> : null}
             </p>
             <p style={{ margin: 0 }}>

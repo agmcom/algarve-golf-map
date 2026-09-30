@@ -85,7 +85,10 @@ export default async function AdminCoursesPage() {
           <span style={{ color: '#555' }}>/</span>
           <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>Admin — Golf Courses</span>
         </div>
-        <span style={{ color: '#888', fontSize: 13 }}>{courses?.length ?? 0} courses</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <Link href="/admin/reviews" style={{ color: '#fff', fontSize: 13, fontWeight: 600, textDecoration: 'none' }}>Reviews →</Link>
+          <span style={{ color: '#888', fontSize: 13 }}>{courses?.length ?? 0} courses</span>
+        </div>
       </div>
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 24px' }}>

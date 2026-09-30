@@ -1,5 +1,5 @@
 import { supabase } from './supabase'
-import type { Course, CoursePrice, Hotel, Shop, Airport, GuidePost } from '@/types/database'
+import type { Course, CoursePrice, CourseReview, Hotel, Shop, Airport, GuidePost } from '@/types/database'
 import { MOCK_COURSES } from '@/data/courses'
 import { FALLBACK_AIRPORTS } from '@/data/airports'
 
@@ -320,4 +320,34 @@ export async function getRelatedGuidePosts(postId: string, categories: string[],
 
   if (error || !data) return []
   return data
+}
+
+// ---- Course reviews ----
+
+// Approved reviews for one course (public view — no email/IP), newest round first.
+export async function getApprovedReviews(courseId: string): Promise<CourseReview[]> {
+  const { data, error } = await supabase
+    .from('course_reviews_public')
+    .select('*')
+    .eq('course_id', courseId)
+    .order('played_month', { ascending: false })
+    .order('approved_at', { ascending: false })
+
+  if (error) {
+    console.error('getApprovedReviews error:', error.message)
+    return []
+  }
+  return (data ?? []) as CourseReview[]
+}
+
+// Slugs of courses with at least `min` approved reviews (their reviews page is indexable).
+export async function getCourseSlugsWithReviews(min = 1): Promise<string[]> {
+  const { data, error } = await supabase
+    .from('courses')
+    .select('slug, review_count')
+    .eq('active', true)
+    .gte('review_count', min)
+
+  if (error) return []
+  return (data ?? []).map(c => c.slug)
 }

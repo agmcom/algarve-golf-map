@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants'
 
 const securityHeaders = [
   { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
@@ -8,7 +9,7 @@ const securityHeaders = [
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
 ]
 
-const nextConfig: NextConfig = {
+const baseConfig: NextConfig = {
   turbopack: {},
   images: {
     remotePatterns: [
@@ -33,4 +34,11 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+// The project lives in iCloud-synced ~/Documents, and iCloud deletes files out
+// of `.next/dev` while the dev server is running. Folders ending in `.nosync`
+// are skipped by iCloud, so the dev server builds there instead. Production
+// builds (Vercel) keep the default `.next`.
+export default function nextConfig(phase: string): NextConfig {
+  if (phase === PHASE_DEVELOPMENT_SERVER) return { ...baseConfig, distDir: '.next.nosync' }
+  return baseConfig
+}

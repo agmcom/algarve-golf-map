@@ -159,6 +159,7 @@ export default async function TownPage({
                     {course.holes} holes
                     {course.par != null && ` · Par ${course.par}`}
                     {course.difficulty && ` · ${course.difficulty.charAt(0).toUpperCase() + course.difficulty.slice(1)}`}
+                    {course.review_count > 0 && course.rating != null && ` · ★ ${course.rating} (${course.review_count} review${course.review_count === 1 ? '' : 's'})`}
                   </span>
                   {course.price_from != null && (
                     <span className="course-list-item__badges">
@@ -170,6 +171,11 @@ export default async function TownPage({
                   )}
                 </div>
               </Link>
+              {course.review_count > 0 && (
+                <Link href={`/courses/${course.slug}/reviews`} className="course-list-item__reviews">
+                  Read {course.name} reviews →
+                </Link>
+              )}
             </li>
           ))}
         </ul>

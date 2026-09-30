@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { getAllCourseSlugs, getAllShopSlugs, getPublishedGuidePosts, getCourseSlugsWithGreenFees } from '@/lib/queries'
+import { getAllCourseSlugs, getAllShopSlugs, getPublishedGuidePosts, getCourseSlugsWithGreenFees, getCourseSlugsWithReviews } from '@/lib/queries'
+import { MIN_REVIEWS_TO_INDEX } from '@/lib/reviews'
 import { TOWN_PAGES } from '@/lib/towns'
 import { RESORT_PAGES } from '@/lib/resorts'
 
@@ -11,6 +12,7 @@ export const revalidate = 3600
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getAllCourseSlugs()
   const greenFeeSlugs = await getCourseSlugsWithGreenFees()
+  const reviewSlugs = await getCourseSlugsWithReviews(MIN_REVIEWS_TO_INDEX)
   const shopSlugs = await getAllShopSlugs()
   const guidePosts = await getPublishedGuidePosts()
 
@@ -30,6 +32,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const greenFeeUrls: MetadataRoute.Sitemap = greenFeeSlugs.map(slug => ({
     url: `${BASE}/courses/${slug}/green-fees`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }))
+
+  // Only reviews pages that are indexable (enough approved reviews).
+  const reviewUrls: MetadataRoute.Sitemap = reviewSlugs.map(slug => ({
+    url: `${BASE}/courses/${slug}/reviews`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,
@@ -109,6 +119,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...townUrls,
     ...courseUrls,
     ...greenFeeUrls,
+    ...reviewUrls,
     ...resortUrls,
     ...hotelUrls,
     ...shopUrls,

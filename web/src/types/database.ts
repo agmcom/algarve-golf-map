@@ -354,3 +354,57 @@ export interface GuidePost {
   created_at: string
   updated_at: string
 }
+
+
+// ---- Course reviews ----
+
+export type ReviewStatus    = 'unverified' | 'pending' | 'approved' | 'rejected'
+export type ReviewGroupType = 'couple' | 'friends' | 'society' | 'solo'
+export type ReviewRoundTime = '<4h' | '4-4.5h' | '4.5-5h' | '>5h'
+export type ReviewBuggyRule = 'fairways' | '90-degree' | 'paths-only' | 'walked'
+export type ReviewTeeTime   = 'morning' | 'midday' | 'twilight'
+export type ReviewDifficulty = 'easier' | 'as-expected' | 'harder'
+
+// Public shape (course_reviews_public view) — no email / IP / token.
+export interface CourseReview {
+  id: string
+  course_id: string
+  reviewer_name: string
+  country: string | null
+  handicap: number | null
+  played_month: string          // YYYY-MM-01
+  group_type: ReviewGroupType | null
+  tee_time: ReviewTeeTime | null
+  difficulty_for_hcp: ReviewDifficulty | null
+
+  rating_overall: number
+  rating_greens: number
+  rating_fairways: number
+  rating_tees_bunkers: number
+  rating_layout: number | null
+  rating_views: number | null
+  rating_pace: number | null
+  rating_staff: number | null
+  rating_clubhouse: number | null
+  rating_value: number | null
+
+  hired_course_clubs: boolean | null   // hired from the course's own pro shop
+  rating_club_hire: number | null
+
+  round_time: ReviewRoundTime | null
+  buggy_rule: ReviewBuggyRule | null
+  condition_flags: string[]
+  would_recommend: boolean
+
+  title: string
+  body: string
+  approved_at: string | null
+  created_at: string
+}
+
+// Full row, admin only.
+export interface CourseReviewAdmin extends CourseReview {
+  status: ReviewStatus
+  email: string
+  verified_at: string | null
+}

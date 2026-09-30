@@ -45,6 +45,7 @@ export default async function AdminStatsPage() {
           <div style={{ display: 'flex', gap: 12 }}>
             <Link href="/admin/courses" style={{ fontSize: 13, color: '#2B6090', textDecoration: 'none', fontWeight: 500 }}>Courses</Link>
             <Link href="/admin/hotels" style={{ fontSize: 13, color: '#2B6090', textDecoration: 'none', fontWeight: 500 }}>Hotels</Link>
+            <Link href="/admin/reviews" style={{ fontSize: 13, color: '#2B6090', textDecoration: 'none', fontWeight: 500 }}>Reviews</Link>
           </div>
         </div>
 

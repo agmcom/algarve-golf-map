@@ -369,6 +369,21 @@ body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Secondary "Read reviews" link under a course card */
+.course-list-item a.course-list-item__reviews {
+  display: inline-block;
+  padding: 6px 14px 0;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2B6090;
+}
+
+.course-list-item a.course-list-item__reviews:hover {
+  box-shadow: none;
+  text-decoration: underline;
+}
+
 .resort-hotel-card {
   display: flex;
   align-items: center;

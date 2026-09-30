@@ -1,9 +1,12 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear, getShopsNear } from '@/lib/queries'
+import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear, getShopsNear, getApprovedReviews } from '@/lib/queries'
 import { RESORT_PAGES, resortSlugForCourse } from '@/lib/resorts'
 import { summarizePrices } from '@/lib/prices'
+import { summarizeReviews, sortReviews, MIN_REVIEWS_TO_INDEX } from '@/lib/reviews'
+import { ReviewStars } from '@/components/ReviewStars'
+import { ReviewCard } from '@/components/ReviewCard'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { CourseMapImage } from '@/components/CourseMapImage'
 import { PageViewTracker } from '@/components/PageViewTracker'
@@ -101,12 +104,15 @@ export default async function CoursePage(
   const course = await getCourseBySlug(slug)
   if (!course) notFound()
 
-  const [hotels, airportList, nearbyCourses, nearbyShops] = await Promise.all([
+  const [hotels, airportList, nearbyCourses, nearbyShops, approvedReviews] = await Promise.all([
     getHotelsNear(course.lat, course.lng),
     getAirports(),
     getCoursesNear(course.lat, course.lng, course.id, 5),
     getShopsNear(course.lat, course.lng, 5),
+    getApprovedReviews(course.id),
   ])
+  const reviewSummary = summarizeReviews(approvedReviews)
+  const latestReviews = sortReviews(approvedReviews).slice(0, 2)
   const airports = airportDistances(course.lat, course.lng, airportList).sort((a, b) => a.roadKm - b.roadKm)
 
   const priceSummary = summarizePrices(course.prices)
@@ -165,6 +171,15 @@ export default async function CoursePage(
     ...(amenityFeatures.length > 0 && { amenityFeature: amenityFeatures }),
     currenciesAccepted: 'EUR',
     touristType: 'Golf Tourists',
+    ...(reviewSummary.count >= MIN_REVIEWS_TO_INDEX && reviewSummary.overall != null && {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: reviewSummary.overall,
+        reviewCount: reviewSummary.count,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    }),
     ...(resort && {
       isPartOf: {
         '@type': 'Resort',
@@ -246,6 +261,7 @@ export default async function CoursePage(
           { id: 'getting-there', label: 'Getting There' },
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
           ...(course.dress_code ? [{ id: 'dress-code', label: 'Dress Code' }] : []),
+          { id: 'reviews', label: 'Reviews' },
           { id: 'course-map', label: 'Course Map' },
           { id: 'nearby-hotels', label: 'Nearby Hotels' },
           { id: 'nearby-courses', label: 'Nearby Courses' },
@@ -494,6 +510,58 @@ export default async function CoursePage(
                   <a href={`tel:${course.phone}`} style={{ display: 'block', textAlign: 'center', marginTop: 14, fontSize: 13, color: '#6a6a6a', textDecoration: 'none' }}>
                     📞 {course.phone}
                   </a>
+                )}
+              </section>
+
+              {/* Reviews */}
+              <section id="reviews" style={{ marginBottom: 36 }}>
+                <h2 style={sectionTitle}>Reviews</h2>
+                {reviewSummary.count > 0 && reviewSummary.overall != null ? (
+                  <>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 14 }}>
+                      <span style={{ fontSize: 30, fontWeight: 800, color: '#222', lineHeight: 1 }}>{reviewSummary.overall}</span>
+                      <ReviewStars value={reviewSummary.overall} size={17} />
+                      <span style={{ fontSize: 14, color: '#6a6a6a' }}>
+                        {reviewSummary.count} review{reviewSummary.count === 1 ? '' : 's'}
+                        {reviewSummary.recommendPct != null && ` · ${reviewSummary.recommendPct}% recommend`}
+                      </span>
+                    </div>
+                    {reviewSummary.recent && (
+                      <p style={{ fontSize: 14, color: '#444', margin: '0 0 14px', lineHeight: 1.6 }}>
+                        Recent condition ({reviewSummary.recent.rangeLabel}):{' '}
+                        {reviewSummary.recent.condition.map((c, i) => (
+                          <span key={c.key}>{i > 0 && ' · '}{c.label} <strong>{c.average}/5</strong></span>
+                        ))}
+                      </p>
+                    )}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                      {latestReviews.map(r => <ReviewCard key={r.id} review={r} clampLines={4} />)}
+                    </div>
+                    <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginTop: 14 }}>
+                      <Link href={`/courses/${slug}/reviews`} style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+                        Read all {reviewSummary.count} review{reviewSummary.count === 1 ? '' : 's'} →
+                      </Link>
+                      <Link href={`/courses/${slug}/reviews/write`} style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+                        Write a review
+                      </Link>
+                    </div>
+                  </>
+                ) : (
+                  <div style={{
+                    padding: '22px 20px', borderRadius: 14,
+                    border: '1px solid #ebebeb', background: '#fff',
+                    display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap',
+                  }}>
+                    <span style={{ fontSize: 14.5, color: '#444', lineHeight: 1.6, flex: '1 1 260px' }}>
+                      No reviews yet. Played {course.name} recently? Tell other golfers how the course was playing.
+                    </span>
+                    <Link href={`/courses/${slug}/reviews/write`} style={{
+                      padding: '11px 18px', borderRadius: 12, background: '#2B6090', color: '#fff',
+                      fontSize: 14, fontWeight: 700, textDecoration: 'none', flexShrink: 0,
+                    }}>
+                      Write a review
+                    </Link>
+                  </div>
                 )}
               </section>
 
