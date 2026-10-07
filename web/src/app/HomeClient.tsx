@@ -139,6 +139,7 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
   const [hcpLadies, setHcpLadies] = useState<number | null>(null)
   const [plannedIds, setPlannedIds] = useState<Set<string>>(new Set())
   const [plannerHotels, setPlannerHotels] = useState<(Hotel & { distance_km: number })[]>([])
+  const [focusedHotelId, setFocusedHotelId] = useState<string | null>(null)
   const [compareIds, setCompareIds] = useState<string[]>([])
   const [compareOpen, setCompareOpen] = useState(false)
   const [comparePopupOpen, setComparePopupOpen] = useState(false)
@@ -275,6 +276,7 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
   const handleClosePlanner = useCallback(() => {
     setPlannerOpen(false)
     setPlannerHotels([])
+    setFocusedHotelId(null)
     mapRef.current?.clearZone()
   }, [])
 
@@ -296,7 +298,9 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
         selectedId={selectedId}
         plannedIds={plannedIds}
         plannerHotels={plannerHotels}
+        focusedHotelId={focusedHotelId}
         onSelect={handleSelectFromMap}
+        onPlannerHotelClick={setFocusedHotelId}
       />
 
       {!plannerOpen && (
@@ -432,6 +436,8 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
           onClear={handleClearPlan}
           onResult={handlePlannerResult}
           onHotels={setPlannerHotels}
+          focusedHotelId={focusedHotelId}
+          onFocusHotel={setFocusedHotelId}
           onClose={handleClosePlanner}
         />
       )}

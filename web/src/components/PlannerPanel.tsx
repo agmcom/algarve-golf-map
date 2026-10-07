@@ -1,10 +1,13 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { BedDouble } from 'lucide-react'
-import { calculateZone, maxMinutesToCourses, timeToRadiusKm, type PlannerResult } from '@/lib/planner'
+import { calculateZone, maxMinutesToCourses, minutesToCourse, timeToRadiusKm, type PlannerResult } from '@/lib/planner'
 import { getHotelsNear } from '@/lib/queries'
 import type { Course, Hotel } from '@/types/database'
+import { TYPE_LABEL, bookingUrl, countByTypeGroup, typeGroupOf, type HotelTypeGroup } from '@/lib/hotels'
+import { HotelRating, OnsiteBadge, ServiceChips } from './HotelCard'
+import { HotelTypeFilter } from './HotelTypeFilter'
 
 const TIME_OPTIONS = [15, 30, 45, 60]
 
@@ -17,10 +20,12 @@ interface PlannerPanelProps {
   onClear: () => void
   onResult: (result: PlannerResult | null) => void
   onHotels?: (hotels: (Hotel & { distance_km: number })[]) => void
+  focusedHotelId: string | null
+  onFocusHotel: (id: string | null) => void
   onClose: () => void
 }
 
-export function PlannerPanel({ courses, allCourses, hasActiveFilters, selectedIds, onToggle, onClear, onResult, onHotels, onClose }: PlannerPanelProps) {
+export function PlannerPanel({ courses, allCourses, hasActiveFilters, selectedIds, onToggle, onClear, onResult, onHotels, focusedHotelId, onFocusHotel, onClose }: PlannerPanelProps) {
   const [maxMinutes, setMaxMinutes] = useState(30)
   const [showAll, setShowAll] = useState(false)
 
@@ -139,7 +144,7 @@ export function PlannerPanel({ courses, allCourses, hasActiveFilters, selectedId
         )}
 
         {/* Results */}
-        {result && <Results result={result} maxMinutes={maxMinutes} onHotels={onHotels} />}
+        {result && <Results result={result} maxMinutes={maxMinutes} onHotels={onHotels} focusedHotelId={focusedHotelId} onFocusHotel={onFocusHotel} />}
 
       </div>
     </div>
@@ -148,30 +153,40 @@ export function PlannerPanel({ courses, allCourses, hasActiveFilters, selectedId
 
 const NO_MATCH_SEARCH_RADIUS_KM = 100
 const NO_MATCH_HOTEL_COUNT = 5
+const MAX_HOTELS = 25
 
-function Results({ result, maxMinutes, onHotels }: { result: PlannerResult; maxMinutes: number; onHotels?: (hotels: (Hotel & { distance_km: number })[]) => void }) {
-  const [hotels, setHotels] = useState<(Hotel & { distance_km: number })[]>([])
+type PlannerHotel = Hotel & { distance_km: number }
+
+function Results({ result, maxMinutes, onHotels, focusedHotelId, onFocusHotel }: {
+  result: PlannerResult
+  maxMinutes: number
+  onHotels?: (hotels: PlannerHotel[]) => void
+  focusedHotelId: string | null
+  onFocusHotel: (id: string | null) => void
+}) {
+  const [hotels, setHotels] = useState<PlannerHotel[]>([])
   const [noExactMatch, setNoExactMatch] = useState(false)
+  const [group, setGroup] = useState<HotelTypeGroup | 'all'>('all')
+  const cardRefs = useRef(new Map<string, HTMLDivElement>())
+  const courses = useMemo(() => result.courseTimes.map(ct => ct.course), [result.courseTimes])
 
   useEffect(() => {
     let cancelled = false
-    const courses = result.courseTimes.map(ct => ct.course)
 
     async function run() {
       const searchRadiusKm = Math.max(timeToRadiusKm(maxMinutes), 10)
-      const nearby = await getHotelsNear(result.center[1], result.center[0], searchRadiusKm)
+      const nearby = await getHotelsNear(result.center[1], result.center[0], searchRadiusKm, MAX_HOTELS)
       const qualifying = nearby.filter(hotel => maxMinutesToCourses(hotel.lat, hotel.lng, courses) <= maxMinutes)
 
       if (qualifying.length > 0) {
         if (cancelled) return
         setHotels(qualifying)
         setNoExactMatch(false)
-        onHotels?.(qualifying)
         return
       }
 
       // Nothing meets the requirement — widen the search and fall back to the closest options
-      const wide = await getHotelsNear(result.center[1], result.center[0], NO_MATCH_SEARCH_RADIUS_KM)
+      const wide = await getHotelsNear(result.center[1], result.center[0], NO_MATCH_SEARCH_RADIUS_KM, 100)
       const closest = wide
         .map(hotel => ({ hotel, minutes: maxMinutesToCourses(hotel.lat, hotel.lng, courses) }))
         .sort((a, b) => a.minutes - b.minutes)
@@ -181,12 +196,34 @@ function Results({ result, maxMinutes, onHotels }: { result: PlannerResult; maxM
       if (cancelled) return
       setHotels(closest)
       setNoExactMatch(true)
-      onHotels?.(closest)
     }
 
     run()
     return () => { cancelled = true }
-  }, [result.center, result.courseTimes, maxMinutes]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [result.center, courses, maxMinutes])
+
+  const visible = useMemo(
+    () => group === 'all' ? hotels : hotels.filter(h => typeGroupOf(h.accommodation_type) === group),
+    [hotels, group],
+  )
+
+  // Map pins follow the filtered list
+  useEffect(() => {
+    onHotels?.(visible)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible])
+
+  // A pin click focuses a card: bring it into view inside the panel
+  useEffect(() => {
+    if (!focusedHotelId) return
+    cardRefs.current.get(focusedHotelId)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+  }, [focusedHotelId, visible])
+
+  function changeGroup(g: HotelTypeGroup | 'all') {
+    setGroup(g)
+    const stillVisible = g === 'all' || hotels.some(h => h.id === focusedHotelId && typeGroupOf(h.accommodation_type) === g)
+    if (!stillVisible) onFocusHotel(null)
+  }
 
   return (
     <div style={{ marginTop: 24 }}>
@@ -194,20 +231,12 @@ function Results({ result, maxMinutes, onHotels }: { result: PlannerResult; maxM
 
       {/* Warning if fallback */}
       {result.warning && (
-        <div style={{
-          background: '#fff8e6', border: '1px solid #f5d87a', borderRadius: 10,
-          padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#7a5c00', lineHeight: 1.5,
-        }}>
-          ⚠️ {result.warning}
-        </div>
+        <div style={warningBox}>⚠️ {result.warning}</div>
       )}
 
       {/* Warning if no hotel meets the max travel time */}
       {noExactMatch && (
-        <div style={{
-          background: '#fff8e6', border: '1px solid #f5d87a', borderRadius: 10,
-          padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#7a5c00', lineHeight: 1.5,
-        }}>
+        <div style={warningBox}>
           ⚠️ No hotels found within {maxMinutes} min of all selected courses. Showing the closest options instead.
         </div>
       )}
@@ -218,53 +247,24 @@ function Results({ result, maxMinutes, onHotels }: { result: PlannerResult; maxM
           Where to stay
         </div>
 
-        {hotels.length > 0 && (
+        <HotelTypeFilter value={group} onChange={changeGroup} total={hotels.length} counts={countByTypeGroup(hotels)} />
+
+        {visible.length > 0 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 12 }}>
-            {hotels.map(h => {
-              const isOnsiteForSelection = result.courseTimes.some(ct => ct.course.onsite_hotel_id === h.id)
-              return (
-              <a
+            {visible.map(h => (
+              <div
                 key={h.id}
-                href={h.booking_url ?? `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(h.name + ' Algarve')}&utm_source=algarvegolfmap.com`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'block', padding: '10px 12px', borderRadius: 10,
-                  border: '1px solid #ebebeb', background: '#fafafa',
-                  textDecoration: 'none',
-                }}
+                ref={el => { if (el) cardRefs.current.set(h.id, el); else cardRefs.current.delete(h.id) }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: '#222', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                        {h.name}
-                      </span>
-                      {isOnsiteForSelection && (
-                        <span style={{
-                          fontSize: 10, fontWeight: 700, color: '#22a06b',
-                          background: '#edf7f2', border: '1px solid #b8e8d0',
-                          borderRadius: 6, padding: '1px 6px',
-                          letterSpacing: '.02em', flexShrink: 0,
-                        }}>
-                          On-site
-                        </span>
-                      )}
-                    </div>
-                    {h.stars && (
-                      <div style={{ fontSize: 11, color: '#f5a623', marginTop: 2 }}>
-                        {'★'.repeat(h.stars)}
-                      </div>
-                    )}
-                  </div>
-                  <div style={{ fontSize: 11, color: '#6a6a6a', flexShrink: 0, marginLeft: 8, marginTop: 2, textAlign: 'right' }}>
-                    <div>~{maxMinutesToCourses(h.lat, h.lng, result.courseTimes.map(ct => ct.course))} min</div>
-                    <div style={{ fontSize: 9, color: '#b0b0b0' }}>max to ⛳</div>
-                  </div>
-                </div>
-              </a>
-              )
-            })}
+                <PlannerHotelCard
+                  hotel={h}
+                  courses={courses}
+                  isOnsite={courses.some(c => c.onsite_hotel_id === h.id)}
+                  focused={h.id === focusedHotelId}
+                  onToggle={() => onFocusHotel(h.id === focusedHotelId ? null : h.id)}
+                />
+              </div>
+            ))}
           </div>
         )}
 
@@ -284,6 +284,89 @@ function Results({ result, maxMinutes, onHotels }: { result: PlannerResult; maxM
       </div>
     </div>
   )
+}
+
+// Compact row; expands in place (pin click or tap) with services, drive times and the booking button
+function PlannerHotelCard({ hotel, courses, isOnsite, focused, onToggle }: {
+  hotel: PlannerHotel
+  courses: Course[]
+  isOnsite: boolean
+  focused: boolean
+  onToggle: () => void
+}) {
+  const type = hotel.accommodation_type ? TYPE_LABEL[hotel.accommodation_type] : null
+  const maxMin = maxMinutesToCourses(hotel.lat, hotel.lng, courses)
+
+  return (
+    <div style={{
+      borderRadius: 10,
+      border: `1px solid ${focused ? '#2B6090' : '#ebebeb'}`,
+      background: focused ? '#fff' : '#fafafa',
+      boxShadow: focused ? '0 4px 16px rgba(43,96,144,.12)' : 'none',
+      transition: 'border-color .15s, box-shadow .15s',
+    }}>
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={focused}
+        style={{
+          display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8,
+          padding: '10px 12px', background: 'none', border: 'none', cursor: 'pointer',
+          textAlign: 'left', fontFamily: 'inherit',
+        }}
+      >
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <span style={{ fontSize: 13, fontWeight: 600, color: '#222', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: focused ? 'normal' : 'nowrap' }}>
+              {hotel.name}
+            </span>
+            {isOnsite && <OnsiteBadge />}
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '2px 8px', marginTop: 3, fontSize: 11, color: '#6a6a6a' }}>
+            {type && <span>{type}</span>}
+            {hotel.google_rating != null && !focused && (
+              <span><span style={{ color: '#f5a623' }}>★</span> {hotel.google_rating.toFixed(1)}</span>
+            )}
+          </div>
+        </div>
+        <div style={{ fontSize: 11, color: '#6a6a6a', flexShrink: 0, marginTop: 2, textAlign: 'right' }}>
+          <div>~{maxMin} min</div>
+          <div style={{ fontSize: 9, color: '#b0b0b0' }}>max to ⛳</div>
+        </div>
+      </button>
+
+      {focused && (
+        <div style={{ padding: '0 12px 12px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <HotelRating hotel={hotel} />
+          <ServiceChips hotel={hotel} maxOther={6} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            {courses.map(c => (
+              <div key={c.id} style={{ display: 'flex', justifyContent: 'space-between', gap: 8, fontSize: 12, color: '#4a4a4a' }}>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>⛳ {c.name}</span>
+                <span style={{ flexShrink: 0, fontWeight: 600 }}>~{minutesToCourse(hotel.lat, hotel.lng, c)} min</span>
+              </div>
+            ))}
+          </div>
+          <a
+            href={bookingUrl(hotel)}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'block', textAlign: 'center', padding: '11px 0', borderRadius: 8,
+              background: '#2B6090', color: '#fff', fontSize: 14, fontWeight: 700, textDecoration: 'none',
+            }}
+          >
+            Check availability →
+          </a>
+        </div>
+      )}
+    </div>
+  )
+}
+
+const warningBox: React.CSSProperties = {
+  background: '#fff8e6', border: '1px solid #f5d87a', borderRadius: 10,
+  padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#7a5c00', lineHeight: 1.5,
 }
 
 // ---- Styles ----

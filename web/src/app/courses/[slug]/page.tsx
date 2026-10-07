@@ -12,6 +12,8 @@ import { CourseMapImage } from '@/components/CourseMapImage'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { CourseNav } from '@/components/CourseNav'
 import { SiteHeader } from '@/components/SiteHeader'
+import { NearbyHotels } from '@/components/NearbyHotels'
+import { toHotelListItem } from '@/lib/hotels'
 import { Goal, ShoppingBag, UtensilsCrossed, BedDouble, User, Store, PlaneLanding, Flag, Hash, Ruler, Award, Gauge, CircleDot, GraduationCap } from 'lucide-react'
 
 import type { Airport } from '@/types/database'
@@ -37,6 +39,20 @@ function airportDistances(lat: number, lng: number, airports: Airport[]) {
     const time       = hours > 0 ? `${hours}h ${mins > 0 ? `${mins} min` : ''}`.trim() : `${mins} min`
     return { ...ap, roadKm, time }
   })
+}
+
+// Everything within 15 km (30 km where the area is sparse), closest first,
+// with the course's own hotel always at the top.
+const NEARBY_HOTEL_RADIUS_KM = 15
+const SPARSE_AREA_RADIUS_KM = 30
+const MIN_NEARBY_HOTELS = 5
+
+async function getNearbyHotels(lat: number, lng: number, onsiteHotelId: string | null | undefined) {
+  let hotels = await getHotelsNear(lat, lng, NEARBY_HOTEL_RADIUS_KM, 200)
+  if (hotels.length < MIN_NEARBY_HOTELS) hotels = await getHotelsNear(lat, lng, SPARSE_AREA_RADIUS_KM, 200)
+  const items = hotels.map(toHotelListItem)
+  if (!onsiteHotelId) return items
+  return items.sort((a, b) => Number(b.id === onsiteHotelId) - Number(a.id === onsiteHotelId))
 }
 
 const PEXELS_FALLBACK = 'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=1400&h=600&fit=crop'
@@ -105,7 +121,7 @@ export default async function CoursePage(
   if (!course) notFound()
 
   const [hotels, airportList, nearbyCourses, nearbyShops, approvedReviews] = await Promise.all([
-    getHotelsNear(course.lat, course.lng),
+    getNearbyHotels(course.lat, course.lng, course.onsite_hotel_id),
     getAirports(),
     getCoursesNear(course.lat, course.lng, course.id, 5),
     getShopsNear(course.lat, course.lng, 5),
@@ -588,11 +604,7 @@ export default async function CoursePage(
               {hotels.length > 0 && (
                 <section id="nearby-hotels" style={{ marginBottom: 36 }}>
                   <h2 style={sectionTitle}>Nearby Hotels</h2>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    {hotels.map(hotel => (
-                      <HotelCard key={hotel.id} hotel={hotel} courseTown={course.town} isOnsiteForCourse={hotel.id === course.onsite_hotel_id} />
-                    ))}
-                  </div>
+                  <NearbyHotels hotels={hotels} onsiteHotelId={course.onsite_hotel_id ?? null} />
                   <a
                     href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent('hotels near ' + course.name)}`}
                     target="_blank"
@@ -752,83 +764,6 @@ const sectionTitle: React.CSSProperties = {
   fontSize: 18, fontWeight: 700, color: '#222',
   margin: '0 0 16px', paddingBottom: 10,
   borderBottom: '2px solid #ebebeb',
-}
-
-// Replace XXXXXXXX with your Booking.com affiliate ID when ready
-const BOOKING_AID = 'XXXXXXXX'
-
-function bookingSearchUrl(town: string): string {
-  const query = encodeURIComponent(`${town}, Algarve, Portugal`)
-  return `https://www.booking.com/searchresults.html?ss=${query}&aid=${BOOKING_AID}`
-}
-
-function HotelCard({ hotel, courseTown, isOnsiteForCourse }: {
-  hotel: { id: string; name: string; stars: number | null; price_from: number | null; town: string; booking_url: string | null; has_golf_package: boolean; onsite: boolean; distance_km: number; google_rating?: number | null }
-  courseTown: string
-  isOnsiteForCourse: boolean
-}) {
-  const stars = hotel.stars ?? 0
-  const url = hotel.booking_url
-    ?? `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(hotel.name + ' Algarve')}&aid=${BOOKING_AID}`
-
-  return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        padding: '14px 16px', borderRadius: 14,
-        border: '1px solid #ebebeb', background: '#fff',
-        textDecoration: 'none', gap: 12,
-        transition: 'border-color .15s, box-shadow .15s',
-      }}
-    >
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4, minWidth: 0 }}>
-          <span style={{ flex: '1 1 0%', minWidth: 0, fontSize: 14, fontWeight: 700, color: '#222', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-            {hotel.name}
-          </span>
-          {isOnsiteForCourse && (
-            <span style={{
-              fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 10,
-              background: '#edf7f2', color: '#22a06b', border: '1px solid #c3e6cb',
-              flexShrink: 0, whiteSpace: 'nowrap',
-            }}>
-              ⛳ On-site
-            </span>
-          )}
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 12, color: '#f5a623' }}>{'★'.repeat(stars)}</span>
-          <span style={{ fontSize: 12, color: '#6a6a6a' }}>
-            {hotel.town}{isOnsiteForCourse ? '' : ` · ${hotel.distance_km.toFixed(1)} km away`}
-          </span>
-          {hotel.google_rating != null && (
-            <span style={{ fontSize: 12, color: '#6a6a6a' }}>
-              · ⭐ {hotel.google_rating.toFixed(1)} <span style={{ color: '#b0b0b0' }}>Google</span>
-            </span>
-          )}
-        </div>
-      </div>
-      <div style={{ textAlign: 'right', flexShrink: 0 }}>
-        {hotel.price_from != null && (
-          <>
-            <div style={{ fontSize: 11, color: '#6a6a6a' }}>from</div>
-            <div style={{ fontSize: 16, fontWeight: 700, color: '#222' }}>€{hotel.price_from}</div>
-            <div style={{ fontSize: 11, color: '#6a6a6a' }}>/night</div>
-          </>
-        )}
-        <div style={{
-          marginTop: 6, padding: '5px 12px', borderRadius: 8,
-          background: '#2B6090', color: '#fff',
-          fontSize: 12, fontWeight: 600,
-        }}>
-          See prices →
-        </div>
-      </div>
-    </a>
-  )
 }
 
 function FacilityCard({ icon, label, active }: { icon: React.ReactNode; label: string; active: boolean }) {

@@ -20,7 +20,9 @@ interface MapViewProps {
   selectedId: string | null
   plannedIds?: Set<string>
   plannerHotels?: (Hotel & { distance_km: number })[]
+  focusedHotelId?: string | null
   onSelect: (id: string | null) => void
+  onPlannerHotelClick?: (id: string) => void
 }
 
 const ALGARVE_CENTER: [number, number] = [-8.2, 37.09]
@@ -28,14 +30,17 @@ const INITIAL_ZOOM = 9.2
 const ZONE_SOURCE = 'planner-zone'
 
 export const MapView = forwardRef<MapViewHandle, MapViewProps>(
-  function MapView({ courses, hotels, shops, airports, selectedId, plannedIds = new Set(), plannerHotels = [], onSelect }, ref) {
+  function MapView({ courses, hotels, shops, airports, selectedId, plannedIds = new Set(), plannerHotels = [], focusedHotelId = null, onSelect, onPlannerHotelClick }, ref) {
     const containerRef = useRef<HTMLDivElement>(null)
     const mapRef = useRef<mapboxgl.Map | null>(null)
     const markersRef = useRef<Map<string, { marker: mapboxgl.Marker; el: HTMLDivElement }>>(new Map())
     const courseMarkerIdsRef = useRef<Set<string>>(new Set())
     const plannerHotelIdsRef = useRef<Set<string>>(new Set())
+    const focusedHotelIdRef = useRef<string | null>(focusedHotelId)
     const onSelectRef = useRef(onSelect)
     onSelectRef.current = onSelect
+    const onPlannerHotelClickRef = useRef(onPlannerHotelClick)
+    onPlannerHotelClickRef.current = onPlannerHotelClick
 
     useImperativeHandle(ref, () => ({
       zoomIn: () => mapRef.current?.zoomIn({ duration: 300 }),
@@ -201,10 +206,10 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
       if (!map) return
 
       plannerHotels.forEach(hotel => {
-        const el = createPin('hotel', `🏨 ${hotel.name}`, `from €${hotel.price_from ?? '—'}/night`, false, () => {
-          const url = hotel.booking_url
-            ?? `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(hotel.name + ' Algarve')}&utm_source=algarvegolfmap.com`
-          window.open(url, '_blank', 'noopener,noreferrer')
+        // Clicking a pin opens that hotel's card in the Find Your Base panel
+        const sub = hotel.google_rating != null ? `★ ${hotel.google_rating.toFixed(1)} on Google` : hotel.town
+        const el = createPin('hotel', `🏨 ${hotel.name}`, sub, hotel.id === focusedHotelIdRef.current, () => {
+          onPlannerHotelClickRef.current?.(hotel.id)
         })
         const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
           .setLngLat([hotel.lng, hotel.lat])
@@ -225,10 +230,10 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
       })
     }, [courses])
 
-    // Update marker styles on selection change
+    // Update marker styles on selection change (map selection or the hotel focused in Find Your Base)
     useEffect(() => {
       markersRef.current.forEach(({ el }, id) => {
-        const selected = id === selectedId
+        const selected = id === selectedId || id === focusedHotelId
         el.classList.toggle('map-pin--selected', selected)
         const wrapper = el.parentElement
         if (wrapper) wrapper.style.zIndex = selected ? '10' : '1'
@@ -248,7 +253,18 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
           })
         }
       }
-    }, [selectedId, courses, hotels, shops])
+    }, [selectedId, focusedHotelId, courses, hotels, shops])
+
+    // Bring the focused Find Your Base hotel into view
+    useEffect(() => {
+      focusedHotelIdRef.current = focusedHotelId
+      if (!focusedHotelId || !mapRef.current) return
+      const hotel = plannerHotels.find(h => h.id === focusedHotelId)
+      if (!hotel) return
+      const bounds = mapRef.current.getBounds()
+      if (bounds && bounds.contains([hotel.lng, hotel.lat])) return
+      mapRef.current.easeTo({ center: [hotel.lng, hotel.lat], duration: 600 })
+    }, [focusedHotelId, plannerHotels])
 
     const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
 

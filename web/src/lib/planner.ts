@@ -1,16 +1,12 @@
 import * as turf from '@turf/turf'
 import type { Feature, Polygon, GeoJsonProperties } from 'geojson'
 import type { Course } from '@/types/database'
+import { timeToRadiusKm, distanceToMinutes } from './travel'
 
-const SPEED_KMH = 70
-const ROAD_FACTOR = 0.85
+export { timeToRadiusKm, distanceToMinutes }
 
-export function timeToRadiusKm(minutes: number): number {
-  return (minutes / 60) * SPEED_KMH * ROAD_FACTOR
-}
-
-export function distanceToMinutes(distanceKm: number): number {
-  return Math.round((distanceKm / (SPEED_KMH * ROAD_FACTOR)) * 60)
+export function minutesToCourse(lat: number, lng: number, course: Course): number {
+  return distanceToMinutes(turf.distance([lng, lat], [course.lng, course.lat]))
 }
 
 // Drive time from a point (e.g. a hotel) to the farthest of the selected courses

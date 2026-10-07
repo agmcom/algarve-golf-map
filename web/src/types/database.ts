@@ -172,6 +172,7 @@ export interface Hotel {
   featured: boolean
   rating: number | null
   google_rating?: number | null
+  google_user_ratings_total?: number | null
   review_count: number
 
   created_at: string
@@ -181,6 +182,19 @@ export interface Hotel {
   photos?: HotelPhoto[]
   zone?: Zone
   partner_courses?: Course[]
+  services?: HotelService[]
+}
+
+export type HotelServiceKey =
+  | 'golf_package' | 'golf_shuttle' | 'club_storage' | 'breakfast_time'
+  | 'tee_time_booking' | 'onsite_golf' | 'club_rental' | 'parking'
+  | 'airport_transfer' | 'late_checkout' | 'spa' | 'restaurant_bar'
+
+// Only confirmed services are stored — a missing row means "not shown", never "no"
+export interface HotelService {
+  service: HotelServiceKey
+  detail: string | null
+  is_paid: boolean | null
 }
 
 export interface HotelPhoto {
