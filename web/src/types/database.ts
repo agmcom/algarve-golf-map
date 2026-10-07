@@ -3,6 +3,7 @@
 // npx supabase gen types typescript --project-id <id> > src/types/supabase.ts
 
 export type AlgarveRegion    = 'west' | 'central' | 'east'
+export type AccommodationType = 'hotel' | 'resort' | 'apartment' | 'guest_house' | 'villa' | 'bb' | 'hostel' | 'camping'
 
 // ---- Airports ----
 
@@ -148,6 +149,7 @@ export interface Hotel {
   rooms: number | null
   price_from: number | null
   onsite: boolean
+  accommodation_type?: AccommodationType
 
   // Golf services
   has_golf_package: boolean

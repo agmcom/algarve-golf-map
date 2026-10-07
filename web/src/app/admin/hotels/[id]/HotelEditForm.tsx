@@ -68,10 +68,11 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   )
 }
 
-const TYPES = ['hotel', 'resort', 'apartment', 'guest_house', 'villa', 'bb']
+const TYPES = ['hotel', 'resort', 'apartment', 'guest_house', 'villa', 'bb', 'hostel', 'camping']
 const TYPE_LABELS: Record<string, string> = {
   hotel: 'Hotel', resort: 'Resort', apartment: 'Apartment',
   guest_house: 'Guest House', villa: 'Villa / Quinta', bb: 'B&B',
+  hostel: 'Hostel', camping: 'Camping / Motorhome',
 }
 
 export default function HotelEditForm({ hotel }: { hotel: Hotel }) {

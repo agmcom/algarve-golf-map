@@ -22,14 +22,16 @@ interface Hotel {
 const TYPE_LABELS: Record<string, string> = {
   hotel: 'Hotel', resort: 'Resort', apartment: 'Apartment',
   guest_house: 'Guest House', villa: 'Villa', bb: 'B&B',
+  hostel: 'Hostel', camping: 'Camping / Motorhome',
 }
 
 const TYPE_COLORS: Record<string, string> = {
   hotel: '#dbeafe', resort: '#fce7f3', apartment: '#dcfce7',
   guest_house: '#fef9c3', villa: '#ede9fe', bb: '#ffedd5',
+  hostel: '#e5e7eb', camping: '#d1fae5',
 }
 
-const ALL_TYPES = ['hotel', 'resort', 'apartment', 'guest_house', 'villa', 'bb']
+const ALL_TYPES = ['hotel', 'resort', 'apartment', 'guest_house', 'villa', 'bb', 'hostel', 'camping']
 
 export default function HotelsAdminClient({ hotels }: { hotels: Hotel[] }) {
   const router = useRouter()

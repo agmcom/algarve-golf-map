@@ -105,11 +105,15 @@ export async function getHotelBySlug(slug: string): Promise<Hotel | null> {
   return data
 }
 
+// Hostels and campsites stay in the DB but are hidden from golf-trip suggestions by default
+const HIDDEN_BY_DEFAULT_TYPES = '(hostel,camping)'
+
 export async function getHotelsNear(lat: number, lng: number, radiusKm = 50): Promise<(Hotel & { distance_km: number })[]> {
   const { data, error } = await supabase
     .from('hotels')
     .select('*')
     .eq('active', true)
+    .not('accommodation_type', 'in', HIDDEN_BY_DEFAULT_TYPES)
 
   if (error || !data) return []
 
