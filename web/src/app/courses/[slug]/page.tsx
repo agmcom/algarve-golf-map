@@ -275,11 +275,11 @@ export default async function CoursePage(
           ...(course.blurb ? [{ id: 'about', label: 'About' }] : []),
           { id: 'facilities', label: 'Facilities' },
           { id: 'getting-there', label: 'Getting There' },
+          { id: 'nearby-hotels', label: 'Nearby Hotels' },
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
           ...(course.dress_code ? [{ id: 'dress-code', label: 'Dress Code' }] : []),
           { id: 'reviews', label: 'Reviews' },
           { id: 'course-map', label: 'Course Map' },
-          { id: 'nearby-hotels', label: 'Nearby Hotels' },
           { id: 'nearby-courses', label: 'Nearby Courses' },
           { id: 'nearby-shops', label: 'Nearby Shops' },
         ]} />
@@ -409,6 +409,28 @@ export default async function CoursePage(
                   ))}
                 </div>
               </section>
+
+              {/* Nearby Hotels */}
+              {hotels.length > 0 && (
+                <section id="nearby-hotels" style={{ marginBottom: 36 }}>
+                  <h2 style={sectionTitle}>Nearby Hotels</h2>
+                  <NearbyHotels hotels={hotels} onsiteHotelId={course.onsite_hotel_id ?? null} />
+                  <a
+                    href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent('hotels near ' + course.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'block', textAlign: 'center', marginTop: 14,
+                      padding: '12px 0', borderRadius: 12,
+                      border: '1.5px solid #2B6090', color: '#2B6090',
+                      fontSize: 14, fontWeight: 600, textDecoration: 'none',
+                      background: '#eef7f2',
+                    }}
+                  >
+                    Search all hotels near {course.town} →
+                  </a>
+                </section>
+              )}
 
               {/* On-site Hotel */}
               {course.onsite_hotel && (
@@ -599,28 +621,6 @@ export default async function CoursePage(
                   </div>
                 )}
               </section>
-
-              {/* Nearby Hotels */}
-              {hotels.length > 0 && (
-                <section id="nearby-hotels" style={{ marginBottom: 36 }}>
-                  <h2 style={sectionTitle}>Nearby Hotels</h2>
-                  <NearbyHotels hotels={hotels} onsiteHotelId={course.onsite_hotel_id ?? null} />
-                  <a
-                    href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent('hotels near ' + course.name)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'block', textAlign: 'center', marginTop: 14,
-                      padding: '12px 0', borderRadius: 12,
-                      border: '1.5px solid #2B6090', color: '#2B6090',
-                      fontSize: 14, fontWeight: 600, textDecoration: 'none',
-                      background: '#eef7f2',
-                    }}
-                  >
-                    Search all hotels near {course.town} →
-                  </a>
-                </section>
-              )}
 
               {/* Nearby Courses */}
               {nearbyCourses.length > 0 && (
