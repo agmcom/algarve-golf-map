@@ -2,10 +2,11 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getGuidePostBySlug, getAllGuidePostSlugs, getCourseBySlug, getHotelBySlug, getShopBySlug, getRelatedGuidePosts } from '@/lib/queries'
-import type { GuideCardRefType } from '@/types/database'
+import type { GuideCardRefType, GuideHotelBlock } from '@/types/database'
 import { CATEGORY_LABELS } from '@/lib/guideCategories'
 import { renderInlineText } from '@/lib/richText'
 import { SiteHeader } from '@/components/SiteHeader'
+import { GuideHotelMap } from '@/components/GuideHotelMap'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
@@ -114,6 +115,12 @@ export default async function GuidePostPage(
 
   const relatedPosts = await getRelatedGuidePosts(post.id, post.categories)
 
+  // Hotel list: numbered in article order; each gets an anchor id the map pins reuse
+  const hotelBlocks = post.content.filter((b): b is GuideHotelBlock => b.type === 'hotel')
+  const hotelNumber = new Map(hotelBlocks.map((b, i) => [b, i + 1]))
+  const mapBlock = post.content.find(b => b.type === 'hotelMap')
+  const mapCourse = mapBlock?.type === 'hotelMap' ? await getCourseBySlug(mapBlock.courseSlug) : null
+
   const pageUrl = `${BASE}/guide/${slug}`
 
   const jsonLd = {
@@ -139,12 +146,32 @@ export default async function GuidePostPage(
     ],
   }
 
+  const hotelListLd = hotelBlocks.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: post.title,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    numberOfItems: hotelBlocks.length,
+    itemListElement: hotelBlocks.map((h, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${pageUrl}#hotel-${i + 1}`,
+      name: h.name,
+    })),
+  } : null
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/<\//g, '<\\/') }}
       />
+      {hotelListLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelListLd).replace(/<\//g, '<\\/') }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
@@ -270,6 +297,22 @@ export default async function GuidePostPage(
                   </Link>
                 )
               }
+              if (block.type === 'hotel') {
+                return <GuideHotelEntry key={i} hotel={block} n={hotelNumber.get(block)!} />
+              }
+              if (block.type === 'hotelMap' && mapCourse) {
+                return (
+                  <GuideHotelMap
+                    key={i}
+                    course={{ name: mapCourse.name, slug: mapCourse.slug, lat: mapCourse.lat, lng: mapCourse.lng }}
+                    hotels={hotelBlocks.map((h, j) => ({
+                      name: h.name, lat: h.lat, lng: h.lng, bookingUrl: h.bookingUrl,
+                      ctaId: `hotel-cta-${j + 1}`,
+                      sub: h.priceFrom != null ? `from ~€${h.priceFrom}` : (h.tier ?? ''),
+                    }))}
+                  />
+                )
+              }
               return null
             })}
           </div>
@@ -320,5 +363,86 @@ export default async function GuidePostPage(
         </div>
       </div>
     </>
+  )
+}
+
+function GuideHotelEntry({ hotel, n }: { hotel: GuideHotelBlock; n: number }) {
+  const facts: [string, string][] = []
+  if (hotel.distanceKm != null) {
+    facts.push(['From the course', `${hotel.distanceKm.toLocaleString('en-GB', { maximumFractionDigits: 1 })} km${hotel.driveMin != null ? ` · ${hotel.driveMin === 0 ? 'walk' : `about ${hotel.driveMin} min drive`}` : ''}`])
+  }
+  if (hotel.priceFrom != null) facts.push(['Price', `from about €${hotel.priceFrom} a night`])
+  if (hotel.rating != null) {
+    facts.push(['Guest rating', `${hotel.rating.toFixed(1)}/10${hotel.ratingSource ? ` on ${hotel.ratingSource}` : ''}${hotel.reviewCount ? ` (${hotel.reviewCount.toLocaleString('en-GB')} reviews)` : ''}`])
+  }
+  if (hotel.breakfast) facts.push(['Breakfast', hotel.breakfast])
+
+  return (
+    <section id={`hotel-${n}`} style={{
+      background: '#fff', border: '1px solid #ebebeb', borderRadius: 14,
+      padding: '20px 22px', margin: '0 0 24px', scrollMarginTop: 80,
+    }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
+        <h3 style={{ fontSize: 20, fontWeight: 700, color: '#222', margin: 0, lineHeight: 1.3 }}>
+          {`${n}. ${hotel.name}`}
+        </h3>
+        {hotel.tier && (
+          <span style={{
+            fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 12,
+            background: hotel.tier.startsWith('On-site') ? '#edf7f2' : '#eef4fa',
+            color: hotel.tier.startsWith('On-site') ? '#22a06b' : '#2B6090',
+            textTransform: 'uppercase', letterSpacing: '.04em', whiteSpace: 'nowrap',
+          }}>
+            {hotel.tier}
+          </span>
+        )}
+      </div>
+
+      {facts.length > 0 && (
+        <dl style={{
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
+          gap: '10px 16px', margin: '16px 0 0', padding: '14px 0', borderTop: '1px solid #f0f0f0', borderBottom: '1px solid #f0f0f0',
+        }}>
+          {facts.map(([label, value]) => (
+            <div key={label}>
+              <dt style={{ fontSize: 11, fontWeight: 700, color: '#8a8a8a', textTransform: 'uppercase', letterSpacing: '.05em' }}>{label}</dt>
+              <dd style={{ fontSize: 14, color: '#222', margin: '3px 0 0', fontWeight: 600 }}>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
+      <p style={{ fontSize: 16, lineHeight: 1.7, color: '#333', margin: '16px 0 0' }}>
+        {renderInlineText(hotel.text)}
+      </p>
+
+      {hotel.perks && hotel.perks.length > 0 && (
+        <ul style={{ listStyle: 'none', padding: 0, margin: '14px 0 0', display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+          {hotel.perks.map(p => (
+            <li key={p} style={{
+              fontSize: 12, fontWeight: 600, padding: '4px 10px', borderRadius: 12,
+              background: '#f4f6f8', color: '#3a4a5a', border: '1px solid #e4e9ee',
+            }}>
+              {p}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <a
+        id={`hotel-cta-${n}`}
+        href={hotel.bookingUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-hotel-click="guide_hotel_list"
+        data-hotel-name={hotel.name}
+        style={{
+          display: 'inline-block', marginTop: 18, padding: '10px 18px', borderRadius: 10,
+          background: '#2B6090', color: '#fff', fontSize: 14, fontWeight: 700, textDecoration: 'none',
+        }}
+      >
+        Check prices for {hotel.name} →
+      </a>
+    </section>
   )
 }

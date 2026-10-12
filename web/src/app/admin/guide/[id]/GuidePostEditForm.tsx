@@ -14,6 +14,9 @@ type Block =
   | { id: string; type: 'paragraph'; text: string }
   | { id: string; type: 'image'; url: string; alt: string }
   | { id: string; type: 'card'; refType: CardRefType; slug: string; withPhoto: boolean }
+  // Hotel list entries and the hotel map are written by Claude, not edited here —
+  // kept as-is so saving from the panel doesn't drop them.
+  | { id: string; type: 'locked'; label: string; data: Record<string, unknown> }
 
 interface ReferenceOption { slug: string; name: string; town: string }
 
@@ -48,6 +51,8 @@ function normalizeBlocks(raw: unknown): Block[] {
       }
       return null
     }
+    if (type === 'hotel') return { id: newId(), type: 'locked', label: `Hotel: ${(b as { name?: string }).name ?? ''}`, data: b as Record<string, unknown> }
+    if (type === 'hotelMap') return { id: newId(), type: 'locked', label: 'Map of the course and hotels in this article', data: b as Record<string, unknown> }
     return null
   }).filter((b): b is Block => b !== null)
 }
@@ -276,6 +281,7 @@ export function GuidePostEditForm({ post, referenceOptions }: {
   }
 
   const contentJson = JSON.stringify(blocks.map(({ ...b }) => {
+    if (b.type === 'locked') return b.data
     const { id, ...rest } = b as Block & { id: string }
     void id
     return rest
@@ -500,6 +506,12 @@ export function GuidePostEditForm({ post, referenceOptions }: {
                   </div>
                 )
               })()}
+              {block.type === 'locked' && (
+                <div style={{ padding: '12px 14px', borderRadius: 10, border: '1px solid #ebebeb', background: '#fafafa', fontSize: 13, color: '#555' }}>
+                  <strong style={{ color: '#222' }}>{block.label}</strong>
+                  <div style={{ fontSize: 12, color: '#999', marginTop: 4 }}>Ask Claude to change this block — it can be moved or deleted here.</div>
+                </div>
+              )}
               <div style={{ position: 'absolute', top: 8, left: 12, fontSize: 10, color: '#ccc' }}>{i + 1}</div>
             </BlockShell>
           ))}

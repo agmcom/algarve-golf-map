@@ -356,6 +356,29 @@ export type GuideBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'image'; url: string; alt: string }
   | { type: 'card'; refType: GuideCardRefType; slug: string; withPhoto: boolean }
+  | GuideHotelBlock
+  // Map of the course (pin → course page) and every hotel block in the post (pin → affiliate link)
+  | { type: 'hotelMap'; courseSlug: string }
+
+// One entry in a "where to stay near X" hotel list. Written by Claude from researched,
+// dated facts — every field is optional except name/bookingUrl/coords.
+export interface GuideHotelBlock {
+  type: 'hotel'
+  name: string
+  bookingUrl: string            // Booking/Expedia page — Stay22 affiliates it
+  lat: number
+  lng: number
+  tier?: string                 // e.g. "On-site", "Luxury", "Mid-range", "Budget"
+  priceFrom?: number | null     // approx. lowest nightly price, EUR
+  rating?: number | null        // out of 10
+  ratingSource?: string | null  // e.g. "Booking.com"
+  reviewCount?: number | null
+  distanceKm?: number | null    // to the course, by road
+  driveMin?: number | null
+  breakfast?: string | null     // e.g. "07:00–10:30"
+  perks?: string[]              // golfer-relevant services, short labels
+  text: string                  // description, supports **bold** and [links](/x)
+}
 
 export interface GuidePost {
   id: string
