@@ -14,6 +14,7 @@ export interface MapViewHandle {
 
 interface MapViewProps {
   courses: Course[]
+  allCourses: Course[]
   hotels: Hotel[]
   shops: Shop[]
   airports: Airport[]
@@ -30,7 +31,7 @@ const INITIAL_ZOOM = 9.2
 const ZONE_SOURCE = 'planner-zone'
 
 export const MapView = forwardRef<MapViewHandle, MapViewProps>(
-  function MapView({ courses, hotels, shops, airports, selectedId, plannedIds = new Set(), plannerHotels = [], focusedHotelId = null, onSelect, onPlannerHotelClick }, ref) {
+  function MapView({ courses, allCourses, hotels, shops, airports, selectedId, plannedIds = new Set(), plannerHotels = [], focusedHotelId = null, onSelect, onPlannerHotelClick }, ref) {
     const containerRef = useRef<HTMLDivElement>(null)
     const mapRef = useRef<mapboxgl.Map | null>(null)
     const markersRef = useRef<Map<string, { marker: mapboxgl.Marker; el: HTMLDivElement }>>(new Map())
@@ -41,6 +42,8 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
     onSelectRef.current = onSelect
     const onPlannerHotelClickRef = useRef(onPlannerHotelClick)
     onPlannerHotelClickRef.current = onPlannerHotelClick
+    const coursesRef = useRef(courses)
+    coursesRef.current = courses
 
     useImperativeHandle(ref, () => ({
       zoomIn: () => mapRef.current?.zoomIn({ duration: 300 }),
@@ -109,8 +112,10 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
           }
         }
 
-        // Course pins
-        courses.forEach(course => {
+        // Course pins — always create markers for every course, regardless of the
+        // current filter, so the later show/hide effect always has a marker to
+        // toggle (it never creates markers itself).
+        allCourses.forEach(course => {
           const el = createPin('course', `⛳ ${course.name}`, `€${course.price_from ?? '—'} · ${course.holes}h`, false, () => {
             onSelectRef.current(course.id)
           })
@@ -141,6 +146,15 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(
             .addTo(map)
           markersRef.current.set(course.id, { marker, el })
           courseMarkerIdsRef.current.add(course.id)
+        })
+
+        // Apply whatever filter is already active (e.g. hydrated from the URL)
+        // now that markers actually exist — the show/hide effect below may have
+        // already run once against an empty marker set before this fired.
+        const visibleIds = new Set(coursesRef.current.map(c => c.id))
+        courseMarkerIdsRef.current.forEach(id => {
+          const entry = markersRef.current.get(id)
+          if (entry) entry.el.style.display = visibleIds.has(id) ? '' : 'none'
         })
 
         // Hotel pins

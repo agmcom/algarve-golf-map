@@ -129,6 +129,20 @@ function readFiltersFromUrl(): { filters: Set<string>; hcpMen: number | null; hc
   }
 }
 
+// Lets external pages (e.g. Guide "X vs Y" posts) deep-link straight into the
+// comparator, e.g. /?compare=quinta-do-lago-south,monte-rei. Slugs (not DB
+// ids) so the links are readable and stable to write by hand.
+function readCompareFromUrl(courses: Course[]): string[] {
+  const params = new URLSearchParams(window.location.search)
+  const compareParam = params.get('compare')
+  if (!compareParam) return []
+  const slugs = compareParam.split(',').filter(Boolean)
+  const ids = slugs
+    .map(slug => courses.find(c => c.slug === slug)?.id)
+    .filter((id): id is string => id != null)
+  return ids.slice(0, 4)
+}
+
 export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps) {
   const skipUrlWrite = useRef(true)
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -168,7 +182,14 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
     if (filters.size > 0) setActiveFilters(filters)
     if (urlHcpMen != null) setHcpMen(urlHcpMen)
     if (urlHcpLadies != null) setHcpLadies(urlHcpLadies)
+
+    const compareFromUrl = readCompareFromUrl(courses)
+    if (compareFromUrl.length >= 2) {
+      setCompareIds(compareFromUrl)
+      setCompareOpen(true)
+    }
     /* eslint-enable react-hooks/set-state-in-effect */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -292,6 +313,7 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
       <MapView
         ref={mapRef}
         courses={filteredCourses}
+        allCourses={courses}
         hotels={hotels}
         shops={shops}
         airports={airports}

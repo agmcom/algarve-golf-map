@@ -51,8 +51,14 @@ function Check({ yes }: { yes: boolean }) {
 
 // ── Desktop table ──────────────────────────────────────────────────────────────
 
+// Matches the ~1600:700 crop convention used for hero photos elsewhere on
+// the site, so the thumbnail here isn't a second, more aggressive crop.
+const HERO_ASPECT = 1600 / 700
+
 function DesktopTable({ courses, onRemove }: { courses: Course[]; onRemove: (id: string) => void }) {
   const colW = Math.max(150, Math.floor(700 / courses.length))
+  const thumbW = Math.min(colW - 20, 190)
+  const thumbH = Math.round(thumbW / HERO_ASPECT)
 
   return (
     <div style={{ overflowX: 'auto', overflowY: 'auto', flex: 1 }}>
@@ -63,7 +69,7 @@ function DesktopTable({ courses, onRemove }: { courses: Course[]; onRemove: (id:
             {courses.map(c => (
               <th key={c.id} style={{ width: colW, padding: '12px 16px', borderBottom: '2px solid #ebebeb', textAlign: 'center' }}>
                 <div style={{ position: 'relative', display: 'inline-block', width: '100%' }}>
-                  <div style={{ height: 80, borderRadius: 10, overflow: 'hidden', marginBottom: 8 }}>
+                  <div style={{ width: thumbW, height: thumbH, borderRadius: 10, overflow: 'hidden', margin: '0 auto 8px' }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={heroUrl(c)} alt={c.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
@@ -218,7 +224,7 @@ function MobileCards({ courses, onRemove }: { courses: Course[]; onRemove: (id: 
       </div>
 
       {/* Photo */}
-      <div style={{ height: 120, flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
+      <div style={{ height: 160, flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={heroUrl(course)} alt={course.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         <button
