@@ -6,7 +6,7 @@ import { FALLBACK_AIRPORTS } from '@/data/airports'
 export async function getCourses(): Promise<Course[]> {
   const { data, error } = await supabase
     .from('courses')
-    .select('*, photos:course_photos(url, alt, is_hero, position)')
+    .select('*, photos:course_photos(url, alt, is_hero, position), onsite_hotel:hotels!onsite_hotel_id(*)')
     .eq('active', true)
     .order('rating', { ascending: false })
 
