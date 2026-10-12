@@ -272,6 +272,7 @@ function Results({ result, maxMinutes, onHotels, focusedHotelId, onFocusHotel }:
           href={`https://www.booking.com/searchresults.html?latitude=${result.center[1]}&longitude=${result.center[0]}&radius=20&order=popularity&utm_source=algarvegolfmap.com`}
           target="_blank"
           rel="noopener noreferrer"
+          data-hotel-click="find_your_base_search"
           style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
             padding: '13px 16px', borderRadius: 10,
@@ -351,6 +352,8 @@ function PlannerHotelCard({ hotel, courses, isOnsite, focused, onToggle }: {
             href={bookingUrl(hotel)}
             target="_blank"
             rel="noopener noreferrer"
+            data-hotel-click="find_your_base"
+            data-hotel-name={hotel.name}
             style={{
               display: 'block', textAlign: 'center', padding: '11px 0', borderRadius: 8,
               background: '#2B6090', color: '#fff', fontSize: 14, fontWeight: 700, textDecoration: 'none',

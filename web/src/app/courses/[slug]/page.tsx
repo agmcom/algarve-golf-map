@@ -419,6 +419,7 @@ export default async function CoursePage(
                     href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent('hotels near ' + course.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-hotel-click="course_hotel_search"
                     style={{
                       display: 'block', textAlign: 'center', marginTop: 14,
                       padding: '12px 0', borderRadius: 12,

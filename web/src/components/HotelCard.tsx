@@ -68,6 +68,8 @@ export function HotelCard({ hotel, isOnsiteForCourse }: { hotel: HotelListItem; 
       href={bookingUrl(hotel)}
       target="_blank"
       rel="noopener noreferrer"
+      data-hotel-click={isOnsiteForCourse ? 'course_onsite_hotel' : 'course_nearby_hotels'}
+      data-hotel-name={hotel.name}
       style={{
         display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between',
         gap: 12, padding: '14px 16px', borderRadius: 14,

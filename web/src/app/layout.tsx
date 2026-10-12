@@ -96,6 +96,20 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-95WX0L3Z7W');
+
+              // Affiliate hotel links carry data-hotel-click="<where on the site>".
+              // Capture phase so it fires before Stay22 rewrites/opens the link.
+              function trackHotelClick(e) {
+                var a = e.target && e.target.closest && e.target.closest('a[data-hotel-click]');
+                if (!a) return;
+                gtag('event', 'hotel_click', {
+                  click_source: a.getAttribute('data-hotel-click'),
+                  hotel_name: a.getAttribute('data-hotel-name') || '(search)',
+                  transport_type: 'beacon'
+                });
+              }
+              document.addEventListener('click', trackHotelClick, true);
+              document.addEventListener('auxclick', function (e) { if (e.button === 1) trackHotelClick(e); }, true);
             `,
           }}
         />

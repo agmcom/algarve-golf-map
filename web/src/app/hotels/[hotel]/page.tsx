@@ -204,6 +204,8 @@ export default async function HotelPage({
                   href={hotel.booking_url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-hotel-click="hotel_page"
+                  data-hotel-name={hotel.name}
                   style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}
                 >
                   Check availability ↗
