@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { X } from 'lucide-react'
+import { SocialLinks } from './SocialLinks'
 
 interface ContactModalProps {
   onClose: () => void
@@ -163,6 +164,14 @@ export function ContactModal({ onClose }: ContactModalProps) {
             >
               {status === 'sending' ? 'Sending…' : 'Send message'}
             </button>
+
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12,
+              marginTop: 18, fontSize: 13, color: '#6a6a6a',
+            }}>
+              Or find us on
+              <SocialLinks />
+            </div>
           </form>
         )}
       </div>

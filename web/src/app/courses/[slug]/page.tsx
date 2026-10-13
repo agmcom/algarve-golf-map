@@ -12,6 +12,7 @@ import { CourseMapImage } from '@/components/CourseMapImage'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { CourseNav } from '@/components/CourseNav'
 import { SiteHeader } from '@/components/SiteHeader'
+import { ShareButtons } from '@/components/ShareButtons'
 import { NearbyHotels } from '@/components/NearbyHotels'
 import { toHotelListItem } from '@/lib/hotels'
 import { Goal, ShoppingBag, UtensilsCrossed, BedDouble, User, Store, PlaneLanding, Flag, Hash, Ruler, Award, Gauge, CircleDot, GraduationCap } from 'lucide-react'
@@ -692,6 +693,13 @@ export default async function CoursePage(
                   </div>
                 </section>
               )}
+
+              <div style={{
+                marginTop: 40, padding: '18px 22px', borderRadius: 14,
+                background: '#fff', border: '1px solid #ebebeb',
+              }}>
+                <ShareButtons url={`${SITE_URL}/courses/${slug}`} title={`${course.name} — Algarve Golf Map`} label="Share this course" contentType="course" />
+              </div>
 
             </div>
 

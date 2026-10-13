@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Course } from '@/types/database'
 import { townSlug } from '@/lib/towns'
+import { SocialLinks } from './SocialLinks'
 
 interface Props {
   courses: Course[]
@@ -35,6 +36,12 @@ export function CourseDirectory({ courses }: Props) {
   return (
     <section className="course-directory" id="courses">
       <div className="course-directory__header">
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '8px 14px', marginBottom: 20 }}>
+          <span style={{ fontSize: 14, fontWeight: 600, color: '#6a6a6a' }}>
+            Follow us for Algarve golf tips &amp; deals
+          </span>
+          <SocialLinks size={22} color="#6a6a6a" />
+        </div>
         <h2 className="course-directory__title">Golf Courses in the Algarve</h2>
         <p className="course-directory__subtitle">
           {courses.length} courses across the Algarve — from Lagos to Vila Real de Santo António

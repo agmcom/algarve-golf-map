@@ -2,10 +2,12 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getGuidePostBySlug, getAllGuidePostSlugs, getCourseBySlug, getHotelBySlug, getShopBySlug, getRelatedGuidePosts } from '@/lib/queries'
-import type { GuideCardRefType, GuideHotelBlock } from '@/types/database'
+import type { GuideBlock, GuideCardRefType, GuideHotelBlock } from '@/types/database'
 import { CATEGORY_LABELS } from '@/lib/guideCategories'
 import { renderInlineText } from '@/lib/richText'
 import { SiteHeader } from '@/components/SiteHeader'
+import { SocialLinks } from '@/components/SocialLinks'
+import { ShareButtons } from '@/components/ShareButtons'
 import { GuideHotelMap } from '@/components/GuideHotelMap'
 
 const BASE = 'https://www.algarvegolfmap.com'
@@ -122,6 +124,7 @@ export default async function GuidePostPage(
   const mapCourse = mapBlock?.type === 'hotelMap' ? await getCourseBySlug(mapBlock.courseSlug) : null
 
   const pageUrl = `${BASE}/guide/${slug}`
+  const followAt = followBoxIndex(post.content)
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -234,7 +237,7 @@ export default async function GuidePostPage(
           )}
 
           <div>
-            {post.content.map((block, i) => {
+            {insertAt(post.content.map((block, i) => {
               if (block.type === 'heading') {
                 const Tag = block.level === 3 ? 'h3' : 'h2'
                 return (
@@ -314,7 +317,7 @@ export default async function GuidePostPage(
                 )
               }
               return null
-            })}
+            }), followAt, <FollowBox key="follow" />)}
           </div>
 
           <div style={{ marginTop: 48, paddingTop: 28, borderTop: '1px solid #ebebeb' }}>
@@ -328,6 +331,13 @@ export default async function GuidePostPage(
             >
               Explore golf courses on the map →
             </Link>
+          </div>
+
+          <div style={{
+            marginTop: 28, padding: '18px 22px', borderRadius: 14,
+            background: '#fff', border: '1px solid #ebebeb',
+          }}>
+            <ShareButtons url={pageUrl} title={post.title} />
           </div>
 
           {relatedPosts.length > 0 && (
@@ -363,6 +373,57 @@ export default async function GuidePostPage(
         </div>
       </div>
     </>
+  )
+}
+
+// Places the "Follow us" box roughly halfway through the article, never inside a
+// hotel list or right after the hotel map. Prefers a heading near the middle; posts
+// built around a hotel list get it just before the list starts; otherwise it goes
+// at the block boundary closest to the middle.
+function followBoxIndex(content: GuideBlock[]): number | null {
+  if (content.length < 2) return null
+  const textLength = (b: GuideBlock) =>
+    b.type === 'paragraph' || b.type === 'heading' ? b.text.length : 400
+  const total = content.reduce((sum, b) => sum + textLength(b), 0)
+  const firstHotel = content.findIndex(b => b.type === 'hotel')
+  const lastHotel = content.findLastIndex(b => b.type === 'hotel')
+
+  const candidates: { i: number; share: number; heading: boolean }[] = []
+  let before = 0
+  content.forEach((b, i) => {
+    const share = before / total
+    before += textLength(b)
+    if (i === 0) return
+    if (firstHotel !== -1 && i > firstHotel && i <= lastHotel) return
+    if (content[i - 1].type === 'hotelMap') return
+    candidates.push({ i, share, heading: b.type === 'heading' })
+  })
+  const closest = (list: typeof candidates) =>
+    list.reduce<(typeof candidates)[number] | null>(
+      (best, c) => (!best || Math.abs(c.share - 0.5) < Math.abs(best.share - 0.5) ? c : best), null)?.i ?? null
+
+  const midHeading = closest(candidates.filter(c => c.heading && c.share >= 0.3 && c.share <= 0.7))
+  if (midHeading != null) return midHeading
+  if (firstHotel > 0) return content[firstHotel - 1].type === 'heading' ? firstHotel - 1 : firstHotel
+  return closest(candidates)
+}
+
+function insertAt(nodes: React.ReactNode[], index: number | null, node: React.ReactNode) {
+  return index == null ? nodes : [...nodes.slice(0, index), node, ...nodes.slice(index)]
+}
+
+function FollowBox() {
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 14,
+      margin: '12px 0 28px', padding: '18px 22px', borderRadius: 14,
+      background: '#fff', border: '1px solid #ebebeb',
+    }}>
+      <div style={{ fontSize: 15, fontWeight: 600, color: '#222' }}>
+        Enjoying this guide? Follow us for more Algarve golf tips
+      </div>
+      <SocialLinks size={22} color="#6a6a6a" />
+    </div>
   )
 }
 

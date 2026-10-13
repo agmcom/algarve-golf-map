@@ -1,3 +1,5 @@
+import { SocialLinks } from './SocialLinks'
+
 const LINKS = [
   { href: '/', label: 'Golf Courses in the Algarve' },
   { href: '/algarve-9-hole-courses', label: 'Algarve 9 Hole Golf Courses' },
@@ -46,9 +48,12 @@ export function SiteFooter() {
           </ul>
         </nav>
 
-        <span style={{ fontSize: 12, color: '#9a9a9a' }}>
-          © {new Date().getFullYear()} Algarve Golf Map
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          <SocialLinks />
+          <span style={{ fontSize: 12, color: '#9a9a9a' }}>
+            © {new Date().getFullYear()} Algarve Golf Map
+          </span>
+        </div>
       </div>
     </footer>
   )

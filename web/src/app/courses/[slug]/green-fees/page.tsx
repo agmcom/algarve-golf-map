@@ -6,6 +6,7 @@ import { summarizePrices, monthListText, PRICE_SOURCE, PRICE_SEASON, PRICE_LAST_
 import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { SiteHeader } from '@/components/SiteHeader'
+import { ShareButtons } from '@/components/ShareButtons'
 import { townSlug } from '@/lib/towns'
 import type { Course } from '@/types/database'
 
@@ -531,6 +532,13 @@ export default async function GreenFeesPage(
               advice is in the <Link href="/guide" style={link}>Algarve golf guide</Link>.
             </p>
             <p style={{ margin: '14px 0 0', fontSize: 12, color: '#b0b0b0' }}>Prices last checked {PRICE_LAST_CHECKED}.</p>
+          </div>
+
+          <div style={{
+            marginTop: 28, padding: '18px 22px', borderRadius: 14,
+            background: '#fff', border: '1px solid #ebebeb',
+          }}>
+            <ShareButtons url={pageUrl} title={`${course.name} green fees — Algarve Golf Map`} label="Share these green fees" contentType="course" />
           </div>
         </div>
       </div>
