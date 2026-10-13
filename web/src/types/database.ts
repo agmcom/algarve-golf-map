@@ -375,6 +375,7 @@ export interface GuideHotelBlock {
   reviewCount?: number | null
   distanceKm?: number | null    // to the course, by road
   driveMin?: number | null
+  distanceLabel?: string | null // replaces km/drive text, e.g. "Inside the resort"
   breakfast?: string | null     // e.g. "07:00–10:30"
   perks?: string[]              // golfer-relevant services, short labels
   text: string                  // description, supports **bold** and [links](/x)

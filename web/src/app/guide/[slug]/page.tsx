@@ -368,7 +368,9 @@ export default async function GuidePostPage(
 
 function GuideHotelEntry({ hotel, n }: { hotel: GuideHotelBlock; n: number }) {
   const facts: [string, string][] = []
-  if (hotel.distanceKm != null) {
+  if (hotel.distanceLabel) {
+    facts.push(['From the course', hotel.distanceLabel])
+  } else if (hotel.distanceKm != null) {
     facts.push(['From the course', `${hotel.distanceKm.toLocaleString('en-GB', { maximumFractionDigits: 1 })} km${hotel.driveMin != null ? ` · ${hotel.driveMin === 0 ? 'walk' : `about ${hotel.driveMin} min drive`}` : ''}`])
   }
   if (hotel.priceFrom != null) facts.push(['Price', `from about €${hotel.priceFrom} a night`])
