@@ -122,6 +122,9 @@ export default async function GuidePostPage(
   const hotelNumber = new Map(hotelBlocks.map((b, i) => [b, i + 1]))
   const mapBlock = post.content.find(b => b.type === 'hotelMap')
   const mapCourse = mapBlock?.type === 'hotelMap' ? await getCourseBySlug(mapBlock.courseSlug) : null
+  const extraMapCourses = mapBlock?.type === 'hotelMap' && mapBlock.extraCourseSlugs?.length
+    ? (await Promise.all(mapBlock.extraCourseSlugs.map(s => getCourseBySlug(s)))).filter(c => c != null)
+    : []
 
   const pageUrl = `${BASE}/guide/${slug}`
   const followAt = followBoxIndex(post.content)
@@ -308,6 +311,7 @@ export default async function GuidePostPage(
                   <GuideHotelMap
                     key={i}
                     course={{ name: mapCourse.name, slug: mapCourse.slug, lat: mapCourse.lat, lng: mapCourse.lng }}
+                    extraCourses={extraMapCourses.map(c => ({ name: c.name, slug: c.slug, lat: c.lat, lng: c.lng }))}
                     hotels={hotelBlocks.map((h, j) => ({
                       name: h.name, lat: h.lat, lng: h.lng, bookingUrl: h.bookingUrl,
                       ctaId: `hotel-cta-${j + 1}`,

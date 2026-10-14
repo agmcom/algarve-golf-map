@@ -358,7 +358,7 @@ export type GuideBlock =
   | { type: 'card'; refType: GuideCardRefType; slug: string; withPhoto: boolean }
   | GuideHotelBlock
   // Map of the course (pin → course page) and every hotel block in the post (pin → affiliate link)
-  | { type: 'hotelMap'; courseSlug: string }
+  | { type: 'hotelMap'; courseSlug: string; extraCourseSlugs?: string[] }
 
 // One entry in a "where to stay near X" hotel list. Written by Claude from researched,
 // dated facts — every field is optional except name/bookingUrl/coords.

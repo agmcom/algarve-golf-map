@@ -12,14 +12,17 @@ export interface GuideMapHotel {
   sub: string          // shown in the pin bubble, e.g. "from €90"
 }
 
+interface MapCourse { name: string; slug: string; lat: number; lng: number }
+
 interface Props {
-  course: { name: string; slug: string; lat: number; lng: number }
+  course: MapCourse
+  extraCourses?: MapCourse[] // e.g. a resort's second course
   hotels: GuideMapHotel[]
 }
 
 // Course pin → course page; hotel pins → the hotel's affiliate link (new tab).
 // Pins are real <a> elements so the site-wide hotel_click listener tracks them.
-export function GuideHotelMap({ course, hotels }: Props) {
+export function GuideHotelMap({ course, extraCourses = [], hotels }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -59,10 +62,13 @@ export function GuideHotelMap({ course, hotels }: Props) {
         bounds.extend([h.lng, h.lat])
       })
 
-      const courseEl = createPin('course', `⛳ ${course.name}`, 'View course', `/courses/${course.slug}`)
-      courseEl.classList.add('map-pin--selected')
-      courseEl.style.zIndex = '5'
-      new mapboxgl.Marker({ element: courseEl, anchor: 'bottom' }).setLngLat([course.lng, course.lat]).addTo(map)
+      ;[course, ...extraCourses].forEach(c => {
+        const courseEl = createPin('course', `⛳ ${c.name}`, 'View course', `/courses/${c.slug}`)
+        courseEl.classList.add('map-pin--selected')
+        courseEl.style.zIndex = '5'
+        new mapboxgl.Marker({ element: courseEl, anchor: 'bottom' }).setLngLat([c.lng, c.lat]).addTo(map)
+        bounds.extend([c.lng, c.lat])
+      })
 
       if (hotels.length > 0) map.fitBounds(bounds, { padding: 60, maxZoom: 13, duration: 0 })
     })
