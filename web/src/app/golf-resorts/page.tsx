@@ -12,7 +12,7 @@ const TITLE = 'Golf Resorts in the Algarve'
 // Short form for the <meta name="description"> / OG / Twitter tags — kept under
 // ~155 characters so Google doesn't truncate it in the SERP.
 const META_DESCRIPTION =
-  'Compare the top Algarve golf resorts — Quinta do Lago, Vale do Lobo, Monte Rei and more. Each pairs an on-site hotel with its own courses, star rating and nightly price.'
+  'Compare the top Algarve golf resorts: Quinta do Lago, Vale do Lobo, Monte Rei and more. On-site hotels with their own courses, star ratings and prices.'
 // Longer form used as the visible intro paragraph on the page.
 const DESCRIPTION =
   'Explore the Algarve\'s best golf resorts — from Quinta do Lago and Vale do Lobo in the Golden Triangle to Monte Rei and Robinson Quinta da Ria in the east. Each resort page pairs the on-site hotel with its golf course details and prices.'

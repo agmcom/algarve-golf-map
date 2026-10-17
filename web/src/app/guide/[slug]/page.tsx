@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { GUIDE_SEO } from '@/lib/guide-seo'
+import { pickDescription, withSiteName } from '@/lib/seo'
 import { getGuidePostBySlug, getAllGuidePostSlugs, getCourseBySlug, getHotelBySlug, getShopBySlug, getRelatedGuidePosts } from '@/lib/queries'
 import type { GuideBlock, GuideCardRefType, GuideHotelBlock } from '@/types/database'
 import { CATEGORY_LABELS } from '@/lib/guideCategories'
@@ -73,15 +75,16 @@ export async function generateMetadata(
   const post = await getGuidePostBySlug(slug)
   if (!post) return {}
 
-  const title = post.title
-  const description = post.excerpt ?? `${post.title} — a guide from Algarve Golf Map.`
+  const seo = GUIDE_SEO[slug] ?? {}
+  const title = seo.title ?? post.title
+  const description = seo.description ?? pickDescription([post.excerpt ?? `${post.title} — a guide from Algarve Golf Map.`])
   const canonicalUrl = `${BASE}/guide/${slug}`
   const ogImages = post.hero_image_url
     ? [{ url: post.hero_image_url, width: 1400, height: 600, alt: post.hero_image_alt ?? post.title }]
     : []
 
   return {
-    title,
+    title: withSiteName(title),
     description,
     alternates: { canonical: canonicalUrl },
     openGraph: {

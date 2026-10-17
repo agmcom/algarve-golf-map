@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { withSiteName } from '@/lib/seo'
 import { getCourses, getHotelBySlug, getAirports } from '@/lib/queries'
 import { RESORT_PAGES } from '@/lib/resorts'
 import { TownMapClient } from '@/components/TownMapClient'
@@ -18,8 +19,10 @@ function heroUrl(course: { photos?: { url: string; is_hero?: boolean }[] }): str
   )
 }
 
+// Avoid doubled names like "Pine Cliffs Resort Golf Resort" or "NAU Morgado Golf & Country Club Golf Resort".
 function resortFullName(resort: { label: string }): string {
-  return resort.label.toLowerCase().endsWith('golf resort')
+  const label = resort.label.toLowerCase()
+  return label.endsWith('resort') || label.includes('golf')
     ? resort.label
     : `${resort.label} Golf Resort`
 }
@@ -65,7 +68,7 @@ export async function generateMetadata({
   const images = image ? [{ url: image, alt: `${title} — ${firstCourse!.name}` }] : [{ url: '/og-default.jpg' }]
 
   return {
-    title,
+    title: withSiteName(title),
     description,
     alternates: { canonical: url },
     openGraph: {

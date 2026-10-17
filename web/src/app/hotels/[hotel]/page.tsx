@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getHotelBySlug, getCourses } from '@/lib/queries'
 import { RESORT_PAGES, resortSlugForHotel } from '@/lib/resorts'
+import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
@@ -30,22 +31,38 @@ export async function generateMetadata({
   const hotel = await getHotelBySlug(slug)
   if (!hotel) return {}
 
-  const title = `${hotel.name} — Golf Hotel in ${hotel.town}, Algarve`
-  const description = hotel.description
-    ?? `${hotel.name} in ${hotel.town}, Algarve${hotel.stars ? ` — ${hotel.stars}-star` : ''} golf hotel${hotel.price_from ? `, from €${hotel.price_from}/night` : ''}.`
-
   const url = `${BASE}/hotels/${slug}`
 
   const resort = RESORT_PAGES.find(r => r.hotelSlug === slug)
   const allCourses = resort ? await getCourses() : []
-  const firstCourse = resort?.courseSlugs
+  const resortCourses = (resort?.courseSlugs ?? [])
     .map(s => allCourses.find(c => c.slug === s))
-    .find(c => c?.photos?.length)
+    .filter(c => c != null)
+  const firstCourse = resortCourses.find(c => c.photos?.length)
   const image = firstCourse ? heroUrl(firstCourse) : null
   const images = image ? [{ url: image, alt: `${hotel.name} — ${firstCourse!.name} golf course` }] : [{ url: '/og-default.jpg' }]
 
+  const town = shortTown(hotel.town)
+  const title = pickTitle([
+    `${hotel.name}: Golf Hotel in ${town}`,
+    `${hotel.name}, ${town}`,
+    hotel.name,
+  ])
+  const courseNames = resortCourses.map(c => c.name)
+  const coursesText = courseNames.length > 1
+    ? `${courseNames.slice(0, -1).join(', ')} and ${courseNames[courseNames.length - 1]}`
+    : courseNames[0]
+  const lead = `${hotel.stars ? `${hotel.stars}-star ` : ''}golf hotel in ${town}`
+  const price = hotel.price_from ? `, from €${hotel.price_from} a night` : ''
+  const description = pickDescription([
+    ...(coursesText ? [`${hotel.name}: ${lead} with ${coursesText} on site${price}. Prices and booking.`] : []),
+    ...(coursesText ? [`${hotel.name}: ${lead} with ${coursesText} on site${price}.`] : []),
+    `${hotel.name}: ${lead}${price}. Prices and booking.`,
+    hotel.description ?? `${hotel.name}: ${lead}.`,
+  ])
+
   return {
-    title,
+    title: withSiteName(title),
     description,
     alternates: { canonical: url },
     openGraph: {

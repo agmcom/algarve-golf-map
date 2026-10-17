@@ -5,7 +5,7 @@ import { CATEGORY_LABELS } from '@/lib/guideCategories'
 import { SiteHeader } from '@/components/SiteHeader'
 
 const BASE = 'https://www.algarvegolfmap.com'
-const TITLE = 'Algarve Golf Guide — Tips & Advice for Playing in the Algarve'
+const TITLE = 'Algarve Golf Guide: Tips for Your Trip'
 const DESCRIPTION =
   'Practical guides for planning a golf trip to the Algarve — the best time to play, course advice, hotels, transport, and what to pack.'
 

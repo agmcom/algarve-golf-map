@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { withSiteName } from '@/lib/seo'
 import { getShopBySlug, getAllShopSlugs, getCoursesNear } from '@/lib/queries'
 import { SiteHeader } from '@/components/SiteHeader'
 import { CourseNav } from '@/components/CourseNav'
@@ -101,7 +102,7 @@ export async function generateMetadata({
   const imageAlt = shop.photo_url ? (shop.photo_alt ?? shop.name) : GENERIC_SHOP_ALT
 
   return {
-    title,
+    title: withSiteName(title),
     description,
     alternates: { canonical: url },
     openGraph: {

@@ -21,7 +21,7 @@ function heroUrl(course: { photos?: { url: string; is_hero?: boolean }[] }): str
 const H1 = 'Algarve 9 Hole Golf Courses'
 const SEO_TITLE = 'Algarve 9 Hole Golf Courses | Short & Par-3 Courses'
 const DESCRIPTION =
-  'A map and guide to every 9-hole golf course in the Algarve — Balaia, Pine Cliffs, Vale de Milho and the Academy Course at Penina. Par, length, green fees and handicap rules for a quick round in Portugal.'
+  'Map of every 9-hole golf course in the Algarve: Balaia, Pine Cliffs, Vale de Milho and Penina\'s Academy Course. Par, length, green fees and handicap rules.'
 
 // Order the four 9-hole courses deliberately: signature layout first, the two
 // beginner-friendly par-3s next, then the Penina academy course.

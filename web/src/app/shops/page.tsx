@@ -12,7 +12,7 @@ const GENERIC_SHOP_ALT = 'Golf clubs on display'
 
 const TITLE = 'Golf Shops in the Algarve'
 const DESCRIPTION =
-  'Golf equipment shops across the Algarve — on-course pro shops, retail stores and club-fitting studios. Find where to buy gear or rent clubs near your course.'
+  'Golf shops across the Algarve — on-course pro shops, retail stores and club-fitting studios. Find where to buy gear or rent clubs near your course.'
 
 export const revalidate = 3600
 

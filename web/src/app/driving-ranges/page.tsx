@@ -23,7 +23,7 @@ function heroUrl(course: { photos?: { url: string; is_hero?: boolean }[] }): str
 const H1 = 'Driving Ranges in the Algarve'
 const SEO_TITLE = 'Driving Ranges in the Algarve | Golf Practice Facilities'
 const DESCRIPTION =
-  'Every golf course in the Algarve with a driving range, listed town by town — Vilamoura, Almancil, Tavira, Portimão, Lagos and more. Practice facilities, golf academies and green fees for your trip to Portugal.'
+  'Every Algarve golf course with a driving range, town by town: Vilamoura, Almancil, Tavira, Portimão, Lagos and more. Practice facilities and academies.'
 
 // City heading from a course town label like "Almancil · Golden Triangle".
 function cityOf(town: string): string {
