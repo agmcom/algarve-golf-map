@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear, getShopsNear, getApprovedReviews } from '@/lib/queries'
 import { RESORT_PAGES, resortSlugForCourse } from '@/lib/resorts'
 import { summarizePrices } from '@/lib/prices'
+import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
 import { summarizeReviews, sortReviews, MIN_REVIEWS_TO_INDEX } from '@/lib/reviews'
 import { ReviewStars } from '@/components/ReviewStars'
 import { ReviewCard } from '@/components/ReviewCard'
@@ -73,9 +74,37 @@ export async function generateMetadata(
   const course = await getCourseBySlug(slug)
   if (!course) return {}
 
-  const title = `${course.name} — Golf Course in ${course.town}, Algarve`
-  const description = course.blurb
-    ?? `Play ${course.name} in ${course.town}, Algarve. ${course.holes} holes, par ${course.par}${course.price_from ? `, from €${course.price_from}` : ''}. Book your tee time online.`
+  const town = shortTown(course.town)
+  const nameHasTown = course.name.toLowerCase().includes(town.toLowerCase())
+  // People search "<name> golf course", so make sure the title says it once (no "Golf Golf" / "Course Course").
+  const lower = course.name.toLowerCase()
+  const courseName = lower.endsWith(' course') ? course.name
+    : lower.endsWith(' golf') ? `${course.name} Course`
+    : lower.includes('golf') ? course.name
+    : `${course.name} Golf Course`
+  const mapName = courseName.toLowerCase().endsWith(' course') ? `${courseName} Map` : `${courseName} Course Map`
+  const title = pickTitle(course.course_map_url
+    ? [
+        ...(nameHasTown ? [] : [`${mapName} & Guide, ${town}`]),
+        `${mapName} & Guide`,
+        mapName,
+      ]
+    : [
+        ...(nameHasTown ? [] : [`${courseName}, ${town}: Guide & Prices`]),
+        `${courseName}: Guide & Prices`,
+        `${courseName} Guide`,
+      ])
+
+  const s = summarizePrices(course.prices ?? [])
+  const priceFrom = s.primary?.min ?? course.price_from
+  const layout = [course.holes && `${course.holes}-hole`, course.par && `par-${course.par}`].filter(Boolean).join(', ')
+  const intro = `${nameHasTown ? course.name : `${course.name}, ${town}`}${layout ? `: ${layout} course` : ''}`
+  const extras = `${course.course_map_url ? 'Course map, g' : 'G'}reen fees${priceFrom != null ? ` from €${priceFrom}` : ''}, facilities and hotels nearby.`
+  const description = pickDescription([
+    ...(course.designer ? [`${intro} by ${course.designer}. ${extras}`] : []),
+    `${intro}. ${extras}`,
+    `${intro}.`,
+  ])
 
   const heroPhoto = course.photos?.find(p => p.is_hero)
   const ogImages = heroPhoto
@@ -85,7 +114,7 @@ export async function generateMetadata(
   const canonicalUrl = `${SITE_URL}/courses/${slug}`
 
   return {
-    title,
+    title: withSiteName(title),
     description,
     alternates: {
       canonical: canonicalUrl,

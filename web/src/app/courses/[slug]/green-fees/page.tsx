@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getCourseBySlug, getCourseSlugsWithGreenFees, getCoursesNear, getGreenFeeComparables } from '@/lib/queries'
 import { summarizePrices, monthListText, PRICE_SOURCE, PRICE_SEASON, PRICE_LAST_CHECKED, type PriceSummary } from '@/lib/prices'
+import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { SiteHeader } from '@/components/SiteHeader'
@@ -143,8 +144,20 @@ export async function generateMetadata(
     ? (s.primary.flat ? `Flat €${s.primary.min}` : `€${s.primary.min}–€${s.primary.max}`)
     : course.price_from != null ? `From €${course.price_from}` : ''
 
-  const title = `${course.name} Green Fees — Prices by Month`
-  const description = `How much does it cost to play ${course.name} in ${course.town}, Algarve? ${range} for ${holes} holes, month-by-month green fees${s.hasTwilight ? ', twilight rates' : ''}, buggy hire and how to book. Updated for the ${PRICE_SEASON} season.`
+  const priceFrom = s.primary?.min ?? course.price_from
+  const title = pickTitle([
+    ...(priceFrom != null ? [`${course.name} Green Fees ${PRICE_SEASON}: from €${priceFrom}`] : []),
+    `${course.name} Green Fees ${PRICE_SEASON}`,
+    `${course.name} Green Fees`,
+  ])
+  const town = shortTown(course.town)
+  const rangeText = range.replace(/^From /, 'from ').replace(/^Flat /, 'a flat ')
+  const details = `month by month${s.hasTwilight ? ', twilight rates' : ''}, buggy hire and how to book.`
+  const description = pickDescription([
+    `${course.name} green fees for ${PRICE_SEASON}: ${range ? `${rangeText} for ${holes} holes` : `${holes} holes`} in ${town}. Prices ${details}`,
+    `${course.name} green fees for ${PRICE_SEASON}: ${range ? `${rangeText} for ${holes} holes` : `${holes} holes`}. Prices ${details}`,
+    `${course.name} green fees for ${PRICE_SEASON}${range ? `: ${rangeText} for ${holes} holes` : ''}. Prices month by month and how to book.`,
+  ])
 
   const heroPhoto = course.photos?.find(p => p.is_hero)
   const ogImages = heroPhoto
@@ -154,7 +167,7 @@ export async function generateMetadata(
   const canonicalUrl = `${SITE_URL}/courses/${slug}/green-fees`
 
   return {
-    title,
+    title: withSiteName(title),
     description,
     alternates: { canonical: canonicalUrl },
     openGraph: {

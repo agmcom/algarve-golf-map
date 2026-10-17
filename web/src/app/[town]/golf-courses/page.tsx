@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { pickTitle, pickDescription, withSiteName } from '@/lib/seo'
 import { getCourses, getAirports } from '@/lib/queries'
 import { TOWN_PAGES } from '@/lib/towns'
 import { TownMapClient } from '@/components/TownMapClient'
@@ -33,16 +34,32 @@ export async function generateMetadata({
   const townPage = TOWN_PAGES.find(t => t.slug === slug)
   if (!townPage) return {}
 
-  const title = `${townPage.label} Golf Courses`
+  const courses = (await getCourses()).filter(c => townPage.towns.includes(c.town ?? ''))
+  const names = courses.map(c => c.name)
+  const namesText = names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}` : names[0]
+
+  // Ferragudo has a single course with its own page; aim this one at "golf near Ferragudo" so they don't compete.
+  const title = pickTitle(slug === 'ferragudo'
+    ? ['Golf near Ferragudo: Map & Green Fees']
+    : [
+        `${townPage.label} Golf Courses: Map & Green Fees`,
+        `${townPage.label} Golf Courses Map`,
+        `${townPage.label} Golf Courses`,
+      ])
+  const count = courses.length === 1 ? 'the golf course' : `the ${courses.length} golf courses`
+  const description = pickDescription([
+    `Map of ${count} in ${townPage.label}: ${namesText}. Compare green fees and course details.`,
+    `Map of ${count} in ${townPage.label}. Compare green fees, difficulty and course details.`,
+  ])
   const url = `${BASE}/${slug}/golf-courses`
 
   return {
-    title,
-    description: townPage.description,
+    title: withSiteName(title),
+    description,
     alternates: { canonical: url },
     openGraph: {
       title,
-      description: townPage.description,
+      description,
       url,
       siteName: 'Algarve Golf Map',
       type: 'website',

@@ -12,6 +12,7 @@ import { ReviewCard } from '@/components/ReviewCard'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { SiteHeader } from '@/components/SiteHeader'
 import { townSlug } from '@/lib/towns'
+import { pickDescription, shortTown } from '@/lib/seo'
 
 const SITE_URL = 'https://www.algarvegolfmap.com'
 const PEXELS_FALLBACK = 'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=1400&h=600&fit=crop'
@@ -47,7 +48,11 @@ export async function generateMetadata(
     ? `Read ${s.count} review${s.count === 1 ? '' : 's'} of ${course.name} in ${course.town}, Algarve, rated ${s.overall}/5 by visiting golfers. ` +
       `Course condition${s.recent ? ` (rounds played ${s.recent.rangeLabel})` : ''}: greens ${greens}/5, fairways ${fairways}/5. ` +
       `Pace of play, buggy rules and tips.`
-    : `Played ${course.name} in ${course.town}, Algarve? Share how the course was playing — greens, fairways, pace of play — and help other golfers plan their trip.`
+    : pickDescription([
+        `Played ${course.name} in ${shortTown(course.town)}? Share how the course was playing — greens, fairways, pace of play — and help other golfers plan their trip.`,
+        `Played ${course.name}? Share how the course was playing — greens, fairways, pace of play — and help other golfers plan their trip.`,
+        `Played ${course.name}? Share how the course was playing and help other golfers plan their trip.`,
+      ])
 
   const base = `${SITE_URL}/courses/${slug}/reviews`
   const canonicalUrl = !season && page > 1 ? `${base}?page=${page}` : base
