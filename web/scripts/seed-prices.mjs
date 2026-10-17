@@ -1,10 +1,13 @@
 // Seed course_prices with monthly data from algarvegolf.net
-// Usage: node scripts/seed-prices.mjs
+// Usage: node --env-file=.env.local scripts/seed-prices.mjs
 
 import { createClient } from '@supabase/supabase-js'
 
-const SUPABASE_URL = 'https://lltyahomlgnigxdtidys.supabase.co'
-const SERVICE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsdHlhaG9tbGduaWd4ZHRpZHlzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MDIyNTI0NCwiZXhwIjoyMDk1ODAxMjQ0fQ.KQQjZ96VuRfmR0JSR5s7_8DZbGDnWHElyixHKshVRzM'
+// Reads credentials from the environment, e.g.:
+//   node --env-file=.env.local scripts/seed-prices.mjs
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const SERVICE_KEY  = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!SUPABASE_URL || !SERVICE_KEY) throw new Error('Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (node --env-file=.env.local …)')
 
 const supabase = createClient(SUPABASE_URL, SERVICE_KEY)
 
