@@ -30,6 +30,18 @@ const baseConfig: NextConfig = {
         destination: '/guide/golf-clubs-on-easyjet-rules-sizes-and-what-it-actually-costs',
         permanent: true,
       },
+      // Old course URL pattern still known to Google (e.g. /golf-courses/balaia/).
+      {
+        source: '/golf-courses/:slug',
+        destination: '/courses/:slug',
+        permanent: true,
+      },
+      // Mistyped slugs of the golf season post that Google picked up.
+      {
+        source: '/guide/algarve-golf-season-best-:typo(time-of|title-to)-play-golf',
+        destination: '/guide/algarve-golf-season-best-time-to-play-golf',
+        permanent: true,
+      },
     ]
   },
 }

@@ -11,6 +11,23 @@ const supabase = createClient(SUPABASE_URL, SERVICE_KEY)
 // Raw price data: [slug, month, time_slot, holes, price_eur, buggy_price, buggy_included]
 // Source: algarvegolf.net (Jun 2026 – May 2027)
 const RAW = [
+  // ── Pestana Ferragudo (opened 2026; algarvegolf.net lists Oct–May only) ──
+  ['pestana-ferragudo', 10,'standard',18, 177, 55,false],
+  ['pestana-ferragudo', 11,'standard',18, 162, 55,false],
+  ['pestana-ferragudo', 12,'standard',18, 116, 55,false],
+  ['pestana-ferragudo',  1,'standard',18, 116, 55,false],
+  ['pestana-ferragudo',  2,'standard',18, 162, 55,false],
+  ['pestana-ferragudo',  3,'standard',18, 177, 55,false],
+  ['pestana-ferragudo',  4,'standard',18, 177, 55,false],
+  ['pestana-ferragudo',  5,'standard',18, 162, 55,false],
+  ['pestana-ferragudo', 11,'twilight',18,  80,null,false],
+  ['pestana-ferragudo', 12,'twilight',18,  80,null,false],
+  ['pestana-ferragudo',  1,'twilight',18,  80,null,false],
+  ['pestana-ferragudo',  2,'twilight',18,  80,null,false],
+  ['pestana-ferragudo',  3,'twilight',18,  80,null,false],
+  ['pestana-ferragudo',  4,'twilight',18,  80,null,false],
+  ['pestana-ferragudo',  5,'twilight',18,  80,null,false],
+
   // ── Quinta do Lago South ─────────────────────────────────
   ['quinta-do-lago-south',  1,'standard',18, 188, 60,false],
   ['quinta-do-lago-south',  2,'standard',18, 228, 60,false],

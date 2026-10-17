@@ -252,7 +252,9 @@ export default async function CoursePage(
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={course.photos?.find(p => p.is_hero)?.url ?? PEXELS_FALLBACK}
-            alt={course.name}
+            alt={course.photos?.find(p => p.is_hero)
+              ? (course.photos.find(p => p.is_hero)!.alt ?? `${course.name} golf course in ${shortTown(course.town)}, Algarve`)
+              : 'Golf course in the Algarve'}
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
           <div style={{
