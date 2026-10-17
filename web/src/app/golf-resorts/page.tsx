@@ -12,7 +12,7 @@ const TITLE = 'Golf Resorts in the Algarve'
 // Short form for the <meta name="description"> / OG / Twitter tags — kept under
 // ~155 characters so Google doesn't truncate it in the SERP.
 const META_DESCRIPTION =
-  'Compare 15 Algarve golf resorts — Quinta do Lago, Vale do Lobo, Monte Rei and more. Each pairs an on-site hotel with its own courses, star rating and nightly price.'
+  'Compare the top Algarve golf resorts — Quinta do Lago, Vale do Lobo, Monte Rei and more. Each pairs an on-site hotel with its own courses, star rating and nightly price.'
 // Longer form used as the visible intro paragraph on the page.
 const DESCRIPTION =
   'Explore the Algarve\'s best golf resorts — from Quinta do Lago and Vale do Lobo in the Golden Triangle to Monte Rei and Robinson Quinta da Ria in the east. Each resort page pairs the on-site hotel with its golf course details and prices.'
@@ -31,6 +31,7 @@ export function generateMetadata(): Metadata {
       url,
       siteName: 'Algarve Golf Map',
       type: 'website',
+      images: ['/og-default.jpg'],
     },
     twitter: {
       card: 'summary_large_image',
@@ -44,6 +45,8 @@ export default async function GolfResortsHubPage() {
   const [allCourses, allHotels] = await Promise.all([getCourses(), getHotels()])
   const coursesBySlug = new Map(allCourses.map(c => [c.slug, c]))
   const hotelsBySlug = new Map(allHotels.map(h => [h.slug, h]))
+  // Resort pages 404 when none of their courses are active (e.g. private clubs), so leave those out.
+  const resorts = RESORT_PAGES.filter(r => r.courseSlugs.some(s => coursesBySlug.has(s)))
 
   const pageUrl = `${BASE}/golf-resorts`
 
@@ -60,8 +63,8 @@ export default async function GolfResortsHubPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: TITLE,
-    numberOfItems: RESORT_PAGES.length,
-    itemListElement: RESORT_PAGES.map((r, i) => ({
+    numberOfItems: resorts.length,
+    itemListElement: resorts.map((r, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: `${r.label} Golf Resort`,
@@ -96,7 +99,7 @@ export default async function GolfResortsHubPage() {
         <div className="course-directory__header" style={{ marginTop: 16 }}>
           <h1 className="course-directory__title">{TITLE}</h1>
           <p className="course-directory__subtitle">
-            {RESORT_PAGES.length} golf resorts, pairing an on-site hotel with its course or courses
+            {resorts.length} golf resorts, pairing an on-site hotel with its course or courses
           </p>
         </div>
 
@@ -105,7 +108,7 @@ export default async function GolfResortsHubPage() {
         </p>
 
         <ul className="course-list">
-          {RESORT_PAGES.map(resort => {
+          {resorts.map(resort => {
             const hotel = hotelsBySlug.get(resort.hotelSlug)
             const firstCourse = coursesBySlug.get(resort.courseSlugs[0])
             const heroImage =

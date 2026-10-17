@@ -42,7 +42,7 @@ export function CourseDirectory({ courses }: Props) {
           </span>
           <SocialLinks size={22} color="#6a6a6a" />
         </div>
-        <h2 className="course-directory__title">Golf Courses in the Algarve</h2>
+        <h1 className="course-directory__title">Golf Courses in the Algarve</h1>
         <p className="course-directory__subtitle">
           {courses.length} courses across the Algarve — from Lagos to Vila Real de Santo António
         </p>

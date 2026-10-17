@@ -36,6 +36,14 @@ export async function generateMetadata({
 
   const url = `${BASE}/hotels/${slug}`
 
+  const resort = RESORT_PAGES.find(r => r.hotelSlug === slug)
+  const allCourses = resort ? await getCourses() : []
+  const firstCourse = resort?.courseSlugs
+    .map(s => allCourses.find(c => c.slug === s))
+    .find(c => c?.photos?.length)
+  const image = firstCourse ? heroUrl(firstCourse) : null
+  const images = image ? [{ url: image, alt: `${hotel.name} — ${firstCourse!.name} golf course` }] : [{ url: '/og-default.jpg' }]
+
   return {
     title,
     description,
@@ -46,6 +54,13 @@ export async function generateMetadata({
       url,
       siteName: 'Algarve Golf Map',
       type: 'website',
+      images,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: images.map(i => i.url),
     },
   }
 }
@@ -63,15 +78,18 @@ export default async function HotelPage({
   const allCourses = resort ? await getCourses() : []
   const courses = resort ? allCourses.filter(c => resort.courseSlugs.includes(c.slug)) : []
 
+  // The resort page 404s when none of its courses are active, so don't link to it then.
+  const resortPage = courses.length > 0 ? resort : undefined
+
   const hotelUrl = `${BASE}/hotels/${slug}`
 
   const breadcrumbItems = [
     { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
   ]
-  if (resort) {
+  if (resortPage) {
     breadcrumbItems.push(
       { '@type': 'ListItem', position: 2, name: 'Golf Resorts in the Algarve', item: `${BASE}/golf-resorts` },
-      { '@type': 'ListItem', position: 3, name: resort.label, item: `${BASE}/golf-resorts/${resort.slug}` },
+      { '@type': 'ListItem', position: 3, name: resortPage.label, item: `${BASE}/golf-resorts/${resortPage.slug}` },
     )
   }
   breadcrumbItems.push({
@@ -129,11 +147,11 @@ export default async function HotelPage({
           }}>
             <li><Link href="/" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Home</Link></li>
             <li aria-hidden="true">›</li>
-            {resort && (
+            {resortPage && (
               <>
                 <li><Link href="/golf-resorts" style={{ color: '#6a6a6a', textDecoration: 'none' }}>Golf Resorts</Link></li>
                 <li aria-hidden="true">›</li>
-                <li><Link href={`/golf-resorts/${resort.slug}`} style={{ color: '#6a6a6a', textDecoration: 'none' }}>{resort.label}</Link></li>
+                <li><Link href={`/golf-resorts/${resortPage.slug}`} style={{ color: '#6a6a6a', textDecoration: 'none' }}>{resortPage.label}</Link></li>
                 <li aria-hidden="true">›</li>
               </>
             )}

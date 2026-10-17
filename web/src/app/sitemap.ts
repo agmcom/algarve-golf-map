@@ -52,7 +52,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }))
 
-  const resortUrls: MetadataRoute.Sitemap = RESORT_PAGES.map(r => ({
+  // Resort pages 404 when none of their courses are active (e.g. private clubs), so leave those out.
+  const resortUrls: MetadataRoute.Sitemap = RESORT_PAGES.filter(r => r.courseSlugs.some(s => slugs.includes(s))).map(r => ({
     url: `${BASE}/golf-resorts/${r.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',

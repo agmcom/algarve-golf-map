@@ -57,6 +57,13 @@ export async function generateMetadata({
   const url = `${BASE}/golf-resorts/${slug}`
   const description = metaDescription(resort.description)
 
+  const allCourses = await getCourses()
+  const firstCourse = resort.courseSlugs
+    .map(s => allCourses.find(c => c.slug === s))
+    .find(c => c?.photos?.length)
+  const image = firstCourse ? heroUrl(firstCourse) : null
+  const images = image ? [{ url: image, alt: `${title} — ${firstCourse!.name}` }] : [{ url: '/og-default.jpg' }]
+
   return {
     title,
     description,
@@ -67,6 +74,13 @@ export async function generateMetadata({
       url,
       siteName: 'Algarve Golf Map',
       type: 'website',
+      images,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: images.map(i => i.url),
     },
   }
 }

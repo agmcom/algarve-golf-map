@@ -54,6 +54,7 @@ export function generateMetadata(): Metadata {
       url,
       siteName: 'Algarve Golf Map',
       type: 'website',
+      images: ['/og-default.jpg'],
     },
   }
 }

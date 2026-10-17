@@ -80,7 +80,7 @@ export async function generateMetadata(
   const heroPhoto = course.photos?.find(p => p.is_hero)
   const ogImages = heroPhoto
     ? [{ url: heroPhoto.url, width: 1400, height: 600, alt: `${course.name} golf course in the Algarve` }]
-    : []
+    : [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Algarve Golf Map' }]
 
   const canonicalUrl = `${SITE_URL}/courses/${slug}`
 
