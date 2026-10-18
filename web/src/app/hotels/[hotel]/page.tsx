@@ -238,17 +238,7 @@ export default async function HotelPage({
             </div>
           )}
           {(hotel.website || hotel.booking_url) && (
-            <div style={{ padding: '16px 22px', display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-              {hotel.website && (
-                <a
-                  href={hotel.website.includes('?') ? `${hotel.website}&utm_source=algarvegolfmap.com` : `${hotel.website}?utm_source=algarvegolfmap.com`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}
-                >
-                  Visit hotel website ↗
-                </a>
-              )}
+            <div style={{ padding: '18px 22px' }}>
               {hotel.booking_url && (
                 <a
                   href={hotel.booking_url}
@@ -256,9 +246,19 @@ export default async function HotelPage({
                   rel="noopener noreferrer"
                   data-hotel-click="hotel_page"
                   data-hotel-name={hotel.name}
-                  style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}
+                  style={ctaBtn}
                 >
-                  Check availability ↗
+                  Check availability{hotel.price_from ? ` · from €${hotel.price_from}/night` : ''} →
+                </a>
+              )}
+              {hotel.website && (
+                <a
+                  href={hotel.website.includes('?') ? `${hotel.website}&utm_source=algarvegolfmap.com` : `${hotel.website}?utm_source=algarvegolfmap.com`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'block', textAlign: 'center', marginTop: hotel.booking_url ? 12 : 0, fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}
+                >
+                  Visit hotel website ↗
                 </a>
               )}
             </div>
@@ -366,9 +366,32 @@ export default async function HotelPage({
             </div>
           ))}
         </section>
+
+        {hotel.booking_url && (
+          <div style={{ marginTop: 28, padding: '20px 22px', borderRadius: 16, background: '#eaf2f8' }}>
+            <div style={{ fontSize: 16, fontWeight: 700, color: '#222', marginBottom: 12 }}>
+              Ready to book {hotel.name}?
+            </div>
+            <a
+              href={hotel.booking_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-hotel-click="hotel_page_bottom"
+              data-hotel-name={hotel.name}
+              style={ctaBtn}
+            >
+              Check availability →
+            </a>
+          </div>
+        )}
       </div>
     </>
   )
+}
+
+const ctaBtn: React.CSSProperties = {
+  display: 'block', textAlign: 'center', padding: '14px 16px', borderRadius: 12,
+  background: '#2B6090', color: '#fff', fontSize: 15, fontWeight: 700, textDecoration: 'none',
 }
 
 const sectionTitle: React.CSSProperties = {

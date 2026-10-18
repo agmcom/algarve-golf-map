@@ -238,8 +238,7 @@ export default async function ResortPage({
                       ))}
                     </div>
                   )}
-                  <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginTop: 14 }}>
-                    <Link href={`/hotels/${hotel.slug}`} style={link}>Hotel details →</Link>
+                  <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', marginTop: 16 }}>
                     {hotel.booking_url && (
                       <a
                         href={hotel.booking_url}
@@ -247,11 +246,15 @@ export default async function ResortPage({
                         rel="noopener noreferrer"
                         data-hotel-click="resort_page"
                         data-hotel-name={hotel.name}
-                        style={link}
+                        style={{
+                          display: 'inline-block', padding: '12px 22px', borderRadius: 12,
+                          background: '#2B6090', color: '#fff', fontSize: 15, fontWeight: 700, textDecoration: 'none',
+                        }}
                       >
-                        Check availability ↗
+                        Check availability →
                       </a>
                     )}
+                    <Link href={`/hotels/${hotel.slug}`} style={link}>Hotel details</Link>
                   </div>
                 </div>
               ))}
