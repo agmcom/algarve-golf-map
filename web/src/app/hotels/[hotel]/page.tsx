@@ -45,10 +45,12 @@ export async function generateMetadata({
   const images = image ? [{ url: image, alt: `${hotel.name} — ${firstCourse!.name} golf course` }] : [{ url: '/og-default.jpg' }]
 
   const town = shortTown(hotel.town)
+  // Marriott names end in ", Algarve" — drop it so titles don't read "…, Algarve, Albufeira".
+  const titleName = hotel.name.replace(/, Algarve$/, '')
   const title = pickTitle([
-    `${hotel.name}: Golf Hotel in ${town}`,
-    `${hotel.name}, ${town}`,
-    hotel.name,
+    `${titleName}: Golf Hotel in ${town}`,
+    `${titleName}, ${town}`,
+    titleName,
   ])
   const courseNames = resortCourses.map(c => c.name)
   const coursesText = courseNames.length > 1

@@ -121,9 +121,17 @@ export const RESORT_PAGES: ResortPage[] = [
       'Pestana Gramacho Residences is a 4-star golf aparthotel within 500 metres of the Gramacho clubhouse at the Pestana Carvoeiro resort near Carvoeiro. Ronald Fream\'s par-72 Gramacho course winds through natural valleys and rocky Algarve terrain, with a shuttle bus connecting residence guests to the wider Pestana course network.',
   },
   {
+    slug: 'salgados',
+    label: 'Salgados',
+    hotelSlugs: ['algarve-marriott-salgados-golf-resort-spa', 'the-westin-salgados-beach-resort-algarve', 'marriott-residences-salgados-resort-algarve'],
+    courseSlugs: ['salgados'],
+    description:
+      'Herdade dos Salgados, between Albufeira and Armação de Pêra, is built around Pedro de Vasconcelos\'s 1997 par-72 Salgados course, laid across a coastal wetland reserve where birdlife from the neighbouring lagoon is part of every round. Three Marriott-group properties share the estate: the Algarve Marriott Salgados Golf Resort & Spa, The Westin Salgados Beach Resort and the apartment-style Marriott Residences, all close to Salgados beach.',
+  },
+  {
     slug: 'pine-cliffs',
     label: 'Pine Cliffs Resort',
-    hotelSlugs: ['pine-cliffs-residence'],
+    hotelSlugs: ['pine-cliffs-residence', 'pine-cliffs-hotel', 'pine-cliffs-ocean-suites'],
     courseSlugs: ['pine-cliffs'],
     description:
       'Pine Cliffs Resort is a five-star Luxury Collection property perched on the red sandstone cliffs above Praia da Falésia near Albufeira, with direct beach access via a cliffside lift. Its own 9-hole, par-33 course — designed by Sir Henry Cotton — is famous for the Devil\'s Parlour, a par-3 played clean over the clifftop edge.',

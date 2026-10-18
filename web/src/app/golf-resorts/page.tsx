@@ -77,8 +77,8 @@ const PICKS: { heading: string; text: string; slugs: string[] }[] = [
   },
   {
     heading: 'Golf and the beach',
-    text: 'The Dona Filipa at Vale do Lobo is a two-minute walk from the sand, Pine Cliffs has a cliffside lift down to Praia da Falésia, and Palmares Beach House overlooks Meia Praia.',
-    slugs: ['vale-do-lobo', 'pine-cliffs', 'palmares'],
+    text: 'The Dona Filipa at Vale do Lobo is a two-minute walk from the sand, Pine Cliffs has a cliffside lift down to Praia da Falésia, Palmares Beach House overlooks Meia Praia, and the Salgados hotels sit close to Salgados beach.',
+    slugs: ['vale-do-lobo', 'pine-cliffs', 'palmares', 'salgados'],
   },
   {
     heading: 'Families',
