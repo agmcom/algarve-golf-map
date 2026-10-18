@@ -238,7 +238,7 @@ export default async function ResortPage({
                       ))}
                     </div>
                   )}
-                  <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', marginTop: 16 }}>
+                  <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', marginTop: 14 }}>
                     {hotel.booking_url && (
                       <a
                         href={hotel.booking_url}
@@ -247,8 +247,8 @@ export default async function ResortPage({
                         data-hotel-click="resort_page"
                         data-hotel-name={hotel.name}
                         style={{
-                          display: 'inline-block', padding: '12px 22px', borderRadius: 12,
-                          background: '#2B6090', color: '#fff', fontSize: 15, fontWeight: 700, textDecoration: 'none',
+                          display: 'inline-block', padding: '9px 16px', borderRadius: 9,
+                          background: '#2B6090', color: '#fff', fontSize: 14, fontWeight: 600, textDecoration: 'none',
                         }}
                       >
                         Check availability →
