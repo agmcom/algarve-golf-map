@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getHotelBySlug, getCourses } from '@/lib/queries'
+import { getHotelBySlug, getCourses, getShopsNear } from '@/lib/queries'
 import { RESORT_PAGES, resortForHotel } from '@/lib/resorts'
-import { faroDistance, formatDriveTime } from '@/lib/distance'
-import type { Hotel } from '@/types/database'
+import { faroDistance, formatDriveTime, nearestCourses } from '@/lib/distance'
+import type { Course, Hotel, Shop } from '@/types/database'
 import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
 
 const BASE = 'https://www.algarvegolfmap.com'
@@ -94,10 +94,18 @@ export default async function HotelPage({
   if (!hotel) notFound()
 
   const resort = resortForHotel(slug)
-  const allCourses = resort ? await getCourses() : []
+  const [allCourses, shopsNear] = await Promise.all([getCourses(), getShopsNear(hotel.lat, hotel.lng, 20, 25)])
   const courses = resort ? allCourses.filter(c => resort.courseSlugs.includes(c.slug)) : []
+  const nearby = nearestCourses(hotel.lat, hotel.lng, '', allCourses.filter(c => !courses.includes(c)), 4)
+  const rentalShops = shopsNear.filter(sh => sh.offers_rental && sh.slug).slice(0, 2)
   const perks = golfPerks(hotel)
   const faro = faroDistance(hotel.lat, hotel.lng)
+  const faqs = buildFaqs(hotel, courses, nearby, rentalShops)
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  }
 
   // The resort page 404s when none of its courses are active, so don't link to it then.
   const resortPage = courses.length > 0 ? resort : undefined
@@ -158,6 +166,7 @@ export default async function HotelPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/<\//g, '<\\/') }} />
 
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '24px 20px 60px' }}>
         <nav aria-label="Breadcrumb" style={{ marginBottom: 8 }}>
@@ -323,6 +332,38 @@ export default async function HotelPage({
             </ul>
           </section>
         )}
+
+        {nearby.length > 0 && (
+          <section style={{ marginTop: 32 }}>
+            <h2 style={sectionTitle}>{courses.length > 0 ? 'More golf courses nearby' : `Golf courses near ${hotel.name}`}</h2>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
+              {nearby.map(c => (
+                <li key={c.id}>
+                  <Link href={`/courses/${c.slug}`} style={{ display: 'flex', justifyContent: 'space-between', gap: 12, padding: '12px 16px', border: '1px solid #ebebeb', borderRadius: 12, textDecoration: 'none', color: '#222' }}>
+                    <span>
+                      <span style={{ fontWeight: 700 }}>{c.name}</span>
+                      <span style={{ display: 'block', fontSize: 13, color: '#6a6a6a', marginTop: 2 }}>
+                        {c.holes} holes{c.par != null ? ` · Par ${c.par}` : ''}{c.price_from != null ? ` · from €${c.price_from}` : ''}
+                      </span>
+                    </span>
+                    <span style={{ fontSize: 13, color: '#6a6a6a', whiteSpace: 'nowrap' }}>{c.distanceKm} km</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 12.5, color: '#8a8a8a', margin: '8px 0 0' }}>Distances are in a straight line from the hotel.</p>
+          </section>
+        )}
+
+        <section style={{ marginTop: 32 }}>
+          <h2 style={sectionTitle}>Frequently asked questions</h2>
+          {faqs.map(f => (
+            <div key={f.q} style={{ marginBottom: 18 }}>
+              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: '#222', margin: '0 0 6px' }}>{f.q}</h3>
+              <p style={{ fontSize: 14.5, lineHeight: 1.7, color: '#444', margin: 0 }}>{f.a}</p>
+            </div>
+          ))}
+        </section>
       </div>
     </>
   )
@@ -346,4 +387,59 @@ function golfPerks(hotel: Hotel): string[] {
     hotel.late_checkout && 'Late checkout available',
     hotel.offers_rental && 'Golf club rental',
   ].filter((p): p is string => Boolean(p))
+}
+
+function joinNames(names: string[]): string {
+  return names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}` : names[0] ?? ''
+}
+
+// Built only from data we hold for the hotel; questions without data are left out.
+function buildFaqs(
+  hotel: Hotel,
+  resortCourses: Course[],
+  nearby: (Course & { distanceKm: number })[],
+  rentalShops: (Shop & { distance_km: number })[],
+): { q: string; a: string }[] {
+  const faqs: { q: string; a: string }[] = []
+
+  if (resortCourses.length > 0) {
+    faqs.push({
+      q: `Does ${hotel.name} have its own golf course?`,
+      a: `Yes. ${joinNames(resortCourses.map(c => `${c.name} (${c.holes} holes${c.price_from != null ? `, green fees from €${c.price_from}` : ''})`))} ${resortCourses.length === 1 ? 'is' : 'are'} on the same estate as the hotel.`,
+    })
+  }
+
+  if (nearby.length > 0) {
+    faqs.push({
+      q: `Which ${resortCourses.length > 0 ? 'other ' : ''}golf courses are near ${hotel.name}?`,
+      a: `The closest are ${joinNames(nearby.slice(0, 3).map(c => `${c.name} (about ${c.distanceKm} km)`))}, measured in a straight line from the hotel.`,
+    })
+  }
+
+  if (hotel.has_golf_package || hotel.has_shuttle) {
+    const parts = [
+      hotel.has_golf_package && (hotel.golf_package_desc ?? 'golf packages'),
+      hotel.has_shuttle && (hotel.shuttle_courses.length ? `a shuttle to ${hotel.shuttle_courses.join(', ')}` : 'a golf shuttle'),
+    ].filter((p): p is string => Boolean(p))
+    faqs.push({
+      q: `Does ${hotel.name} offer anything extra for golfers?`,
+      a: `According to the hotel: ${parts.map((p, i) => (i === 0 ? p.charAt(0).toLowerCase() + p.slice(1) : p)).join('; ')}. Check the current terms when you book.`,
+    })
+  }
+
+  if (rentalShops.length > 0) {
+    faqs.push({
+      q: `Can I hire golf clubs near ${hotel.name}?`,
+      a: `Yes. ${joinNames(rentalShops.map(sh => `${sh.name} in ${sh.town} (about ${Math.round(sh.distance_km)} km)`))} ${rentalShops.length === 1 ? 'rents' : 'rent'} golf clubs${hotel.offers_rental ? ', and the hotel can also arrange club hire' : ''}.`,
+    })
+  }
+
+  if (hotel.price_from != null) {
+    faqs.push({
+      q: `How much does a night at ${hotel.name} cost?`,
+      a: `Rooms start from about €${hotel.price_from} a night. Prices change with the season and room type, so check availability for your dates.`,
+    })
+  }
+
+  return faqs
 }
