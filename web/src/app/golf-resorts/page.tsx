@@ -37,7 +37,7 @@ async function getResortRows(): Promise<ResortRow[]> {
       const fees = courses.map(c => c.price_from).filter(p => p != null)
       return {
         resort,
-        hotel: hotelsBySlug.get(resort.hotelSlug),
+        hotel: hotelsBySlug.get(resort.hotelSlugs[0]),
         courses,
         holes: courses.reduce((sum, c) => sum + (c.holes ?? 0), 0),
         greenFeeFrom: fees.length ? Math.min(...fees) : null,
