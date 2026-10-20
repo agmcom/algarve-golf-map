@@ -39,7 +39,7 @@ export function generateMetadata(): Metadata {
       title: SEO_TITLE,
       description: DESCRIPTION,
       url,
-      siteName: 'Algarve Golf Map',
+      siteName: 'Algarve Golf Map', locale: 'en_GB',
       type: 'website',
       images: ['/og-default.jpg'],
     },

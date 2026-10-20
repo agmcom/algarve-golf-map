@@ -53,6 +53,9 @@ export function CourseDirectory({ courses }: Props) {
           <Link href="/club-rental" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
             Browse Golf Club Rental in the Algarve →
           </Link>
+          <Link href="/guide" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+            Browse the Algarve Golf Guide →
+          </Link>
         </div>
       </div>
 

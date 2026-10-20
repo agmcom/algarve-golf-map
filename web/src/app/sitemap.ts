@@ -101,7 +101,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE}/guide`,
-      lastModified: new Date(),
+      // The hub only changes when a post does, so report the newest post's date rather than "now".
+      lastModified: guidePosts.length
+        ? new Date(Math.max(...guidePosts.map(p => new Date(p.updated_at).getTime())))
+        : new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
     },

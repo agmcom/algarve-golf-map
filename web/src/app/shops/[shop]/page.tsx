@@ -106,7 +106,7 @@ export async function generateMetadata({
     description,
     alternates: { canonical: url },
     openGraph: {
-      title, description, url, siteName: 'Algarve Golf Map', type: 'website',
+      title, description, url, siteName: 'Algarve Golf Map', locale: 'en_GB', type: 'website',
       images: [{ url: image, width: 1400, height: 600, alt: imageAlt }],
     },
   }

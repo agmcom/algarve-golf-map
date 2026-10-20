@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
     title: TITLE,
     description: DESCRIPTION,
     alternates: { canonical: url },
-    openGraph: { title: TITLE, description: DESCRIPTION, url, siteName: 'Algarve Golf Map', type: 'website', images: ['/og-default.jpg'] },
+    openGraph: { title: TITLE, description: DESCRIPTION, url, siteName: 'Algarve Golf Map', locale: 'en_GB', type: 'website', images: ['/og-default.jpg'] },
   }
 }
 

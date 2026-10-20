@@ -47,7 +47,11 @@ export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
             )}
           </div>
 
-          {/* Right: contact button */}
+          {/* Right: guide link + contact button */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <Link href="/guide" style={{ fontSize: 13, fontWeight: 600, color: '#222', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            Guide
+          </Link>
           <button
             className="site-header__contact"
             onClick={() => setContactOpen(true)}
@@ -65,6 +69,7 @@ export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
           >
             Contact
           </button>
+          </div>
         </div>
       </nav>
 

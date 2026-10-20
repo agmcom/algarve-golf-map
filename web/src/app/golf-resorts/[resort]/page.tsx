@@ -81,7 +81,7 @@ export async function generateMetadata({
       title,
       description,
       url,
-      siteName: 'Algarve Golf Map',
+      siteName: 'Algarve Golf Map', locale: 'en_GB',
       type: 'website',
       images,
     },

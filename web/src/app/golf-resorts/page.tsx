@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { absolute: title },
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, siteName: 'Algarve Golf Map', type: 'website', images: ['/og-default.jpg'] },
+    openGraph: { title, description, url, siteName: 'Algarve Golf Map', locale: 'en_GB', type: 'website', images: ['/og-default.jpg'] },
     twitter: { card: 'summary_large_image', title, description },
   }
 }
