@@ -87,7 +87,7 @@ const PICKS: { heading: string; text: string; slugs: string[] }[] = [
   },
   {
     heading: 'Beginners and short rounds',
-    text: 'A 9-hole course on site makes it easy to warm up or learn: Balaia\'s par-3 layout, Penina\'s Academy Course and the clifftop 9 holes at Pine Cliffs.',
+    text: 'A 9-hole course on site makes it easy to warm up or learn: Balaia\'s par-3 layout, Penina\'s Resort Course and the clifftop 9 holes at Pine Cliffs.',
     slugs: ['balaia-golf-village', 'penina', 'pine-cliffs'],
   },
   {
@@ -135,7 +135,7 @@ function buildFaqs(rows: ResortRow[]): { q: string; a: string }[] {
     },
     {
       q: 'Which golf resorts are good for beginners?',
-      a: 'Resorts with a 9-hole course are the easiest start: Balaia Golf Village has a relaxed par-3 course, Penina has its 9-hole Academy Course and Pine Cliffs has a short clifftop course. Most 18-hole courses ask for a handicap certificate, so check the rules before you book.',
+      a: 'Resorts with a 9-hole course are the easiest start: Balaia Golf Village has a relaxed par-3 course, Penina has its 9-hole Resort Course and Pine Cliffs has a short clifftop course. Most 18-hole courses ask for a handicap certificate, so check the rules before you book.',
     },
   ]
   if (priced.length >= 2) {

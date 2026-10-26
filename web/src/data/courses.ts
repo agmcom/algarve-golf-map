@@ -311,7 +311,7 @@ const RAW_COURSES: Course[] = [
     ...DEFAULTS,
     id: 'penina-resort', slug: 'penina-resort',
     name: 'Penina Resort',
-    blurb: "The Academy Course at Penina is a 9-hole par-35 layout designed by Sir Henry Cotton as a companion to the Championship Course. Situated within the Penina Hotel & Golf Resort, it serves as an accessible warm-up or beginner option on the same historic grounds.",
+    blurb: "The Resort Course at Penina is a 9-hole par-35 layout designed by Sir Henry Cotton as a companion to the Championship Course. Situated within the Penina Hotel & Golf Resort, it serves as an accessible warm-up or beginner option on the same historic grounds.",
     lat: 37.1611, lng: -8.5811,
     town: 'Portimão', region: 'west',
     holes: 9, par: 35,

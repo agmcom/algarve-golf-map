@@ -21,10 +21,10 @@ function heroUrl(course: { photos?: { url: string; is_hero?: boolean }[] }): str
 const H1 = 'Algarve 9 Hole Golf Courses'
 const SEO_TITLE = 'Algarve 9 Hole Golf Courses | Short & Par-3 Courses'
 const DESCRIPTION =
-  'Map of every 9-hole golf course in the Algarve: Balaia, Pine Cliffs, Vale de Milho and Penina\'s Academy Course. Par, length, green fees and handicap rules.'
+  'Map of every 9-hole golf course in the Algarve: Balaia, Pine Cliffs, Vale de Milho and Penina\'s Resort Course. Par, length, green fees and handicap rules.'
 
 // Order the four 9-hole courses deliberately: signature layout first, the two
-// beginner-friendly par-3s next, then the Penina academy course.
+// beginner-friendly par-3s next, then the Penina Resort Course.
 const SLUGS = ['pine-cliffs', 'vale-de-milho', 'balaia', 'penina-resort'] as const
 
 export const revalidate = 3600
@@ -63,16 +63,17 @@ const COPY: Record<string, ReactNode> = {
     <>
       <p>
         <A href="/courses/pine-cliffs">Pine Cliffs</A> is the most spectacular of
-        the Algarve&apos;s 9-hole courses. Sir Henry Cotton laid it out in 1992
-        along the ochre sandstone cliffs of Olhos de Água, above Praia da
+        the Algarve&apos;s 9-hole courses. Martin Hawtree laid it out along the
+        ochre sandstone cliffs of Olhos de Água, above Praia da
         Falésia, and at roughly 2,230 metres off the back tees it is also the
         longest nine on this list — a genuine par 33 rather than a par-3 track.
         Its signature hole, the Devil&apos;s Parlour, is a par 3 played clean
         across a gap in the cliffs with the Atlantic below.
       </p>
       <p>
-        A handicap certificate is required (maximum 36 for men and ladies) and
-        green fees start at around €54. The course belongs to the five-star{' '}
+        The club&apos;s local rules let players without a handicap play, as long
+        as they use the red tees, and on the 2025-26 price list nine holes cost
+        visitors €57 in the low season. The course belongs to the five-star{' '}
         <A href="/golf-resorts/pine-cliffs">Pine Cliffs Resort</A>, so it pairs
         naturally with a stay there. For a fuller schedule, it sits a short drive
         from the 18-hole layouts covered on our{' '}
@@ -104,10 +105,12 @@ const COPY: Record<string, ReactNode> = {
     <>
       <p>
         <A href="/courses/balaia">Balaia Golf Village</A> near Albufeira is a
-        9-hole, par-27 course on which every hole is a par 3. It opened in 1974
-        and measures under 1,000 metres, so it is one of the most approachable
-        places to play on the central Algarve coast — there is no handicap
-        requirement and green fees start at around €45.
+        9-hole, par-27 course on which every hole is a par 3. It measures under
+        1,000 metres, so it is one of the most approachable places to play on
+        the central Algarve coast. The resort&apos;s guest information says a
+        handicap is required, without giving a limit, so check with the club if
+        you have only just started. On the 2025-26 price list a visitor&apos;s day
+        green fee is €50.
       </p>
       <p>
         The course sits inside the self-catering{' '}
@@ -122,15 +125,14 @@ const COPY: Record<string, ReactNode> = {
   'penina-resort': (
     <>
       <p>
-        The <A href="/courses/penina-resort">Academy Course at Penina</A> is a
+        The <A href="/courses/penina-resort">Resort Course at Penina</A> is a
         9-hole, par-35 layout that Sir Henry Cotton designed as a companion to
         his 1966 Championship Course — the first purpose-built golf course in
-        Portugal. At roughly 1,850 metres it plays as a proper short course
-        rather than a par-3 track.
+        Portugal. At 2,629 metres from the yellow tees it plays as a proper
+        short course rather than a par-3 track.
       </p>
       <p>
-        Green fees start at around €28, the lowest of any 9-hole course in the
-        Algarve, and there is no handicap requirement, so it works well for
+        Penina states that no handicap is required, so it works well for
         higher-handicap golfers and beginners. It shares the historic parkland
         estate of the <A href="/golf-resorts/penina">Penina Hotel &amp; Golf
         Resort</A> near Portimão — see more on our{' '}
@@ -188,7 +190,7 @@ export default async function NineHoleCoursesPage() {
         name: 'How many 9-hole golf courses are there in the Algarve?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Four: Pine Cliffs at Olhos de Água, Vale de Milho near Carvoeiro, Balaia Golf Village near Albufeira, and the Academy Course at the Penina resort near Portimão.',
+          text: 'Four: Pine Cliffs at Olhos de Água, Vale de Milho near Carvoeiro, Balaia Golf Village near Albufeira, and the Resort Course at the Penina resort near Portimão.',
         },
       },
       {
@@ -196,7 +198,7 @@ export default async function NineHoleCoursesPage() {
         name: 'Which Algarve 9-hole course is best for beginners?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Balaia and Vale de Milho are both par-3, par-27 layouts with no handicap requirement, which makes them the easiest options for beginners and families. The Academy Course at Penina is also beginner-friendly and slightly longer at par 35.',
+          text: 'Vale de Milho is the easiest place to start: an all par-3, par-27 course with no handicap requirement. Penina’s Resort Course (par 35) also needs no handicap, and Pine Cliffs lets players without one play from the red tees. Balaia is another short par-3 course, but the resort says a handicap is required, so check the limit with the club.',
         },
       },
       {
@@ -204,7 +206,7 @@ export default async function NineHoleCoursesPage() {
         name: 'Do you need a handicap to play a 9-hole course in the Algarve?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Only Pine Cliffs asks for a handicap certificate, with a maximum of 36 for men and ladies. Balaia, Vale de Milho and Penina’s Academy Course have no handicap requirement.',
+          text: 'Vale de Milho and Penina’s Resort Course need no handicap. At Pine Cliffs, players without a handicap can play from the red tees. Balaia’s resort information says a handicap is required, without giving a limit, so check with the club before you book.',
         },
       },
       {
