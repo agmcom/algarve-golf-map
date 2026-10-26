@@ -1,4 +1,4 @@
-import { MONTH_LABELS, PRICE_SOURCE, type PriceSummary } from '@/lib/prices'
+import { MONTH_LABELS, type PriceSummary } from '@/lib/prices'
 
 /**
  * Month-by-month green-fee table. Shared by the course detail page
@@ -89,7 +89,7 @@ export function CoursePriceTable({
         )}
       </div>
       {showCaption && (
-        <p style={{ fontSize: 10, color: '#b0b0b0', margin: '6px 0 0', textAlign: 'right' }}>Prices indicative · source: {PRICE_SOURCE}</p>
+        <p style={{ fontSize: 10, color: '#b0b0b0', margin: '6px 0 0', textAlign: 'right' }}>Prices indicative · source: {summary.source}</p>
       )}
     </div>
   )

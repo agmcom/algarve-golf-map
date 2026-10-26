@@ -1,0 +1,5772 @@
+[
+ {
+  "slug": "pestana-ferragudo",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 200,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 200,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 200,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 200,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 230,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 230,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 230,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "pestana-ferragudo",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "gramacho",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vale-da-pinta",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 93,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 167,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "silves",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 73,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 73,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 73,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 73,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 73,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 131,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 131,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 131,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "alto-golf",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 45,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 182,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 182,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 182,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 182,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 200,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 200,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 200,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "vila-sol",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 60,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pestana Golf official price list"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 57,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 57,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 57,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 57,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 57,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 57,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 57,
+  "buggy_price": 40,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "santo-antonio",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 35,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Santo António official 2026 rates"
+ },
+ {
+  "slug": "benamor",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 66,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 59,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 95,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 103,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 103,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 95,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 66,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 59,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 66,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 59,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 66,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 59,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 95,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 103,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 103,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 66,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "benamor",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 59,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Benamor official green-fee page (internet rate)"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 57,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 57,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 57,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 57,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 57,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 57,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "pine-cliffs",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 57,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Pine Cliffs official 2025/26 price list"
+ },
+ {
+  "slug": "balaia",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "balaia",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 50,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Balaia official 2025-26 rates (day fee)"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vale-de-milho",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 22,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: Vale de Milho official fees page"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 236,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 236,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 301,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 301,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 301,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 272,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 236,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 236,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 272,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 248,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 258,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-old-course",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 215,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 136,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 136,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 132,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 132,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 132,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 119,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 97,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 97,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 114,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 114,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-laguna",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 124,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 97,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 136,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 132,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 132,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 132,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 119,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 97,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 97,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 114,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 114,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 92,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-millennium",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 142,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 142,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 144,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 144,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 144,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 127,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 101,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 101,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 127,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 108,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 108,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vilamoura-pinhal",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 124,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 101,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 216,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 162,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 216,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 216,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 85,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 101,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 101,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 101,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 185,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 185,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "ombria",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": true,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "palmares",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 138,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "palmares",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 183,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "palmares",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 183,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "palmares",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 183,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "palmares",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 183,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "palmares",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 159,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "palmares",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 159,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 74,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 108,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 108,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 74,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 74,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 74,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 102,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "boavista",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 74,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 90,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 90,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 65,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 79,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 79,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 79,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 54,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 54,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 54,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "espiche",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 54,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-da-ria",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 105,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-da-ria",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 111,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-da-ria",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 150,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-da-ria",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 150,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-da-ria",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-da-ria",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-da-ria",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-da-ria",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 100,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 105,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 150,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 150,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 150,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 105,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 105,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 105,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 130,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 145,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-de-cima",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 100,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 79,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 68,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 79,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 95,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 95,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-vale",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 67,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 96,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 96,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 96,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 95,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 87,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "castro-marim",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 87,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 82,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 98,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 128,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 128,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 128,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 98,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 82,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 128,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 120,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 98,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "morgado",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 82,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 82,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 98,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 128,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 128,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 128,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 98,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 82,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 128,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 120,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 98,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "alamos",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 82,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 78,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 102,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 102,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 139,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 139,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 102,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 78,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 78,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 139,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 139,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 47,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 62,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 62,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 47,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 47,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "salgados",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 100,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 197,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 138,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 212,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 212,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 197,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 193,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 197,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-faldo",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 100,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 100,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 197,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 138,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 212,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 212,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 109,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 197,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 193,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 197,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "amendoeira-oconnor",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 100,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 154,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 171,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 134,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 134,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 127,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 127,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 158,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 147,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 91,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 101,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 87,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 87,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 95,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 87,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-royal",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 154,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 171,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 171,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 134,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 127,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 127,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 158,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 147,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 116,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 1,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 2,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 91,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 101,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 88,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 87,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 87,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 95,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 87,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "vale-do-lobo-ocean",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 76,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 216,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 216,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 312,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 312,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 312,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 312,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 258,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 258,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 312,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 245,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 190,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 190,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 3,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 240,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 4,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 240,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 5,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 240,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 240,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 210,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 210,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 240,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 195,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "monte-rei",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 195,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 170,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 206,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 242,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 242,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 242,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 206,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 172,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 172,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 206,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 223,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 206,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-laranjal",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 170,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 170,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 206,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 242,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 242,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 242,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 206,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 172,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 172,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 206,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 223,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 206,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-north",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 170,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 188,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 228,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 264,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 264,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 264,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 228,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 188,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 188,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 264,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 243,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 228,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "quinta-do-lago-south",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 188,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: club's own online booking, sampled Oct 2026"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 1,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 151,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 2,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 151,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 3,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 176,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 4,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 176,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 5,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 176,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 148,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 138,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 138,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 148,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 161,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 148,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "san-lorenzo",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 204,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 108,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 122,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 122,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 99,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 92,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 92,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "pinheiros-altos",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 92,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 86,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 77,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 77,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 77,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 110,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 86,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 18,
+  "price_eur": 77,
+  "buggy_price": 55,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 6,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 69,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 7,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 69,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 8,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 69,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 9,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 69,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 10,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 69,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 11,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 69,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-championship",
+  "month": 12,
+  "time_slot": "twilight",
+  "holes": 18,
+  "price_eur": 69,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-resort",
+  "month": 6,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 28,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-resort",
+  "month": 7,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 28,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-resort",
+  "month": 8,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 28,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-resort",
+  "month": 9,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 28,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-resort",
+  "month": 10,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 29,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-resort",
+  "month": 11,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 28,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ },
+ {
+  "slug": "penina-resort",
+  "month": 12,
+  "time_slot": "standard",
+  "holes": 9,
+  "price_eur": 28,
+  "buggy_price": null,
+  "buggy_included": false,
+  "notes": "source: algarvegolf.net, Sep 2026 (club publishes no current rates)"
+ }
+]

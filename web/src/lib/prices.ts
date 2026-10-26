@@ -3,10 +3,12 @@ import type { CoursePrice } from '@/types/database'
 export const MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 export const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-// Green-fee data is seeded from algarvegolf.net (see web/scripts/seed-prices.mjs).
-export const PRICE_SOURCE = 'algarvegolf.net'
+// Green-fee data comes from each club's own price list or online booking (see
+// web/scripts/seed-prices.mjs); each price row's `notes` names its source as "source: …".
+// PRICE_SOURCE is only the fallback when a row carries no source.
+export const PRICE_SOURCE = 'the club'
 export const PRICE_SEASON = '2026/27'
-export const PRICE_LAST_CHECKED = 'September 2026'
+export const PRICE_LAST_CHECKED = 'October 2026'
 
 export interface MonthPrice {
   standard?: CoursePrice
@@ -38,6 +40,7 @@ export interface PriceSummary {
   primarySlot: 'standard' | 'twilight' | null
   twilightSaving: { minAbs: number; maxAbs: number; minPct: number; maxPct: number } | null
   coverage: { monthsCovered: number; yearRound: boolean; label: string | null }
+  source: string // where these prices come from, e.g. "Pestana Golf official price list"
 }
 
 export function monthListText(months: number[]): string {
@@ -140,6 +143,9 @@ export function summarizePrices(prices: CoursePrice[], now: Date = new Date()): 
   const monthsCovered = months.length
   const yearRound = monthsCovered === 12
 
+  const sourceNote = prices.map(p => p.notes).find(n => n?.startsWith('source: '))
+  const source = sourceNote ? sourceNote.slice('source: '.length) : PRICE_SOURCE
+
   return {
     byMonth,
     months,
@@ -157,5 +163,6 @@ export function summarizePrices(prices: CoursePrice[], now: Date = new Date()): 
     primarySlot,
     twilightSaving,
     coverage: { monthsCovered, yearRound, label: yearRound ? null : coverageLabel(months) },
+    source,
   }
 }

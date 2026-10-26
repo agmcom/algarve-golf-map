@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getCourseBySlug, getCourseSlugsWithGreenFees, getCoursesNear, getGreenFeeComparables } from '@/lib/queries'
-import { summarizePrices, monthListText, PRICE_SOURCE, PRICE_SEASON, PRICE_LAST_CHECKED, type PriceSummary } from '@/lib/prices'
+import { summarizePrices, monthListText, PRICE_SEASON, PRICE_LAST_CHECKED, type PriceSummary } from '@/lib/prices'
 import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { PageViewTracker } from '@/components/PageViewTracker'
@@ -335,7 +335,7 @@ export default async function GreenFeesPage(
           <div style={{ maxWidth: 700, fontSize: 16, lineHeight: 1.7, color: '#333', margin: '20px 0 8px' }}>
             <p style={{ margin: '0 0 14px' }}>
               {s.twilightOnly && r
-                ? `${PRICE_SOURCE} lists only a twilight green fee for ${course.name}: ${rangeText(s)} for ${holes} holes, with a buggy included.`
+                ? `The published rates list only a twilight green fee for ${course.name}: ${rangeText(s)} for ${holes} holes, with a buggy included.`
                 : r?.flat
                   ? `Playing ${course.name} costs ${rangeText(s)} for ${holes} holes throughout the ${PRICE_SEASON} season.`
                   : r
@@ -349,7 +349,7 @@ export default async function GreenFeesPage(
                   ? `A buggy is optional at around €${s.buggyAddOn} per round.`
                   : 'Buggy hire is arranged separately with the club.'}
               {s.hasTwilight && !s.twilightOnly ? ' Twilight rounds are cheaper still — see below.' : ''}
-              {s.coverage.label ? ` ${PRICE_SOURCE} publishes rates for ${s.coverage.label}; for other months, contact the club.` : ''}
+              {s.coverage.label ? ` Published rates cover ${s.coverage.label}; for other months, contact the club.` : ''}
             </p>
           </div>
 
@@ -369,7 +369,7 @@ export default async function GreenFeesPage(
               <>
                 <CoursePriceTable summary={s} variant="full" showCaption={false} />
                 <p style={{ fontSize: 12, color: '#8a8a8a', margin: '8px 0 0', lineHeight: 1.6 }}>
-                  Indicative {PRICE_SEASON}-season visitor rates; source: {PRICE_SOURCE}. Green fees change with demand — confirm the current rate with {course.name} when you book.
+                  Indicative {PRICE_SEASON}-season visitor rates; source: {s.source}. Green fees change with demand — confirm the current rate with {course.name} when you book.
                 </p>
               </>
             ) : (
@@ -423,7 +423,7 @@ export default async function GreenFeesPage(
             <section style={{ margin: '28px 0' }}>
               <h2 style={sectionTitle}>Twilight green fees at {course.name}</h2>
               <p style={{ fontSize: 15.5, lineHeight: 1.75, color: '#333', margin: 0 }}>
-                {PRICE_SOURCE} lists only a buggy-inclusive twilight rate for {course.name}, shown in the table above. For morning and
+                The published rates list only a buggy-inclusive twilight rate for {course.name}, shown in the table above. For morning and
                 midday tee times, ask the club for a full-price quote.
               </p>
             </section>
