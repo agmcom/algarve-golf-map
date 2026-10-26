@@ -111,8 +111,8 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     description: 'The golf club rental companies at Faro Airport (FAO): where to find each one, what they stock, roughly what it costs and how to book before you fly.',
   },
   'the-10-best-algarve-golf-courses-for-beginners': {
-    title: 'The 10 best Algarve golf courses for beginners',
-    description: 'The 10 most beginner-friendly golf courses in the Algarve, ranked, with the handicap rules, green fees and practice facilities to check before you book.',
+    title: 'The 8 best Algarve golf courses for beginners',
+    description: 'The 8 Algarve golf courses that genuinely suit beginners, from par-3 nines with no handicap needed to forgiving 18s, with handicap rules and practice facilities.',
   },
   'algarve-golf-season-best-time-to-play-golf': {
     title: 'Algarve golf season: the best time to play golf',
