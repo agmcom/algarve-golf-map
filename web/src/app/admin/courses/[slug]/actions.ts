@@ -31,6 +31,7 @@ export async function saveCourse(slug: string, _prevState: SaveResult | null, fo
     year_opened:            num('year_opened'),
     handicap_required_men:     num('handicap_required_men'),
     handicap_required_ladies:  num('handicap_required_ladies'),
+    handicap_required:         str('handicap_required') == null ? null : str('handicap_required') === 'true',
 
     has_own_hotel:          bool('has_own_hotel'),
     driving_range:          bool('driving_range'),

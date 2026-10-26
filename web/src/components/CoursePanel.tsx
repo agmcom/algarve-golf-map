@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import type { Course } from '@/types/database'
 import { faroDistance, formatDriveTime, nearestCourses } from '@/lib/distance'
+import { handicapRule, handicapRuleLabel } from '@/lib/handicap'
 
 interface CoursePanelProps {
   course: Course
@@ -105,7 +106,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
             <Spec label="✈ Faro Airport" value={`~${km} km · ${formatDriveTime(mins)}`} />
             <Spec label="Distance" value={course.length_meters != null ? `${course.length_meters.toLocaleString()} m` : '—'} />
             <Spec label="Designer" value={course.designer ?? '—'} />
-            {(course.handicap_required_men != null || course.handicap_required_ladies != null) && (
+            {handicapRule(course) === 'limit' && (
               <Spec
                 label="Max HCP"
                 value={[
@@ -113,6 +114,9 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
                   course.handicap_required_ladies != null ? `${course.handicap_required_ladies} ladies` : null,
                 ].filter(Boolean).join(' / ')}
               />
+            )}
+            {(handicapRule(course) === 'none' || handicapRule(course) === 'required') && (
+              <Spec label="Handicap" value={handicapRuleLabel(handicapRule(course))!} />
             )}
             {course.difficulty && (
               <Spec label="Difficulty" value={DIFFICULTY_LABEL[course.difficulty]} />

@@ -63,6 +63,7 @@ export interface Course {
   year_opened: number | null
   handicap_required_men: number | null
   handicap_required_ladies: number | null
+  handicap_required?: boolean | null   // true = certificate needed, false = not needed, null = not verified
 
   has_own_hotel: boolean
   onsite_hotel_id: string | null   // FK → hotels.id

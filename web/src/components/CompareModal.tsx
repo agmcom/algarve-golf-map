@@ -3,6 +3,13 @@
 import { useState, useEffect } from 'react'
 import type { Course } from '@/types/database'
 import { faroDistance, formatDriveTime } from '@/lib/distance'
+import { handicapRule } from '@/lib/handicap'
+
+// Shown in the max-handicap cells when a course publishes no number.
+const hcpFallback = (c: Course) => {
+  const rule = handicapRule(c)
+  return rule === 'none' ? 'Not required' : rule === 'required' ? 'Required' : '—'
+}
 
 const PEXELS_FALLBACK = 'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop'
 
@@ -104,8 +111,8 @@ function DesktopTable({ courses, onRemove }: { courses: Course[]; onRemove: (id:
             { label: 'Distance', render: (c: Course) => metersToYards(c.length_meters) },
             { label: 'Slope rating', render: (c: Course) => c.slope_rating ?? '—' },
             { label: 'Difficulty', render: (c: Course) => diffLabel(c.difficulty) },
-            { label: 'Men HCP max', render: (c: Course) => c.handicap_required_men ?? '—' },
-            { label: 'Ladies HCP max', render: (c: Course) => c.handicap_required_ladies ?? '—' },
+            { label: 'Men HCP max', render: (c: Course) => c.handicap_required_men ?? hcpFallback(c) },
+            { label: 'Ladies HCP max', render: (c: Course) => c.handicap_required_ladies ?? hcpFallback(c) },
             {
               label: 'Faro airport',
               render: (c: Course) => {
@@ -194,8 +201,8 @@ function MobileCards({ courses, onRemove }: { courses: Course[]; onRemove: (id: 
     { label: 'Distance', value: metersToYards(course.length_meters) },
     { label: 'Slope rating', value: course.slope_rating ?? '—' },
     { label: 'Difficulty', value: diffLabel(course.difficulty) },
-    { label: 'Men HCP max', value: course.handicap_required_men ?? '—' },
-    { label: 'Ladies HCP max', value: course.handicap_required_ladies ?? '—' },
+    { label: 'Men HCP max', value: course.handicap_required_men ?? hcpFallback(course) },
+    { label: 'Ladies HCP max', value: course.handicap_required_ladies ?? hcpFallback(course) },
     { label: 'Faro airport', value: `${km} km · ${formatDriveTime(mins)}` },
     { label: 'Designer', value: course.designer ?? '—' },
     { label: 'On-site hotel', value: course.has_own_hotel ? (course.onsite_hotel?.name ?? 'Yes') : '—' },

@@ -134,7 +134,7 @@ export const RESORT_PAGES: ResortPage[] = [
     hotelSlugs: ['pine-cliffs-residence', 'pine-cliffs-hotel', 'pine-cliffs-ocean-suites'],
     courseSlugs: ['pine-cliffs'],
     description:
-      'Pine Cliffs Resort is a five-star Luxury Collection property perched on the red sandstone cliffs above Praia da Falésia near Albufeira, with direct beach access via a cliffside lift. Its own 9-hole, par-33 course — designed by Sir Henry Cotton — is famous for the Devil\'s Parlour, a par-3 played clean over the clifftop edge.',
+      'Pine Cliffs Resort is a five-star Luxury Collection property perched on the red sandstone cliffs above Praia da Falésia near Albufeira, with direct beach access via a cliffside lift. Its own 9-hole, par-33 course — designed by Martin Hawtree — is famous for the Devil\'s Parlour, a par-3 played clean over the clifftop edge.',
   },
 ]
 

@@ -16,6 +16,7 @@ import { SiteHeader } from '@/components/SiteHeader'
 import { ShareButtons } from '@/components/ShareButtons'
 import { NearbyHotels } from '@/components/NearbyHotels'
 import { toHotelListItem } from '@/lib/hotels'
+import { handicapRule, handicapRuleLabel } from '@/lib/handicap'
 import { Goal, ShoppingBag, UtensilsCrossed, BedDouble, User, Store, PlaneLanding, Flag, Hash, Ruler, Award, Gauge, CircleDot, GraduationCap } from 'lucide-react'
 
 import type { Airport } from '@/types/database'
@@ -327,7 +328,7 @@ export default async function CoursePage(
               if (m != null && l != null) return `Men ${m}  ·  Ladies ${l}`
               if (m != null) return `Men ${m}`
               if (l != null) return `Ladies ${l}`
-              return null
+              return handicapRuleLabel(handicapRule(course))
             })()
             const stats = [
               { label: 'Holes',      value: `${course.holes}`,                                                          icon: <Flag size={15} strokeWidth={1.8} /> },

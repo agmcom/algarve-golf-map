@@ -184,6 +184,13 @@ export function CourseEditForm({ course }: { course: Course }) {
             <Field label="Max handicap — Ladies">
               <input style={input} name="handicap_required_ladies" type="number" defaultValue={num('handicap_required_ladies')} />
             </Field>
+            <Field label="Handicap certificate required?">
+              <select style={input} name="handicap_required" defaultValue={course.handicap_required == null ? '' : String(course.handicap_required)}>
+                <option value="">Not verified</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </Field>
             <Field label="Designer">
               <input style={input} name="designer" defaultValue={str('designer')} />
             </Field>

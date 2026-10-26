@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { withSiteName, pickTitle } from '@/lib/seo'
 import { getCourses, getHotelBySlug, getAirports, getCourseSlugsWithGreenFees } from '@/lib/queries'
 import { faroDistance, formatDriveTime } from '@/lib/distance'
+import { handicapRule } from '@/lib/handicap'
 import type { Course, Hotel } from '@/types/database'
 import { RESORT_PAGES } from '@/lib/resorts'
 import { TownMapClient } from '@/components/TownMapClient'
@@ -342,16 +343,20 @@ function buildFaqs(name: string, hotels: Hotel[], courses: Course[]): { q: strin
   }
 
   const withHcp = courses.filter(c => c.handicap_required_men != null)
-  const noHcp = courses.filter(c => c.handicap_required_men == null && c.holes === 9)
-  if (withHcp.length > 0) {
+  const noHcp = courses.filter(c => handicapRule(c) === 'none')
+  const noLimit = courses.filter(c => handicapRule(c) === 'required')
+  if (withHcp.length + noHcp.length + noLimit.length > 0) {
     const limit = (c: Course) => `${c.handicap_required_men} for men${c.handicap_required_ladies != null ? ` and ${c.handicap_required_ladies} for ladies` : ''}`
     const sameLimit = withHcp.every(c => limit(c) === limit(withHcp[0]))
+    const parts: string[] = []
+    if (withHcp.length) parts.push(sameLimit
+      ? `${joinNames(withHcp.map(c => c.name))} ${withHcp.length === 1 ? 'asks' : 'ask'} for a maximum handicap of ${limit(withHcp[0])}.`
+      : `Maximum handicaps: ${withHcp.map(c => `${c.name} ${limit(c)}`).join('; ')}.`)
+    if (noHcp.length) parts.push(`${joinNames(noHcp.map(c => c.name))} ${noHcp.length === 1 ? 'does' : 'do'} not ask for a handicap.`)
+    if (noLimit.length) parts.push(`${joinNames(noLimit.map(c => c.name))} ${noLimit.length === 1 ? 'asks' : 'ask'} for a handicap but ${noLimit.length === 1 ? 'does' : 'do'} not publish a limit, so check with the club when you book.`)
     faqs.push({
       q: `Do I need a handicap to play at ${name}?`,
-      a: (sameLimit
-        ? `${joinNames(withHcp.map(c => c.name))} ${withHcp.length === 1 ? 'asks' : 'ask'} for a maximum handicap of ${limit(withHcp[0])}.`
-        : `Maximum handicaps: ${withHcp.map(c => `${c.name} ${limit(c)}`).join('; ')}.`)
-        + (noHcp.length ? ` The 9-hole ${noHcp.map(c => c.name).join(' and ')} is a more relaxed option; check its rules when you book.` : ''),
+      a: parts.join(' '),
     })
   }
 

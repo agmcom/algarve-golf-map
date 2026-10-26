@@ -30,7 +30,7 @@ const DEFAULTS = {
   blurb: null, description: null, address: null,
   length_meters: null, difficulty: null, slope_rating: null, course_type: null,
   designer: null, year_opened: null,
-  handicap_required_men: null, handicap_required_ladies: null,
+  handicap_required_men: null, handicap_required_ladies: null, handicap_required: null,
   has_own_hotel: false,
   onsite_hotel_id: null,
   driving_range: false, putting_green: true, golf_academy: false, caddie_service: false,
@@ -556,6 +556,16 @@ const HANDICAPS: Record<string, { men: number | null; ladies: number | null }> =
   'castro-marim':            { men: 24, ladies: 28 },
 }
 
+// Courses with no published limit, so the yes/no has to be stated explicitly.
+// Verified 2026-10-26: Penina and Vale de Milho official info, Pine Cliffs local rule 1
+// (no handicap = red tees), Balaia resort guest guide ("Handicap required", no limit).
+const HANDICAP_REQUIRED: Record<string, boolean> = {
+  'penina-resort': false,
+  'pine-cliffs':   false,
+  'vale-de-milho': false,
+  'balaia':        true,
+}
+
 // Curated tags per course — displayed as badges and used as filters
 // Sources: official sites, GolfPass, Golf Digest, Top100GolfCourses.com (verified June 2026)
 const TAGS: Record<string, string[]> = {
@@ -611,5 +621,6 @@ export const MOCK_COURSES: Course[] = RAW_COURSES.map(c => ({
   difficulty:               SLOPE[c.slug] != null ? slopeToDifficulty(SLOPE[c.slug]) : c.difficulty,
   handicap_required_men:    HANDICAPS[c.slug]?.men    ?? c.handicap_required_men,
   handicap_required_ladies: HANDICAPS[c.slug]?.ladies ?? c.handicap_required_ladies,
-  tags:                     TAGS[c.slug]         ?? c.tags,
+  handicap_required:        HANDICAP_REQUIRED[c.slug] ?? (HANDICAPS[c.slug] ? true : c.handicap_required),
+  tags:                    TAGS[c.slug]         ?? c.tags,
 }))
