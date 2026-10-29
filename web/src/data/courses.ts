@@ -74,7 +74,7 @@ const RAW_COURSES: Course[] = [
     blurb: "Joseph Lee's par-72 design from 1990 brings open fairways and water features to the typically tree-lined Vilamoura landscape. Laguna's flatter terrain and lakeside holes make it one of the most approachable courses in the resort for mid-handicap visitors.",
     lat: 37.1009, lng: -8.1355,
     town: 'Vilamoura', region: 'central',
-    holes: 18, par: 72,
+    holes: 18, par: 71,
     designer: 'Joseph Lee', year_opened: 1990,
   },
   {
@@ -357,10 +357,10 @@ const RAW_COURSES: Course[] = [
     ...DEFAULTS,
     id: 'santo-antonio', slug: 'santo-antonio',
     name: 'Santo António Golf',
-    blurb: "Located near Vila do Bispo on the far western tip of the Algarve, Santo António Golf is one of the region's most remote and wind-influenced courses. Designed by Pepe Gancedo and opened in 1986, the par-72 layout rewards players who enjoy a raw, natural round away from the resort mainstream.",
+    blurb: "Located near Vila do Bispo on the far western tip of the Algarve, Santo António Golf is one of the region's most remote and wind-influenced courses. Designed by Pepe Gancedo and opened in 1986, the par-71 layout rewards players who enjoy a raw, natural round away from the resort mainstream.",
     lat: 37.0851, lng: -8.8402,
     town: 'Vila do Bispo', region: 'west',
-    holes: 18, par: 72,
+    holes: 18, par: 71,
     designer: 'Pepe Gancedo', year_opened: 1986,
   },
 
@@ -460,11 +460,11 @@ const RAW_COURSES: Course[] = [
     ...DEFAULTS,
     id: 'castro-marim', slug: 'castro-marim',
     name: 'Castro Marim Golf',
-    blurb: "Located near the Spanish border in the far eastern Algarve, Castro Marim Golf is an 18-hole par-72 course with a history stretching back to 1993. Its remote setting and quieter fairways attract golfers who prefer an unhurried round away from the main tourist areas.",
+    blurb: "Located near the Spanish border in the far eastern Algarve, Castro Marim Golf is a 27-hole resort with the original 18 holes dating to 2001 and a third nine added in 2008. Its remote setting and quieter fairways attract golfers who prefer an unhurried round away from the main tourist areas.",
     lat: 37.2359, lng: -7.4693,
     town: 'Castro Marim · East Algarve', region: 'east',
-    holes: 18, par: 72,
-    year_opened: 1993,
+    holes: 27, par: 72,
+    year_opened: 2001,
   },
   {
     ...DEFAULTS,
@@ -553,7 +553,6 @@ const HANDICAPS: Record<string, { men: number | null; ladies: number | null }> =
   'quinta-de-cima':          { men: 36, ladies: 36 },
   'monte-rei':               { men: 28, ladies: 36 },
   'quinta-do-vale':          { men: 24, ladies: 28 },
-  'castro-marim':            { men: 24, ladies: 28 },
 }
 
 // Courses with no published limit, so the yes/no has to be stated explicitly.
@@ -564,6 +563,7 @@ const HANDICAP_REQUIRED: Record<string, boolean> = {
   'pine-cliffs':   false,
   'vale-de-milho': false,
   'balaia':        true,
+  'castro-marim':  true,   // certificate required; no limit on the club's 2026 price list or scorecard (checked 2026-10-29)
 }
 
 // Curated tags per course — displayed as badges and used as filters

@@ -8,7 +8,7 @@ const ROAD_EXTRA_KM = 3
 const AVG_SPEED_KMH = 95
 const FIXED_MINS = 8
 
-function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
+export function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
   const R = 6371
   const dLat = ((lat2 - lat1) * Math.PI) / 180
   const dLng = ((lng2 - lng1) * Math.PI) / 180
@@ -18,11 +18,16 @@ function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): nu
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
-export function faroDistance(lat: number, lng: number): { km: number; mins: number } {
-  const straight = haversineKm(lat, lng, FARO_LAT, FARO_LNG)
+// Estimated road distance and drive time between two points, using the same calibration as Faro.
+export function driveEstimate(lat1: number, lng1: number, lat2: number, lng2: number): { km: number; mins: number } {
+  const straight = haversineKm(lat1, lng1, lat2, lng2)
   const km = Math.round(straight * ROAD_FACTOR + ROAD_EXTRA_KM)
   const mins = Math.round((km / AVG_SPEED_KMH) * 60 + FIXED_MINS)
   return { km, mins }
+}
+
+export function faroDistance(lat: number, lng: number): { km: number; mins: number } {
+  return driveEstimate(lat, lng, FARO_LAT, FARO_LNG)
 }
 
 export function formatDriveTime(mins: number): string {

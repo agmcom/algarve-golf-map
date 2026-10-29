@@ -256,6 +256,42 @@ export async function getGreenFeeComparables(): Promise<GreenFeeComparable[]> {
   return out
 }
 
+export interface VisitorPriceRange {
+  // Lowest and highest standard visitor rate across the season (twilight-only courses
+  // fall back to their twilight range, then to `price_from` with no upper bound).
+  from: number
+  to: number | null
+  twilightFrom: number | null
+}
+
+// Season price range per course id — used to compare the courses on a town page.
+export async function getVisitorPriceRanges(courses: Pick<Course, 'id' | 'price_from'>[]): Promise<Map<string, VisitorPriceRange>> {
+  const { data: priceRows } = await supabase
+    .from('course_prices')
+    .select('course_id, price_eur, time_slot')
+    .eq('rate_type', 'visitor')
+
+  const standard = new Map<string, number[]>()
+  const twilight = new Map<string, number[]>()
+  for (const r of priceRows ?? []) {
+    const bucket = r.time_slot === 'twilight' || r.time_slot === 'sunset' ? twilight : standard
+    const list = bucket.get(r.course_id) ?? []
+    list.push(r.price_eur)
+    bucket.set(r.course_id, list)
+  }
+
+  const out = new Map<string, VisitorPriceRange>()
+  for (const c of courses) {
+    const std = standard.get(c.id)
+    const tw = twilight.get(c.id)
+    const twilightFrom = tw?.length ? Math.min(...tw) : null
+    if (std?.length) out.set(c.id, { from: Math.min(...std), to: Math.max(...std), twilightFrom })
+    else if (tw?.length) out.set(c.id, { from: Math.min(...tw), to: Math.max(...tw), twilightFrom: null })
+    else if (c.price_from != null) out.set(c.id, { from: c.price_from, to: null, twilightFrom: null })
+  }
+  return out
+}
+
 export async function getShopBySlug(slug: string): Promise<Shop | null> {
   const { data, error } = await supabase
     .from('shops')

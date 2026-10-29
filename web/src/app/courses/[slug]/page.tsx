@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getCourseBySlug, getAllCourseSlugs, getHotelsNear, getAirports, getCoursesNear, getShopsNear, getApprovedReviews } from '@/lib/queries'
 import { RESORT_PAGES, resortSlugForCourse } from '@/lib/resorts'
+import { TOWN_PAGES } from '@/lib/towns'
 import { summarizePrices } from '@/lib/prices'
 import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
 import { summarizeReviews, sortReviews, MIN_REVIEWS_TO_INDEX } from '@/lib/reviews'
@@ -167,6 +168,7 @@ export default async function CoursePage(
 
   const resortSlug = resortSlugForCourse(course.slug)
   const resort = resortSlug ? RESORT_PAGES.find(r => r.slug === resortSlug) ?? null : null
+  const zonePage = TOWN_PAGES.find(t => t.towns.includes(course.town ?? '')) ?? null
 
   const facilities = [
     { label: 'Driving range',  active: course.driving_range },
@@ -686,6 +688,18 @@ export default async function CoursePage(
                     ))}
                   </div>
                 </section>
+              )}
+
+              {/* Town page link */}
+              {zonePage && (
+                <Link href={`/${zonePage.slug}/golf-courses`} style={{
+                  display: 'block', marginBottom: 36,
+                  padding: '14px 16px', borderRadius: 14, background: '#f2f7fb',
+                  border: '1px solid #d6e6f2', color: '#2B6090', fontSize: 14, fontWeight: 600,
+                  textDecoration: 'none',
+                }}>
+                  All golf courses in {zonePage.label}: green fees compared, where to stay &amp; FAQs →
+                </Link>
               )}
 
               {/* Nearby Shops */}
