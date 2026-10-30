@@ -5,6 +5,7 @@ import { getCourseBySlug, getCourseSlugsWithGreenFees, getCoursesNear, getGreenF
 import { summarizePrices, monthListText, PRICE_SEASON, PRICE_LAST_CHECKED, type PriceSummary } from '@/lib/prices'
 import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
+import { TeeTimeButtons } from '@/components/TeeTimeButtons'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { SiteHeader } from '@/components/SiteHeader'
 import { ShareButtons } from '@/components/ShareButtons'
@@ -378,6 +379,12 @@ export default async function GreenFeesPage(
                 {' '}<strong>€{course.price_from}</strong>; contact them or your tour operator for exact {PRICE_SEASON} rates.
               </p>
             )}
+            <TeeTimeButtons
+              bookingUrl={course.booking_url}
+              websiteUrl={websiteWithUtm}
+              courseName={course.name}
+              source="green_fees_prices"
+            />
           </section>
 
           {/* Cheapest time */}
@@ -460,21 +467,13 @@ export default async function GreenFeesPage(
               reserving a few weeks ahead. Golf tour operators and stay-and-play packages often price rounds below the walk-in green
               fee, especially at the premium Golden Triangle and Vilamoura courses.
             </p>
-            {course.booking_url && (
-              <a href={course.booking_url} target="_blank" rel="noopener noreferrer" style={ctaBtn('#2B6090', '#fff')}>
-                Book Tee Time
-              </a>
-            )}
-            {websiteWithUtm && (
-              <a href={websiteWithUtm} target="_blank" rel="noopener noreferrer" style={{ ...ctaBtn('#2B6090', '#fff'), marginTop: course.booking_url ? 10 : 0 }}>
-                Official website ↗
-              </a>
-            )}
-            {course.phone && (
-              <a href={`tel:${course.phone}`} style={{ display: 'block', textAlign: 'center', marginTop: 14, fontSize: 13, color: '#6a6a6a', textDecoration: 'none' }}>
-                📞 {course.phone}
-              </a>
-            )}
+            <TeeTimeButtons
+              bookingUrl={course.booking_url}
+              websiteUrl={websiteWithUtm}
+              phone={course.phone}
+              courseName={course.name}
+              source="green_fees_how_to_book"
+            />
           </section>
 
           {/* Nearby comparison */}
@@ -576,14 +575,4 @@ const sectionTitle: React.CSSProperties = {
   fontSize: 18, fontWeight: 700, color: '#222',
   margin: '0 0 16px', paddingBottom: 10,
   borderBottom: '2px solid #ebebeb',
-}
-
-function ctaBtn(bg: string, color: string): React.CSSProperties {
-  return {
-    display: 'block', textAlign: 'center',
-    padding: '14px 0', borderRadius: 12,
-    background: bg, color,
-    fontSize: 15, fontWeight: 700,
-    textDecoration: 'none', cursor: 'pointer',
-  }
 }

@@ -197,7 +197,9 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
               <a
                 href={course.booking_url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="sponsored noopener noreferrer"
+                data-tee-time-click="map_panel"
+                data-course-name={course.name}
                 style={{
                   display: 'block', textAlign: 'center',
                   padding: '12px 0', borderRadius: 12,
@@ -205,7 +207,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
                   fontSize: 14, fontWeight: 600, textDecoration: 'none',
                 }}
               >
-                Book
+                {course.booking_url.includes('golfscape.com') ? 'Book on Golfscape' : 'Book tee time'}
               </a>
             )}
           </div>

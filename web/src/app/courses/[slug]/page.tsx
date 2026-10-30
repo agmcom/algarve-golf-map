@@ -10,6 +10,7 @@ import { summarizeReviews, sortReviews, MIN_REVIEWS_TO_INDEX } from '@/lib/revie
 import { ReviewStars } from '@/components/ReviewStars'
 import { ReviewCard } from '@/components/ReviewCard'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
+import { TeeTimeButtons } from '@/components/TeeTimeButtons'
 import { CourseMapImage } from '@/components/CourseMapImage'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { CourseNav } from '@/components/CourseNav'
@@ -165,6 +166,9 @@ export default async function CoursePage(
 
   const priceSummary = summarizePrices(course.prices)
   const showGreenFeesLink = priceSummary.hasPrices || course.price_from != null
+  const websiteWithUtm = course.website
+    ? (course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`)
+    : null
 
   const resortSlug = resortSlugForCourse(course.slug)
   const resort = resortSlug ? RESORT_PAGES.find(r => r.slug === resortSlug) ?? null : null
@@ -565,25 +569,17 @@ export default async function CoursePage(
                   </div>
                 )}
                 {priceSummary.hasPrices && <CoursePriceTable summary={priceSummary} />}
+                <TeeTimeButtons
+                  bookingUrl={course.booking_url}
+                  websiteUrl={websiteWithUtm}
+                  phone={course.phone}
+                  courseName={course.name}
+                  source="course_page_mobile"
+                />
                 {showGreenFeesLink && (
-                  <Link href={`/courses/${slug}/green-fees`} style={{ display: 'inline-block', marginBottom: 20, fontSize: 13, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+                  <Link href={`/courses/${slug}/green-fees`} style={{ display: 'block', textAlign: 'center', marginTop: 16, fontSize: 13, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
                     See full green fee breakdown →
                   </Link>
-                )}
-                {course.booking_url && (
-                  <a href={course.booking_url} target="_blank" rel="noopener noreferrer" style={ctaBtn('#2B6090', '#fff')}>
-                    Book Tee Time
-                  </a>
-                )}
-                {course.website && (
-                  <a href={course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`} target="_blank" rel="noopener noreferrer" style={{ ...ctaBtn('#2B6090', '#fff'), marginTop: course.booking_url ? 10 : 0 }}>
-                    Official website ↗
-                  </a>
-                )}
-                {course.phone && (
-                  <a href={`tel:${course.phone}`} style={{ display: 'block', textAlign: 'center', marginTop: 14, fontSize: 13, color: '#6a6a6a', textDecoration: 'none' }}>
-                    📞 {course.phone}
-                  </a>
                 )}
               </section>
 
@@ -769,41 +765,18 @@ export default async function CoursePage(
                 {/* Price breakdown by month */}
                 {priceSummary.hasPrices && <CoursePriceTable summary={priceSummary} />}
 
+                <TeeTimeButtons
+                  bookingUrl={course.booking_url}
+                  websiteUrl={websiteWithUtm}
+                  phone={course.phone}
+                  courseName={course.name}
+                  source="course_page"
+                />
+
                 {showGreenFeesLink && (
-                  <Link href={`/courses/${slug}/green-fees`} style={{ display: 'inline-block', marginBottom: 20, fontSize: 13, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+                  <Link href={`/courses/${slug}/green-fees`} style={{ display: 'block', textAlign: 'center', marginTop: 16, fontSize: 13, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
                     See full green fee breakdown →
                   </Link>
-                )}
-
-                {course.booking_url && (
-                  <a
-                    href={course.booking_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={ctaBtn('#2B6090', '#fff')}
-                  >
-                    Book Tee Time
-                  </a>
-                )}
-
-                {course.website && (
-                  <a
-                    href={course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ ...ctaBtn('#2B6090', '#fff'), marginTop: course.booking_url ? 10 : 0 }}
-                  >
-                    Official website ↗
-                  </a>
-                )}
-
-                {course.phone && (
-                  <a href={`tel:${course.phone}`} style={{
-                    display: 'block', textAlign: 'center', marginTop: 14,
-                    fontSize: 13, color: '#6a6a6a', textDecoration: 'none',
-                  }}>
-                    📞 {course.phone}
-                  </a>
                 )}
               </div>
             </div>
@@ -837,15 +810,4 @@ function FacilityCard({ icon, label, active }: { icon: React.ReactNode; label: s
       </span>
     </div>
   )
-}
-
-
-function ctaBtn(bg: string, color: string): React.CSSProperties {
-  return {
-    display: 'block', textAlign: 'center',
-    padding: '14px 0', borderRadius: 12,
-    background: bg, color,
-    fontSize: 15, fontWeight: 700,
-    textDecoration: 'none', cursor: 'pointer',
-  }
 }

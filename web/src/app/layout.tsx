@@ -110,6 +110,19 @@ export default function RootLayout({
               }
               document.addEventListener('click', trackHotelClick, true);
               document.addEventListener('auxclick', function (e) { if (e.button === 1) trackHotelClick(e); }, true);
+
+              // Tee-time affiliate links (Golfscape) carry data-tee-time-click="<where on the site>".
+              function trackTeeTimeClick(e) {
+                var a = e.target && e.target.closest && e.target.closest('a[data-tee-time-click]');
+                if (!a) return;
+                gtag('event', 'tee_time_click', {
+                  click_source: a.getAttribute('data-tee-time-click'),
+                  course_name: a.getAttribute('data-course-name') || '',
+                  transport_type: 'beacon'
+                });
+              }
+              document.addEventListener('click', trackTeeTimeClick, true);
+              document.addEventListener('auxclick', function (e) { if (e.button === 1) trackTeeTimeClick(e); }, true);
             `,
           }}
         />
