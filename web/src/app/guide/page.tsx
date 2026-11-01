@@ -32,8 +32,8 @@ const SECTIONS: { id: string; heading: string; intro: string; match: (p: Post) =
   {
     id: 'best-courses',
     heading: 'The best Algarve courses for…',
-    intro: 'Shortlists for a particular kind of round: beginners, seniors, par-3 golf and ocean views.',
-    match: p => /^(the-10-best|the-best|the-algarve-s-best)/.test(p.slug),
+    intro: 'Shortlists for a particular kind of round: beginners, seniors, par-3 golf, ocean views and golf on a budget.',
+    match: p => /^(the-10-best|the-best|the-algarve-s-best|the-cheapest)/.test(p.slug),
   },
   {
     id: 'where-to-stay',

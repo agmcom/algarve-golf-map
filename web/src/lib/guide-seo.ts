@@ -178,4 +178,8 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     title: 'Santo António vs Palmares: which west Algarve course?',
     description: 'The Algarve\'s westernmost course from €57 against 27 seaside holes at Palmares from €138. How Santo António and Palmares compare for a trip to the far west.',
   },
+  'the-cheapest-golf-courses-in-the-algarve': {
+    title: 'Cheapest golf courses in the Algarve: 2026/27 green fees',
+    description: 'The Algarve\'s cheapest 18-hole courses, from €57 at Santo António, plus nine-hole rounds from €22 and twilight deals, ranked on official 2026/27 prices.',
+  },
 }
