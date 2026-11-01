@@ -22,7 +22,7 @@ export const RESORT_PAGES: ResortPage[] = [
     hotelSlugs: ['dona-filipa-hotel'],
     courseSlugs: ['vale-do-lobo-ocean', 'vale-do-lobo-royal'],
     description:
-      'The five-star Dona Filipa Hotel sits within the exclusive Vale do Lobo estate, a two-minute walk from the beach and with complimentary transfers to the legendary San Lorenzo course. The estate\'s own Royal and Ocean courses complete 36 holes of parkland golf, with the Royal\'s clifftop finishing stretch among the most photographed in European golf.',
+      'The five-star Dona Filipa Hotel sits within the exclusive Vale do Lobo estate, a two-minute walk from the beach. Its long-standing link with the neighbouring San Lorenzo course is on hold while San Lorenzo is closed for renovation until mid-2028. The estate\'s own Royal and Ocean courses complete 36 holes of parkland golf, with the Royal\'s clifftop finishing stretch among the most photographed in European golf.',
   },
   {
     slug: 'penina',
@@ -30,7 +30,7 @@ export const RESORT_PAGES: ResortPage[] = [
     hotelSlugs: ['penina-hotel'],
     courseSlugs: ['penina-championship', 'penina-resort'],
     description:
-      'Penina Hotel & Golf Resort is built around Portugal\'s first purpose-built golf course, Sir Henry Cotton\'s 1966 Championship layout, on a 360-acre parkland estate near Portimão. The five-star hotel adds a 9-hole Resort Course for warm-ups and beginners, six dining venues, and a golf academy on the same historic grounds.',
+      'Penina Hotel & Golf Resort is built around the Algarve\'s first 18-hole golf course, Sir Henry Cotton\'s 1966 Championship layout, on a 360-acre parkland estate near Portimão. The five-star hotel adds a 9-hole Resort Course for warm-ups and beginners, six dining venues, and a golf academy on the same historic grounds.',
   },
   {
     slug: 'monte-rei',

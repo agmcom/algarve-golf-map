@@ -154,4 +154,28 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
   'ryanair-golf-clubs-what-it-costs-to-fly-with-your-own-set-to-the-algarve': {
     title: 'Ryanair golf clubs: what it costs to fly to the Algarve',
   },
+  'san-lorenzo-golf-course-closed-until-2028-where-to-play-instead': {
+    title: 'San Lorenzo golf closed until 2028: where to play instead',
+    description: 'San Lorenzo closed for renovation on 19 October 2026 and is due back in mid-2028. The nearest alternatives, from Quinta do Lago South to the Old Course.',
+  },
+  'vila-sol-vs-vilamoura-old-course-which-should-you-play': {
+    title: 'Vila Sol vs Vilamoura Old Course: which should you play?',
+    description: 'Seven minutes apart near Vilamoura: the 1969 Old Course, Portugal\'s best in 2025, against Pestana\'s 27-hole Vila Sol at a lower green fee. How they compare.',
+  },
+  'palmares-vs-boavista-which-lagos-golf-course-should-you-play': {
+    title: 'Palmares vs Boavista: which Lagos golf course to play?',
+    description: '27 seaside holes above Meia Praia against a hillside course for around half the green fee. How Palmares and Boavista compare, and which suits your trip.',
+  },
+  'alto-golf-vs-penina-championship-which-portimao-course-should-you-play': {
+    title: 'Alto Golf vs Penina: which Portimão course should you play?',
+    description: 'Henry Cotton\'s first Algarve course against his last, 15 minutes apart: Penina\'s long par 73 or Alto Golf\'s shorter, cheaper par 70. How they compare.',
+  },
+  'benamor-vs-quinta-da-ria-which-tavira-golf-course-should-you-play': {
+    title: 'Benamor vs Quinta da Ria: which Tavira course should you play?',
+    description: 'Eleven minutes apart near Tavira: short, good-value Benamor among old olive trees, or Quinta da Ria inside the Ria Formosa Natural Park. How they compare.',
+  },
+  'santo-antonio-vs-palmares-which-western-algarve-course-should-you-play': {
+    title: 'Santo António vs Palmares: which west Algarve course?',
+    description: 'The Algarve\'s westernmost course from €57 against 27 seaside holes at Palmares from €138. How Santo António and Palmares compare for a trip to the far west.',
+  },
 }

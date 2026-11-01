@@ -127,8 +127,8 @@ const COPY: Record<string, ReactNode> = {
       <p>
         The <A href="/courses/penina-resort">Resort Course at Penina</A> is a
         9-hole, par-35 layout that Sir Henry Cotton designed as a companion to
-        his 1966 Championship Course — the first purpose-built golf course in
-        Portugal. At 2,629 metres from the yellow tees it plays as a proper
+        his 1966 Championship Course — the first 18-hole golf course built in
+        the Algarve. At 2,629 metres from the yellow tees it plays as a proper
         short course rather than a par-3 track.
       </p>
       <p>
