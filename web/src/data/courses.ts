@@ -258,10 +258,10 @@ const RAW_COURSES: Course[] = [
     ...DEFAULTS,
     id: 'silves', slug: 'silves',
     name: 'Silves Golf',
-    blurb: "An 18-hole par-72 course set inland near the historic Moorish town of Silves, offering a quieter alternative to the resort-heavy options on the coast. Rolling terrain, easy access, and a peaceful atmosphere make it a practical choice for golfers based in central Algarve.",
+    blurb: "An 18-hole par-70 course set inland near the historic Moorish town of Silves, offering a quieter alternative to the resort-heavy options on the coast. Rolling terrain, easy access, and a peaceful atmosphere make it a practical choice for golfers based in central Algarve.",
     lat: 37.1679, lng: -8.4271,
     town: 'Silves', region: 'central',
-    holes: 18, par: 72,
+    holes: 18, par: 70,
   },
 
   // ── PORTIMÃO ─────────────────────────────────────────────────────────────
@@ -536,7 +536,7 @@ const HANDICAPS: Record<string, { men: number | null; ladies: number | null }> =
   'salgados':                { men: 28, ladies: 36 },
   'gramacho':                { men: 27, ladies: 35 },
   'vale-da-pinta':           { men: 27, ladies: 35 },
-  'silves':                  { men: 24, ladies: 28 },
+  'silves':                  { men: 28, ladies: 36 },
   'alto-golf':               { men: 36, ladies: 36 },
   'alamos':                  { men: 28, ladies: 36 },
   'morgado':                 { men: 28, ladies: 36 },

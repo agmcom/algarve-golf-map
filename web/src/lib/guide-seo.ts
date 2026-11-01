@@ -182,4 +182,44 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     title: 'Cheapest golf courses in the Algarve: 2026/27 green fees',
     description: 'The Algarve\'s cheapest 18-hole courses, from €57 at Santo António, plus nine-hole rounds from €22 and twilight deals, ranked on official 2026/27 prices.',
   },
+  'hotels-near-palmares-golf': {
+    title: 'Hotels near Palmares golf: 7 best places to stay',
+    description: 'Where to stay to play Palmares in Lagos: the resort\'s own boutique hotel and apartments, plus five well-rated hotels within 15 minutes of the course.',
+  },
+  'hotels-near-boavista-golf': {
+    title: 'Hotels near Boavista golf: 10 best places to stay',
+    description: 'Where to stay to play Boavista in Lagos: the resort\'s own five-star village, a golf-friendly country hotel and eight well-rated hotels within 10 minutes.',
+  },
+  'hotels-near-espiche-golf': {
+    title: 'Hotels near Espiche golf: 8 best places to stay',
+    description: 'Espiche has no hotel of its own. The 8 best places to stay nearby, from Praia da Luz and Burgau to the Boavista resort, with real drive times.',
+  },
+  'hotels-near-ombria-golf': {
+    title: 'Hotels near Ombria golf: 8 best places to stay',
+    description: 'Where to stay to play Ombria, inland from Loulé: the Viceroy hotel on the course, a country house in Querença and six well-rated hotels in Loulé.',
+  },
+  'hotels-near-santo-antonio-golf': {
+    title: 'Hotels near Santo António golf: 8 best places to stay',
+    description: 'Where to stay to play Santo António near Salema: the course\'s own villas, a top-rated beach village in Salema and six options in Burgau and Praia da Luz.',
+  },
+  'hotels-near-amendoeira-golf': {
+    title: 'Hotels near Amendoeira golf: 10 best places to stay',
+    description: 'Where to stay to play Amendoeira\'s Faldo and O\'Connor courses: the resort\'s own apartments and villas plus nine well-rated hotels and guest houses nearby.',
+  },
+  'hotels-near-silves-golf': {
+    title: 'Hotels near Pestana Silves golf: 10 best places to stay',
+    description: 'There\'s no hotel at Pestana Silves golf. The 10 best places to stay nearby, from guest houses in historic Silves to the Amendoeira resort.',
+  },
+  'hotels-near-castro-marim-golf': {
+    title: 'Hotels near Castro Marim and Quinta do Vale golf',
+    description: 'Where to stay to play Castro Marim and Quinta do Vale: the golf resort\'s own villas plus nine well-rated hotels from Altura to Vila Real de Santo António.',
+  },
+  'hotels-near-benamor-golf': {
+    title: 'Hotels near Benamor golf: 10 best places to stay',
+    description: 'Where to stay to play Benamor near Tavira: ten well-rated hotels within 13 minutes, from golf-friendly hotels to a Pousada in a former convent.',
+  },
+  'hotels-near-quinta-da-ria-golf': {
+    title: 'Hotels near Quinta da Ria and Quinta de Cima golf',
+    description: 'Where to stay to play Quinta da Ria and Quinta de Cima: the all-inclusive Robinson between both courses, plus nine well-rated hotels nearby.',
+  },
 }
