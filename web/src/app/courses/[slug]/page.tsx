@@ -471,9 +471,6 @@ export default async function CoursePage(
                     </a>
                   ))}
                 </div>
-                <p style={{ fontSize: 11.5, color: '#8a8a8a', textAlign: 'center', margin: '8px 0 0', lineHeight: 1.4 }}>
-                  We may earn a commission if you book.
-                </p>
               </section>
 
               {/* Nearby Hotels */}
