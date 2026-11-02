@@ -19,7 +19,7 @@ import { ShareButtons } from '@/components/ShareButtons'
 import { NearbyHotels } from '@/components/NearbyHotels'
 import { toHotelListItem } from '@/lib/hotels'
 import { handicapRule, handicapRuleLabel } from '@/lib/handicap'
-import { Goal, ShoppingBag, UtensilsCrossed, BedDouble, User, Store, PlaneLanding, Flag, Hash, Ruler, Award, Gauge, CircleDot, GraduationCap } from 'lucide-react'
+import { Goal, ShoppingBag, UtensilsCrossed, BedDouble, User, Store, PlaneLanding, Car, CarTaxiFront, Flag, Hash, Ruler, Award, Gauge, CircleDot, GraduationCap } from 'lucide-react'
 
 import type { Airport } from '@/types/database'
 
@@ -447,6 +447,33 @@ export default async function CoursePage(
                     </div>
                   ))}
                 </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 14 }}>
+                  {[
+                    { partner: 'economybookings', href: 'https://economybookings.tpo.li/Qf5waAWw', label: 'Compare car hire prices', icon: <Car size={14} strokeWidth={1.8} /> },
+                    { partner: 'gettransfer',     href: 'https://gettransfer.tpo.li/9bs77WsA',     label: 'Check transfer prices',   icon: <CarTaxiFront size={14} strokeWidth={1.8} /> },
+                  ].map(l => (
+                    <a
+                      key={l.partner}
+                      href={l.href}
+                      target="_blank"
+                      rel="sponsored noopener noreferrer"
+                      data-transport-click={l.partner}
+                      data-course-name={course.name}
+                      style={{
+                        flex: '1 1 200px', boxSizing: 'border-box',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+                        padding: '7px 14px', borderRadius: 8,
+                        background: '#fff', color: '#2B6090', border: '1.5px solid #cfdcea',
+                        fontSize: 13, fontWeight: 600, textDecoration: 'none',
+                      }}
+                    >
+                      {l.icon}{l.label} ↗
+                    </a>
+                  ))}
+                </div>
+                <p style={{ fontSize: 11.5, color: '#8a8a8a', textAlign: 'center', margin: '8px 0 0', lineHeight: 1.4 }}>
+                  We may earn a commission if you book.
+                </p>
               </section>
 
               {/* Nearby Hotels */}

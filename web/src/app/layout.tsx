@@ -123,6 +123,19 @@ export default function RootLayout({
               }
               document.addEventListener('click', trackTeeTimeClick, true);
               document.addEventListener('auxclick', function (e) { if (e.button === 1) trackTeeTimeClick(e); }, true);
+
+              // Transport affiliate links (car hire, transfers) carry data-transport-click="<partner>".
+              function trackTransportClick(e) {
+                var a = e.target && e.target.closest && e.target.closest('a[data-transport-click]');
+                if (!a) return;
+                gtag('event', 'transport_click', {
+                  partner: a.getAttribute('data-transport-click'),
+                  course_name: a.getAttribute('data-course-name') || '',
+                  transport_type: 'beacon'
+                });
+              }
+              document.addEventListener('click', trackTransportClick, true);
+              document.addEventListener('auxclick', function (e) { if (e.button === 1) trackTransportClick(e); }, true);
             `,
           }}
         />
