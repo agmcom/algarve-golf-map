@@ -4,13 +4,14 @@ import Link from 'next/link'
 import { GUIDE_SEO } from '@/lib/guide-seo'
 import { pickDescription, withSiteName } from '@/lib/seo'
 import { getGuidePostBySlug, getAllGuidePostSlugs, getCourseBySlug, getHotelBySlug, getShopBySlug, getRelatedGuidePosts } from '@/lib/queries'
-import type { GuideBlock, GuideCardRefType, GuideHotelBlock } from '@/types/database'
+import type { GuideBlock, GuideCardRefType, GuideHotelBlock, GuidePost } from '@/types/database'
 import { CATEGORY_LABELS } from '@/lib/guideCategories'
 import { renderInlineText } from '@/lib/richText'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SocialLinks } from '@/components/SocialLinks'
 import { ShareButtons } from '@/components/ShareButtons'
 import { GuideHotelMap } from '@/components/GuideHotelMap'
+import { supabaseAdmin } from '@/lib/supabase-admin'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
@@ -63,6 +64,31 @@ async function resolveCard(refType: GuideCardRefType, slug: string): Promise<Res
   }
 }
 
+// Outline icons (24×24, stroked) that a table block can show before each row label via rowIcons.
+const TABLE_ICONS: Record<string, string[]> = {
+  sun: ['M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8Z', 'M12 2v2', 'M12 20v2', 'm4.93 4.93 1.41 1.41', 'm17.66 17.66 1.41 1.41',
+    'M2 12h2', 'M20 12h2', 'm6.34 17.66-1.41 1.41', 'm19.07 4.93-1.41 1.41'],
+  moon: ['M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'],
+  'cloud-rain': ['M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2', 'M16 14v6', 'M8 14v6', 'M12 16v6'],
+  droplet: ['M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z'],
+  umbrella: ['M22 12a10.06 10.06 1 0 0-20 0Z', 'M12 12v8a2 2 0 0 0 4 0', 'M12 2v1'],
+  clock: ['M12 2a10 10 0 1 0 0 20a10 10 0 1 0 0-20Z', 'M12 6v6l4 2'],
+  sunset: ['M12 10V2', 'm4.93 10.93 1.41 1.41', 'M2 18h2', 'M20 18h2', 'm19.07 10.93-1.41 1.41', 'M22 22H2',
+    'm16 6-4 4-4-4', 'M16 18a4 4 0 0 0-8 0'],
+  sunrise: ['M12 2v8', 'm4.93 10.93 1.41 1.41', 'M2 18h2', 'M20 18h2', 'm19.07 10.93-1.41 1.41', 'M22 22H2',
+    'm8 6 4-4 4 4', 'M16 18a4 4 0 0 0-8 0'],
+  thermometer: ['M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z'],
+}
+
+// Local draft preview: with GUIDE_PREVIEW_DRAFTS=1 (never set in production) unpublished
+// posts render too, so a draft can be checked on the dev server before publishing.
+async function loadPost(slug: string) {
+  const post = await getGuidePostBySlug(slug)
+  if (post || process.env.GUIDE_PREVIEW_DRAFTS !== '1') return post
+  const { data } = await supabaseAdmin.from('guide_posts').select('*').eq('slug', slug).maybeSingle()
+  return (data as GuidePost | null) ?? null
+}
+
 export async function generateStaticParams() {
   const slugs = await getAllGuidePostSlugs()
   return slugs.map(slug => ({ slug }))
@@ -72,7 +98,7 @@ export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params
-  const post = await getGuidePostBySlug(slug)
+  const post = await loadPost(slug)
   if (!post) return {}
 
   const seo = GUIDE_SEO[slug] ?? {}
@@ -109,7 +135,7 @@ export default async function GuidePostPage(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params
-  const post = await getGuidePostBySlug(slug)
+  const post = await loadPost(slug)
   if (!post) notFound()
 
   const cardBlocks = post.content.filter(b => b.type === 'card')
@@ -308,6 +334,64 @@ export default async function GuidePostPage(
               }
               if (block.type === 'hotel') {
                 return <GuideHotelEntry key={i} hotel={block} n={hotelNumber.get(block)!} />
+              }
+              if (block.type === 'table') {
+                return (
+                  <figure key={i} style={{ margin: '8px 0 28px' }}>
+                    <div style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid #ebebeb', background: '#fff' }}>
+                      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15, color: '#333' }}>
+                        {block.caption && (
+                          <caption style={{ textAlign: 'left', padding: '14px 16px 4px', fontSize: 15, fontWeight: 700, color: '#222' }}>
+                            {block.caption}
+                          </caption>
+                        )}
+                        <thead>
+                          <tr>
+                            {block.headers.map((h, j) => (
+                              <th key={j} scope="col" style={{
+                                textAlign: 'left', padding: '10px 10px', fontSize: 13, fontWeight: 700,
+                                color: '#6a6a6a', borderBottom: '1px solid #ebebeb', verticalAlign: 'bottom',
+                              }}>
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {block.rows.map((row, r) => (
+                            <tr key={r} style={{ borderTop: r === 0 ? 'none' : '1px solid #f2f2f2' }}>
+                              {row.map((cell, c) => {
+                                const Cell = c === 0 ? 'th' : 'td'
+                                const icon = c === 0 ? TABLE_ICONS[block.rowIcons?.[r] ?? ''] : undefined
+                                return (
+                                  <Cell key={c} scope={c === 0 ? 'row' : undefined} style={{
+                                    textAlign: 'left', padding: '10px 10px', lineHeight: 1.45,
+                                    fontWeight: c === 0 ? 600 : 400, color: c === 0 ? '#222' : '#333',
+                                  }}>
+                                    {icon ? (
+                                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B6090" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+                                          {icon.map((d, k) => <path key={k} d={d} />)}
+                                        </svg>
+                                        <span>{renderInlineText(cell)}</span>
+                                      </span>
+                                    ) : renderInlineText(cell)}
+                                  </Cell>
+                                )
+                              })}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    {block.note && (
+                      <figcaption style={{ fontSize: 13, color: '#6a6a6a', marginTop: 8, lineHeight: 1.5 }}>
+                        {renderInlineText(block.note)}
+                      </figcaption>
+                    )}
+                  </figure>
+                )
               }
               if (block.type === 'hotelMap' && mapCourse) {
                 return (

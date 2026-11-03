@@ -53,6 +53,7 @@ function normalizeBlocks(raw: unknown): Block[] {
     }
     if (type === 'hotel') return { id: newId(), type: 'locked', label: `Hotel: ${(b as { name?: string }).name ?? ''}`, data: b as Record<string, unknown> }
     if (type === 'hotelMap') return { id: newId(), type: 'locked', label: 'Map of the course and hotels in this article', data: b as Record<string, unknown> }
+    if (type === 'table') return { id: newId(), type: 'locked', label: `Table: ${(b as { caption?: string }).caption ?? 'data table'}`, data: b as Record<string, unknown> }
     return null
   }).filter((b): b is Block => b !== null)
 }

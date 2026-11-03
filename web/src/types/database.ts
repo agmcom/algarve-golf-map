@@ -360,6 +360,9 @@ export type GuideBlock =
   | GuideHotelBlock
   // Map of the course (pin → course page) and every hotel block in the post (pin → affiliate link)
   | { type: 'hotelMap'; courseSlug: string; extraCourseSlugs?: string[] }
+  // Data table (e.g. monthly weather). Cells support **bold** and [links](/x); note = source line
+  // rowIcons: optional icon name per row, drawn before the row label (see TABLE_ICONS in guide/[slug]/page.tsx)
+  | { type: 'table'; caption?: string; headers: string[]; rows: string[][]; note?: string; rowIcons?: (string | null)[] }
 
 // One entry in a "where to stay near X" hotel list. Written by Claude from researched,
 // dated facts — every field is optional except name/bookingUrl/coords.

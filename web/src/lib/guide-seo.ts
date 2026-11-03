@@ -92,6 +92,54 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     title: 'Amendoeira Faldo vs O\'Connor: which course should you play?',
     description: 'Two 18-hole courses at the same Silves resort by two major winners. How the desert-style Faldo Course and the water-laced O\'Connor Course compare.',
   },
+  'algarve-golf-in-january': {
+    title: 'Algarve weather in January for golf: what to expect',
+    description: 'Golf in the Algarve in January: highs of 16°C, about six rainy days, sunset from 5.25pm and some of the cheapest green fees of the year.',
+  },
+  'algarve-golf-in-february': {
+    title: 'Algarve weather in February for golf: what to expect',
+    description: 'Golf in the Algarve in February: highs of 17°C, about five rainy days, sunset after 6pm by the end of the month, and green fees on the rise.',
+  },
+  'algarve-golf-in-march': {
+    title: 'Algarve weather in March for golf: what to expect',
+    description: 'Golf in the Algarve in March: highs of 19°C, about six rainy days, light until nearly 8pm after the clocks change, and peak green fees at most courses.',
+  },
+  'algarve-golf-in-april': {
+    title: 'Algarve weather in April for golf: what to expect',
+    description: 'Golf in the Algarve in April: highs of 21°C, about five rainy days, light until after 8pm and the year\'s highest green fees on almost every course.',
+  },
+  'algarve-golf-in-may': {
+    title: 'Algarve weather in May for golf: what to expect',
+    description: 'Golf in the Algarve in May: highs of 23°C, about four rainy days, light until after 8.40pm and peak green fees at most courses. What to expect.',
+  },
+  'algarve-golf-in-june': {
+    title: 'Algarve weather in June for golf: what to expect',
+    description: 'Golf in the Algarve in June: highs of 27°C, almost no rain, light until 9pm, and green fees falling to low-season levels on many courses.',
+  },
+  'algarve-golf-in-july': {
+    title: 'Algarve weather in July for golf: what to expect',
+    description: 'Golf in the Algarve in July: highs of 29°C, no rain, sunrise around 6.15am and some of the lowest green fees of the year. How to beat the heat.',
+  },
+  'algarve-golf-in-august': {
+    title: 'Algarve weather in August for golf: what to expect',
+    description: 'Golf in the Algarve in August: highs of 29°C, almost no rain, sunrise around 6.40am and low summer green fees. When to tee off to beat the heat.',
+  },
+  'algarve-golf-in-september': {
+    title: 'Algarve weather in September for golf: what to expect',
+    description: 'Golf in the Algarve in September: highs of 26°C, about two rainy days, sunset from 8pm to 7.20pm, and green fees moving back towards autumn peak.',
+  },
+  'algarve-golf-in-october': {
+    title: 'Algarve weather in October for golf: what to expect',
+    description: 'Golf in the Algarve in October: highs of 23°C, about six rainy days, earlier sunsets after the clocks go back, and autumn peak green fees.',
+  },
+  'algarve-golf-in-november': {
+    title: 'Algarve weather in November for golf: what to expect',
+    description: 'Golf in the Algarve in November: highs of 20°C, about seven rainy days, sunset around 5.20pm, and green fees starting to fall. What to expect.',
+  },
+  'algarve-golf-in-december': {
+    title: 'Algarve weather in December for golf: what to expect',
+    description: 'Golf in the Algarve in December: highs of 17°C, about seven rainy days, sunset around 5.20pm and the cheapest green fees of the year on most courses.',
+  },
   'salgados-vs-amendoeira-which-golf-course-near-albufeira-should-you-play': {
     title: 'Salgados vs Amendoeira: which golf course near Albufeira?',
     description: 'Salgados by the beach or Amendoeira\'s Faldo and O\'Connor courses inland: green fees, handicap, practice facilities and which round suits you.',
