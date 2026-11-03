@@ -92,6 +92,10 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     title: 'Amendoeira Faldo vs O\'Connor: which course should you play?',
     description: 'Two 18-hole courses at the same Silves resort by two major winners. How the desert-style Faldo Course and the water-laced O\'Connor Course compare.',
   },
+  'salgados-vs-amendoeira-which-golf-course-near-albufeira-should-you-play': {
+    title: 'Salgados vs Amendoeira: which golf course near Albufeira?',
+    description: 'Salgados by the beach or Amendoeira\'s Faldo and O\'Connor courses inland: green fees, handicap, practice facilities and which round suits you.',
+  },
   'the-algarve-s-best-par-3-golf-courses': {
     description: 'The Algarve\'s all par-3 courses, plus one clifftop course with a famous exception: short, beginner-friendly rounds with real par, length and price.',
   },

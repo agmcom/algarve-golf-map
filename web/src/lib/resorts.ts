@@ -126,7 +126,7 @@ export const RESORT_PAGES: ResortPage[] = [
     hotelSlugs: ['algarve-marriott-salgados-golf-resort-spa', 'the-westin-salgados-beach-resort-algarve', 'marriott-residences-salgados-resort-algarve'],
     courseSlugs: ['salgados'],
     description:
-      'Herdade dos Salgados, between Albufeira and Armação de Pêra, is built around Pedro de Vasconcelos\'s 1997 par-72 Salgados course, laid across a coastal wetland reserve where birdlife from the neighbouring lagoon is part of every round. Three Marriott-group properties share the estate: the Algarve Marriott Salgados Golf Resort & Spa, The Westin Salgados Beach Resort and the apartment-style Marriott Residences, all close to Salgados beach.',
+      'Herdade dos Salgados, between Albufeira and Armação de Pêra, is built around Pedro de Vasconcelos\'s 1994 par-72 Salgados course, laid across a coastal wetland reserve where birdlife from the neighbouring lagoon is part of every round. Three Marriott-group properties share the estate: the Algarve Marriott Salgados Golf Resort & Spa, The Westin Salgados Beach Resort and the apartment-style Marriott Residences, all close to Salgados beach.',
   },
   {
     slug: 'pine-cliffs',

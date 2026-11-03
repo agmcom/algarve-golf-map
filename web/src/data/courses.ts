@@ -216,11 +216,11 @@ const RAW_COURSES: Course[] = [
     ...DEFAULTS,
     id: 'salgados', slug: 'salgados',
     name: 'Salgados Golf',
-    blurb: "Laid across a coastal wetland reserve between Albufeira and Armação de Pêra, Salgados is one of the Algarve's most ecologically distinctive courses. Pedro de Vasconcelos's par-72 design from 1997 features open links-style fairways where birdlife from the adjacent lagoon is a constant presence.",
+    blurb: "Laid across a coastal wetland reserve between Albufeira and Armação de Pêra, Salgados is one of the Algarve's most ecologically distinctive courses. Pedro de Vasconcelos's par-72 design from 1994 features open links-style fairways where birdlife from the adjacent lagoon is a constant presence.",
     lat: 37.0932, lng: -8.3241,
     town: 'Albufeira', region: 'central',
     holes: 18, par: 72,
-    designer: 'Pedro de Vasconcelos', year_opened: 1997,
+    designer: 'Pedro de Vasconcelos', year_opened: 1994,
   },
 
   // ── CARVOEIRO / LAGOA ────────────────────────────────────────────────────
