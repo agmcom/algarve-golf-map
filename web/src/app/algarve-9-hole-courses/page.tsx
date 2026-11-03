@@ -21,11 +21,24 @@ function heroUrl(course: { photos?: { url: string; is_hero?: boolean }[] }): str
 const H1 = 'Algarve 9 Hole Golf Courses'
 const SEO_TITLE = 'Algarve 9 Hole Golf Courses | Short & Par-3 Courses'
 const DESCRIPTION =
-  'Map of every 9-hole golf course in the Algarve: Balaia, Pine Cliffs, Vale de Milho and Penina\'s Resort Course. Par, length, green fees and handicap rules.'
+  'Every 9-hole golf course in the Algarve: Balaia, Pine Cliffs, Vale de Milho, Penina\'s Resort Course and Amendoeira\'s floodlit Academy course. Par, length, green fees and handicap rules.'
 
-// Order the four 9-hole courses deliberately: signature layout first, the two
+// Order the four 9-hole courses that have course pages: signature layout first, the two
 // beginner-friendly par-3s next, then the Penina Resort Course.
 const SLUGS = ['pine-cliffs', 'vale-de-milho', 'balaia', 'penina-resort'] as const
+
+// Amendoeira's Academy course has no course page of its own, so it is listed
+// here by hand and links to the night golf guide. €16 = visitor 9 holes on the
+// resort's online booking (amendoeira.golfmanager.com, checked 3 Nov 2026).
+const ACADEMY = {
+  name: 'Amendoeira Academy Course',
+  href: '/guide/night-golf-in-the-algarve',
+  town: 'Silves',
+  par: 27,
+  price_from: 16,
+  image: 'https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/guide-images/hero/c7e21550-7f81-4589-a655-26dc8628cbf9-1793180361506.jpg',
+  blurb: 'A floodlit nine-hole, par-27 course of short par 3s between the Faldo and O\'Connor courses at Amendoeira Golf Resort. The resort says it is the only floodlit nine-hole course in Portugal.',
+}
 
 export const revalidate = 3600
 
@@ -157,6 +170,7 @@ export default async function NineHoleCoursesPage() {
   const centerLng = courses.reduce((sum, c) => sum + c.lng, 0) / courses.length
 
   const pageUrl = `${BASE}/algarve-9-hole-courses`
+  const total = courses.length + 1
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -172,13 +186,16 @@ export default async function NineHoleCoursesPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: H1,
-    numberOfItems: courses.length,
-    itemListElement: courses.map((c, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: c.name,
-      url: `${BASE}/courses/${c.slug}`,
-    })),
+    numberOfItems: total,
+    itemListElement: [
+      ...courses.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.name,
+        url: `${BASE}/courses/${c.slug}`,
+      })),
+      { '@type': 'ListItem', position: total, name: ACADEMY.name, url: `${BASE}${ACADEMY.href}` },
+    ],
   }
 
   const faqLd = {
@@ -190,7 +207,7 @@ export default async function NineHoleCoursesPage() {
         name: 'How many 9-hole golf courses are there in the Algarve?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Four: Pine Cliffs at Olhos de Água, Vale de Milho near Carvoeiro, Balaia Golf Village near Albufeira, and the Resort Course at the Penina resort near Portimão.',
+          text: 'Five: Pine Cliffs at Olhos de Água, Vale de Milho near Carvoeiro, Balaia Golf Village near Albufeira, the Resort Course at the Penina resort near Portimão, and the floodlit Academy course at Amendoeira Golf Resort near Silves.',
         },
       },
       {
@@ -254,23 +271,24 @@ export default async function NineHoleCoursesPage() {
         <div className="course-directory__header" style={{ marginTop: 16 }}>
           <h1 className="course-directory__title">{H1}</h1>
           <p className="course-directory__subtitle">
-            {courses.length} nine-hole golf courses in the Algarve, Portugal
+            {total} nine-hole golf courses in the Algarve, Portugal
           </p>
         </div>
 
         <div style={{ maxWidth: 700, fontSize: 15, lineHeight: 1.7, color: '#444', margin: '16px 0 8px' }}>
           <p>
             The Algarve is best known for its championship 18-hole layouts, but
-            the region also has four 9-hole golf courses that are ideal for a
+            the region also has five 9-hole golf courses that are ideal for a
             quick round, an arrival or departure day, a game with the family, or
             easing back in gently. This page maps every 9-hole course in the
             Algarve and sets out what each one offers — par, length, green fees
             and handicap requirements.
           </p>
           <p>
-            Three of the four sit on the central Algarve coast between Albufeira
-            and Carvoeiro; the fourth is on the historic Penina estate near
-            Portimão. For the full picture, browse{' '}
+            Three of the five sit on the central Algarve coast between Albufeira
+            and Carvoeiro, one is on the historic Penina estate near Portimão,
+            and Amendoeira&apos;s floodlit Academy course is a short drive inland
+            near Silves. For the full picture, browse{' '}
             <A href="/#courses">every golf course in the Algarve</A> or read the{' '}
             <A href="/guide">Algarve golf guide</A>.
           </p>
@@ -307,6 +325,28 @@ export default async function NineHoleCoursesPage() {
               </Link>
             </li>
           ))}
+          <li className="course-list-item">
+            <Link href={ACADEMY.href}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={ACADEMY.image}
+                alt={`${ACADEMY.name}, floodlit at night`}
+                width={80}
+                height={80}
+                loading="lazy"
+              />
+              <div className="course-list-item__body">
+                <h2 className="course-list-item__name">{ACADEMY.name}</h2>
+                <span className="course-list-item__meta">
+                  9 holes · Par {ACADEMY.par} · {ACADEMY.town}
+                </span>
+                <span className="course-list-item__badges">
+                  <span className="course-list-item__price">From €{ACADEMY.price_from}</span>
+                </span>
+                <p className="course-list-item__blurb">{ACADEMY.blurb}</p>
+              </div>
+            </Link>
+          </li>
         </ul>
 
         <h2 className="course-directory__town">Algarve 9-hole courses in detail</h2>
@@ -323,6 +363,33 @@ export default async function NineHoleCoursesPage() {
             </div>
           </div>
         ))}
+        <div style={{ maxWidth: 700, marginBottom: 28 }}>
+          <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#222', margin: '0 0 8px' }}>
+            <A href={ACADEMY.href}>{ACADEMY.name}</A>
+            <span style={{ fontWeight: 500, color: '#6a6a6a' }}> — 9 holes, par {ACADEMY.par}</span>
+          </h3>
+          <div style={{ fontSize: 14.5, lineHeight: 1.7, color: '#444' }}>
+            <p>
+              The Academy course at <A href="/golf-resorts/amendoeira-golf-resort">Amendoeira
+              Golf Resort</A> is a nine-hole par-3 course designed by Steve
+              Richardson, set between the resort&apos;s{' '}
+              <A href="/courses/amendoeira-faldo">Faldo</A> and{' '}
+              <A href="/courses/amendoeira-oconnor">O&apos;Connor</A> courses. It
+              has lights around every hole, and the resort says it is the only
+              floodlit nine-hole course in Portugal. In the resort&apos;s online
+              booking it appears as the &ldquo;António Parreira Afonso Pitch &amp;
+              Putt&rdquo;, where a visitor&apos;s nine holes cost €16.
+            </p>
+            <p>
+              Online booking only covers daytime tee times; to play under the
+              floodlights, contact the resort. The resort doesn&apos;t publish a
+              handicap requirement for the course, so check when you book if you
+              have never played. Our guide to{' '}
+              <A href="/guide/night-golf-in-the-algarve">night golf in the Algarve</A>{' '}
+              explains how a floodlit round works.
+            </p>
+          </div>
+        </div>
 
         <h2 className="course-directory__town">Planning a 9-hole round in the Algarve</h2>
         <div style={{ maxWidth: 700, fontSize: 14.5, lineHeight: 1.7, color: '#444' }}>
@@ -335,8 +402,10 @@ export default async function NineHoleCoursesPage() {
             <A href="/#courses">course page</A>.
           </p>
           <p>
-            Two of the four 9-hole courses — <A href="/golf-resorts/pine-cliffs">Pine
-            Cliffs</A> and <A href="/golf-resorts/penina">Penina</A> — belong to
+            Four of the five 9-hole courses — <A href="/golf-resorts/pine-cliffs">Pine
+            Cliffs</A>, <A href="/golf-resorts/balaia-golf-village">Balaia</A>,{' '}
+            <A href="/golf-resorts/penina">Penina</A> and{' '}
+            <A href="/golf-resorts/amendoeira-golf-resort">Amendoeira</A> — belong to
             resorts you can stay at; see all{' '}
             <A href="/golf-resorts">golf resorts in the Algarve</A>. For clubs,
             trolleys and shoes on arrival, our{' '}
