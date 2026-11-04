@@ -49,7 +49,7 @@ function buildMetaDescription(shop: ShopWithJoins): string {
   if (shop.course) extras.push(`On-site at ${shop.course.name}.`)
   if (dedicatedRental) {
     if (shop.rental_pickup_location) extras.push(`Collect at ${shop.rental_pickup_location}.`)
-    if (shop.delivery_to_course) extras.push('Delivers to your hotel or course.')
+    if (shop.delivery_to_course) extras.push('Delivery available.')
   } else if (shop.offers_rental) {
     extras.push('Club rental available.')
   }
@@ -446,7 +446,7 @@ export default async function ShopPage({
                     <p style={{ fontSize: 15, color: '#333', margin: 0, lineHeight: 1.6 }}>
                       Club rental available
                       {shop.rental_price_per_day != null && <> from <strong>€{shop.rental_price_per_day}</strong> / day</>}
-                      {shop.delivery_to_course && ' · delivery to your course'}
+                      {shop.delivery_to_course && ' · delivery available'}
                     </p>
                     {shop.rental_set_types.length > 0 && (
                       <p style={{ fontSize: 13, color: '#6a6a6a', margin: '8px 0 0' }}>

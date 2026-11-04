@@ -159,8 +159,8 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     description: 'Same designer, resort and hotel near Portimão, but the two courses play nothing alike. What separates Alamos and Morgado and which suits your handicap.',
   },
   'hiring-golf-clubs-at-faro-airport': {
-    title: 'Golf club hire at Faro Airport: rental options compared',
-    description: 'The golf club rental companies at Faro Airport (FAO): where to find each one, what they stock, roughly what it costs and how to book before you fly.',
+    title: 'Golf club hire at Faro Airport: 3 options and prices',
+    description: 'Compare 3 ways to hire golf clubs at Faro Airport: where to collect, published prices and sets, plus how hire compares with airline golf-bag fees.',
   },
   'the-10-best-algarve-golf-courses-for-beginners': {
     title: 'The 8 best Algarve golf courses for beginners',
