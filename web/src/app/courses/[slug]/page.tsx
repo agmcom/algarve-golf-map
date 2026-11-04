@@ -772,8 +772,10 @@ export default async function CoursePage(
             </div>
 
             {/* Right column — sticky booking card (desktop only) */}
-            <div className="course-booking-desktop" style={{ position: 'sticky', top: 76 }}>
+            <div className="course-booking-desktop" style={{ position: 'sticky', top: 124 }}>
               <div style={{
+                display: 'flex', flexDirection: 'column',
+                maxHeight: 'calc(100vh - 140px)',
                 background: '#fff', border: '1px solid #ebebeb',
                 borderRadius: 20, padding: '24px 22px',
                 boxShadow: '0 4px 24px rgba(0,0,0,.08)',
@@ -788,8 +790,12 @@ export default async function CoursePage(
                   </div>
                 )}
 
-                {/* Price breakdown by month */}
-                {priceSummary.hasPrices && <CoursePriceTable summary={priceSummary} />}
+                {/* Price breakdown by month — scrolls inside the card so the booking buttons stay on screen */}
+                {priceSummary.hasPrices && (
+                  <div className="no-scrollbar" style={{ flex: '1 1 auto', minHeight: 0, overflowY: 'auto' }}>
+                    <CoursePriceTable summary={priceSummary} />
+                  </div>
+                )}
 
                 <TeeTimeButtons
                   bookingUrl={course.booking_url}

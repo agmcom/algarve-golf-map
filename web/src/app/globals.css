@@ -25,7 +25,8 @@
 }
 
 html, body {
-  overflow-x: hidden;
+  /* clip, unlike hidden, doesn't make body a scroll container, which would break position: sticky */
+  overflow-x: clip;
   max-width: 100%;
 }
 

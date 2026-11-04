@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
+import { SiteHeader } from '@/components/SiteHeader'
 import { notFound } from 'next/navigation'
 import { getCourses, getAirports } from '@/lib/queries'
 import { TownMapClient } from '@/components/TownMapClient'
@@ -242,6 +243,8 @@ export default async function NineHoleCoursesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+
+      <SiteHeader showBackToMap />
 
       <div style={{ position: 'relative' }}>
         <TownMapClient

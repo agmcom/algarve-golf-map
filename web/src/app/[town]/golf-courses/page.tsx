@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { SiteHeader } from '@/components/SiteHeader'
 import { pickTitle, pickDescription, withSiteName } from '@/lib/seo'
 import { getCourses, getAirports, getHotelsNear, getPublishedGuidePosts, getVisitorPriceRanges, type VisitorPriceRange } from '@/lib/queries'
 import { TOWN_PAGES } from '@/lib/towns'
@@ -305,6 +306,8 @@ export default async function TownPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/<\//g, '<\\/') }}
       />
+
+      <SiteHeader showBackToMap />
 
       <div style={{ position: 'relative' }}>
         <TownMapClient

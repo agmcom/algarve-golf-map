@@ -533,8 +533,9 @@ export default async function ShopPage({
             </div>
 
             {/* Right column — sticky contact card (desktop only) */}
-            <div className="course-booking-desktop" style={{ position: 'sticky', top: 76 }}>
+            <div className="course-booking-desktop" style={{ position: 'sticky', top: 124 }}>
               <div style={{
+                maxHeight: 'calc(100vh - 140px)', overflowY: 'auto',
                 background: '#fff', border: '1px solid #ebebeb',
                 borderRadius: 20, padding: '24px 22px',
                 boxShadow: '0 4px 24px rgba(0,0,0,.08)',

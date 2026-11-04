@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { SiteHeader } from '@/components/SiteHeader'
 import { getCourses, getAirports } from '@/lib/queries'
 import { townSlug } from '@/lib/towns'
 import { TownMapClient } from '@/components/TownMapClient'
@@ -153,6 +154,8 @@ export default async function DrivingRangesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+
+      <SiteHeader showBackToMap />
 
       <div style={{ position: 'relative' }}>
         <TownMapClient

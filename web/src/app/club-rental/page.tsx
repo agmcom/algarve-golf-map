@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { SiteHeader } from '@/components/SiteHeader'
 import { getShops } from '@/lib/queries'
 import { PartnerPrompt } from '@/components/PartnerPrompt'
 
@@ -71,6 +72,8 @@ export default async function ClubRentalIndexPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
+
+      <SiteHeader showBackToMap />
 
       <section className="course-directory" id="club-rental">
         <nav aria-label="Breadcrumb" style={{ marginBottom: 8 }}>

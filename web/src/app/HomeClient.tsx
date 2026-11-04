@@ -12,6 +12,7 @@ import { CoursePanel } from '@/components/CoursePanel'
 import { CompareModal } from '@/components/CompareModal'
 import { CompareButton, ComparePopup } from '@/components/CompareBar'
 import { ContactModal } from '@/components/ContactModal'
+import { SiteMenu } from '@/components/SiteMenu'
 import type { Course, Hotel, Shop, Airport } from '@/types/database'
 import type { PlannerResult } from '@/lib/planner'
 
@@ -340,22 +341,6 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
                   </div>
                 </>
               )}
-              {!isMobile && (
-                <button
-                  onClick={() => setContactOpen(true)}
-                  style={{
-                    height: 44, padding: '0 16px',
-                    background: '#fff', color: '#222',
-                    border: '1px solid #ebebeb', borderRadius: 22,
-                    fontSize: 13, fontWeight: 600,
-                    cursor: 'pointer', fontFamily: 'var(--font-body)',
-                    boxShadow: '0 1px 6px rgba(0,0,0,.06)',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  Contact
-                </button>
-              )}
               <button
                 onClick={handleOpenPlanner}
                 style={{
@@ -379,6 +364,7 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
                 <BedDouble size={isMobile ? 14 : 16} strokeWidth={2.2} />
                 {isMobile ? 'Base' : 'Find Your Base'}
               </button>
+              <SiteMenu onContact={() => setContactOpen(true)} size={isMobile ? 40 : 44} floating />
             </>
           }
         />

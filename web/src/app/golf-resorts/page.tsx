@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { SiteHeader } from '@/components/SiteHeader'
 import { getCourses, getHotels } from '@/lib/queries'
 import { RESORT_PAGES, type ResortPage } from '@/lib/resorts'
 import { faroDistance, formatDriveTime } from '@/lib/distance'
@@ -189,6 +190,8 @@ export default async function GolfResortsHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/<\//g, '<\\/') }} />
+
+      <SiteHeader showBackToMap />
 
       <section className="course-directory" id="golf-resorts">
         <nav aria-label="Breadcrumb" style={{ marginBottom: 8 }}>

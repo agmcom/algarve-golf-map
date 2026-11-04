@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { SiteHeader } from '@/components/SiteHeader'
 import { withSiteName, pickTitle } from '@/lib/seo'
 import { getCourses, getHotelBySlug, getAirports, getCourseSlugsWithGreenFees } from '@/lib/queries'
 import { faroDistance, formatDriveTime } from '@/lib/distance'
@@ -161,6 +162,8 @@ export default async function ResortPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/<\//g, '<\\/') }} />
+
+      <SiteHeader showBackToMap />
 
       <div style={{ position: 'relative' }}>
         <TownMapClient

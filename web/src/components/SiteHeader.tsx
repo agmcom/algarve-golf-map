@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ContactModal } from './ContactModal'
+import { SiteMenu } from './SiteMenu'
 
 interface SiteHeaderProps {
   showBackToMap?: boolean
@@ -47,29 +48,8 @@ export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
             )}
           </div>
 
-          {/* Right: guide link + contact button */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <Link href="/guide" style={{ fontSize: 13, fontWeight: 600, color: '#222', textDecoration: 'none', whiteSpace: 'nowrap' }}>
-            Guide
-          </Link>
-          <button
-            className="site-header__contact"
-            onClick={() => setContactOpen(true)}
-            style={{
-              height: 34, padding: '0 16px',
-              border: '1.5px solid #ebebeb', borderRadius: 20,
-              background: '#fff', color: '#222',
-              fontSize: 13, fontWeight: 600,
-              cursor: 'pointer', fontFamily: 'var(--font-body)',
-              whiteSpace: 'nowrap',
-              transition: 'border-color .15s',
-            }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = '#2B6090')}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = '#ebebeb')}
-          >
-            Contact
-          </button>
-          </div>
+          {/* Right: site menu */}
+          <SiteMenu onContact={() => setContactOpen(true)} />
         </div>
       </nav>
 

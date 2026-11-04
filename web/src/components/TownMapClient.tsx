@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
 import mapboxgl from 'mapbox-gl'
 import type { Course, Airport } from '@/types/database'
 import { CoursePanel } from './CoursePanel'
@@ -80,37 +79,6 @@ export function TownMapClient({ courses, centerLat, centerLng, zoom = 11.5, faro
   return (
     <div style={{ position: 'relative', height: 'min(65vh, 600px)' }}>
       <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
-      <div style={{ position: 'absolute', top: 16, left: 16, zIndex: 10, display: 'flex', alignItems: 'center', gap: 8 }}>
-        <Link
-          href="/"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: 7,
-            background: '#fff', border: '1px solid #ebebeb',
-            borderRadius: 20, padding: '7px 14px',
-            textDecoration: 'none',
-            boxShadow: '0 2px 8px rgba(0,0,0,.12)',
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="" style={{ width: 22, height: 22, flexShrink: 0 }} />
-          <span style={{ fontSize: 13, fontWeight: 700, color: '#222', whiteSpace: 'nowrap' }}>
-            Algarve Golf Map
-          </span>
-        </Link>
-        <Link
-          href="/"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: 6,
-            background: '#fff', border: '1px solid #ebebeb',
-            borderRadius: 20, padding: '7px 14px',
-            fontSize: 13, fontWeight: 600, color: '#222',
-            textDecoration: 'none',
-            boxShadow: '0 2px 8px rgba(0,0,0,.12)',
-          }}
-        >
-          ← All Algarve courses
-        </Link>
-      </div>
       {selectedCourse && (
         <div style={{ position: 'fixed', top: 0, left: 0, bottom: 0, zIndex: 200, width: 380, pointerEvents: 'none' }}>
           <div style={{ position: 'relative', height: '100%', pointerEvents: 'auto' }}>
