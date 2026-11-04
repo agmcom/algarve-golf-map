@@ -179,7 +179,7 @@ export function ContactModal({ onClose }: ContactModalProps) {
   )
 }
 
-function Field({ label, children, required, style }: {
+export function Field({ label, children, required, style }: {
   label: string
   children: React.ReactNode
   required?: boolean
@@ -195,7 +195,7 @@ function Field({ label, children, required, style }: {
   )
 }
 
-const inputStyle: React.CSSProperties = {
+export const inputStyle: React.CSSProperties = {
   width: '100%', padding: '9px 12px',
   border: '1.5px solid #ebebeb', borderRadius: 10,
   fontSize: 14, color: '#222', background: '#fff',

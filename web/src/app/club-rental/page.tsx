@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getShops } from '@/lib/queries'
+import { PartnerPrompt } from '@/components/PartnerPrompt'
 
 const BASE = 'https://www.algarvegolfmap.com'
 // Generic golf club display, no people and no visible branding — used only
@@ -146,6 +147,8 @@ export default async function ClubRentalIndexPage() {
             </ul>
           </div>
         ))}
+
+        <PartnerPrompt />
       </section>
     </>
   )

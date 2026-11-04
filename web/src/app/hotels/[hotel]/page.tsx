@@ -6,6 +6,7 @@ import { RESORT_PAGES, resortForHotel } from '@/lib/resorts'
 import { faroDistance, formatDriveTime, nearestCourses } from '@/lib/distance'
 import type { Course, Hotel, Shop } from '@/types/database'
 import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
+import { PartnerPrompt } from '@/components/PartnerPrompt'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
@@ -384,6 +385,8 @@ export default async function HotelPage({
             </a>
           </div>
         )}
+
+        <PartnerPrompt />
       </div>
     </>
   )

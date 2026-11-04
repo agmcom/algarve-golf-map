@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getCourses, getHotels } from '@/lib/queries'
 import { RESORT_PAGES, type ResortPage } from '@/lib/resorts'
 import { faroDistance, formatDriveTime } from '@/lib/distance'
+import { PartnerPrompt } from '@/components/PartnerPrompt'
 import type { Course, Hotel } from '@/types/database'
 
 const BASE = 'https://www.algarvegolfmap.com'
@@ -348,6 +349,8 @@ export default async function GolfResortsHubPage() {
             or browse <Link href="/#courses" style={link}>all golf courses in the Algarve</Link>.
           </p>
         </div>
+
+        <PartnerPrompt />
       </section>
     </>
   )

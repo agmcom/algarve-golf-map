@@ -8,6 +8,7 @@ const LINKS = [
   { href: '/golf-resorts', label: 'Golf Resorts in the Algarve' },
   { href: '/shops', label: 'Golf Shops in the Algarve' },
   { href: '/guide', label: 'Algarve Golf Guide' },
+  { href: '/partners', label: 'Partner with us' },
 ]
 
 export function SiteFooter() {
