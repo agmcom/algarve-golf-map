@@ -22,6 +22,7 @@ import { handicapRule, handicapRuleLabel } from '@/lib/handicap'
 import { Goal, ShoppingBag, UtensilsCrossed, BedDouble, User, Store, PlaneLanding, Car, CarTaxiFront, Flag, Hash, Ruler, Award, Gauge, CircleDot, GraduationCap } from 'lucide-react'
 
 import type { Airport } from '@/types/database'
+import { faroDistance } from '@/lib/distance'
 
 function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
   const R = 6371
@@ -37,8 +38,9 @@ function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): nu
 function airportDistances(lat: number, lng: number, airports: Airport[]) {
   return airports.map(ap => {
     const straightKm = haversineKm(lat, lng, ap.lat, ap.lng)
-    const roadKm     = Math.round(straightKm * ap.road_factor)
-    const minutes    = Math.round((roadKm / ap.avg_speed_kmh) * 60)
+    const faro       = ap.code === 'FAO' ? faroDistance(lat, lng) : null
+    const roadKm     = faro ? faro.km : Math.round(straightKm * ap.road_factor)
+    const minutes    = faro ? faro.mins : Math.round((roadKm / ap.avg_speed_kmh) * 60)
     const hours      = Math.floor(minutes / 60)
     const mins       = minutes % 60
     const time       = hours > 0 ? `${hours}h ${mins > 0 ? `${mins} min` : ''}`.trim() : `${mins} min`

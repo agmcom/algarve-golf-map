@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useMemo, useEffect } from 'react'
 import { BedDouble } from 'lucide-react'
 import { trackPageView, trackFilter } from '@/lib/analytics'
+import { faroDistance } from '@/lib/distance'
 import { MapView, type MapViewHandle } from '@/components/MapView'
 import { TopBar } from '@/components/TopBar'
 import { BottomCarousel, type BottomCarouselHandle } from '@/components/BottomCarousel'
@@ -27,23 +28,7 @@ const HOLE_FILTERS = new Set(['holes_18', 'holes_9', 'holes_27'])
 const DIFF_FILTERS = new Set(['easy', 'moderate', 'challenging'])
 const FARO_FILTERS  = new Set(['faro_30', 'faro_60', 'faro_90'])
 
-function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
-  const R = 6371
-  const dLat = ((lat2 - lat1) * Math.PI) / 180
-  const dLng = ((lng2 - lng1) * Math.PI) / 180
-  const a =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) *
-    Math.sin(dLng / 2) ** 2
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-}
-
-function faroMinutes(course: Course, fao: { lat: number; lng: number; road_factor: number; avg_speed_kmh: number }): number {
-  const km = haversineKm(course.lat, course.lng, fao.lat, fao.lng)
-  return Math.round((km * fao.road_factor) / fao.avg_speed_kmh * 60)
-}
-
-function matchFilter(course: Course, key: string, fao: { lat: number; lng: number; road_factor: number; avg_speed_kmh: number }): boolean {
+function matchFilter(course: Course, key: string): boolean {
   switch (key) {
     case 'clubs_rental':  return course.offers_rental
     case 'onsite_hotel':  return course.onsite_hotel_id != null
@@ -62,19 +47,17 @@ function matchFilter(course: Course, key: string, fao: { lat: number; lng: numbe
     case 'easy':         return course.difficulty === 'easy'
     case 'moderate':     return course.difficulty === 'moderate'
     case 'challenging':  return course.difficulty === 'challenging'
-    case 'faro_30':      return faroMinutes(course, fao) <= 30
-    case 'faro_60':      return faroMinutes(course, fao) <= 60
-    case 'faro_90':      return faroMinutes(course, fao) <= 90
+    case 'faro_30':      return faroDistance(course.lat, course.lng).mins <= 30
+    case 'faro_60':      return faroDistance(course.lat, course.lng).mins <= 60
+    case 'faro_90':      return faroDistance(course.lat, course.lng).mins <= 90
     default:             return true
   }
 }
 
-type FaoLike = { lat: number; lng: number; road_factor: number; avg_speed_kmh: number }
 
 function applyFilters(
   courses: Course[],
   active: Set<string>,
-  fao: FaoLike,
   hcpMen: number | null,
   hcpLadies: number | null,
 ): Course[] {
@@ -100,11 +83,11 @@ function applyFilters(
   return courses.filter(c => {
     if (top10Ids && !top10Ids.has(c.id)) return false
     for (const k of activeSingles) {
-      if (!matchFilter(c, k, fao)) return false
+      if (!matchFilter(c, k)) return false
     }
-    if (activeHoles.length > 0 && !activeHoles.some(k => matchFilter(c, k, fao))) return false
-    if (activeDiff.length  > 0 && !activeDiff.some(k  => matchFilter(c, k, fao))) return false
-    if (activeFaro.length  > 0 && !activeFaro.some(k  => matchFilter(c, k, fao))) return false
+    if (activeHoles.length > 0 && !activeHoles.some(k => matchFilter(c, k))) return false
+    if (activeDiff.length  > 0 && !activeDiff.some(k  => matchFilter(c, k))) return false
+    if (activeFaro.length  > 0 && !activeFaro.some(k  => matchFilter(c, k))) return false
     // handicap_required_men = max HCP allowed. I qualify if my HCP <= that limit.
     if (hcpMen != null && c.handicap_required_men != null && c.handicap_required_men < hcpMen) return false
     if (hcpLadies != null && c.handicap_required_ladies != null && c.handicap_required_ladies < hcpLadies) return false
@@ -112,7 +95,6 @@ function applyFilters(
   })
 }
 
-const FAO_FALLBACK: FaoLike = { lat: 37.0144, lng: -7.9659, road_factor: 1.35, avg_speed_kmh: 75 }
 
 function readFiltersFromUrl(): { filters: Set<string>; hcpMen: number | null; hcpLadies: number | null } {
   const params = new URLSearchParams(window.location.search)
@@ -214,12 +196,11 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
     window.history.replaceState(window.history.state, '', url)
   }, [activeFilters, hcpMen, hcpLadies])
 
-  const fao = airports.find(a => a.code === 'FAO') ?? FAO_FALLBACK
   const showTop10 = courses.filter(c => (c.review_count ?? 0) >= 3).length > 10
 
   const filteredCourses = useMemo(
-    () => applyFilters(courses, activeFilters, fao, hcpMen, hcpLadies),
-    [courses, activeFilters, fao, hcpMen, hcpLadies]
+    () => applyFilters(courses, activeFilters, hcpMen, hcpLadies),
+    [courses, activeFilters, hcpMen, hcpLadies]
   )
 
   const handleToggleFilter = useCallback((key: string) => {

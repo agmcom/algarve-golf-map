@@ -1,8 +1,16 @@
+import { FARO_DRIVE_TIMES } from '@/data/faroDriveTimes'
+
 const FARO_LAT = 37.0144
 const FARO_LNG = -7.9659
-// Calibrated (Oct 2026) against the airport drive times resorts publish: Quinta do Lago ~15 min,
-// Vale do Lobo ~20, Penina ~50, Monte Rei ~38, Lagos ~60. A fixed overhead covers leaving the
-// airport and the last stretch on local roads, which a pure speed estimate misses on short trips.
+// How close a point must be to a course to share its real Faro Airport drive time.
+const FARO_MATCH_RADIUS_KM = 1
+// Fitted (Nov 2026) to the real Faro Airport drive times, for points that aren't at a course.
+const FARO_ROAD_FACTOR = 1.18
+const FARO_ROAD_EXTRA_KM = 8
+const FARO_FIXED_MINS = 21
+const FARO_MINS_PER_KM = 0.5
+// A fixed overhead covers the first and last stretch on local roads, which a pure speed
+// estimate misses on short trips.
 const ROAD_FACTOR = 1.2
 const ROAD_EXTRA_KM = 3
 const AVG_SPEED_KMH = 95
@@ -18,7 +26,7 @@ export function haversineKm(lat1: number, lng1: number, lat2: number, lng2: numb
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
-// Estimated road distance and drive time between two points, using the same calibration as Faro.
+// Estimated road distance and drive time between two points.
 export function driveEstimate(lat1: number, lng1: number, lat2: number, lng2: number): { km: number; mins: number } {
   const straight = haversineKm(lat1, lng1, lat2, lng2)
   const km = Math.round(straight * ROAD_FACTOR + ROAD_EXTRA_KM)
@@ -26,8 +34,14 @@ export function driveEstimate(lat1: number, lng1: number, lat2: number, lng2: nu
   return { km, mins }
 }
 
+// Real drive time from Faro Airport when the point is at a course, otherwise a fitted estimate.
 export function faroDistance(lat: number, lng: number): { km: number; mins: number } {
-  return driveEstimate(lat, lng, FARO_LAT, FARO_LNG)
+  const nearest = FARO_DRIVE_TIMES
+    .map(c => ({ ...c, away: haversineKm(lat, lng, c.lat, c.lng) }))
+    .reduce((a, b) => (b.away < a.away ? b : a))
+  if (nearest.away <= FARO_MATCH_RADIUS_KM) return { km: nearest.km, mins: nearest.mins }
+  const km = Math.round(haversineKm(lat, lng, FARO_LAT, FARO_LNG) * FARO_ROAD_FACTOR + FARO_ROAD_EXTRA_KM)
+  return { km, mins: Math.round((FARO_FIXED_MINS + km * FARO_MINS_PER_KM) / 5) * 5 }
 }
 
 export function formatDriveTime(mins: number): string {
