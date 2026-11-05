@@ -372,7 +372,7 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
 
 
       {!plannerOpen && (
-        <div className="absolute z-10" style={{ bottom: 232, right: 20 }}>
+        <div className="absolute z-20" style={{ bottom: isMobile ? 286 : 296, right: 20 }}>
           <div style={{
             display: 'flex', flexDirection: 'column',
             background: '#ffffff', border: '1px solid #ebebeb',
