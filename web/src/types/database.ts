@@ -236,6 +236,7 @@ export interface Shop {
   services: string[]
 
   offers_rental: boolean
+  rental_only: boolean          // hires clubs but has no golf shop to visit and buy from
   rental_price_per_day: number | null
   rental_set_types: string[]
   delivery_to_course: boolean
@@ -244,6 +245,7 @@ export interface Shop {
   rental_price_notes: string | null
 
   website: string | null
+  retail_website: string | null // separate sales site, when `website` only covers hire
   phone: string | null
   email: string | null
   active: boolean

@@ -30,12 +30,11 @@ const SERVICE_META: Record<string, { icon: React.ReactNode; label: string }> = {
   club_cleaning:  { icon: <Droplets size={26} strokeWidth={1.8} />,     label: 'Club Cleaning' },
 }
 
-// A shop whose only tagged service is rental, with no on-course link, is a
-// dedicated rental company (e.g. ClubsToHire, Green-Tee) rather than a
+// A dedicated rental company (e.g. ClubsToHire, Green-Tee) rather than a
 // retail/pro shop that also happens to rent clubs — worth its own copy since
 // "club rental/hire" is the higher-intent search term for these businesses.
 function isDedicatedRentalShop(shop: ShopWithJoins): boolean {
-  return shop.offers_rental && !shop.course_id && shop.services.length === 1 && shop.services[0] === 'rental'
+  return shop.rental_only
 }
 
 function buildMetaDescription(shop: ShopWithJoins): string {
@@ -151,7 +150,7 @@ export default async function ShopPage({
     ],
   }
 
-  const sameAs = [shop.website, shop.instagram_url, shop.facebook_url].filter(Boolean) as string[]
+  const sameAs = [shop.website, shop.retail_website, shop.instagram_url, shop.facebook_url].filter(Boolean) as string[]
 
   const storeLd = {
     '@context': 'https://schema.org',
@@ -211,6 +210,17 @@ export default async function ShopPage({
           style={{ ...ctaBtn('#eaf2f8', '#2B6090'), marginTop: 10 }}
         >
           Visit Website ↗
+        </a>
+      )}
+
+      {shop.retail_website && (
+        <a
+          href={`${shop.retail_website}?utm_source=algarvegolfmap.com`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ ...ctaBtn('#eaf2f8', '#2B6090'), marginTop: 10 }}
+        >
+          Visit Online Shop ↗
         </a>
       )}
 

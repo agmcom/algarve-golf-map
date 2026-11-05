@@ -40,7 +40,7 @@ function groupByTown<T extends { town: string }>(items: T[]): { town: string; it
 }
 
 export default async function ShopsIndexPage() {
-  const shops = await getShops()
+  const shops = (await getShops()).filter(s => !s.rental_only)
   const groups = groupByTown(shops)
   const pageUrl = `${BASE}/shops`
 
