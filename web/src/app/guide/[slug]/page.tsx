@@ -411,7 +411,12 @@ export default async function GuidePostPage(
             }), followAt, <FollowBox key="follow" />)}
           </div>
 
-          <div style={{ marginTop: 48, paddingTop: 28, borderTop: '1px solid #ebebeb' }}>
+          <p style={{ marginTop: 36, marginBottom: 0, fontSize: 13, lineHeight: 1.6, color: '#767676' }}>
+            Prices, rules and availability can change. We check our information against official sources where possible, but please
+            confirm the details directly with the course, airline or provider before booking.
+          </p>
+
+          <div style={{ marginTop: 28, paddingTop: 28, borderTop: '1px solid #ebebeb' }}>
             <Link
               href="/"
               style={{

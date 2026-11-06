@@ -5,6 +5,7 @@ import { getCourseBySlug, getCourseSlugsWithGreenFees, getCoursesNear, getGreenF
 import { summarizePrices, monthListText, PRICE_SEASON, PRICE_LAST_CHECKED, type PriceSummary } from '@/lib/prices'
 import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
+import { applyBuggyFacts, buggyFaqAnswer, buggySentence } from '@/data/buggies'
 import { TeeTimeButtons } from '@/components/TeeTimeButtons'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { SiteHeader } from '@/components/SiteHeader'
@@ -39,19 +40,13 @@ function buildFaqs(course: Course, s: PriceSummary): Faq[] {
   const tw = s.twilight
   const sv = s.twilightSaving
 
-  const buggyPhrase = s.buggyIncluded
-    ? 'a shared buggy included'
-    : s.buggyAddOn != null
-      ? `a buggy available for about €${s.buggyAddOn}`
-      : 'buggy hire arranged separately'
-
   const faqs: Faq[] = []
 
   // 1 — headline price
   if (r?.flat) {
     faqs.push({
       q: `How much does it cost to play ${name}?`,
-      a: `A round at ${name} costs €${r.min} for ${holes} holes throughout the ${PRICE_SEASON} season, with ${buggyPhrase}.`,
+      a: `A round at ${name} costs €${r.min} for ${holes} holes throughout the ${PRICE_SEASON} season. ${buggySentence(course.slug)}`,
     })
   } else if (s.twilightOnly && r) {
     faqs.push({
@@ -104,11 +99,7 @@ function buildFaqs(course: Course, s: PriceSummary): Faq[] {
   // 4 — buggy
   faqs.push({
     q: `Is a buggy included at ${name}?`,
-    a: s.buggyIncluded
-      ? `Yes — the green fee at ${name} includes a shared buggy.`
-      : s.buggyAddOn != null
-        ? `No, but a buggy can be added for about €${s.buggyAddOn} per round.`
-        : `Buggy hire is not listed in the published rates for ${name}; expect roughly €40–€60 per cart and confirm availability with the club.`,
+    a: buggyFaqAnswer(course.slug),
   })
 
   // 5 — how to book
@@ -139,7 +130,7 @@ export async function generateMetadata(
   const course = await getCourseBySlug(slug)
   if (!course) return {}
 
-  const s = summarizePrices(course.prices)
+  const s = summarizePrices(applyBuggyFacts(course.slug, course.prices))
   const holes = s.holes ?? course.holes
   const range = s.primary
     ? (s.primary.flat ? `Flat €${s.primary.min}` : `€${s.primary.min}–€${s.primary.max}`)
@@ -196,7 +187,7 @@ export default async function GreenFeesPage(
   const course = await getCourseBySlug(slug)
   if (!course) notFound()
 
-  const s = summarizePrices(course.prices)
+  const s = summarizePrices(applyBuggyFacts(course.slug, course.prices))
   if (!s.hasPrices && course.price_from == null) notFound()
 
   const [nearby, comparables] = await Promise.all([
@@ -344,11 +335,7 @@ export default async function GreenFeesPage(
                     : `${course.name} quotes green fees from €${course.price_from} per round for the ${PRICE_SEASON} season.`}
             </p>
             <p style={{ margin: 0 }}>
-              {s.buggyIncluded
-                ? 'The green fee includes a shared buggy.'
-                : s.buggyAddOn != null
-                  ? `A buggy is optional at around €${s.buggyAddOn} per round.`
-                  : 'Buggy hire is arranged separately with the club.'}
+              {buggySentence(course.slug)}
               {s.hasTwilight && !s.twilightOnly ? ' Twilight rounds are cheaper still — see below.' : ''}
               {s.coverage.label ? ` Published rates cover ${s.coverage.label}; for other months, contact the club.` : ''}
             </p>
@@ -440,13 +427,7 @@ export default async function GreenFeesPage(
           <section style={{ margin: '28px 0' }}>
             <h2 style={sectionTitle}>Buggy, clubs &amp; extras</h2>
             <ul style={{ fontSize: 15.5, lineHeight: 1.7, color: '#333', margin: 0, paddingLeft: 20 }}>
-              <li>
-                {s.buggyIncluded
-                  ? 'A shared buggy is included in the green fee.'
-                  : s.buggyAddOn != null
-                    ? `A buggy is optional at about €${s.buggyAddOn} per round.`
-                    : 'Buggy hire is not listed in the published rates — ask the club; expect roughly €40–€60 per cart.'}
-              </li>
+              <li>{buggySentence(course.slug)}</li>
               {course.offers_rental && course.rental_price_per_round != null && (
                 <li>
                   Club hire from €{course.rental_price_per_round} per round

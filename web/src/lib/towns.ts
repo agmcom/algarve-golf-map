@@ -103,7 +103,7 @@ export const TOWN_PAGES: TownPage[] = [
     description:
       'Ombria, in the hills north of Loulé, opened in April 2023. Designed by Portuguese architect Jorge Santana da Silva, it is part of the Ombria resort and holds GEO Foundation certification for sustainable golf.',
     more: [
-      "The course was built on a former fruit farm and plays over undulating terrain with several climbs, so consider a buggy. Ombria sets a handicap limit of 28 for men and 36 for ladies and asks for your name, nationality and handicap on every booking. The Viceroy at Ombria Algarve hotel sits beside the course, with rooms and residences that have private pools.",
+      "The course was built on a former fruit farm and plays over undulating terrain with several climbs, and a shared buggy is included in the green fee, subject to availability. Ombria sets a handicap limit of 28 for men and 36 for ladies and asks for your name, nationality and handicap on every booking. The Viceroy at Ombria Algarve hotel sits beside the course, with rooms and residences that have private pools.",
       "Although it is in the hills, Ombria is within about 25 minutes by car of the Vilamoura, Vale do Lobo and Quinta do Lago courses, so it pairs easily with a stay on the coast.",
     ],
   },

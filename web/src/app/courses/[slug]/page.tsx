@@ -10,6 +10,8 @@ import { summarizeReviews, sortReviews, MIN_REVIEWS_TO_INDEX } from '@/lib/revie
 import { ReviewStars } from '@/components/ReviewStars'
 import { ReviewCard } from '@/components/ReviewCard'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
+import { CourseBuggies } from '@/components/CourseBuggies'
+import { applyBuggyFacts, getBuggyInfo } from '@/data/buggies'
 import { TeeTimeButtons } from '@/components/TeeTimeButtons'
 import { CourseMapImage } from '@/components/CourseMapImage'
 import { PageViewTracker } from '@/components/PageViewTracker'
@@ -100,7 +102,7 @@ export async function generateMetadata(
         `${courseName} Guide`,
       ])
 
-  const s = summarizePrices(course.prices ?? [])
+  const s = summarizePrices(applyBuggyFacts(course.slug, course.prices ?? []))
   const priceFrom = s.primary?.min ?? course.price_from
   const layout = [course.holes && `${course.holes}-hole`, course.par && `par-${course.par}`].filter(Boolean).join(', ')
   const intro = `${nameHasTown ? course.name : `${course.name}, ${town}`}${layout ? `: ${layout} course` : ''}`
@@ -166,7 +168,8 @@ export default async function CoursePage(
   const latestReviews = sortReviews(approvedReviews).slice(0, 2)
   const airports = airportDistances(course.lat, course.lng, airportList).sort((a, b) => a.roadKm - b.roadKm)
 
-  const priceSummary = summarizePrices(course.prices)
+  const priceSummary = summarizePrices(applyBuggyFacts(course.slug, course.prices))
+  const buggyInfo = getBuggyInfo(course.slug)
   const showGreenFeesLink = priceSummary.hasPrices || course.price_from != null
   const websiteWithUtm = course.website
     ? (course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`)
@@ -319,6 +322,7 @@ export default async function CoursePage(
           { id: 'nearby-hotels', label: 'Nearby Hotels' },
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
           ...(course.dress_code ? [{ id: 'dress-code', label: 'Dress Code' }] : []),
+          ...(buggyInfo ? [{ id: 'buggies', label: 'Buggies' }] : []),
           { id: 'reviews', label: 'Reviews' },
           { id: 'course-map', label: 'Course Map' },
           { id: 'nearby-courses', label: 'Nearby Courses' },
@@ -581,6 +585,8 @@ export default async function CoursePage(
                   </p>
                 </section>
               )}
+
+              {buggyInfo && <CourseBuggies info={buggyInfo} phone={course.phone} />}
 
               {/* Prices & Booking — mobile only (desktop shows in right column) */}
               <section className="course-booking-mobile" id="booking" style={{ marginBottom: 36 }}>
