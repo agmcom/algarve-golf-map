@@ -11,6 +11,7 @@ import { ReviewStars } from '@/components/ReviewStars'
 import { ReviewCard } from '@/components/ReviewCard'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { CourseBuggies } from '@/components/CourseBuggies'
+import { tripCostGuideFor } from '@/data/tripCostGuides'
 import { applyBuggyFacts, getBuggyInfo } from '@/data/buggies'
 import { TeeTimeButtons } from '@/components/TeeTimeButtons'
 import { CourseMapImage } from '@/components/CourseMapImage'
@@ -587,6 +588,22 @@ export default async function CoursePage(
               )}
 
               {buggyInfo && <CourseBuggies info={buggyInfo} phone={course.phone} />}
+
+              {(() => {
+                const tripGuide = tripCostGuideFor(course.slug)
+                return (
+                  <section id="trip-cost" style={{ marginBottom: 36 }}>
+                    <h2 style={sectionTitle}>Planning a golf trip?</h2>
+                    <p style={{ fontSize: 17, lineHeight: 1.7, color: '#333', margin: 0 }}>
+                      See{' '}
+                      <Link href={tripGuide.href} style={{ color: '#2B6090', fontWeight: 600 }}>
+                        how much a golf trip to {tripGuide.place} costs
+                      </Link>{' '}
+                      if you book it yourself, with month-by-month totals and example hotels.
+                    </p>
+                  </section>
+                )
+              })()}
 
               {/* Prices & Booking — mobile only (desktop shows in right column) */}
               <section className="course-booking-mobile" id="booking" style={{ marginBottom: 36 }}>
