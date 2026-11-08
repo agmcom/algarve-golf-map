@@ -159,7 +159,7 @@ export default async function AcademyPage({ params }: { params: Promise<{ academ
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
 
       <div style={{ minHeight: '100vh', background: '#f9f9f9', fontFamily: 'var(--font-body)' }}>
-        <SiteHeader showBackToMap />
+        <SiteHeader back={{ href: '/golf-academies', label: 'All golf academies', shortLabel: 'Academies' }} />
 
         {/* Hero */}
         <div style={{ position: 'relative', height: 380, background: '#3d6b4f', overflow: 'hidden' }}>

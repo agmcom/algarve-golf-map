@@ -7,9 +7,12 @@ import { SiteMenu } from './SiteMenu'
 
 interface SiteHeaderProps {
   showBackToMap?: boolean
+  /** Point the back link somewhere other than the map (e.g. a parent listing). */
+  back?: { href: string; label: string; shortLabel: string }
 }
 
-export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
+export function SiteHeader({ showBackToMap = false, back }: SiteHeaderProps) {
+  const backLink = back ?? { href: '/', label: 'Back to map', shortLabel: 'Map' }
   const [contactOpen, setContactOpen] = useState(false)
 
   return (
@@ -34,15 +37,15 @@ export function SiteHeader({ showBackToMap = false }: SiteHeaderProps) {
                 Algarve Golf Map
               </span>
             </Link>
-            {showBackToMap && (
+            {(showBackToMap || back) && (
               <>
                 <span className="site-header__wordmark" style={{ color: '#d0d0d0', fontSize: 16 }}>|</span>
-                <Link href="/" style={{
+                <Link href={backLink.href} style={{
                   fontSize: 13, fontWeight: 500, color: '#6a6a6a',
                   textDecoration: 'none', whiteSpace: 'nowrap',
                 }}>
-                  <span className="site-header__back-full">← Back to map</span>
-                  <span className="site-header__back-short">← Map</span>
+                  <span className="site-header__back-full">← {backLink.label}</span>
+                  <span className="site-header__back-short">← {backLink.shortLabel}</span>
                 </Link>
               </>
             )}
