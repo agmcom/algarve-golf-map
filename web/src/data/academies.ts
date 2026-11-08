@@ -389,6 +389,48 @@ export const ACADEMIES: Academy[] = [
     contact: { phone: '+351 281 320 880', website: 'https://www.benamorgolf.com/en/golf-lessons-clinics/' },
   },
   {
+    slug: 'boavista-golf-academy',
+    name: 'Boavista Golf Academy',
+    baseCourse: 'boavista',
+    courses: ['boavista'],
+    tagline: 'Lessons from €60, a 10-lesson "Start 2 Golf" beginners programme for €175 and a junior golf school in Lagos.',
+    about: [
+      'The Boavista Golf Academy at Boavista Golf & Spa Resort in Lagos has a golf professional available to give lessons and advice on improving your game.',
+      'For newcomers, the "Start 2 Golf" beginners programme bundles 10 lessons for €175. There are also monthly programmes of 4 or 8 lessons, playing lessons on the course, and a junior golf school with a monthly fee.',
+    ],
+    facilities: [],
+    technology: [],
+    team: [],
+    programmes: [
+      { name: 'Start 2 Golf beginners programme', detail: '10 lessons to learn the basics.', price: '€175' },
+      { name: 'Monthly programmes', detail: '4 or 8 lessons a month, for one or two people.', price: '4 lessons €180, 8 lessons €280 (1 person)' },
+      { name: 'Boavista Junior Golf School', detail: 'Group lessons for juniors. Contact reception for the timetable.', price: '€70 per month' },
+    ],
+    priceGroups: [
+      { title: 'Individual lessons', note: 'The price list does not state how long a lesson lasts.', rows: [
+        { label: '1 lesson, 1 person', price: '€60' },
+        { label: '1 lesson, 2 people', price: '€75' },
+      ] },
+      { title: 'Monthly programmes', rows: [
+        { label: '4 lessons, 1 person', price: '€180' },
+        { label: '8 lessons, 1 person', price: '€280' },
+        { label: '4 lessons, 2 people', price: '€230' },
+        { label: '8 lessons, 2 people', price: '€360' },
+      ] },
+      { title: 'On-course lessons', rows: [
+        { label: '9 holes', price: '€120' },
+        { label: '18 holes', price: '€160' },
+      ] },
+    ],
+    lessonFrom: { price: 60, duration: 'lesson' },
+    beginnerProgramme: true,
+    juniors: true,
+    priceStatus: 'undated',
+    priceSource: { label: 'Boavista Golf Academy price list (published January 2025)', url: 'https://www.boavistaresort.pt/Files/Golf/GOLF%20ACADEMY%20LESSONS%202.pdf' },
+    priceNote: 'The price list shows no season and was published in January 2025, so confirm current prices when you book. Members have separate rates.',
+    contact: { phone: '+351 967 799 267', email: 'golf.academy@boavistaresort.pt', website: 'https://www.boavistaresort.pt/en/Menu/Golf/About-the-Course.aspx' },
+  },
+  {
     slug: 'amendoeira-golf-academy',
     name: 'Amendoeira Golf Academy',
     baseCourse: 'amendoeira-oconnor',
