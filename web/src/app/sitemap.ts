@@ -3,6 +3,7 @@ import { getAllCourseSlugs, getAllShopSlugs, getPublishedGuidePosts, getCourseSl
 import { MIN_REVIEWS_TO_INDEX } from '@/lib/reviews'
 import { TOWN_PAGES } from '@/lib/towns'
 import { RESORT_PAGES } from '@/lib/resorts'
+import { ACADEMIES } from '@/data/academies'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
@@ -120,6 +121,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${BASE}/golf-academies`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    ...ACADEMIES.map(a => ({
+      url: `${BASE}/golf-academies/${a.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
     {
       url: `${BASE}/partners`,
       lastModified: new Date(),

@@ -8,6 +8,7 @@ const LINKS = [
   { href: '/guide', label: 'Guide' },
   { href: '/club-rental', label: 'Club rental' },
   { href: '/shops', label: 'Golf shops' },
+  { href: '/golf-academies', label: 'Golf academies' },
   { href: '/partners', label: 'Partner with us' },
 ]
 

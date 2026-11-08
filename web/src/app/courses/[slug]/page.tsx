@@ -12,6 +12,7 @@ import { ReviewCard } from '@/components/ReviewCard'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { CourseBuggies } from '@/components/CourseBuggies'
 import { tripCostGuideFor } from '@/data/tripCostGuides'
+import { academyForCourse, PRICE_STATUS_LABEL } from '@/data/academies'
 import { applyBuggyFacts, getBuggyInfo } from '@/data/buggies'
 import { TeeTimeButtons } from '@/components/TeeTimeButtons'
 import { CourseMapImage } from '@/components/CourseMapImage'
@@ -319,6 +320,7 @@ export default async function CoursePage(
         <CourseNav sections={[
           ...(course.blurb ? [{ id: 'about', label: 'About' }] : []),
           { id: 'facilities', label: 'Facilities' },
+          ...(academyForCourse(course.slug) ? [{ id: 'academy', label: 'Golf Academy' }] : []),
           { id: 'getting-there', label: 'Getting There' },
           { id: 'nearby-hotels', label: 'Nearby Hotels' },
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
@@ -419,6 +421,35 @@ export default async function CoursePage(
                   </p>
                 )}
               </section>
+
+              {/* Golf academy summary → full academy page */}
+              {(() => {
+                const academy = academyForCourse(course.slug)
+                if (!academy) return null
+                return (
+                  <section id="academy" style={{ marginBottom: 36 }}>
+                    <h2 style={sectionTitle}>Golf Academy</h2>
+                    <Link href={`/golf-academies/${academy.slug}`} style={{
+                      display: 'block', padding: '16px 18px', borderRadius: 14,
+                      border: '1px solid #ebebeb', background: '#fff', textDecoration: 'none',
+                    }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'baseline', flexWrap: 'wrap' }}>
+                        <strong style={{ fontSize: 16, color: '#222' }}>{academy.name}</strong>
+                        <span style={{ fontSize: 14, fontWeight: 700, color: '#222' }}>
+                          {academy.lessonFrom ? `Lessons from €${academy.lessonFrom.price} / ${academy.lessonFrom.duration}` : 'Price on request'}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: 14.5, color: '#555', margin: '8px 0 0', lineHeight: 1.6 }}>{academy.tagline}</p>
+                      <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 10, fontSize: 12.5, color: '#6a6a6a' }}>
+                        {academy.beginnerProgramme && <span>✓ Beginner programme</span>}
+                        {academy.juniors && <span>✓ Junior lessons</span>}
+                        {academy.lessonFrom && academy.priceStatus !== 'current' && <span>{PRICE_STATUS_LABEL[academy.priceStatus]}</span>}
+                      </div>
+                      <div style={{ marginTop: 12, fontSize: 14, fontWeight: 600, color: '#2B6090' }}>See the full academy page →</div>
+                    </Link>
+                  </section>
+                )
+              })()}
 
               {/* Getting There */}
               <section id="getting-there" style={{ marginBottom: 36 }}>

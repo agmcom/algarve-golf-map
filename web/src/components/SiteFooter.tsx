@@ -7,6 +7,7 @@ const LINKS = [
   { href: '/club-rental', label: 'Golf Club Rental in the Algarve' },
   { href: '/golf-resorts', label: 'Golf Resorts in the Algarve' },
   { href: '/shops', label: 'Golf Shops in the Algarve' },
+  { href: '/golf-academies', label: 'Golf Academies in the Algarve' },
   { href: '/guide', label: 'Algarve Golf Guide' },
   { href: '/partners', label: 'Partner with us' },
 ]
