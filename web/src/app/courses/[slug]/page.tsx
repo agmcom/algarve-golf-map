@@ -12,6 +12,7 @@ import { ReviewCard } from '@/components/ReviewCard'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { CourseBuggies } from '@/components/CourseBuggies'
 import { tripCostGuideFor } from '@/data/tripCostGuides'
+import { COURSE_RATINGS, slopeRange } from '@/data/course-ratings'
 import { academyForCourse, PRICE_STATUS_LABEL } from '@/data/academies'
 import { applyBuggyFacts, getBuggyInfo } from '@/data/buggies'
 import { TeeTimeButtons } from '@/components/TeeTimeButtons'
@@ -353,22 +354,34 @@ export default async function CoursePage(
               { label: 'Slope (back tees)', value: course.slope_rating != null ? `${course.slope_rating}` : '—',               icon: <Gauge size={15} strokeWidth={1.8} /> },
               { label: 'Difficulty', value: course.difficulty ? DIFFICULTY_LABEL[course.difficulty] : '—',              icon: <Gauge size={15} strokeWidth={1.8} /> },
             ]
+            const slopes = COURSE_RATINGS[slug] ? slopeRange(slug, 'men') : null
             return (
-              <div style={{
-                display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: 1, background: '#ebebeb',
-                border: '1px solid #ebebeb', borderRadius: 16,
-                overflow: 'hidden', margin: '28px 0',
-              }}>
-                {stats.map(({ label, value, icon }) => (
-                  <div key={label} style={{ background: '#fff', padding: '12px 12px', textAlign: 'center' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, marginBottom: 5, color: '#b0b0b0' }}>
-                      {icon}
-                      <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '.07em', textTransform: 'uppercase' }}>{label}</span>
+              <div style={{ margin: '28px 0' }}>
+                <div style={{
+                  display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: 1, background: '#ebebeb',
+                  border: '1px solid #ebebeb', borderRadius: 16,
+                  overflow: 'hidden',
+                }}>
+                  {stats.map(({ label, value, icon }) => (
+                    <div key={label} style={{ background: '#fff', padding: '12px 12px', textAlign: 'center' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, marginBottom: 5, color: '#b0b0b0' }}>
+                        {icon}
+                        <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '.07em', textTransform: 'uppercase' }}>{label}</span>
+                      </div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: '#222', lineHeight: 1.2 }}>{value}</div>
                     </div>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: '#222', lineHeight: 1.2 }}>{value}</div>
+                  ))}
+                </div>
+                {slopes && (
+                  <div style={{ marginTop: 10, fontSize: 13, color: '#6a6a6a', textAlign: 'center' }}>
+                    {slopes.min === slopes.max ? `Men's slope ${slopes.max}` : `Men's slope ${slopes.min}–${slopes.max} depending on tees`}
+                    {' · '}
+                    <Link href={`/courses/${slug}/slope-rating`} style={{ color: '#2B6090', fontWeight: 600, textDecoration: 'none' }}>
+                      See ratings for every tee →
+                    </Link>
                   </div>
-                ))}
+                )}
               </div>
             )
           })()}

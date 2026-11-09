@@ -79,8 +79,8 @@ const COPY: Record<string, ReactNode> = {
         <A href="/courses/pine-cliffs">Pine Cliffs</A> is the most spectacular of
         the Algarve&apos;s 9-hole courses. Martin Hawtree laid it out along the
         ochre sandstone cliffs of Olhos de Água, above Praia da
-        Falésia, and at roughly 2,230 metres off the back tees it is also the
-        longest nine on this list — a genuine par 33 rather than a par-3 track.
+        Falésia. With five par 4s alongside its four par 3s, it is a genuine
+        par 32 rather than a par-3 track.
         Its signature hole, the Devil&apos;s Parlour, is a par 3 played clean
         across a gap in the cliffs with the Atlantic below.
       </p>

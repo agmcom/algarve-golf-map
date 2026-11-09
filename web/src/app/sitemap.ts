@@ -3,6 +3,7 @@ import { getAllCourseSlugs, getAllShopSlugs, getPublishedGuidePosts, getCourseSl
 import { MIN_REVIEWS_TO_INDEX } from '@/lib/reviews'
 import { TOWN_PAGES } from '@/lib/towns'
 import { RESORT_PAGES } from '@/lib/resorts'
+import { COURSE_RATINGS } from '@/data/course-ratings'
 import { ACADEMIES } from '@/data/academies'
 
 const BASE = 'https://www.algarvegolfmap.com'
@@ -36,6 +37,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,
+  }))
+
+  const slopeRatingUrls: MetadataRoute.Sitemap = Object.keys(COURSE_RATINGS).map(slug => ({
+    url: `${BASE}/courses/${slug}/slope-rating`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
   }))
 
   // Only reviews pages that are indexable (enough approved reviews).
@@ -142,6 +150,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...townUrls,
     ...courseUrls,
     ...greenFeeUrls,
+    ...slopeRatingUrls,
     ...reviewUrls,
     ...resortUrls,
     ...hotelUrls,
