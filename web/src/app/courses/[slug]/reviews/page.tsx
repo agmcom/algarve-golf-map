@@ -265,7 +265,7 @@ export default async function CourseReviewsPage(
                     ))}
                   </ul>
                   {course.slope_rating != null && (
-                    <p style={{ ...muted, margin: '10px 0 0' }}>Official slope rating: {course.slope_rating} (113 is average).</p>
+                    <p style={{ ...muted, margin: '10px 0 0' }}>Official slope rating from the back tees: {course.slope_rating} (113 is average).</p>
                   )}
                 </section>
               )}

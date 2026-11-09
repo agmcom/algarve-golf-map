@@ -350,7 +350,7 @@ export default async function CoursePage(
               { label: 'Par',        value: course.par != null ? `${course.par}` : '—',                                 icon: <Hash size={15} strokeWidth={1.8} /> },
               { label: 'Distance',   value: course.length_meters != null ? `${course.length_meters.toLocaleString()} m` : '—', icon: <Ruler size={15} strokeWidth={1.8} /> },
               { label: 'Max HCP',    value: hcpValue ?? '—',                                                            icon: <Award size={15} strokeWidth={1.8} /> },
-              { label: 'Slope',      value: course.slope_rating != null ? `${course.slope_rating}` : '—',               icon: <Gauge size={15} strokeWidth={1.8} /> },
+              { label: 'Slope (back tees)', value: course.slope_rating != null ? `${course.slope_rating}` : '—',               icon: <Gauge size={15} strokeWidth={1.8} /> },
               { label: 'Difficulty', value: course.difficulty ? DIFFICULTY_LABEL[course.difficulty] : '—',              icon: <Gauge size={15} strokeWidth={1.8} /> },
             ]
             return (
