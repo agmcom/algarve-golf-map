@@ -304,6 +304,18 @@ export async function getShopBySlug(slug: string): Promise<Shop | null> {
   return data
 }
 
+// Slug + last edit date of active courses / shops, for real <lastmod> dates in the sitemap.
+export async function getCourseSitemapRows(): Promise<{ slug: string; updated_at: string | null }[]> {
+  const { data } = await supabase.from('courses').select('slug, updated_at').eq('active', true)
+  if (data?.length) return data
+  return MOCK_COURSES.map(c => ({ slug: c.slug, updated_at: null }))
+}
+
+export async function getShopSitemapRows(): Promise<{ slug: string; updated_at: string | null }[]> {
+  const { data } = await supabase.from('shops').select('slug, updated_at').eq('active', true).not('slug', 'is', null)
+  return (data ?? []) as { slug: string; updated_at: string | null }[]
+}
+
 export async function getAllShopSlugs(): Promise<string[]> {
   const { data } = await supabase
     .from('shops')
