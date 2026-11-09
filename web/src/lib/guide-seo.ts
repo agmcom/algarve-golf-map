@@ -270,6 +270,9 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     title: 'Hotels near Benamor golf: 10 best places to stay',
     description: 'Where to stay to play Benamor near Tavira: ten well-rated hotels within 13 minutes, from golf-friendly hotels to a Pousada in a former convent.',
   },
+  'cheapest-golf-in-vilamoura': {
+    title: 'Cheapest golf in Vilamoura: green fees compared',
+  },
   'the-hardest-golf-courses-in-the-algarve': {
     title: 'Hardest golf courses in the Algarve: official slope ratings',
   },
