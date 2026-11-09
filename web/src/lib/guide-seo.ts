@@ -270,6 +270,9 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     title: 'Hotels near Benamor golf: 10 best places to stay',
     description: 'Where to stay to play Benamor near Tavira: ten well-rated hotels within 13 minutes, from golf-friendly hotels to a Pousada in a former convent.',
   },
+  'best-value-golf-in-the-algarve': {
+    title: 'Best value golf in the Algarve: what your green fee buys',
+  },
   'hotels-near-quinta-da-ria-golf': {
     title: 'Hotels near Quinta da Ria and Quinta de Cima golf',
     description: 'Where to stay to play Quinta da Ria and Quinta de Cima: the all-inclusive Robinson between both courses, plus nine well-rated hotels nearby.',
