@@ -62,7 +62,7 @@ export const RESORT_PAGES: ResortPage[] = [
     hotelSlugs: ['nau-morgado-golf-country-club'],
     courseSlugs: ['morgado', 'alamos'],
     description:
-      'The 4-star NAU Morgado Golf & Country Club sits in the hills above Portimão between two contrasting courses: Ronald Fream\'s par-73 Morgado layout and the more secluded Alamos Golf. All 98 rooms have balconies overlooking the fairways, with a golf academy at the clubhouse for guests fine-tuning their game.',
+      'The 4-star NAU Morgado Golf & Country Club sits in the hills above Portimão between two contrasting courses by Russell Talley of European Golf Design: the par-73 Morgado layout and the more secluded Alamos Golf. All 98 rooms have balconies overlooking the fairways, with a golf academy at the clubhouse for guests fine-tuning their game.',
   },
   {
     slug: 'boavista-golf-spa-resort',
