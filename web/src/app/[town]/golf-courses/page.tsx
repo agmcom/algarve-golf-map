@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import { difficultyText } from '@/lib/difficulty'
 import Link from 'next/link'
 import { SiteHeader } from '@/components/SiteHeader'
 import { pickTitle, pickDescription, withSiteName } from '@/lib/seo'
@@ -375,7 +376,7 @@ export default async function TownPage({
                   <span className="course-list-item__meta">
                     {course.holes} holes
                     {course.par != null && ` · Par ${course.par}`}
-                    {course.difficulty && ` · ${course.difficulty.charAt(0).toUpperCase() + course.difficulty.slice(1)}`}
+                    {course.difficulty && ` · ${difficultyText(course)}`}
                     {course.review_count > 0 && course.rating != null && ` · ★ ${course.rating} (${course.review_count} review${course.review_count === 1 ? '' : 's'})`}
                   </span>
                   {course.price_from != null && (

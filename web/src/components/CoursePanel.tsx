@@ -4,6 +4,7 @@ import Link from 'next/link'
 import type { Course } from '@/types/database'
 import { faroDistance, formatDriveTime, nearestCourses } from '@/lib/distance'
 import { handicapRule, handicapRuleLabel } from '@/lib/handicap'
+import { difficultyNote, difficultyText } from '@/lib/difficulty'
 
 interface CoursePanelProps {
   course: Course
@@ -119,7 +120,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
               <Spec label="Handicap" value={handicapRuleLabel(handicapRule(course))!} />
             )}
             {course.difficulty && (
-              <Spec label="Difficulty" value={DIFFICULTY_LABEL[course.difficulty]} />
+              <Spec label="Difficulty" value={difficultyNote(course.slug) ? (difficultyText(course) ?? '') : DIFFICULTY_LABEL[course.difficulty]} />
             )}
           </div>
 

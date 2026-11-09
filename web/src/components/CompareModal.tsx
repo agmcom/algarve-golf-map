@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import type { Course } from '@/types/database'
 import { faroDistance, formatDriveTime } from '@/lib/distance'
 import { handicapRule } from '@/lib/handicap'
+import { difficultyText } from '@/lib/difficulty'
 
 // Shown in the max-handicap cells when a course publishes no number.
 const hcpFallback = (c: Course) => {
@@ -22,9 +23,8 @@ function metersToYards(m: number | null): string {
   return Math.round(m * 1.094).toLocaleString() + ' y'
 }
 
-function diffLabel(d: string | null): string {
-  if (!d) return '—'
-  return d.charAt(0).toUpperCase() + d.slice(1)
+function diffLabel(c: Course): string {
+  return difficultyText(c) ?? '—'
 }
 
 function useIsMobile() {
@@ -110,7 +110,7 @@ function DesktopTable({ courses, onRemove }: { courses: Course[]; onRemove: (id:
             { label: 'Par', render: (c: Course) => c.par ?? '—' },
             { label: 'Distance', render: (c: Course) => metersToYards(c.length_meters) },
             { label: 'Slope (back tees)', render: (c: Course) => c.slope_rating ?? '—' },
-            { label: 'Difficulty', render: (c: Course) => diffLabel(c.difficulty) },
+            { label: 'Difficulty', render: (c: Course) => diffLabel(c) },
             { label: 'Men HCP max', render: (c: Course) => c.handicap_required_men ?? hcpFallback(c) },
             { label: 'Ladies HCP max', render: (c: Course) => c.handicap_required_ladies ?? hcpFallback(c) },
             {
@@ -200,7 +200,7 @@ function MobileCards({ courses, onRemove }: { courses: Course[]; onRemove: (id: 
     { label: 'Par', value: course.par ?? '—' },
     { label: 'Distance', value: metersToYards(course.length_meters) },
     { label: 'Slope (back tees)', value: course.slope_rating ?? '—' },
-    { label: 'Difficulty', value: diffLabel(course.difficulty) },
+    { label: 'Difficulty', value: diffLabel(course) },
     { label: 'Men HCP max', value: course.handicap_required_men ?? hcpFallback(course) },
     { label: 'Ladies HCP max', value: course.handicap_required_ladies ?? hcpFallback(course) },
     { label: 'Faro airport', value: `${km} km · ${formatDriveTime(mins)}` },

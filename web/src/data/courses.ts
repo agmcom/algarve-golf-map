@@ -1,4 +1,5 @@
 import type { Course } from '@/types/database'
+import { DIFFICULTY_WITHOUT_SLOPE } from '@/lib/difficulty'
 import { ONSITE_HOTELS } from '@/data/hotels'
 
 const h = (id: string) => ONSITE_HOTELS.find(h => h.id === id)!
@@ -622,7 +623,7 @@ export const MOCK_COURSES: Course[] = RAW_COURSES.map(c => ({
   ...c,
   course_map_url:           MAP[c.slug]          ?? c.course_map_url,
   slope_rating:             SLOPE[c.slug]        ?? c.slope_rating,
-  difficulty:               SLOPE[c.slug] != null ? slopeToDifficulty(SLOPE[c.slug]) : c.difficulty,
+  difficulty:               SLOPE[c.slug] != null ? slopeToDifficulty(SLOPE[c.slug]) : (DIFFICULTY_WITHOUT_SLOPE[c.slug]?.difficulty ?? c.difficulty),
   handicap_required_men:    HANDICAPS[c.slug]?.men    ?? c.handicap_required_men,
   handicap_required_ladies: HANDICAPS[c.slug]?.ladies ?? c.handicap_required_ladies,
   handicap_required:        HANDICAP_REQUIRED[c.slug] ?? (HANDICAPS[c.slug] ? true : c.handicap_required),

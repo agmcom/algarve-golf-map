@@ -24,6 +24,7 @@ import { ShareButtons } from '@/components/ShareButtons'
 import { NearbyHotels } from '@/components/NearbyHotels'
 import { toHotelListItem } from '@/lib/hotels'
 import { handicapRule, handicapRuleLabel } from '@/lib/handicap'
+import { difficultyText } from '@/lib/difficulty'
 import { Goal, ShoppingBag, UtensilsCrossed, BedDouble, User, Store, PlaneLanding, Car, CarTaxiFront, Flag, Hash, Ruler, Award, Gauge, CircleDot, GraduationCap } from 'lucide-react'
 
 import type { Airport } from '@/types/database'
@@ -147,11 +148,6 @@ export async function generateMetadata(
   }
 }
 
-const DIFFICULTY_LABEL: Record<string, string> = {
-  easy:        'Easy',
-  moderate:    'Moderate',
-  challenging: 'Challenging',
-}
 
 export default async function CoursePage(
   { params }: { params: Promise<{ slug: string }> }
@@ -352,7 +348,7 @@ export default async function CoursePage(
               { label: 'Distance',   value: course.length_meters != null ? `${course.length_meters.toLocaleString()} m` : '—', icon: <Ruler size={15} strokeWidth={1.8} /> },
               { label: 'Max HCP',    value: hcpValue ?? '—',                                                            icon: <Award size={15} strokeWidth={1.8} /> },
               { label: 'Slope (back tees)', value: course.slope_rating != null ? `${course.slope_rating}` : '—',               icon: <Gauge size={15} strokeWidth={1.8} /> },
-              { label: 'Difficulty', value: course.difficulty ? DIFFICULTY_LABEL[course.difficulty] : '—',              icon: <Gauge size={15} strokeWidth={1.8} /> },
+              { label: 'Difficulty', value: difficultyText(course) ?? '—',              icon: <Gauge size={15} strokeWidth={1.8} /> },
             ]
             const slopes = COURSE_RATINGS[slug] ? slopeRange(slug, 'men') : null
             return (
