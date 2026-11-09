@@ -13,6 +13,11 @@ export function CourseHandicapCalculator({ loops, courseName, nineHole = false }
   const value = raw.trim().replace(',', '.').replace(/^\+/, '-')
   const index = value === '' ? NaN : Number(value)
   const valid = Number.isFinite(index) && index >= -10 && index <= 54
+  // Tees rated for one sex but not the other (junior tees aside), e.g. back tees rated for men only.
+  const other = who === 'men' ? 'women' : 'men'
+  const unrated = [...new Set(loops.flatMap(l => l.tees)
+    .filter(t => !isJuniorTee(t) && t[other] && !t[who])
+    .map(t => t.colour))]
 
   return (
     <div style={{ background: '#fff', border: '1px solid #ebebeb', borderRadius: 14, padding: '18px 18px 14px' }}>
@@ -65,6 +70,13 @@ export function CourseHandicapCalculator({ loops, courseName, nineHole = false }
             </div>
           )
         })
+      )}
+      {valid && unrated.length > 0 && (
+        <p style={{ fontSize: 13, color: '#444', margin: '4px 0 8px', lineHeight: 1.6 }}>
+          {`Only tees with an official ${who === 'men' ? "men's" : "women's"} rating are shown. The federation doesn't rate the ${
+            unrated.length === 1 ? unrated[0] : `${unrated.slice(0, -1).join(', ')} and ${unrated[unrated.length - 1]}`
+          } tees for ${who} here, so if you'd like to play from them, ask the club how your handicap will be worked out.`}
+        </p>
       )}
       <p style={{ fontSize: 12, color: '#8a8a8a', margin: '6px 0 0', lineHeight: 1.6 }}>
         {nineHole ? 'These figures are for 18 holes, playing the nine twice. ' : ''}Course handicap = Handicap Index × slope ÷ 113 + (course rating − par), rounded. In competitions your playing handicap may
