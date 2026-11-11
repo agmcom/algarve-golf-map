@@ -279,6 +279,10 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
   'best-value-golf-in-the-algarve': {
     title: 'Best value golf in the Algarve: what your green fee buys',
   },
+  'algarve-golf-trips-for-groups-and-golf-societies': {
+    title: 'Algarve golf trips for groups and societies: villas and tips',
+    description: 'Plan an Algarve golf trip for a group or golf society: golf villas and apartments near the courses, tee times, buggies, minivans and organiser tips.',
+  },
   'how-to-book-tee-times-in-the-algarve': {
     title: 'How to book Algarve tee times: club, booking site or agency',
     description: 'How to book golf in the Algarve: online with the club, on booking sites, via agencies or your hotel. When to book and the cancellation rules to check.',
