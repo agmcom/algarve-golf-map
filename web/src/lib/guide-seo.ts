@@ -279,6 +279,10 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
   'best-value-golf-in-the-algarve': {
     title: 'Best value golf in the Algarve: what your green fee buys',
   },
+  'all-inclusive-golf-hotels-in-the-algarve': {
+    title: 'All-inclusive golf hotels in the Algarve: where to stay',
+    description: 'All-inclusive hotels near Algarve golf courses, from Albufeira and Alvor to Lagos and Tavira: what all-inclusive covers (not green fees) and drive times.',
+  },
   'algarve-golf-trips-for-groups-and-golf-societies': {
     title: 'Algarve golf trips for groups and societies: villas and tips',
     description: 'Plan an Algarve golf trip for a group or golf society: golf villas and apartments near the courses, tee times, buggies, minivans and organiser tips.',
