@@ -279,6 +279,10 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
   'best-value-golf-in-the-algarve': {
     title: 'Best value golf in the Algarve: what your green fee buys',
   },
+  'how-to-book-tee-times-in-the-algarve': {
+    title: 'How to book Algarve tee times: club, booking site or agency',
+    description: 'How to book golf in the Algarve: online with the club, on booking sites, via agencies or your hotel. When to book and the cancellation rules to check.',
+  },
   'golf-weekend-in-the-algarve': {
     title: 'Golf weekend in the Algarve: where to stay and what it costs',
     description: 'Plan a golf weekend in the Algarve yourself: 4 bases near Faro Airport, 2 courses and 3 hotels in each, and the cost per person by month. Not a package.',
