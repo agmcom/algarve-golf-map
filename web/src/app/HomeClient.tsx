@@ -33,7 +33,8 @@ function matchFilter(course: Course, key: string): boolean {
   switch (key) {
     case 'clubs_rental':  return course.offers_rental
     case 'onsite_hotel':  return course.onsite_hotel_id != null
-    case 'under_150':    return (course.price_from ?? 0) < 150
+    case 'under_100':    return course.price_from != null && course.price_from < 100
+    case 'under_150':    return course.price_from != null && course.price_from < 150
     case 'ocean_view':   return course.tags.some(t => OCEAN_TAGS.has(t))
     case 'holes_18':     return course.holes === 18
     case 'holes_9':      return course.holes === 9

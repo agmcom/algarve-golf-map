@@ -17,6 +17,7 @@ interface TopBarProps {
 const QUICK_FILTERS = [
   { key: 'top_rated',    label: 'Top 10' },
   { key: 'clubs_rental', label: 'Clubs rental' },
+  { key: 'under_100',    label: 'Under €100' },
   { key: 'under_150',    label: 'Under €150' },
   { key: 'ocean_view',   label: 'Ocean view' },
   { key: 'onsite_hotel', label: 'On-site hotel' },
