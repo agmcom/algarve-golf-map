@@ -279,6 +279,10 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
   'best-value-golf-in-the-algarve': {
     title: 'Best value golf in the Algarve: what your green fee buys',
   },
+  'golf-tournaments-in-the-algarve': {
+    title: 'Golf tournaments in the Algarve 2026/27: amateur events',
+    description: 'Amateur golf tournaments in the Algarve for 2026/27 that visitors can enter: dates, courses, handicap limits and entry prices, from Vilamoura to Penina.',
+  },
   'all-inclusive-golf-hotels-in-the-algarve': {
     title: 'All-inclusive golf hotels in the Algarve: where to stay',
     description: 'All-inclusive hotels near Algarve golf courses, from Albufeira and Alvor to Lagos and Tavira: what all-inclusive covers (not green fees) and drive times.',
