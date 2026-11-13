@@ -279,6 +279,10 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
   'best-value-golf-in-the-algarve': {
     title: 'Best value golf in the Algarve: what your green fee buys',
   },
+  'long-stay-golf-in-the-algarve': {
+    title: 'Long-stay golf in the Algarve: memberships and winter stays',
+    description: 'Wintering in the Algarve? Short-term golf memberships, round packages and golf societies compared, plus how long EU and UK visitors can stay.',
+  },
   'golf-tournaments-in-the-algarve': {
     title: 'Golf tournaments in the Algarve 2026/27: amateur events',
     description: 'Amateur golf tournaments in the Algarve for 2026/27 that visitors can enter: dates, courses, handicap limits and entry prices, from Vilamoura to Penina.',
