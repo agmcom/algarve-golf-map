@@ -219,7 +219,7 @@ export default async function ScorecardPage(
       `}</style>
 
       <div style={{ minHeight: '100vh', background: '#f9f9f9', fontFamily: 'var(--font-body)' }}>
-        <SiteHeader showBackToMap />
+        <SiteHeader back={{ href: `/courses/${slug}`, label: `Back to ${course.name}`, shortLabel: 'Course' }} />
 
         {/* Hero */}
         <div className="print-hero" style={{ position: 'relative', height: 300, background: '#d4e6c3', overflow: 'hidden' }}>

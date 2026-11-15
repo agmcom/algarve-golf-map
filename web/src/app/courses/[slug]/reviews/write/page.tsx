@@ -39,7 +39,7 @@ export default async function WriteReviewPage(
 
   return (
     <div style={{ minHeight: '100vh', background: '#f9f9f9', fontFamily: 'var(--font-body)' }}>
-      <SiteHeader showBackToMap />
+      <SiteHeader back={{ href: `/courses/${slug}`, label: `Back to ${course.name}`, shortLabel: 'Course' }} />
 
       <div style={{ maxWidth: 680, margin: '0 auto', padding: '20px 16px 80px' }}>
         <nav aria-label="Breadcrumb" style={{ marginBottom: 18 }}>
