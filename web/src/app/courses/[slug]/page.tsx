@@ -11,6 +11,8 @@ import { ReviewStars } from '@/components/ReviewStars'
 import { ReviewCard } from '@/components/ReviewCard'
 import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { CourseBuggies } from '@/components/CourseBuggies'
+import { CourseWalking } from '@/components/CourseWalking'
+import { getWalkingInfo } from '@/data/walking'
 import { tripCostGuideFor } from '@/data/tripCostGuides'
 import { COURSE_RATINGS, slopeRange } from '@/data/course-ratings'
 import { academyForCourse, PRICE_STATUS_LABEL } from '@/data/academies'
@@ -169,6 +171,7 @@ export default async function CoursePage(
 
   const priceSummary = summarizePrices(applyBuggyFacts(course.slug, course.prices))
   const buggyInfo = getBuggyInfo(course.slug)
+  const walkingInfo = getWalkingInfo(course.slug)
   const showGreenFeesLink = priceSummary.hasPrices || course.price_from != null
   const websiteWithUtm = course.website
     ? (course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`)
@@ -322,6 +325,7 @@ export default async function CoursePage(
           { id: 'nearby-hotels', label: 'Nearby Hotels' },
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
           ...(course.dress_code ? [{ id: 'dress-code', label: 'Dress Code' }] : []),
+          ...(walkingInfo ? [{ id: 'walking', label: 'Walking' }] : []),
           ...(buggyInfo ? [{ id: 'buggies', label: 'Buggies' }] : []),
           { id: 'reviews', label: 'Reviews' },
           { id: 'course-map', label: 'Course Map' },
@@ -626,6 +630,8 @@ export default async function CoursePage(
                   </p>
                 </section>
               )}
+
+              {walkingInfo && <CourseWalking info={walkingInfo} />}
 
               {buggyInfo && <CourseBuggies info={buggyInfo} phone={course.phone} />}
 

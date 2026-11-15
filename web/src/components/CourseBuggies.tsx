@@ -1,3 +1,4 @@
+import { withUtm } from '@/lib/utm'
 import { activeOffers, BUGGY_LAST_CHECKED, type BuggyInfo } from '@/data/buggies'
 
 export function CourseBuggies({ info, phone }: { info: BuggyInfo; phone: string | null }) {
@@ -41,7 +42,7 @@ export function CourseBuggies({ info, phone }: { info: BuggyInfo; phone: string 
             {info.sources.map((s, i) => (
               <span key={s.url}>
                 {i > 0 && ', '}
-                <a href={s.url} target="_blank" rel="noopener noreferrer nofollow" style={{ color: '#767676' }}>{s.label}</a>
+                <a href={withUtm(s.url)} target="_blank" rel="noopener noreferrer nofollow" style={{ color: '#767676' }}>{s.label}</a>
               </span>
             ))}
             .{' '}
