@@ -15,6 +15,7 @@ import { CourseWalking } from '@/components/CourseWalking'
 import { getWalkingInfo } from '@/data/walking'
 import { tripCostGuideFor } from '@/data/tripCostGuides'
 import { COURSE_RATINGS, slopeRange } from '@/data/course-ratings'
+import { SCORECARDS } from '@/data/scorecards'
 import { academyForCourse, PRICE_STATUS_LABEL } from '@/data/academies'
 import { applyBuggyFacts, getBuggyInfo } from '@/data/buggies'
 import { TeeTimeButtons } from '@/components/TeeTimeButtons'
@@ -379,6 +380,14 @@ export default async function CoursePage(
                     {' · '}
                     <Link href={`/courses/${slug}/slope-rating`} style={{ color: '#2B6090', fontWeight: 600, textDecoration: 'none' }}>
                       See ratings for every tee →
+                    </Link>
+                  </div>
+                )}
+                {SCORECARDS[slug] && (
+                  <div style={{ marginTop: slopes ? 6 : 10, fontSize: 13, color: '#6a6a6a', textAlign: 'center' }}>
+                    Par, stroke index and length of every hole ·{' '}
+                    <Link href={`/courses/${slug}/scorecard`} style={{ color: '#2B6090', fontWeight: 600, textDecoration: 'none' }}>
+                      See the {course.name} scorecard →
                     </Link>
                   </div>
                 )}

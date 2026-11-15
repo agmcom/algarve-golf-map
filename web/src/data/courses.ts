@@ -335,7 +335,7 @@ const RAW_COURSES: Course[] = [
   {
     ...DEFAULTS,
     id: 'palmares', slug: 'palmares',
-    name: 'Palmares Ocean & Lakes',
+    name: 'Palmares Golf',
     blurb: "One of the Algarve's most scenic layouts, Palmares spreads across 27 holes of clifftop and lakeside terrain above Meia Praia beach near Lagos. Robert Trent Jones Jr. redesigned and extended the original 1975 course, adding sweeping Atlantic views and memorable holes above the bay.",
     lat: 37.1267, lng: -8.6413,
     town: 'Lagos', region: 'west',

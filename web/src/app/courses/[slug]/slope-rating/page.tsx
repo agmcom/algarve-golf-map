@@ -9,6 +9,7 @@ import {
   slopeRange, hardestMenTee, hardnessRank, courseHandicap, isJuniorTee, type Tee,
 } from '@/data/course-ratings'
 import { CourseHandicapCalculator } from '@/components/CourseHandicapCalculator'
+import { SCORECARDS } from '@/data/scorecards'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { SiteHeader } from '@/components/SiteHeader'
 import { ShareButtons } from '@/components/ShareButtons'
@@ -333,6 +334,7 @@ export default async function SlopeRatingPage(
           {/* Closing */}
           <div style={{ fontSize: 14.5, lineHeight: 1.7, color: '#444', borderTop: '1px solid #ebebeb', paddingTop: 20 }}>
             <p style={{ margin: 0 }}>
+              {SCORECARDS[slug] ? <>For the par and length of every hole, see the <Link href={`/courses/${slug}/scorecard`} style={link}>{course.name} scorecard</Link>. </> : null}
               For the layout, facilities and how to get there, see the full{' '}
               <Link href={`/courses/${slug}`} style={link}>{course.name} course guide</Link>
               {course.price_from != null ? <>, and check the <Link href={`/courses/${slug}/green-fees`} style={link}>{course.name} green fees</Link></> : null}.

@@ -4,6 +4,7 @@ import { MIN_REVIEWS_TO_INDEX } from '@/lib/reviews'
 import { TOWN_PAGES } from '@/lib/towns'
 import { RESORT_PAGES } from '@/lib/resorts'
 import { COURSE_RATINGS } from '@/data/course-ratings'
+import { SCORECARDS } from '@/data/scorecards'
 import { ACADEMIES } from '@/data/academies'
 
 const BASE = 'https://www.algarvegolfmap.com'
@@ -15,9 +16,10 @@ export const revalidate = 3600
 // built from the database use the row's updated_at. For content that lives in code, bump the
 // matching date below when you change it meaningfully. Pages with no reliable date have no
 // lastmod at all, which Google treats as "unknown" rather than "changed today".
-const COURSE_TEMPLATE_UPDATED = '2026-11-09' // course page layout/sections (slope range + link added)
+const COURSE_TEMPLATE_UPDATED = '2026-11-15' // course page layout/sections (scorecard link added)
 const GREEN_FEES_UPDATED = '2026-11-06'      // last price seed (2026-10-26) or buggy facts (2026-11-06)
 const SLOPE_RATINGS_UPDATED = '2026-11-09'   // FPG table checked; see src/data/course-ratings.ts
+// Scorecard pages use each card's own `checked` date (src/data/scorecards.ts).
 
 function latest(...dates: (string | null | undefined)[]): Date | undefined {
   const t = dates.filter(Boolean).map(d => new Date(d as string).getTime()).filter(n => !Number.isNaN(n))
@@ -56,6 +58,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slopeRatingUrls: MetadataRoute.Sitemap = Object.keys(COURSE_RATINGS).filter(s => slugs.includes(s)).map(slug => ({
     url: `${BASE}/courses/${slug}/slope-rating`,
     lastModified: latest(SLOPE_RATINGS_UPDATED),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
+
+  const scorecardUrls: MetadataRoute.Sitemap = Object.keys(SCORECARDS).filter(s => slugs.includes(s)).map(slug => ({
+    url: `${BASE}/courses/${slug}/scorecard`,
+    lastModified: latest(SCORECARDS[slug].checked),
     changeFrequency: 'monthly',
     priority: 0.6,
   }))
@@ -118,6 +127,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...courseUrls,
     ...greenFeeUrls,
     ...slopeRatingUrls,
+    ...scorecardUrls,
     ...reviewUrls,
     ...resortUrls,
     ...hotelUrls,
