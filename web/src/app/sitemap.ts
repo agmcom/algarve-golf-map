@@ -5,6 +5,7 @@ import { TOWN_PAGES } from '@/lib/towns'
 import { RESORT_PAGES } from '@/lib/resorts'
 import { COURSE_RATINGS } from '@/data/course-ratings'
 import { SCORECARDS } from '@/data/scorecards'
+import { HOLE_GUIDES } from '@/data/hole-guides'
 import { ACADEMIES } from '@/data/academies'
 
 const BASE = 'https://www.algarvegolfmap.com'
@@ -69,6 +70,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }))
 
+  const holeGuideUrls: MetadataRoute.Sitemap = Object.keys(HOLE_GUIDES).filter(s => slugs.includes(s)).map(slug => ({
+    url: `${BASE}/courses/${slug}/hole-by-hole`,
+    lastModified: latest(HOLE_GUIDES[slug].checked),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
+
   // Only reviews pages that are indexable (enough approved reviews).
   const reviewUrls: MetadataRoute.Sitemap = reviewSlugs.map(slug => ({
     url: `${BASE}/courses/${slug}/reviews`,
@@ -128,6 +136,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...greenFeeUrls,
     ...slopeRatingUrls,
     ...scorecardUrls,
+    ...holeGuideUrls,
     ...reviewUrls,
     ...resortUrls,
     ...hotelUrls,

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getCourseBySlug, getCoursesNear } from '@/lib/queries'
 import { pickTitle, pickDescription, withSiteName } from '@/lib/seo'
 import { SCORECARDS, type Scorecard } from '@/data/scorecards'
+import { HOLE_GUIDES } from '@/data/hole-guides'
 import { COURSE_RATINGS, isJuniorTee } from '@/data/course-ratings'
 import {
   allHoles, parOf, parCounts, longestTee, shortestTee, longestHole, shortestHole, hardestHole,
@@ -441,6 +442,7 @@ export default async function ScorecardPage(
           {/* Closing */}
           <div className="no-print" style={{ fontSize: 14.5, lineHeight: 1.7, color: '#444', borderTop: '1px solid #ebebeb', paddingTop: 20 }}>
             <p style={{ margin: 0 }}>
+              {HOLE_GUIDES[slug] ? <>For what each hole looks like and how to play it, see <Link href={`/courses/${slug}/hole-by-hole`} style={link}>{course.name} hole by hole</Link>. </> : null}
               For facilities, handicap rules and how to get there, see the full{' '}
               <Link href={`/courses/${slug}`} style={link}>{course.name} course guide</Link>
               {course.price_from != null ? <>, and check the <Link href={`/courses/${slug}/green-fees`} style={link}>{course.name} green fees</Link></> : null}.

@@ -16,6 +16,7 @@ import { getWalkingInfo } from '@/data/walking'
 import { tripCostGuideFor } from '@/data/tripCostGuides'
 import { COURSE_RATINGS, slopeRange } from '@/data/course-ratings'
 import { SCORECARDS } from '@/data/scorecards'
+import { HOLE_GUIDES } from '@/data/hole-guides'
 import { academyForCourse, PRICE_STATUS_LABEL } from '@/data/academies'
 import { applyBuggyFacts, getBuggyInfo } from '@/data/buggies'
 import { TeeTimeButtons } from '@/components/TeeTimeButtons'
@@ -388,6 +389,14 @@ export default async function CoursePage(
                     Par, stroke index and length of every hole ·{' '}
                     <Link href={`/courses/${slug}/scorecard`} style={{ color: '#2B6090', fontWeight: 600, textDecoration: 'none' }}>
                       See the {course.name} scorecard →
+                    </Link>
+                  </div>
+                )}
+                {HOLE_GUIDES[slug] && (
+                  <div style={{ marginTop: slopes || SCORECARDS[slug] ? 6 : 10, fontSize: 13, color: '#6a6a6a', textAlign: 'center' }}>
+                    What each hole looks like and how to play it ·{' '}
+                    <Link href={`/courses/${slug}/hole-by-hole`} style={{ color: '#2B6090', fontWeight: 600, textDecoration: 'none' }}>
+                      {course.name} hole by hole →
                     </Link>
                   </div>
                 )}
