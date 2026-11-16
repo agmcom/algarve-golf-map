@@ -5,6 +5,8 @@ import type { Course } from '@/types/database'
 import { faroDistance, formatDriveTime, nearestCourses } from '@/lib/distance'
 import { handicapRule, handicapRuleLabel } from '@/lib/handicap'
 import { difficultyNote, difficultyText } from '@/lib/difficulty'
+import { CourseStatusBadge } from '@/components/CourseStatusBadge'
+import { isUnbookable } from '@/data/course-status'
 
 interface CoursePanelProps {
   course: Course
@@ -82,6 +84,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
               {course.name}
             </h2>
             <div style={{ fontSize: 13, color: '#6a6a6a', marginTop: 4 }}>{course.town}</div>
+            <CourseStatusBadge slug={course.slug} style={{ marginTop: 8 }} />
           </div>
 
           {/* Tags */}
@@ -173,7 +176,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
           <div style={{ width: '100%', height: 1, background: '#ebebeb', marginBottom: 16 }} />
 
           {/* Price */}
-          {course.price_from != null && (
+          {course.price_from != null && !isUnbookable(course.slug) && (
             <div style={{ marginBottom: 20, display: 'flex', alignItems: 'baseline', gap: 4 }}>
               <span style={{ fontSize: 12, color: '#6a6a6a' }}>From</span>
               <span style={{ fontSize: 26, fontWeight: 700, color: '#222' }}>€{course.price_from}</span>
@@ -194,7 +197,7 @@ export function CoursePanel({ course, allCourses, onClose }: CoursePanelProps) {
             >
               View full profile →
             </a>
-            {course.booking_url && (
+            {course.booking_url && !isUnbookable(course.slug) && (
               <a
                 href={course.booking_url}
                 target="_blank"

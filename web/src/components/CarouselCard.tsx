@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import type { Course } from '@/types/database'
 import { faroDistance, formatDriveTime } from '@/lib/distance'
 import { Scale } from 'lucide-react'
+import { CourseStatusBadge } from '@/components/CourseStatusBadge'
+import { isUnbookable } from '@/data/course-status'
 
 function useIsMobile() {
   const [mobile, setMobile] = useState(false)
@@ -106,6 +108,7 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
         }}>
           {course.name}
         </div>
+        <CourseStatusBadge slug={course.slug} size="sm" />
 
         {/* Location + distance */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -122,7 +125,7 @@ export function CarouselCard({ course, selected, onSelect, planned = false, onTo
           <span style={{ fontSize: 11, color: '#888' }}>
             {course.holes}h · par {course.par}
           </span>
-          {course.price_from != null && (
+          {course.price_from != null && !isUnbookable(course.slug) && (
             <span style={{ fontSize: 11.5, color: '#222' }}>
               <strong style={{ fontWeight: 700, fontSize: 14 }}>€{course.price_from}</strong>
               <span style={{ color: '#999' }}> /round</span>

@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { CourseStatusNotice } from '@/components/CourseStatusNotice'
+import { getCourseStatus, isUnbookable } from '@/data/course-status'
 import { getCourseBySlug, getCourseSlugsWithGreenFees, getCoursesNear, getGreenFeeComparables } from '@/lib/queries'
 import { summarizePrices, monthListText, PRICE_SEASON, PRICE_LAST_CHECKED, type PriceSummary } from '@/lib/prices'
 import { pickTitle, pickDescription, withSiteName, shortTown } from '@/lib/seo'
@@ -137,7 +139,12 @@ export async function generateMetadata(
     : course.price_from != null ? `From €${course.price_from}` : ''
 
   const priceFrom = s.primary?.min ?? course.price_from
-  const title = pickTitle([
+  // Closed or private course: no bookable green fees, so say so and keep the page out of search results.
+  const status = getCourseStatus(course.slug)
+  const unbookable = isUnbookable(course.slug)
+  const title = unbookable && status
+    ? pickTitle([`${course.name} Green Fees: ${status.badge}`, `${course.name} Green Fees`])
+    : pickTitle([
     ...(priceFrom != null ? [`${course.name} Green Fees ${PRICE_SEASON}: from €${priceFrom}`] : []),
     `${course.name} Green Fees ${PRICE_SEASON}`,
     `${course.name} Green Fees`,
@@ -145,7 +152,9 @@ export async function generateMetadata(
   const town = shortTown(course.town)
   const rangeText = range.replace(/^From /, 'from ').replace(/^Flat /, 'a flat ')
   const details = `month by month${s.hasTwilight ? ', twilight rates' : ''}, buggy hire and how to book.`
-  const description = pickDescription([
+  const description = unbookable && status
+    ? pickDescription([`${status.headline}. ${status.detail}`, `${status.headline}. ${status.detail.split('. ')[0]}.`])
+    : pickDescription([
     `${course.name} green fees for ${PRICE_SEASON}: ${range ? `${rangeText} for ${holes} holes` : `${holes} holes`} in ${town}. Prices ${details}`,
     `${course.name} green fees for ${PRICE_SEASON}: ${range ? `${rangeText} for ${holes} holes` : `${holes} holes`}. Prices ${details}`,
     `${course.name} green fees for ${PRICE_SEASON}${range ? `: ${rangeText} for ${holes} holes` : ''}. Prices month by month and how to book.`,
@@ -162,6 +171,7 @@ export async function generateMetadata(
     title: withSiteName(title),
     description,
     alternates: { canonical: canonicalUrl },
+    ...(unbookable && { robots: { index: false, follow: true } }),
     openGraph: {
       title,
       description,
@@ -186,6 +196,8 @@ export default async function GreenFeesPage(
   const { slug } = await params
   const course = await getCourseBySlug(slug)
   if (!course) notFound()
+  const courseStatus = getCourseStatus(course.slug)
+  const unbookable = isUnbookable(course.slug)
 
   const s = summarizePrices(applyBuggyFacts(course.slug, course.prices))
   if (!s.hasPrices && course.price_from == null) notFound()
@@ -320,6 +332,12 @@ export default async function GreenFeesPage(
           </ol>
         </nav>
 
+        {courseStatus && (
+          <div style={{ maxWidth: 760, margin: '0 auto', padding: '16px 24px 0' }}>
+            <CourseStatusNotice status={courseStatus} compact={courseStatus.kind === 'facility' || courseStatus.kind === 'reopened'} />
+          </div>
+        )}
+
         {/* Content */}
         <div style={{ maxWidth: 760, margin: '0 auto', padding: '8px 24px 80px' }}>
 
@@ -366,12 +384,12 @@ export default async function GreenFeesPage(
                 {' '}<strong>€{course.price_from}</strong>; contact them or your tour operator for exact {PRICE_SEASON} rates.
               </p>
             )}
-            <TeeTimeButtons
+            {!unbookable && <TeeTimeButtons
               bookingUrl={course.booking_url}
               websiteUrl={websiteWithUtm}
               courseName={course.name}
               source="green_fees_prices"
-            />
+            />}
           </section>
 
           {/* Cheapest time */}
@@ -441,7 +459,7 @@ export default async function GreenFeesPage(
           </section>
 
           {/* How to book */}
-          <section style={{ margin: '28px 0' }}>
+          {!unbookable && <section style={{ margin: '28px 0' }}>
             <h2 style={sectionTitle}>How to book a tee time at {course.name}</h2>
             <p style={{ fontSize: 15.5, lineHeight: 1.75, color: '#333', margin: '0 0 16px' }}>
               You can usually book {course.name} online in advance or by phone. In the busy spring and autumn months it is worth
@@ -455,7 +473,7 @@ export default async function GreenFeesPage(
               courseName={course.name}
               source="green_fees_how_to_book"
             />
-          </section>
+          </section>}
 
           {/* Nearby comparison */}
           {nearbyPriced.length > 0 && myPrice != null && (

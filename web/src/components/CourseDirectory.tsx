@@ -2,6 +2,8 @@ import Link from 'next/link'
 import type { Course } from '@/types/database'
 import { townSlug } from '@/lib/towns'
 import { SocialLinks } from './SocialLinks'
+import { CourseStatusBadge } from '@/components/CourseStatusBadge'
+import { isUnbookable } from '@/data/course-status'
 
 interface Props {
   courses: Course[]
@@ -88,11 +90,12 @@ export function CourseDirectory({ courses }: Props) {
                       {course.par != null && ` · Par ${course.par}`}
                       {course.difficulty && ` · ${course.difficulty.charAt(0).toUpperCase() + course.difficulty.slice(1)}`}
                     </span>
-                    {course.price_from != null && (
+                    {course.price_from != null && !isUnbookable(course.slug) && (
                       <span className="course-list-item__badges">
                         <span className="course-list-item__price">From €{course.price_from}</span>
                       </span>
                     )}
+                    <CourseStatusBadge slug={course.slug} size="sm" />
                     {course.blurb && (
                       <p className="course-list-item__blurb">{course.blurb}</p>
                     )}

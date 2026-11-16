@@ -8,6 +8,7 @@ import { SCORECARDS } from '@/data/scorecards'
 import { HOLE_GUIDES } from '@/data/hole-guides'
 import { PRACTICE_GROUNDS, PRACTICE_LAST_CHECKED } from '@/data/practice'
 import { ACADEMIES } from '@/data/academies'
+import { isUnbookable } from '@/data/course-status'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
@@ -50,7 +51,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }))
 
-  const greenFeeUrls: MetadataRoute.Sitemap = greenFeeSlugs.map(slug => ({
+  // Closed/private courses' green-fee pages are noindex, so leave them out.
+  const greenFeeUrls: MetadataRoute.Sitemap = greenFeeSlugs.filter(slug => !isUnbookable(slug)).map(slug => ({
     url: `${BASE}/courses/${slug}/green-fees`,
     lastModified: latest(GREEN_FEES_UPDATED),
     changeFrequency: 'weekly',

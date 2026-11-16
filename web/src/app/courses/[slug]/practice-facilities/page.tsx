@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { CourseStatusNotice } from '@/components/CourseStatusNotice'
+import { getCourseStatus } from '@/data/course-status'
 import { getCourseBySlug, getCoursesNear } from '@/lib/queries'
 import { pickTitle, pickDescription, withSiteName } from '@/lib/seo'
 import { withUtm } from '@/lib/utm'
@@ -91,6 +93,7 @@ export default async function PracticeFacilitiesPage(
   if (!g || g.pageCourse !== slug) notFound()
   const course = await getCourseBySlug(slug)
   if (!course) notFound()
+  const courseStatus = getCourseStatus(course.slug)
 
   const place = placeName(g, course)
   const shared = g.courses.filter(s => s !== slug)
@@ -179,6 +182,12 @@ export default async function PracticeFacilitiesPage(
             <li aria-current="page" style={{ color: '#222', fontWeight: 600 }}>Practice facilities</li>
           </ol>
         </nav>
+
+        {courseStatus && (
+          <div style={{ maxWidth: 860, margin: '0 auto', padding: '16px 24px 0' }}>
+            <CourseStatusNotice status={courseStatus} compact={courseStatus.kind === 'facility' || courseStatus.kind === 'reopened'} />
+          </div>
+        )}
 
         <div style={{ maxWidth: 860, margin: '0 auto', padding: '8px 24px 80px' }}>
           {g.notice && (

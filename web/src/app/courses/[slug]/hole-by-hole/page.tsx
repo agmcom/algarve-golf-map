@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { CourseStatusNotice } from '@/components/CourseStatusNotice'
+import { getCourseStatus } from '@/data/course-status'
 import { getCourseBySlug, getCoursesNear } from '@/lib/queries'
 import { pickTitle, pickDescription, withSiteName } from '@/lib/seo'
 import { HOLE_GUIDES, type HoleGuide, type HoleGuideHole } from '@/data/hole-guides'
@@ -107,6 +109,7 @@ export default async function HoleByHolePage(
   if (!g) notFound()
   const course = await getCourseBySlug(slug)
   if (!course) notFound()
+  const courseStatus = getCourseStatus(course.slug)
 
   const card = SCORECARDS[slug]
   const holes = mainHoles(g)
@@ -231,6 +234,12 @@ export default async function HoleByHolePage(
             <li aria-current="page" style={{ color: '#222', fontWeight: 600 }}>Hole by hole</li>
           </ol>
         </nav>
+
+        {courseStatus && (
+          <div style={{ maxWidth: 860, margin: '0 auto', padding: '16px 24px 0' }}>
+            <CourseStatusNotice status={courseStatus} compact={courseStatus.kind === 'facility' || courseStatus.kind === 'reopened'} />
+          </div>
+        )}
 
         <div style={{ maxWidth: 860, margin: '0 auto', padding: '8px 24px 80px' }}>
 

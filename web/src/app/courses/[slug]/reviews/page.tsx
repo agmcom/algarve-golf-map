@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PenLine } from 'lucide-react'
+import { CourseStatusNotice } from '@/components/CourseStatusNotice'
+import { getCourseStatus } from '@/data/course-status'
 import { getCourseBySlug, getApprovedReviews, getCoursesNear } from '@/lib/queries'
 import {
   summarizeReviews, sortReviews, seasonOf, SEASON_LABELS, BUGGY_RULE_LABELS, ROUND_TIME_LABELS, DIFFICULTY_LABELS,
@@ -77,6 +79,7 @@ export default async function CourseReviewsPage(
   const { page, season } = parseParams(await searchParams)
   const course = await getCourseBySlug(slug)
   if (!course) notFound()
+  const courseStatus = getCourseStatus(course.slug)
 
   const [allReviews, nearby] = await Promise.all([
     getApprovedReviews(course.id),
@@ -201,6 +204,12 @@ export default async function CourseReviewsPage(
             <li aria-current="page" style={{ color: '#222', fontWeight: 600 }}>Reviews</li>
           </ol>
         </nav>
+
+        {courseStatus && (
+          <div style={{ maxWidth: 760, margin: '0 auto', padding: '16px 16px 0' }}>
+            <CourseStatusNotice status={courseStatus} compact={courseStatus.kind === 'facility' || courseStatus.kind === 'reopened'} />
+          </div>
+        )}
 
         <div style={{ maxWidth: 760, margin: '0 auto', padding: '8px 16px 80px' }}>
 

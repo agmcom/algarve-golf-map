@@ -23,6 +23,8 @@ import { HOLE_GUIDES } from '@/data/hole-guides'
 import { academyForCourse, PRICE_STATUS_LABEL } from '@/data/academies'
 import { applyBuggyFacts, getBuggyInfo } from '@/data/buggies'
 import { TeeTimeButtons } from '@/components/TeeTimeButtons'
+import { CourseStatusNotice } from '@/components/CourseStatusNotice'
+import { getCourseStatus, isUnbookable } from '@/data/course-status'
 import { CourseMapImage } from '@/components/CourseMapImage'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { CourseNav } from '@/components/CourseNav'
@@ -101,7 +103,12 @@ export async function generateMetadata(
     : lower.includes('golf') ? course.name
     : `${course.name} Golf Course`
   const mapName = courseName.toLowerCase().endsWith(' course') ? `${courseName} Map` : `${courseName} Course Map`
-  const title = pickTitle(course.course_map_url
+  // Closed or private courses: say so in the title, since people search "is <course> open".
+  const status = getCourseStatus(course.slug)
+  const statusInTitle = status && (status.kind === 'closed' || status.kind === 'private')
+  const title = statusInTitle
+    ? pickTitle([`${courseName}: ${status.badge}`, courseName])
+    : pickTitle(course.course_map_url
     ? [
         ...(nameHasTown ? [] : [`${mapName} & Guide, ${town}`]),
         `${mapName} & Guide`,
@@ -118,7 +125,9 @@ export async function generateMetadata(
   const layout = [course.holes && `${course.holes}-hole`, course.par && `par-${course.par}`].filter(Boolean).join(', ')
   const intro = `${nameHasTown ? course.name : `${course.name}, ${town}`}${layout ? `: ${layout} course` : ''}`
   const extras = `${course.course_map_url ? 'Course map, g' : 'G'}reen fees${priceFrom != null ? ` from €${priceFrom}` : ''}, facilities and hotels nearby.`
-  const description = pickDescription([
+  const description = statusInTitle
+    ? pickDescription([`${status.headline}. ${status.detail}`, status.detail, `${status.headline}. ${status.detail.split('. ')[0]}.`])
+    : pickDescription([
     ...(course.designer ? [`${intro} by ${course.designer}. ${extras}`] : []),
     `${intro}. ${extras}`,
     `${intro}.`,
@@ -178,7 +187,9 @@ export default async function CoursePage(
   const buggyInfo = getBuggyInfo(course.slug)
   const walkingInfo = getWalkingInfo(course.slug)
   const practiceGround = getPracticeGround(course.slug)
-  const showGreenFeesLink = priceSummary.hasPrices || course.price_from != null
+  const courseStatus = getCourseStatus(course.slug)
+  const unbookable = isUnbookable(course.slug)
+  const showGreenFeesLink = !unbookable && (priceSummary.hasPrices || course.price_from != null)
   const websiteWithUtm = course.website
     ? (course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`)
     : null
@@ -228,7 +239,7 @@ export default async function CoursePage(
     },
     ...(course.website    && { sameAs: course.website }),
     ...(course.phone      && { telephone: course.phone }),
-    ...(course.price_from && { priceRange: `From €${course.price_from}` }),
+    ...(course.price_from && !unbookable && { priceRange: `From €${course.price_from}` }),
     ...(heroPhotoUrl      && { image: allPhotoUrls.length > 1 ? allPhotoUrls : heroPhotoUrl }),
     ...(course.designer   && { architect: { '@type': 'Person', name: course.designer } }),
     ...(course.year_opened && { foundingDate: String(course.year_opened) }),
@@ -342,6 +353,8 @@ export default async function CoursePage(
 
         {/* Content */}
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px 80px' }}>
+
+          {courseStatus && <CourseStatusNotice status={courseStatus} />}
 
           {/* Quick stats */}
           {(() => {
@@ -686,7 +699,14 @@ export default async function CoursePage(
               {/* Prices & Booking — mobile only (desktop shows in right column) */}
               <section className="course-booking-mobile" id="booking" style={{ marginBottom: 36 }}>
                 <h2 style={sectionTitle}>Prices & Booking</h2>
-                {course.price_from != null && (
+                {unbookable && courseStatus && (
+                  <p style={{ fontSize: 15, lineHeight: 1.6, color: '#444', margin: 0 }}>
+                    {courseStatus.kind === 'closed'
+                      ? `${course.name} is closed, so there are no green fees or tee times to book right now.`
+                      : `${course.name} is not open to the public, so it does not sell green fees to visitors.`}
+                  </p>
+                )}
+                {!unbookable && course.price_from != null && (
                   <div style={{ marginBottom: 20 }}>
                     <div style={{ fontSize: 12, color: '#6a6a6a' }}>From</div>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
@@ -695,14 +715,14 @@ export default async function CoursePage(
                     </div>
                   </div>
                 )}
-                {priceSummary.hasPrices && <CoursePriceTable summary={priceSummary} />}
-                <TeeTimeButtons
+                {!unbookable && priceSummary.hasPrices && <CoursePriceTable summary={priceSummary} />}
+                {!unbookable && <TeeTimeButtons
                   bookingUrl={course.booking_url}
                   websiteUrl={websiteWithUtm}
                   phone={course.phone}
                   courseName={course.name}
                   source="course_page_mobile"
-                />
+                />}
                 {showGreenFeesLink && (
                   <Link href={`/courses/${slug}/green-fees`} style={{ display: 'block', textAlign: 'center', marginTop: 16, fontSize: 13, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
                     See full green fee breakdown →
@@ -881,7 +901,14 @@ export default async function CoursePage(
                 borderRadius: 20, padding: '24px 22px',
                 boxShadow: '0 4px 24px rgba(0,0,0,.08)',
               }}>
-                {course.price_from != null && (
+                {unbookable && courseStatus && (
+                  <p style={{ fontSize: 15, lineHeight: 1.6, color: '#444', margin: 0 }}>
+                    {courseStatus.kind === 'closed'
+                      ? `${course.name} is closed, so there are no green fees or tee times to book right now.`
+                      : `${course.name} is not open to the public, so it does not sell green fees to visitors.`}
+                  </p>
+                )}
+                {!unbookable && course.price_from != null && (
                   <div style={{ marginBottom: 20 }}>
                     <div style={{ fontSize: 12, color: '#6a6a6a' }}>From</div>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
@@ -892,19 +919,19 @@ export default async function CoursePage(
                 )}
 
                 {/* Price breakdown by month — scrolls inside the card so the booking buttons stay on screen */}
-                {priceSummary.hasPrices && (
+                {!unbookable && priceSummary.hasPrices && (
                   <div className="no-scrollbar" style={{ flex: '1 1 auto', minHeight: 0, overflowY: 'auto' }}>
                     <CoursePriceTable summary={priceSummary} />
                   </div>
                 )}
 
-                <TeeTimeButtons
+                {!unbookable && <TeeTimeButtons
                   bookingUrl={course.booking_url}
                   websiteUrl={websiteWithUtm}
                   phone={course.phone}
                   courseName={course.name}
                   source="course_page"
-                />
+                />}
 
                 {showGreenFeesLink && (
                   <Link href={`/courses/${slug}/green-fees`} style={{ display: 'block', textAlign: 'center', marginTop: 16, fontSize: 13, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>

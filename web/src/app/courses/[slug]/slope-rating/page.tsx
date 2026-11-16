@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { CourseStatusNotice } from '@/components/CourseStatusNotice'
+import { getCourseStatus } from '@/data/course-status'
 import { getCourseBySlug, getCoursesNear } from '@/lib/queries'
 import { pickTitle, pickDescription, withSiteName } from '@/lib/seo'
 import { handicapRule } from '@/lib/handicap'
@@ -131,6 +133,7 @@ export default async function SlopeRatingPage(
   if (!loops) notFound()
   const course = await getCourseBySlug(slug)
   if (!course) notFound()
+  const courseStatus = getCourseStatus(course.slug)
 
   const top = hardestMenTee(slug)
   const men = slopeRange(slug, 'men')
@@ -207,6 +210,12 @@ export default async function SlopeRatingPage(
             <li aria-current="page" style={{ color: '#222', fontWeight: 600 }}>Slope Rating</li>
           </ol>
         </nav>
+
+        {courseStatus && (
+          <div style={{ maxWidth: 760, margin: '0 auto', padding: '16px 24px 0' }}>
+            <CourseStatusNotice status={courseStatus} compact={courseStatus.kind === 'facility' || courseStatus.kind === 'reopened'} />
+          </div>
+        )}
 
         <div style={{ maxWidth: 760, margin: '0 auto', padding: '8px 24px 80px' }}>
 
