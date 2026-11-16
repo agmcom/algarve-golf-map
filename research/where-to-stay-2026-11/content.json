@@ -1,0 +1,820 @@
+[
+ {
+  "type": "paragraph",
+  "text": "The best place to stay for golf in the Algarve depends on how many courses you want to play and what you want from your evenings. If golf comes first, **Vilamoura, Quarteira and the Golden Triangle around Almancil** put the most courses within a short drive, and they are the closest bases to Faro Airport. **Albufeira** suits groups who want nightlife, **Carvoeiro and Tavira** are quieter, and **Lagos and Alvor** are the bases for the western courses, where green fees are often lower."
+ },
+ {
+  "type": "findYourBase",
+  "title": "Already know which courses you want to play?",
+  "text": "Use **Find Your Base** on our map: tick the courses, choose how far you are happy to drive, and it shows the area where they all overlap, with the hotels inside it.",
+  "buttonLabel": "Find your base on the map"
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "The main golf bases compared"
+ },
+ {
+  "type": "table",
+  "caption": "Golf courses within a short drive of each base",
+  "headers": [
+   "Base",
+   "Courses ≤15 min",
+   "Courses ≤30 min",
+   "From Faro Airport",
+   "Cheapest 18 holes nearby",
+   "Best for"
+  ],
+  "rows": [
+   [
+    "[Vilamoura](/vilamoura/golf-courses)",
+    "5",
+    "13",
+    "~35 min",
+    "€88",
+    "Most golf, marina evenings"
+   ],
+   [
+    "[Quarteira](/quarteira/golf-courses)",
+    "7",
+    "14",
+    "~35 min",
+    "€85",
+    "Most golf, beach town"
+   ],
+   [
+    "[Almancil / Golden Triangle](/almancil/golf-courses)",
+    "9",
+    "14",
+    "~30 min",
+    "€85",
+    "Famous courses, luxury"
+   ],
+   [
+    "[Albufeira](/albufeira/golf-courses)",
+    "1",
+    "10",
+    "~40 min",
+    "€78",
+    "Nightlife, groups"
+   ],
+   [
+    "[Olhos de Água](/olhos-de-agua/golf-courses)",
+    "5",
+    "13",
+    "~40 min",
+    "€78",
+    "Short courses, quieter beach"
+   ],
+   [
+    "[Armação de Pêra](/armacao-de-pera/golf-courses)",
+    "3",
+    "13",
+    "~45 min",
+    "€77",
+    "Salgados and Amendoeira"
+   ],
+   [
+    "[Carvoeiro](/carvoeiro/golf-courses)",
+    "4",
+    "12",
+    "~50 min",
+    "€73",
+    "Quiet village, Pestana courses"
+   ],
+   [
+    "[Portimão](/portimao/golf-courses)",
+    "2",
+    "14",
+    "~55 min",
+    "€73",
+    "Town life, western courses"
+   ],
+   [
+    "[Alvor](/alvor/golf-courses)",
+    "3",
+    "14",
+    "~60 min",
+    "€73",
+    "Penina and Alto"
+   ],
+   [
+    "[Lagos](/lagos/golf-courses)",
+    "1",
+    "9",
+    "~60 min",
+    "€57",
+    "Lower green fees, old town"
+   ],
+   [
+    "[Praia da Luz](/praia-da-luz/golf-courses)",
+    "3",
+    "7",
+    "~65 min",
+    "€57",
+    "Quiet, far west"
+   ],
+   [
+    "[Tavira](/tavira/golf-courses)",
+    "1",
+    "5",
+    "~45 min",
+    "€66",
+    "Quiet, historic, east"
+   ],
+   [
+    "[Monte Gordo](/monte-gordo/golf-courses)",
+    "0",
+    "6",
+    "~55 min",
+    "€66",
+    "Beach, far east"
+   ],
+   [
+    "[Faro](/faro/golf-courses)",
+    "0",
+    "9",
+    "~10 min",
+    "€99",
+    "Short stays, near the airport"
+   ]
+  ],
+  "note": "Drive times from each town centre without traffic (Mapbox, checked 16 November 2026), rounded to the nearest 5 minutes. Counts include 9-hole courses and leave out San Lorenzo (closed until mid-2028) and The Els Club (private). 'Cheapest' is the lowest visitor green fee we list for an 18-hole course within 30 minutes; prices change through the year."
+ },
+ {
+  "type": "paragraph",
+  "text": "The numbers show why golfers keep coming back to the central Algarve: from Almancil, nine courses are within about 15 minutes. In the far west and east there are fewer courses close together, but they are usually cheaper and quieter. Summer traffic on the coast road can add a lot to these times, so in July and August allow extra."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Which base suits your trip?"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "You want to play as many courses as possible"
+ },
+ {
+  "type": "paragraph",
+  "text": "Stay in **Vilamoura, Quarteira or Almancil**. From Quarteira, 7 courses are within about 15 minutes, including the four Vilamoura Golf courses, Pestana Vila Sol and the two Vale do Lobo courses, and 14 are within half an hour. See [golf near Quarteira](/quarteira/golf-courses) and the [Vilamoura golf courses](/vilamoura/golf-courses)."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Luxury and the best-known courses"
+ },
+ {
+  "type": "paragraph",
+  "text": "Stay in the **Golden Triangle**, the area between Almancil, Quinta do Lago and Vale do Lobo. It has the Algarve's best-known courses, including [Quinta do Lago South](/courses/quinta-do-lago-south) and the clifftop holes of [Vale do Lobo Royal](/courses/vale-do-lobo-royal), and five-star hotels and resort villas. Expect some of the highest green fees in the region: Quinta do Lago South starts at €188. See the [hotels near Quinta do Lago](/guide/hotels-near-quinta-do-lago-golf) and [hotels near Vale do Lobo](/guide/hotels-near-vale-do-lobo-golf)."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "A golf trip on a budget"
+ },
+ {
+  "type": "paragraph",
+  "text": "Look west to **Lagos and Praia da Luz**, or east to **Tavira**. Around Lagos, [Santo António](/courses/santo-antonio) starts at €57, [Espiche](/courses/espiche) at €65 and [Boavista](/courses/boavista) at €74. In the east, [Benamor](/courses/benamor) starts at €66 and [Quinta do Vale](/courses/quinta-do-vale) at €67. You'll have fewer courses within a short drive, so plan two or three rounds rather than six. Our guide to [the best-value golf in the Algarve](/guide/best-value-golf-in-the-algarve) has more ideas."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "A short break or a weekend"
+ },
+ {
+  "type": "paragraph",
+  "text": "Stay close to the airport. Almancil and Vilamoura are around 30–35 minutes from Faro Airport, so you can play on the day you land. [Faro](/faro/golf-courses) itself has no course, but Quinta do Lago Laranjal is about 20 minutes from the city. Our [golf weekend in the Algarve](/guide/golf-weekend-in-the-algarve) guide plans three nights and two rounds from four different bases."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Nightlife and group trips"
+ },
+ {
+  "type": "paragraph",
+  "text": "**Albufeira** is the Algarve's party town. Its nightlife is centred on \"the Strip\", Avenida Sá Carneiro in the Montechoro area, about 3 km east of the old town. The closest courses are [Balaia](/courses/balaia), about 15 minutes away, and [Salgados](/courses/salgados) and [Pine Cliffs](/courses/pine-cliffs), about 20, with the Vilamoura courses around 25. If you'd rather have restaurants and bars than clubs, **Vilamoura's marina** is busy in the evenings and has a casino. For tips on organising a society or a group, read [golf trips for groups](/guide/algarve-golf-trips-for-groups-and-golf-societies)."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Peace and quiet"
+ },
+ {
+  "type": "paragraph",
+  "text": "**Tavira** is a historic town on the river Gilão and is much quieter than the central resorts, with [Benamor](/courses/benamor) about 15 minutes away and the two Quinta da Ria courses about 20. **Carvoeiro** is a small cliffside village with Gramacho, Vale da Pinta and Vale de Milho all within about 15 minutes. **Praia da Luz** is a small resort west of Lagos, about 10 minutes from Boavista."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Golfers with non-golfing partners, families or beginners"
+ },
+ {
+  "type": "paragraph",
+  "text": "Pick a base with a short course that needs no handicap certificate, so everyone can play. [Pine Cliffs](/courses/pine-cliffs) (9 holes) is next to [Olhos de Água](/olhos-de-agua/golf-courses), the 9-hole [Penina Resort](/courses/penina-resort) course is about 15 minutes from [Alvor](/alvor/golf-courses), and [Vale de Milho](/courses/vale-de-milho), a 9-hole par-3 course, is in Carvoeiro. [Balaia](/courses/balaia), another 9-hole par-3 course near Albufeira, does ask for a handicap. For lessons, see the [Algarve golf academies](/golf-academies)."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Without a car"
+ },
+ {
+  "type": "paragraph",
+  "text": "The easiest way is to stay at a resort with its own course, so the first tee is a walk away: see our list of [Algarve hotels with a golf course on site](/guide/algarve-hotels-with-a-golf-course-on-site). The train line along the coast stops in the centre of Lagos, Faro and Tavira, but Albufeira's station is several kilometres outside the town, and most courses are a taxi ride from the nearest station. For getting from the airport, see [Faro Airport to the Algarve golf courses](/guide/faro-airport-to-algarve-golf-courses)."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "The bases one by one"
+ },
+ {
+  "type": "paragraph",
+  "text": "A few well-rated hotels in each base, all checked for our other hotel guides. Prices are the lowest we found for a recent date and change with the season, so check your own dates."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Vilamoura and Quarteira"
+ },
+ {
+  "type": "paragraph",
+  "text": "Vilamoura is built around its marina, with the four Vilamoura Golf courses and Pestana Vila Sol all within about 15 minutes. Quarteira, its beach-town neighbour, is just as close to the courses. From Vilamoura's marina, 13 courses are within 30 minutes. More in [golf near Quarteira](/quarteira/golf-courses) and [golf hotels near Vilamoura](/guide/golf-hotels-near-vilamoura)."
+ },
+ {
+  "type": "findYourBase",
+  "text": "Open Find Your Base with these courses already ticked to see hotels in the area where they overlap.",
+  "courseSlugs": [
+   "vilamoura-old-course",
+   "vilamoura-pinhal",
+   "vilamoura-laguna",
+   "vilamoura-millennium",
+   "vila-sol"
+  ],
+  "buttonLabel": "Show hotels for these courses"
+ },
+ {
+  "lat": 37.066248,
+  "lng": -8.0995584,
+  "name": "Dom José Beach Hotel",
+  "text": "A three-star beach hotel in Quarteira, rated **8.9 on Booking.com** and from about €61 a night in October. It has no golf services of its own, but Pinhal is about 13 minutes away and the Old Course about 15, and breakfast starts at 7.30am.",
+  "tier": "Value",
+  "type": "hotel",
+  "perks": [
+   "Breakfast from 07:30",
+   "On the beach in Quarteira",
+   "Fully renovated in 2024"
+  ],
+  "rating": 8.9,
+  "breakfast": "07:30–10:30",
+  "priceFrom": 61,
+  "bookingUrl": "https://www.booking.com/hotel/pt/dom-jose.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "On the beach in Quarteira"
+ },
+ {
+  "lat": 37.093165,
+  "lng": -8.11161,
+  "name": "Hilton Vilamoura As Cascatas Golf Resort & Spa",
+  "text": "A five-star resort overlooking the Pinhal course and one of Vilamoura Golf's official partner hotels, rated **8.5 on Booking.com** and from about €112 a night in October. The Old Course is about 5 minutes away.",
+  "tier": "Mid-range",
+  "type": "hotel",
+  "perks": [
+   "Official Vilamoura Golf partner hotel",
+   "Overlooks the Pinhal course",
+   "Apartments and hotel rooms",
+   "7Seven Spa"
+  ],
+  "rating": 8.5,
+  "priceFrom": 112,
+  "bookingUrl": "https://www.booking.com/hotel/pt/hilton-vilamoura.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Next to the Pinhal course, Vilamoura"
+ },
+ {
+  "lat": 37.074277,
+  "lng": -8.119806,
+  "name": "Tivoli Marina Vilamoura Algarve Resort",
+  "text": "A big five-star resort right between the marina and the beach, rated **8.9 on Booking.com** from more than 1,600 reviews. It suits golfers travelling with non-golfing partners or family, with the beach, pools and marina all on the doorstep. Pinhal is about 11 minutes away and the Old Course about 14.",
+  "tier": "Luxury",
+  "type": "hotel",
+  "perks": [
+   "Right between the marina and the beach",
+   "Large resort pools",
+   "Spa"
+  ],
+  "rating": 8.9,
+  "priceFrom": 160,
+  "bookingUrl": "https://www.booking.com/hotel/pt/tivolimarinavilamoura.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Between the marina and the beach, Vilamoura"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Almancil and the Golden Triangle"
+ },
+ {
+  "type": "paragraph",
+  "text": "Quinta do Lago's three courses, Pinheiros Altos and the two Vale do Lobo courses are all about 10 minutes from Almancil, and Vilamoura is around 15–20. The area is known for five-star hotels and resort villas, but there are simpler apartments too. More in [hotels near Quinta do Lago](/guide/hotels-near-quinta-do-lago-golf)."
+ },
+ {
+  "type": "findYourBase",
+  "text": "Open Find Your Base with these courses already ticked to see hotels in the area where they overlap.",
+  "courseSlugs": [
+   "quinta-do-lago-south",
+   "quinta-do-lago-north",
+   "quinta-do-lago-laranjal",
+   "pinheiros-altos",
+   "vale-do-lobo-royal",
+   "vale-do-lobo-ocean"
+  ],
+  "buttonLabel": "Show hotels for these courses"
+ },
+ {
+  "lat": 37.07342,
+  "lng": -8.04924,
+  "name": "WOT Algarve Soul",
+  "text": "Simple apartments and studios on the Almancil side, rated **8.5 on Booking.com** and from about €54 a night in October, which is rare for this area. It has no golf services of its own, but it's about 6 minutes from the Royal and 10 from the South Course.",
+  "tier": "Value",
+  "type": "hotel",
+  "perks": [
+   "Self-catering apartments and studios",
+   "Two outdoor pools",
+   "Free parking",
+   "EV charging"
+  ],
+  "rating": 8.5,
+  "priceFrom": 54,
+  "bookingUrl": "https://www.booking.com/searchresults.html?ss=WOT%20Algarve%20Soul%20Almancil",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Almancil side of the Golden Triangle"
+ },
+ {
+  "lat": 37.0433827,
+  "lng": -8.0184087,
+  "name": "Vilar do Golf",
+  "text": "Apartments right beside the South Course, two minutes from the clubhouse, rated **8.8 on Booking.com** and from about €103 a night in October. The resort offers a **golf club rental service**, handy if you're travelling light, and every apartment has a kitchen.",
+  "tier": "Mid-range",
+  "type": "hotel",
+  "perks": [
+   "Apartments with kitchens and terraces",
+   "Golf club rental service",
+   "Indoor and outdoor pools"
+  ],
+  "rating": 8.8,
+  "priceFrom": 103,
+  "bookingUrl": "https://www.booking.com/hotel/pt/vilar-do-golf.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Beside Quinta do Lago South"
+ },
+ {
+  "lat": 37.0632425,
+  "lng": -8.0289784,
+  "name": "Conrad Algarve",
+  "text": "A five-star hotel rated **9.0 on Booking.com**, from about €170 a night in October. Its **golf concierge** can book your rounds, and breakfast starts at 7am, which suits an early tee time. It sits between the two courses, 6 minutes from the South and 8 from the Royal.",
+  "tier": "Premium",
+  "type": "hotel",
+  "perks": [
+   "Golf concierge",
+   "Lessons with a PGA golf pro",
+   "Signature Quinta do Lago Golf Experience packages",
+   "Conrad Spa"
+  ],
+  "rating": 9,
+  "breakfast": "07:00–11:00",
+  "priceFrom": 170,
+  "bookingUrl": "https://www.booking.com/hotel/pt/conrad-algarve.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Between Quinta do Lago and Vale do Lobo"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Albufeira and Olhos de Água"
+ },
+ {
+  "type": "paragraph",
+  "text": "Albufeira has the most hotels and nightlife in the Algarve. The short courses at Balaia and Pine Cliffs are closest, with Salgados and the Vilamoura courses within about 25 minutes. Olhos de Água, a quieter beach village just to the east, is the better pick if you want to be closer to Vilamoura. More in [golf near Olhos de Água](/olhos-de-agua/golf-courses) and the [cheapest golf near Albufeira](/guide/cheapest-golf-near-albufeira)."
+ },
+ {
+  "type": "findYourBase",
+  "text": "Open Find Your Base with these courses already ticked to see hotels in the area where they overlap.",
+  "courseSlugs": [
+   "balaia",
+   "pine-cliffs",
+   "salgados",
+   "vilamoura-laguna",
+   "vilamoura-millennium"
+  ],
+  "buttonLabel": "Show hotels for these courses"
+ },
+ {
+  "lat": 37.0911794,
+  "lng": -8.2095811,
+  "name": "Alfagar Village",
+  "text": "Clifftop apartments above Santa Eulália beach, just three minutes from Balaia and rated 8.8 by guests. It has no golf services of its own, but it is one of the closest and best-value options, with a heated indoor pool and gym for the cooler months, massages on request and a paid airport transfer.",
+  "tier": "Value",
+  "type": "hotel",
+  "perks": [
+   "Three minutes from the course",
+   "Heated indoor pool and gym",
+   "Massages on request",
+   "Airport transfer from €58"
+  ],
+  "rating": 8.8,
+  "breakfast": "08:00–10:30 (€15)",
+  "priceFrom": 60,
+  "bookingUrl": "https://www.booking.com/hotel/pt/alfagarresort.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Santa Eulália, east Albufeira"
+ },
+ {
+  "lat": 37.091613,
+  "lng": -8.187459,
+  "name": "PortoBay Blue Ocean",
+  "text": "A clifftop hotel just west of Pine Cliffs, rated **9.2 on Booking.com** and from about €113 a night. It is not adults-only, but it has a lounge area reserved for adults and a calm, couple-friendly feel. Breakfast starts at 7.30am.",
+  "tier": "Mid-range",
+  "type": "hotel",
+  "perks": [
+   "Breakfast from 07:30",
+   "Blu Spa",
+   "Adults-only lounge area",
+   "Airport transfer (extra cost)"
+  ],
+  "rating": 9.2,
+  "breakfast": "07:30–10:30",
+  "priceFrom": 113,
+  "bookingUrl": "https://www.booking.com/hotel/pt/portobay-blue-ocean.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Clifftop near Olhos de Água"
+ },
+ {
+  "lat": 37.0923,
+  "lng": -8.177,
+  "name": "Pine Cliffs Ocean Suites, a Luxury Collection Resort & Spa",
+  "text": "Suites and apartments at the Pine Cliffs resort, which has its own 9-hole clifftop course that needs no handicap. All rooms interconnect, which makes it popular with families, and guests get free access to the resort's Oasis Thermal area.",
+  "tier": "On-site",
+  "type": "hotel",
+  "perks": [
+   "Serenity Spa on site",
+   "Free access to Oasis Thermal",
+   "Lower green fees for resort guests",
+   "Interconnecting rooms"
+  ],
+  "rating": 8.8,
+  "breakfast": "07:30–10:30",
+  "priceFrom": 258,
+  "bookingUrl": "https://www.booking.com/hotel/pt/pine-cliffs-ocean-suites-a-luxury-collection-resort-algarve.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Inside the Pine Cliffs resort"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Carvoeiro and Armação de Pêra"
+ },
+ {
+  "type": "paragraph",
+  "text": "Carvoeiro is a small cliffside village, with Gramacho, Vale da Pinta and the 9-hole Vale de Milho all within about 15 minutes and Pestana Ferragudo about 15–20. A little further east, Armação de Pêra is the closest town to Salgados and Amendoeira. More in [golf near Armação de Pêra](/armacao-de-pera/golf-courses) and [hotels near Vale de Milho](/guide/hotels-near-vale-de-milho-golf)."
+ },
+ {
+  "type": "findYourBase",
+  "text": "Open Find Your Base with these courses already ticked to see hotels in the area where they overlap.",
+  "courseSlugs": [
+   "gramacho",
+   "vale-da-pinta",
+   "vale-de-milho",
+   "pestana-ferragudo",
+   "salgados",
+   "amendoeira-faldo"
+  ],
+  "buttonLabel": "Show hotels for these courses"
+ },
+ {
+  "lat": 37.093067,
+  "lng": -8.457309,
+  "name": "Pestana Palm Gardens",
+  "text": "Clifftop studios and apartments in Carvoeiro run by Pestana, the same group that owns Ferragudo. Pestana says guests get **exclusive benefits and discounts at Gramacho and Vale da Pinta**, so it is a smart base if you want to play all three Pestana courses. Breakfast starts at 8am and is charged separately, but every unit has a kitchen, so an early bite before your round is easy.",
+  "tier": "Value",
+  "type": "hotel",
+  "perks": [
+   "Discounts at Gramacho and Vale da Pinta",
+   "Self-catering apartments",
+   "Free gym and sauna",
+   "Free parking"
+  ],
+  "rating": 8.5,
+  "breakfast": "08:00–10:30 (paid extra)",
+  "priceFrom": 51,
+  "bookingUrl": "https://www.booking.com/hotel/pt/pestana-palm-gardens.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Clifftop in Carvoeiro"
+ },
+ {
+  "lat": 37.0939326,
+  "lng": -8.4602881,
+  "name": "Tivoli Carvoeiro Algarve Resort",
+  "text": "A five-star clifftop resort a short walk from Carvoeiro village, rated **8.6 on Booking.com**, with sea views, a full spa and indoor and outdoor pools. UK golf tour operators sell packages here that include rounds at Gramacho and Vale da Pinta.",
+  "tier": "Luxury",
+  "type": "hotel",
+  "perks": [
+   "Golf packages via tour operators",
+   "Breakfast from 07:30",
+   "Full-service spa",
+   "Indoor and outdoor pools"
+  ],
+  "rating": 8.6,
+  "breakfast": "07:30–10:30",
+  "priceFrom": 125,
+  "bookingUrl": "https://www.booking.com/hotel/pt/tvalmansorcarveiro.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Short walk from Carvoeiro village"
+ },
+ {
+  "lat": 37.101851,
+  "lng": -8.379327,
+  "name": "Vila Vita Parc",
+  "text": "A clifftop resort near Porches rated an exceptional **9.5 on Booking.com**, from about €246 a night in October. It's 15 minutes from Salgados and 18 from Amendoeira. Pick it if the weekend is a special occasion rather than just a golf trip.",
+  "tier": "Premium",
+  "type": "hotel",
+  "perks": [
+   "Rated 9.5 on Booking.com",
+   "Clifftop gardens above the sea",
+   "Several restaurants"
+  ],
+  "rating": 9.5,
+  "priceFrom": 246,
+  "bookingUrl": "https://www.booking.com/hotel/pt/vila-vita-parc-resort-spa.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "Clifftop near Porches and Armação de Pêra"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Portimão and Alvor"
+ },
+ {
+  "type": "paragraph",
+  "text": "Portimão and Alvor are the bases for the Sir Henry Cotton courses: [Alto Golf](/courses/alto-golf) is about 5 minutes from both, and [Penina](/courses/penina-championship) about 15–20. Pestana Ferragudo is about 15 minutes from Portimão, Gramacho and Vale da Pinta about 20, Morgado about 25 and Álamos about 30. More in [golf near Alvor](/alvor/golf-courses) and [hotels near Penina](/guide/hotels-near-penina-golf-resort)."
+ },
+ {
+  "type": "findYourBase",
+  "text": "Open Find Your Base with these courses already ticked to see hotels in the area where they overlap.",
+  "courseSlugs": [
+   "alto-golf",
+   "penina-championship",
+   "morgado",
+   "alamos",
+   "pestana-ferragudo"
+  ],
+  "buttonLabel": "Show hotels for these courses"
+ },
+ {
+  "lat": 37.1286104,
+  "lng": -8.533727,
+  "name": "Jupiter Marina Hotel",
+  "text": "A stylish hotel on Portimão marina, with a spa, a rooftop bar and a free shuttle to Praia da Rocha beach. It scores **9.0 on Booking.com**, unusually high for the price, and breakfast starts at 7.30am. Parking is paid.",
+  "tier": "Value",
+  "type": "hotel",
+  "perks": [
+   "Breakfast from 07:30",
+   "Spa",
+   "Airport transfer",
+   "Luggage service"
+  ],
+  "rating": 9,
+  "breakfast": "07:30–10:30",
+  "priceFrom": 65,
+  "bookingUrl": "https://www.booking.com/hotel/pt/jupiter-marina.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "On Portimão marina"
+ },
+ {
+  "lat": 37.1299506,
+  "lng": -8.5802307,
+  "name": "RR Alvor Baía Resort",
+  "text": "A large, family-friendly resort of suites with kitchenettes, with a spa, gym and heated hydrotherapy pool. For golfers the useful detail is breakfast: it starts at 7am, and the hotel offers **a breakfast pack for early-morning departures** if you ask at reception the day before, ideal for a first tee time at Penina.",
+  "tier": "Value",
+  "type": "hotel",
+  "perks": [
+   "Early-departure breakfast pack",
+   "Breakfast from 07:00",
+   "5 Senses Spa",
+   "Free beach shuttle",
+   "Airport transfer on request"
+  ],
+  "rating": 8.3,
+  "breakfast": "07:00–10:00",
+  "priceFrom": 85,
+  "bookingUrl": "https://www.booking.com/hotel/pt/apartamento-alvor-baia.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "In Alvor"
+ },
+ {
+  "lat": 37.161549,
+  "lng": -8.5803536,
+  "name": "Penina Hotel & Golf Resort",
+  "text": "The Algarve's original golf resort, with the 18-hole Championship and the 9-hole Resort course on site. The Championship course was designed by Sir Henry Cotton. Penina's \"Best Available Rate for Golfers\" includes **a complimentary round every day** on one of its courses (a handicap certificate is needed for the Championship course). Breakfast starts at 7am.",
+  "tier": "Golf resort",
+  "type": "hotel",
+  "perks": [
+   "Three courses on site",
+   "Free daily round on the golfer rate",
+   "Breakfast from 07:00",
+   "Driving range and academy",
+   "Airport transfer"
+  ],
+  "rating": 8.1,
+  "breakfast": "07:00–10:30",
+  "priceFrom": 100,
+  "bookingUrl": "https://www.booking.com/hotel/pt/penina-hotel-golf-resort.html",
+  "ratingSource": "Booking.com",
+  "locationLabel": "On the Penina course"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Lagos and Praia da Luz"
+ },
+ {
+  "type": "paragraph",
+  "text": "Lagos has a lively old town and a marina, with Boavista about 10 minutes away and Palmares and Espiche about 20. Praia da Luz is quieter and closer to Boavista, Espiche and Santo António. Green fees here are among the lowest in the Algarve, but Vilamoura and Quinta do Lago are about an hour away. More in [golf near Praia da Luz](/praia-da-luz/golf-courses) and [hotels near Boavista](/guide/hotels-near-boavista-golf)."
+ },
+ {
+  "type": "findYourBase",
+  "text": "Open Find Your Base with these courses already ticked to see hotels in the area where they overlap.",
+  "courseSlugs": [
+   "boavista",
+   "palmares",
+   "espiche",
+   "santo-antonio"
+  ],
+  "buttonLabel": "Show hotels for these courses"
+ },
+ {
+  "lat": 37.10797,
+  "lng": -8.67563,
+  "name": "Hotel Marina Rio",
+  "text": "A four-star hotel opposite Lagos marina, a short walk from the old town, rated **9.0 on Booking.com** from more than 1,000 reviews. A private garage is available if you reserve in advance. About 9 minutes from Boavista.",
+  "tier": "Value",
+  "type": "hotel",
+  "perks": [
+   "Opposite the marina",
+   "Walk to the old town",
+   "Garage on advance request"
+  ],
+  "rating": 9,
+  "breakfast": null,
+  "priceFrom": null,
+  "bookingUrl": "https://www.booking.com/hotel/pt/albergaria-marina-rio.html",
+  "reviewCount": 1040,
+  "ratingSource": "Booking.com",
+  "locationLabel": "Opposite Lagos marina"
+ },
+ {
+  "lat": 37.0912,
+  "lng": -8.73316,
+  "name": "Belavista da Luz",
+  "text": "A four-star wellness hotel in Praia da Luz, rated **8.5 on Booking.com** from more than 1,000 reviews, with a spa. About 8 minutes from Boavista.",
+  "tier": "Mid-range",
+  "type": "hotel",
+  "perks": [
+   "Spa",
+   "In Praia da Luz"
+  ],
+  "rating": 8.5,
+  "breakfast": null,
+  "priceFrom": null,
+  "bookingUrl": "https://www.booking.com/hotel/pt/belavista-da-luz.html",
+  "reviewCount": 1044,
+  "ratingSource": "Booking.com",
+  "locationLabel": "In Praia da Luz"
+ },
+ {
+  "lat": 37.12411,
+  "lng": -8.64063,
+  "name": "Palmares Beach House Hotel",
+  "text": "The five-star boutique hotel on the Palmares resort, adults only, with just 20 rooms including two suites. It scores **8.9 on Booking.com**, and Palmares sells Stay & Play packages that combine a stay with rounds on its 27 holes. Right at Palmares.",
+  "tier": "On-site",
+  "type": "hotel",
+  "perks": [
+   "On the Palmares resort",
+   "Adults only, 20 rooms",
+   "Stay & Play golf packages"
+  ],
+  "rating": 8.9,
+  "breakfast": null,
+  "priceFrom": null,
+  "bookingUrl": "https://www.booking.com/hotel/pt/onyria-palmares-beach-house-hostel.html",
+  "reviewCount": 413,
+  "ratingSource": "Booking.com",
+  "locationLabel": "On the Palmares resort"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Tavira and the east"
+ },
+ {
+  "type": "paragraph",
+  "text": "Tavira is the base for the eastern courses: Benamor about 15 minutes away, Quinta da Ria and Quinta de Cima about 20, and Quinta do Vale and Castro Marim about 25–30. Monte Rei, the Jack Nicklaus course, is about 35 minutes from Tavira and closer to Monte Gordo. More in [golf near Monte Gordo](/monte-gordo/golf-courses) and [hotels near Quinta da Ria](/guide/hotels-near-quinta-da-ria-golf)."
+ },
+ {
+  "type": "findYourBase",
+  "text": "Open Find Your Base with these courses already ticked to see hotels in the area where they overlap.",
+  "courseSlugs": [
+   "benamor",
+   "quinta-da-ria",
+   "quinta-de-cima",
+   "quinta-do-vale",
+   "castro-marim",
+   "monte-rei"
+  ],
+  "buttonLabel": "Show hotels for these courses"
+ },
+ {
+  "lat": 37.12616715766713,
+  "lng": -7.660081935133803,
+  "name": "Hotel Don Rodrigues",
+  "text": "A small hotel rated **8.8 on Booking.com**, from €65 a night **with breakfast** on its own website. It has an outdoor pool and free parking, and it's 12 minutes from Benamor. Breakfast starts at 8am, so for an early tee time ask about something to take with you.",
+  "tier": "Value",
+  "type": "hotel",
+  "perks": [
+   "Breakfast included",
+   "Outdoor pool",
+   "Free parking"
+  ],
+  "rating": 8.8,
+  "breakfast": "08:00–10:00",
+  "priceFrom": 65,
+  "bookingUrl": "https://www.booking.com/hotel/pt/don-rodrigues.html",
+  "reviewCount": 1545,
+  "ratingSource": "Booking.com",
+  "locationLabel": "In Tavira"
+ },
+ {
+  "lat": 37.14068712042766,
+  "lng": -7.624643587957735,
+  "name": "OZADI Tavira Hotel",
+  "text": "A four-star hotel on the edge of Tavira, rated **9.0 on Booking.com** from more than 3,700 reviews and from about €77 a night in November. Benamor is about 6 minutes away, and it has two pools and free parking.",
+  "tier": "Mid-range",
+  "type": "hotel",
+  "perks": [
+   "Two pools",
+   "Bistro and buffet breakfast",
+   "Padel",
+   "Free parking"
+  ],
+  "rating": 9,
+  "priceFrom": 77,
+  "bookingUrl": "https://www.booking.com/hotel/pt/ozadi-tavira.html",
+  "reviewCount": 3734,
+  "ratingSource": "Booking.com",
+  "locationLabel": "Edge of Tavira, towards Benamor"
+ },
+ {
+  "lat": 37.12499543854031,
+  "lng": -7.652948498725891,
+  "name": "Pousada Convento Tavira",
+  "text": "A Pousada in a former 16th-century convent in the centre of Tavira, rated **9.0 on Booking.com** and from €131 a night on its own website. You can walk to the old town's restaurants after the round. Breakfast runs from 8am to 11am.",
+  "tier": "Premium",
+  "type": "hotel",
+  "perks": [
+   "Former convent",
+   "Outdoor pool",
+   "Restaurant",
+   "Free parking"
+  ],
+  "rating": 9,
+  "breakfast": "08:00–11:00",
+  "priceFrom": 131,
+  "bookingUrl": "https://www.booking.com/hotel/pt/pousada-de-tavira-convento-da-graca.html",
+  "reviewCount": 594,
+  "ratingSource": "Booking.com",
+  "locationLabel": "Centre of Tavira"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Faro"
+ },
+ {
+  "type": "paragraph",
+  "text": "Faro is the Algarve's capital and the airport is on the edge of the city, but there is no golf course in Faro itself. It works for a night before an early flight or a short city break with a round at [Quinta do Lago Laranjal](/courses/quinta-do-lago-laranjal), about 20 minutes away. For hotels in the city, see [golf near Faro](/faro/golf-courses)."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Plan the rest of your trip"
+ },
+ {
+  "type": "paragraph",
+  "text": "Once you've picked a base, compare green fees in the [full list of Algarve golf courses](/courses), check [how to get from Faro Airport to your base with clubs](/guide/faro-airport-to-algarve-golf-courses), and if you're not bringing your own set, read our [club rental guide](/club-rental)."
+ },
+ {
+  "type": "findYourBase",
+  "title": "Still not sure where to stay?",
+  "text": "Tick the courses you want to play in **Find Your Base** and the map shows the best area to stay, with the hotels inside it.",
+  "buttonLabel": "Find your base on the map"
+ }
+]

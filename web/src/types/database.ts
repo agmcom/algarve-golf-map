@@ -365,6 +365,8 @@ export type GuideBlock =
   // Data table (e.g. monthly weather). Cells support **bold** and [links](/x); note = source line
   // rowIcons: optional icon name per row, drawn before the row label (see TABLE_ICONS in guide/[slug]/page.tsx)
   | { type: 'table'; caption?: string; headers: string[]; rows: string[][]; note?: string; rowIcons?: (string | null)[] }
+  // Call-out that opens Find Your Base on the map, optionally with these courses ticked (?base=slug,slug)
+  | { type: 'findYourBase'; title?: string; text?: string; courseSlugs?: string[]; buttonLabel?: string }
 
 // One entry in a "where to stay near X" hotel list. Written by Claude from researched,
 // dated facts — every field is optional except name/bookingUrl/coords.
@@ -382,6 +384,7 @@ export interface GuideHotelBlock {
   distanceKm?: number | null    // to the course, by road
   driveMin?: number | null
   distanceLabel?: string | null // replaces km/drive text, e.g. "Inside the resort"
+  locationLabel?: string | null // shown as 'Where' instead of 'From the course' (posts not about one course)
   breakfast?: string | null     // e.g. "07:00–10:30"
   perks?: string[]              // golfer-relevant services, short labels
   text: string                  // description, supports **bold** and [links](/x)

@@ -29,7 +29,13 @@ export function PlannerPanel({ courses, allCourses, hasActiveFilters, selectedId
   const [maxMinutes, setMaxMinutes] = useState(30)
   const [showAll, setShowAll] = useState(false)
 
-  const displayCourses = hasActiveFilters && !showAll ? courses : allCourses
+  // Courses already selected when the panel opens (e.g. from a ?base= link) go to the top;
+  // later ticks don't reorder the list.
+  const [preselected] = useState(() => new Set(selectedIds))
+  const baseList = hasActiveFilters && !showAll ? courses : allCourses
+  const displayCourses = preselected.size
+    ? [...baseList.filter(c => preselected.has(c.id)), ...baseList.filter(c => !preselected.has(c.id))]
+    : baseList
 
   // Zone is derived live from the selected courses and max travel time
   const result = useMemo<PlannerResult | null>(() => {

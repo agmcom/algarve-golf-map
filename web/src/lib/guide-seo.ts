@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'where-to-stay-in-the-algarve-for-golf': {
+    title: 'Where to stay in the Algarve for golf: best bases compared',
+    description: 'Which Algarve base puts the most golf courses within 15 or 30 minutes? Vilamoura, Almancil, Albufeira, Lagos, Tavira and more compared, with hotels.',
+  },
   'beginner-golf-holidays-in-portugal': {
     title: 'Beginner golf holidays in Portugal: plan your first trip',
     description: 'Plan a beginner golf holiday in the Algarve: where to play without a handicap, golf schools, the best resorts, when to go and what to do about clubs.',

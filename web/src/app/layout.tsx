@@ -149,6 +149,18 @@ export default function RootLayout({
               }
               document.addEventListener('click', trackDownloadClick, true);
               document.addEventListener('auxclick', function (e) { if (e.button === 1) trackDownloadClick(e); }, true);
+
+              // "Open Find Your Base" buttons in guide posts carry data-fyb-click="open|preset".
+              function trackFybClick(e) {
+                var a = e.target && e.target.closest && e.target.closest('a[data-fyb-click]');
+                if (!a) return;
+                gtag('event', 'find_your_base_click', {
+                  click_type: a.getAttribute('data-fyb-click'),
+                  page_path: location.pathname,
+                  transport_type: 'beacon'
+                });
+              }
+              document.addEventListener('click', trackFybClick, true);
             `,
           }}
         />

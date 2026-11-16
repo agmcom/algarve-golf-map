@@ -393,6 +393,22 @@ export default async function GuidePostPage(
                   </figure>
                 )
               }
+              if (block.type === 'findYourBase') {
+                const href = block.courseSlugs?.length ? `/?base=${block.courseSlugs.join(',')}` : '/?base=1'
+                return (
+                  <aside key={i} style={{ background: '#EEF4FA', border: '1px solid #CFE0F0', borderRadius: 14, padding: '16px 20px', margin: '4px 0 26px' }}>
+                    {block.title && <div style={{ fontSize: 17, fontWeight: 800, color: '#1E4A72', marginBottom: 6 }}>🛏️ {block.title}</div>}
+                    {block.text && <p style={{ fontSize: 15.5, lineHeight: 1.6, color: '#333', margin: '0 0 12px' }}>{renderInlineText(block.text)}</p>}
+                    <Link
+                      href={href}
+                      data-fyb-click={block.courseSlugs?.length ? 'preset' : 'open'}
+                      style={{ display: 'inline-flex', alignItems: 'center', minHeight: 44, padding: '0 18px', borderRadius: 10, background: '#2B6090', color: '#fff', fontSize: 15, fontWeight: 700, textDecoration: 'none' }}
+                    >
+                      {block.buttonLabel ?? 'Open Find Your Base'} →
+                    </Link>
+                  </aside>
+                )
+              }
               if (block.type === 'hotelMap' && mapCourse) {
                 return (
                   <GuideHotelMap
@@ -526,7 +542,9 @@ function FollowBox() {
 
 function GuideHotelEntry({ hotel, n }: { hotel: GuideHotelBlock; n: number }) {
   const facts: [string, string][] = []
-  if (hotel.distanceLabel) {
+  if (hotel.locationLabel) {
+    facts.push(['Where', hotel.locationLabel])
+  } else if (hotel.distanceLabel) {
     facts.push(['From the course', hotel.distanceLabel])
   } else if (hotel.distanceKm != null) {
     facts.push(['From the course', `${hotel.distanceKm.toLocaleString('en-GB', { maximumFractionDigits: 1 })} km${hotel.driveMin != null ? ` · ${hotel.driveMin === 0 ? 'walk' : `about ${hotel.driveMin} min drive`}` : ''}`])

@@ -172,6 +172,17 @@ export function HomeClient({ courses, hotels, shops, airports }: HomeClientProps
       setCompareIds(compareFromUrl)
       setCompareOpen(true)
     }
+
+    // Deep link into Find Your Base: ?base=1 opens it, ?base=slug1,slug2 also preselects courses.
+    const baseParam = new URLSearchParams(window.location.search).get('base')
+    if (baseParam != null) {
+      const ids = baseParam.split(',')
+        .map(slug => courses.find(c => c.slug === slug)?.id)
+        .filter((id): id is string => id != null)
+      if (ids.length) setPlannedIds(new Set(ids))
+      setSelectedId(null)
+      setPlannerOpen(true)
+    }
     /* eslint-enable react-hooks/set-state-in-effect */
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
