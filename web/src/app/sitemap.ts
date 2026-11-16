@@ -6,6 +6,7 @@ import { RESORT_PAGES } from '@/lib/resorts'
 import { COURSE_RATINGS } from '@/data/course-ratings'
 import { SCORECARDS } from '@/data/scorecards'
 import { HOLE_GUIDES } from '@/data/hole-guides'
+import { PRACTICE_GROUNDS, PRACTICE_LAST_CHECKED } from '@/data/practice'
 import { ACADEMIES } from '@/data/academies'
 
 const BASE = 'https://www.algarvegolfmap.com'
@@ -17,7 +18,7 @@ export const revalidate = 3600
 // built from the database use the row's updated_at. For content that lives in code, bump the
 // matching date below when you change it meaningfully. Pages with no reliable date have no
 // lastmod at all, which Google treats as "unknown" rather than "changed today".
-const COURSE_TEMPLATE_UPDATED = '2026-11-15' // course page layout/sections (scorecard link added)
+const COURSE_TEMPLATE_UPDATED = '2026-11-16' // course page layout/sections (practice facilities section added)
 const GREEN_FEES_UPDATED = '2026-11-06'      // last price seed (2026-10-26) or buggy facts (2026-11-06)
 const SLOPE_RATINGS_UPDATED = '2026-11-09'   // FPG table checked; see src/data/course-ratings.ts
 // Scorecard pages use each card's own `checked` date (src/data/scorecards.ts).
@@ -76,6 +77,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly',
     priority: 0.6,
   }))
+
+  const practiceUrls: MetadataRoute.Sitemap = PRACTICE_GROUNDS.flatMap(g => (g.pageCourse ? [g.pageCourse] : []))
+    .filter(s => slugs.includes(s)).map(slug => ({
+      url: `${BASE}/courses/${slug}/practice-facilities`,
+      lastModified: latest(PRACTICE_LAST_CHECKED),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    }))
 
   // Only reviews pages that are indexable (enough approved reviews).
   const reviewUrls: MetadataRoute.Sitemap = reviewSlugs.map(slug => ({
@@ -137,6 +146,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...slopeRatingUrls,
     ...scorecardUrls,
     ...holeGuideUrls,
+    ...practiceUrls,
     ...reviewUrls,
     ...resortUrls,
     ...hotelUrls,

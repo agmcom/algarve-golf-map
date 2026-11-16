@@ -13,6 +13,9 @@ import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { CourseBuggies } from '@/components/CourseBuggies'
 import { CourseWalking } from '@/components/CourseWalking'
 import { getWalkingInfo } from '@/data/walking'
+import { CoursePractice } from '@/components/CoursePractice'
+import { getPracticeGround } from '@/data/practice'
+import { MOCK_COURSES } from '@/data/courses'
 import { tripCostGuideFor } from '@/data/tripCostGuides'
 import { COURSE_RATINGS, slopeRange } from '@/data/course-ratings'
 import { SCORECARDS } from '@/data/scorecards'
@@ -174,6 +177,7 @@ export default async function CoursePage(
   const priceSummary = summarizePrices(applyBuggyFacts(course.slug, course.prices))
   const buggyInfo = getBuggyInfo(course.slug)
   const walkingInfo = getWalkingInfo(course.slug)
+  const practiceGround = getPracticeGround(course.slug)
   const showGreenFeesLink = priceSummary.hasPrices || course.price_from != null
   const websiteWithUtm = course.website
     ? (course.website.includes('?') ? `${course.website}&utm_source=algarvegolfmap.com` : `${course.website}?utm_source=algarvegolfmap.com`)
@@ -322,6 +326,7 @@ export default async function CoursePage(
         <CourseNav sections={[
           ...(course.blurb ? [{ id: 'about', label: 'About' }] : []),
           { id: 'facilities', label: 'Facilities' },
+          ...(practiceGround ? [{ id: 'practice', label: 'Practice' }] : []),
           ...(academyForCourse(course.slug) ? [{ id: 'academy', label: 'Golf Academy' }] : []),
           { id: 'getting-there', label: 'Getting There' },
           { id: 'nearby-hotels', label: 'Nearby Hotels' },
@@ -452,6 +457,15 @@ export default async function CoursePage(
                   </p>
                 )}
               </section>
+
+              {practiceGround && (
+                <CoursePractice
+                  ground={practiceGround}
+                  courseSlug={course.slug}
+                  courseName={course.name}
+                  courseNames={Object.fromEntries(MOCK_COURSES.map(c => [c.slug, c.name]))}
+                />
+              )}
 
               {/* Golf academy summary → full academy page */}
               {(() => {
