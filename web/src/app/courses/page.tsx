@@ -6,6 +6,8 @@ import { CourseStatusBadge } from '@/components/CourseStatusBadge'
 import { getCourses } from '@/lib/queries'
 import { TOWN_PAGES } from '@/lib/towns'
 import { COURSE_STATUS, getCourseStatus, isUnbookable } from '@/data/course-status'
+import { hardestMenTee, COURSE_RATINGS } from '@/data/course-ratings'
+import { NEAR_TOWN_PAGES } from '@/data/near-towns'
 import type { Course } from '@/types/database'
 
 // "List of Algarve golf courses" / "how many golf courses are in the Algarve".
@@ -46,6 +48,8 @@ type Row = {
   region: string
   holes: number | null
   par: number | null
+  metres: number | null
+  slope: number | null
   priceFrom: number | null
 }
 
@@ -62,11 +66,13 @@ function toRows(courses: Course[]): Row[] {
   const rows: Row[] = courses.map(c => ({
     slug: c.slug, name: c.name, town: c.town ?? '', region: c.region ?? '',
     holes: c.holes, par: c.par,
+    metres: c.length_meters ?? null,
+    slope: hardestMenTee(c.slug)?.rating.slope ?? null,
     priceFrom: isUnbookable(c.slug) ? null : c.price_from,
   }))
   for (const p of PRIVATE_EXTRA) {
     if (!rows.some(r => r.slug === p.slug) && COURSE_STATUS[p.slug]) {
-      rows.push({ ...p, priceFrom: null })
+      rows.push({ ...p, metres: null, slope: hardestMenTee(p.slug)?.rating.slope ?? null, priceFrom: null })
     }
   }
   return rows.sort((a, b) => a.name.localeCompare(b.name, 'en'))
@@ -93,6 +99,27 @@ function stats(rows: Row[]) {
   }
 }
 
+// "How many golf courses are in Vilamoura / Quinta do Lago / Vale do Lobo?"
+// Matched on our town field or slug prefix, so new courses are picked up.
+const AREA_COUNTS = [
+  { name: 'Vilamoura', href: '/vilamoura/golf-courses', match: (r: Row) => r.town === 'Vilamoura' },
+  { name: 'Quinta do Lago', href: '/almancil/golf-courses', match: (r: Row) => r.slug.startsWith('quinta-do-lago-') },
+  { name: 'Vale do Lobo', href: '/vale-do-lobo/golf-courses', match: (r: Row) => r.town === 'Vale do Lobo' },
+] as const
+
+function areaAnswer(name: string, rows: Row[]): string {
+  const open = rows.filter(r => !isUnbookable(r.slug))
+  const closed = rows.filter(r => isUnbookable(r.slug))
+  const short = (r: Row) => r.name.replace(/^(Vilamoura|Quinta do Lago|Vale do Lobo) /, '')
+  let a = `There are ${countWord(rows.length)} golf courses in ${name}: ${joinNames([...open, ...closed].map(r => {
+    const st = getCourseStatus(r.slug)
+    return st && isUnbookable(r.slug) ? `${short(r)} (${st.badge.toLowerCase()})` : short(r)
+  }))}.`
+  if (closed.length) a += ` ${countWord(open.length).replace(/^./, c => c.toUpperCase())} of them ${open.length === 1 ? 'is' : 'are'} open to visitors.`
+  if (name === 'Quinta do Lago') a += ' Pinheiros Altos is right next door, and San Lorenzo nearby is closed for renovation until mid-2028.'
+  return a
+}
+
 /** "A, B and C" */
 function joinNames(names: string[]): string {
   return names.length <= 1 ? (names[0] ?? '') : `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
@@ -111,7 +138,7 @@ export const revalidate = 3600
 
 export async function generateMetadata(): Promise<Metadata> {
   const s = stats(toRows(await getCourses()))
-  const description = `There are ${s.total} golf courses in the Algarve on our map, and ${s.playable} are open to visitors today. Full list by area with holes, par and green fees from.`
+  const description = `There are ${s.total} golf courses in the Algarve on our map, and ${s.playable} are open to visitors today. Full list by area with holes, par, length, slope and green fees.`
   return {
     title: { absolute: SEO_TITLE },
     description,
@@ -150,6 +177,10 @@ export default async function AllCoursesPage() {
     `There are ${s.total} golf courses in the Algarve on Algarve Golf Map, and ${s.playable} of them are open to visitors today. ` +
     (s.closed.length + s.priv.length > 0 ? `The other ${countWord(s.closed.length + s.priv.length)} are ${unavailableText(s)}.` : '')
 
+  const areas = AREA_COUNTS.map(a => {
+    const rs = rows.filter(a.match)
+    return { ...a, rows: rs, answer: areaAnswer(a.name, rs) }
+  })
   const regionSentence = joinNames(s.byRegion.map(g => `${g.rows.length} in the ${g.label.toLowerCase().replace('algarve', 'Algarve')}`))
 
   const faqLd = {
@@ -171,6 +202,11 @@ export default async function AllCoursesPage() {
         name: 'How many 9-hole golf courses are there in the Algarve?',
         acceptedAnswer: { '@type': 'Answer', text: `${countWord(s.nine).replace(/^./, c => c.toUpperCase())} of the courses on our map have 9 holes. Amendoeira also has a floodlit 9-hole pitch-and-putt Academy course, which we do not count as a full course.` },
       },
+      ...areas.map(a => ({
+        '@type': 'Question',
+        name: `How many golf courses are there in ${a.name}?`,
+        acceptedAnswer: { '@type': 'Answer', text: a.answer },
+      })),
     ],
   }
 
@@ -262,6 +298,19 @@ export default async function AllCoursesPage() {
             </p>
           </div>
 
+          <style>{`
+            .courses-table .c-name { width: 31% } .courses-table .c-area { width: 19% }
+            .courses-table .c-holes { width: 9% } .courses-table .c-par { width: 8% }
+            .courses-table .c-metres { width: 12% } .courses-table .c-slope { width: 9% }
+            .courses-table .c-from { width: 12% }
+            @media (max-width: 640px) {
+              .courses-table .c-extra { display: none }
+              .courses-table .c-name { width: 39% } .courses-table .c-area { width: 24% }
+              .courses-table .c-holes { width: 14% } .courses-table .c-par { width: 10% }
+              .courses-table .c-from { width: 13% }
+            }
+          `}</style>
+
           {/* The table, by region */}
           {s.byRegion.map(g => (
             <section key={g.key} style={{ marginTop: 30 }}>
@@ -269,21 +318,16 @@ export default async function AllCoursesPage() {
                 {g.label} <span style={{ fontWeight: 500, color: '#6a6a6a' }}>· {g.rows.length} courses</span>
               </h2>
               <div style={{ overflowX: 'auto', background: '#fff', border: '1px solid #ebebeb', borderRadius: 14 }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
-                  <colgroup>
-                    <col style={{ width: '39%' }} />
-                    <col style={{ width: '24%' }} />
-                    <col style={{ width: '14%' }} />
-                    <col style={{ width: '10%' }} />
-                    <col style={{ width: '13%' }} />
-                  </colgroup>
+                <table className="courses-table" style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                   <thead>
                     <tr>
-                      <th style={th}>Course</th>
-                      <th style={th}>Area</th>
-                      <th style={{ ...th, textAlign: 'right' }}>Holes</th>
-                      <th style={{ ...th, textAlign: 'right' }}>Par</th>
-                      <th style={{ ...th, textAlign: 'right' }}>From</th>
+                      <th className="c-name" style={th}>Course</th>
+                      <th className="c-area" style={th}>Area</th>
+                      <th className="c-holes" style={{ ...th, textAlign: 'right' }}>Holes</th>
+                      <th className="c-par" style={{ ...th, textAlign: 'right' }}>Par</th>
+                      <th className="c-extra c-metres" style={{ ...th, textAlign: 'right' }}>Metres</th>
+                      <th className="c-extra c-slope" style={{ ...th, textAlign: 'right' }}>Slope</th>
+                      <th className="c-from" style={{ ...th, textAlign: 'right' }}>From</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -300,6 +344,12 @@ export default async function AllCoursesPage() {
                           </td>
                           <td style={num}>{r.holes ?? '—'}</td>
                           <td style={num}>{r.par ?? '—'}</td>
+                          <td className="c-extra" style={num}>{r.metres != null ? r.metres.toLocaleString('en-GB') : '—'}</td>
+                          <td className="c-extra" style={num}>
+                            {r.slope != null && COURSE_RATINGS[r.slug]
+                              ? <Link href={`/courses/${r.slug}/slope-rating`} style={{ color: '#333', textDecoration: 'none' }}>{r.slope}</Link>
+                              : '—'}
+                          </td>
                           <td style={num}>{r.priceFrom != null ? `€${r.priceFrom}` : '—'}</td>
                         </tr>
                       )
@@ -312,8 +362,33 @@ export default async function AllCoursesPage() {
 
           <p style={{ fontSize: 13.5, lineHeight: 1.6, color: '#767676', marginTop: 14 }}>
             &ldquo;From&rdquo; is the lowest visitor green fee we list for each course. Prices change through the
-            year, so open a course for its full green fees.
+            year, so open a course for its full green fees. Metres is the length from the back tees. Slope is the
+            official Portuguese Golf Federation slope rating from the hardest men&apos;s tees (113 is standard
+            difficulty; 9-hole courses are rated as 18 holes). Length and slope are hidden on narrow screens.
           </p>
+
+          <section style={{ marginTop: 30, fontSize: 15.5, lineHeight: 1.7, color: '#444' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 800, color: '#222', margin: '0 0 8px' }}>How many golf courses are in Vilamoura, Quinta do Lago and Vale do Lobo?</h2>
+            {areas.map(a => (
+              <p key={a.name} style={{ margin: '0 0 12px' }}>
+                <strong style={{ color: '#222' }}>{a.name}.</strong> {a.answer}{' '}
+                <A href={a.href}>See the {a.name} courses →</A>
+              </p>
+            ))}
+          </section>
+
+          <section style={{ marginTop: 30, fontSize: 15.5, lineHeight: 1.7, color: '#444' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 800, color: '#222', margin: '0 0 8px' }}>Golf near popular places to stay</h2>
+            <p style={{ margin: '0 0 10px' }}>Staying somewhere without a course of its own? These pages list the nearest courses by drive time:</p>
+            <p style={{ margin: 0 }}>
+              {NEAR_TOWN_PAGES.map((t, i) => (
+                <span key={t.slug}>
+                  {i > 0 && ' · '}
+                  <A href={`/${t.slug}/golf-courses`}>Golf near {t.label}</A>
+                </span>
+              ))}
+            </p>
+          </section>
 
           <section style={{ marginTop: 30, fontSize: 15.5, lineHeight: 1.7, color: '#444' }}>
             <h2 style={{ fontSize: 20, fontWeight: 800, color: '#222', margin: '0 0 8px' }}>Where to go next</h2>

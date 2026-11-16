@@ -1,0 +1,1298 @@
+{
+ "alvor": {
+  "lat": 37.129,
+  "lng": -8.5935,
+  "drive": {
+   "santo-antonio": {
+    "mins": 40,
+    "km": 41
+   },
+   "espiche": {
+    "mins": 37,
+    "km": 34
+   },
+   "boavista": {
+    "mins": 27,
+    "km": 28
+   },
+   "palmares": {
+    "mins": 25,
+    "km": 17
+   },
+   "penina-resort": {
+    "mins": 14,
+    "km": 9
+   },
+   "penina-championship": {
+    "mins": 14,
+    "km": 9
+   },
+   "morgado": {
+    "mins": 24,
+    "km": 16
+   },
+   "alto-golf": {
+    "mins": 7,
+    "km": 3
+   },
+   "alamos": {
+    "mins": 29,
+    "km": 17
+   },
+   "pestana-ferragudo": {
+    "mins": 21,
+    "km": 15
+   },
+   "gramacho": {
+    "mins": 23,
+    "km": 16
+   },
+   "vale-da-pinta": {
+    "mins": 22,
+    "km": 16
+   },
+   "vale-de-milho": {
+    "mins": 31,
+    "km": 21
+   },
+   "silves": {
+    "mins": 28,
+    "km": 23
+   },
+   "amendoeira-oconnor": {
+    "mins": 29,
+    "km": 30
+   },
+   "amendoeira-faldo": {
+    "mins": 29,
+    "km": 30
+   },
+   "salgados": {
+    "mins": 34,
+    "km": 34
+   },
+   "balaia": {
+    "mins": 40,
+    "km": 45
+   },
+   "pine-cliffs": {
+    "mins": 45,
+    "km": 48
+   },
+   "victoria-els-club": {
+    "mins": 52,
+    "km": 51
+   },
+   "vilamoura-millennium": {
+    "mins": 47,
+    "km": 51
+   },
+   "vilamoura-laguna": {
+    "mins": 47,
+    "km": 51
+   },
+   "vilamoura-old-course": {
+    "mins": 47,
+    "km": 58
+   },
+   "vilamoura-pinhal": {
+    "mins": 51,
+    "km": 59
+   },
+   "vila-sol": {
+    "mins": 50,
+    "km": 66
+   },
+   "vale-do-lobo-ocean": {
+    "mins": 54,
+    "km": 67
+   },
+   "vale-do-lobo-royal": {
+    "mins": 54,
+    "km": 67
+   },
+   "quinta-do-lago-south": {
+    "mins": 57,
+    "km": 68
+   },
+   "quinta-do-lago-north": {
+    "mins": 57,
+    "km": 68
+   },
+   "san-lorenzo": {
+    "mins": 61,
+    "km": 71
+   },
+   "ombria": {
+    "mins": 54,
+    "km": 65
+   },
+   "pinheiros-altos": {
+    "mins": 56,
+    "km": 70
+   },
+   "quinta-do-lago-laranjal": {
+    "mins": 52,
+    "km": 71
+   },
+   "benamor": {
+    "mins": 74,
+    "km": 104
+   },
+   "quinta-de-cima": {
+    "mins": 80,
+    "km": 109
+   },
+   "quinta-da-ria": {
+    "mins": 80,
+    "km": 109
+   },
+   "monte-rei": {
+    "mins": 96,
+    "km": 124
+   },
+   "castro-marim": {
+    "mins": 80,
+    "km": 123
+   },
+   "quinta-do-vale": {
+    "mins": 77,
+    "km": 121
+   }
+  }
+ },
+ "quarteira": {
+  "lat": 37.0697,
+  "lng": -8.1003,
+  "drive": {
+   "santo-antonio": {
+    "mins": 70,
+    "km": 95
+   },
+   "espiche": {
+    "mins": 66,
+    "km": 87
+   },
+   "boavista": {
+    "mins": 57,
+    "km": 82
+   },
+   "palmares": {
+    "mins": 56,
+    "km": 74
+   },
+   "penina-resort": {
+    "mins": 47,
+    "km": 66
+   },
+   "penina-championship": {
+    "mins": 47,
+    "km": 66
+   },
+   "morgado": {
+    "mins": 52,
+    "km": 64
+   },
+   "alto-golf": {
+    "mins": 54,
+    "km": 66
+   },
+   "alamos": {
+    "mins": 58,
+    "km": 69
+   },
+   "pestana-ferragudo": {
+    "mins": 46,
+    "km": 58
+   },
+   "gramacho": {
+    "mins": 46,
+    "km": 57
+   },
+   "vale-da-pinta": {
+    "mins": 44,
+    "km": 56
+   },
+   "vale-de-milho": {
+    "mins": 51,
+    "km": 59
+   },
+   "silves": {
+    "mins": 45,
+    "km": 55
+   },
+   "amendoeira-oconnor": {
+    "mins": 36,
+    "km": 44
+   },
+   "amendoeira-faldo": {
+    "mins": 36,
+    "km": 44
+   },
+   "salgados": {
+    "mins": 40,
+    "km": 42
+   },
+   "balaia": {
+    "mins": 28,
+    "km": 18
+   },
+   "pine-cliffs": {
+    "mins": 25,
+    "km": 16
+   },
+   "victoria-els-club": {
+    "mins": 22,
+    "km": 9
+   },
+   "vilamoura-millennium": {
+    "mins": 13,
+    "km": 6
+   },
+   "vilamoura-laguna": {
+    "mins": 13,
+    "km": 6
+   },
+   "vilamoura-old-course": {
+    "mins": 11,
+    "km": 6
+   },
+   "vilamoura-pinhal": {
+    "mins": 10,
+    "km": 5
+   },
+   "vila-sol": {
+    "mins": 8,
+    "km": 4
+   },
+   "vale-do-lobo-ocean": {
+    "mins": 13,
+    "km": 7
+   },
+   "vale-do-lobo-royal": {
+    "mins": 13,
+    "km": 7
+   },
+   "quinta-do-lago-south": {
+    "mins": 19,
+    "km": 11
+   },
+   "quinta-do-lago-north": {
+    "mins": 19,
+    "km": 11
+   },
+   "san-lorenzo": {
+    "mins": 23,
+    "km": 13
+   },
+   "ombria": {
+    "mins": 27,
+    "km": 22
+   },
+   "pinheiros-altos": {
+    "mins": 19,
+    "km": 12
+   },
+   "quinta-do-lago-laranjal": {
+    "mins": 19,
+    "km": 14
+   },
+   "benamor": {
+    "mins": 46,
+    "km": 55
+   },
+   "quinta-de-cima": {
+    "mins": 51,
+    "km": 60
+   },
+   "quinta-da-ria": {
+    "mins": 51,
+    "km": 60
+   },
+   "monte-rei": {
+    "mins": 68,
+    "km": 75
+   },
+   "castro-marim": {
+    "mins": 53,
+    "km": 74
+   },
+   "quinta-do-vale": {
+    "mins": 49,
+    "km": 72
+   }
+  }
+ },
+ "armacao-de-pera": {
+  "lat": 37.1025,
+  "lng": -8.3575,
+  "drive": {
+   "santo-antonio": {
+    "mins": 51,
+    "km": 60
+   },
+   "espiche": {
+    "mins": 46,
+    "km": 53
+   },
+   "boavista": {
+    "mins": 37,
+    "km": 47
+   },
+   "palmares": {
+    "mins": 36,
+    "km": 40
+   },
+   "penina-resort": {
+    "mins": 28,
+    "km": 31
+   },
+   "penina-championship": {
+    "mins": 28,
+    "km": 31
+   },
+   "morgado": {
+    "mins": 32,
+    "km": 29
+   },
+   "alto-golf": {
+    "mins": 34,
+    "km": 32
+   },
+   "alamos": {
+    "mins": 38,
+    "km": 34
+   },
+   "pestana-ferragudo": {
+    "mins": 27,
+    "km": 23
+   },
+   "gramacho": {
+    "mins": 26,
+    "km": 15
+   },
+   "vale-da-pinta": {
+    "mins": 24,
+    "km": 14
+   },
+   "vale-de-milho": {
+    "mins": 22,
+    "km": 12
+   },
+   "silves": {
+    "mins": 21,
+    "km": 13
+   },
+   "amendoeira-oconnor": {
+    "mins": 16,
+    "km": 8
+   },
+   "amendoeira-faldo": {
+    "mins": 16,
+    "km": 8
+   },
+   "salgados": {
+    "mins": 12,
+    "km": 7
+   },
+   "balaia": {
+    "mins": 27,
+    "km": 23
+   },
+   "pine-cliffs": {
+    "mins": 31,
+    "km": 26
+   },
+   "victoria-els-club": {
+    "mins": 40,
+    "km": 29
+   },
+   "vilamoura-millennium": {
+    "mins": 35,
+    "km": 29
+   },
+   "vilamoura-laguna": {
+    "mins": 35,
+    "km": 29
+   },
+   "vilamoura-old-course": {
+    "mins": 34,
+    "km": 36
+   },
+   "vilamoura-pinhal": {
+    "mins": 38,
+    "km": 37
+   },
+   "vila-sol": {
+    "mins": 37,
+    "km": 44
+   },
+   "vale-do-lobo-ocean": {
+    "mins": 41,
+    "km": 46
+   },
+   "vale-do-lobo-royal": {
+    "mins": 41,
+    "km": 45
+   },
+   "quinta-do-lago-south": {
+    "mins": 44,
+    "km": 46
+   },
+   "quinta-do-lago-north": {
+    "mins": 44,
+    "km": 46
+   },
+   "san-lorenzo": {
+    "mins": 48,
+    "km": 49
+   },
+   "ombria": {
+    "mins": 42,
+    "km": 43
+   },
+   "pinheiros-altos": {
+    "mins": 43,
+    "km": 48
+   },
+   "quinta-do-lago-laranjal": {
+    "mins": 39,
+    "km": 49
+   },
+   "benamor": {
+    "mins": 63,
+    "km": 82
+   },
+   "quinta-de-cima": {
+    "mins": 68,
+    "km": 87
+   },
+   "quinta-da-ria": {
+    "mins": 68,
+    "km": 87
+   },
+   "monte-rei": {
+    "mins": 84,
+    "km": 102
+   },
+   "castro-marim": {
+    "mins": 68,
+    "km": 101
+   },
+   "quinta-do-vale": {
+    "mins": 65,
+    "km": 99
+   }
+  }
+ },
+ "praia-da-luz": {
+  "lat": 37.088,
+  "lng": -8.728,
+  "drive": {
+   "santo-antonio": {
+    "mins": 17,
+    "km": 13
+   },
+   "espiche": {
+    "mins": 14,
+    "km": 6
+   },
+   "boavista": {
+    "mins": 8,
+    "km": 4
+   },
+   "palmares": {
+    "mins": 23,
+    "km": 19
+   },
+   "penina-resort": {
+    "mins": 24,
+    "km": 24
+   },
+   "penina-championship": {
+    "mins": 24,
+    "km": 24
+   },
+   "morgado": {
+    "mins": 33,
+    "km": 33
+   },
+   "alto-golf": {
+    "mins": 31,
+    "km": 31
+   },
+   "alamos": {
+    "mins": 40,
+    "km": 38
+   },
+   "pestana-ferragudo": {
+    "mins": 33,
+    "km": 35
+   },
+   "gramacho": {
+    "mins": 36,
+    "km": 42
+   },
+   "vale-da-pinta": {
+    "mins": 34,
+    "km": 41
+   },
+   "vale-de-milho": {
+    "mins": 40,
+    "km": 44
+   },
+   "silves": {
+    "mins": 36,
+    "km": 40
+   },
+   "amendoeira-oconnor": {
+    "mins": 37,
+    "km": 47
+   },
+   "amendoeira-faldo": {
+    "mins": 37,
+    "km": 47
+   },
+   "salgados": {
+    "mins": 42,
+    "km": 51
+   },
+   "balaia": {
+    "mins": 48,
+    "km": 61
+   },
+   "pine-cliffs": {
+    "mins": 52,
+    "km": 65
+   },
+   "victoria-els-club": {
+    "mins": 60,
+    "km": 68
+   },
+   "vilamoura-millennium": {
+    "mins": 55,
+    "km": 68
+   },
+   "vilamoura-laguna": {
+    "mins": 55,
+    "km": 68
+   },
+   "vilamoura-old-course": {
+    "mins": 56,
+    "km": 75
+   },
+   "vilamoura-pinhal": {
+    "mins": 59,
+    "km": 76
+   },
+   "vila-sol": {
+    "mins": 58,
+    "km": 82
+   },
+   "vale-do-lobo-ocean": {
+    "mins": 62,
+    "km": 84
+   },
+   "vale-do-lobo-royal": {
+    "mins": 62,
+    "km": 84
+   },
+   "quinta-do-lago-south": {
+    "mins": 65,
+    "km": 85
+   },
+   "quinta-do-lago-north": {
+    "mins": 65,
+    "km": 85
+   },
+   "san-lorenzo": {
+    "mins": 69,
+    "km": 87
+   },
+   "ombria": {
+    "mins": 62,
+    "km": 81
+   },
+   "pinheiros-altos": {
+    "mins": 64,
+    "km": 87
+   },
+   "quinta-do-lago-laranjal": {
+    "mins": 59,
+    "km": 88
+   },
+   "benamor": {
+    "mins": 82,
+    "km": 120
+   },
+   "quinta-de-cima": {
+    "mins": 87,
+    "km": 126
+   },
+   "quinta-da-ria": {
+    "mins": 87,
+    "km": 126
+   },
+   "monte-rei": {
+    "mins": 104,
+    "km": 141
+   },
+   "castro-marim": {
+    "mins": 88,
+    "km": 140
+   },
+   "quinta-do-vale": {
+    "mins": 85,
+    "km": 138
+   }
+  }
+ },
+ "monte-gordo": {
+  "lat": 37.1801,
+  "lng": -7.4517,
+  "drive": {
+   "santo-antonio": {
+    "mins": 100,
+    "km": 147
+   },
+   "espiche": {
+    "mins": 96,
+    "km": 140
+   },
+   "boavista": {
+    "mins": 85,
+    "km": 135
+   },
+   "palmares": {
+    "mins": 86,
+    "km": 127
+   },
+   "penina-resort": {
+    "mins": 76,
+    "km": 119
+   },
+   "penina-championship": {
+    "mins": 76,
+    "km": 119
+   },
+   "morgado": {
+    "mins": 81,
+    "km": 117
+   },
+   "alto-golf": {
+    "mins": 84,
+    "km": 119
+   },
+   "alamos": {
+    "mins": 89,
+    "km": 122
+   },
+   "pestana-ferragudo": {
+    "mins": 76,
+    "km": 111
+   },
+   "gramacho": {
+    "mins": 75,
+    "km": 110
+   },
+   "vale-da-pinta": {
+    "mins": 73,
+    "km": 108
+   },
+   "vale-de-milho": {
+    "mins": 82,
+    "km": 111
+   },
+   "silves": {
+    "mins": 76,
+    "km": 107
+   },
+   "amendoeira-oconnor": {
+    "mins": 66,
+    "km": 97
+   },
+   "amendoeira-faldo": {
+    "mins": 66,
+    "km": 97
+   },
+   "salgados": {
+    "mins": 70,
+    "km": 94
+   },
+   "balaia": {
+    "mins": 66,
+    "km": 83
+   },
+   "pine-cliffs": {
+    "mins": 64,
+    "km": 81
+   },
+   "victoria-els-club": {
+    "mins": 65,
+    "km": 78
+   },
+   "vilamoura-millennium": {
+    "mins": 59,
+    "km": 75
+   },
+   "vilamoura-laguna": {
+    "mins": 59,
+    "km": 75
+   },
+   "vilamoura-old-course": {
+    "mins": 56,
+    "km": 72
+   },
+   "vilamoura-pinhal": {
+    "mins": 56,
+    "km": 72
+   },
+   "vila-sol": {
+    "mins": 53,
+    "km": 70
+   },
+   "vale-do-lobo-ocean": {
+    "mins": 56,
+    "km": 72
+   },
+   "vale-do-lobo-royal": {
+    "mins": 56,
+    "km": 72
+   },
+   "quinta-do-lago-south": {
+    "mins": 56,
+    "km": 69
+   },
+   "quinta-do-lago-north": {
+    "mins": 56,
+    "km": 69
+   },
+   "san-lorenzo": {
+    "mins": 58,
+    "km": 70
+   },
+   "ombria": {
+    "mins": 59,
+    "km": 75
+   },
+   "pinheiros-altos": {
+    "mins": 53,
+    "km": 67
+   },
+   "quinta-do-lago-laranjal": {
+    "mins": 48,
+    "km": 65
+   },
+   "benamor": {
+    "mins": 25,
+    "km": 17
+   },
+   "quinta-de-cima": {
+    "mins": 23,
+    "km": 14
+   },
+   "quinta-da-ria": {
+    "mins": 23,
+    "km": 14
+   },
+   "monte-rei": {
+    "mins": 27,
+    "km": 14
+   },
+   "castro-marim": {
+    "mins": 22,
+    "km": 12
+   },
+   "quinta-do-vale": {
+    "mins": 19,
+    "km": 16
+   }
+  }
+ },
+ "olhos-de-agua": {
+  "lat": 37.0905,
+  "lng": -8.1905,
+  "drive": {
+   "santo-antonio": {
+    "mins": 62,
+    "km": 75
+   },
+   "espiche": {
+    "mins": 59,
+    "km": 67
+   },
+   "boavista": {
+    "mins": 49,
+    "km": 62
+   },
+   "palmares": {
+    "mins": 48,
+    "km": 54
+   },
+   "penina-resort": {
+    "mins": 39,
+    "km": 46
+   },
+   "penina-championship": {
+    "mins": 39,
+    "km": 46
+   },
+   "morgado": {
+    "mins": 44,
+    "km": 44
+   },
+   "alto-golf": {
+    "mins": 46,
+    "km": 46
+   },
+   "alamos": {
+    "mins": 51,
+    "km": 49
+   },
+   "pestana-ferragudo": {
+    "mins": 38,
+    "km": 38
+   },
+   "gramacho": {
+    "mins": 38,
+    "km": 37
+   },
+   "vale-da-pinta": {
+    "mins": 36,
+    "km": 36
+   },
+   "vale-de-milho": {
+    "mins": 42,
+    "km": 33
+   },
+   "silves": {
+    "mins": 37,
+    "km": 35
+   },
+   "amendoeira-oconnor": {
+    "mins": 28,
+    "km": 24
+   },
+   "amendoeira-faldo": {
+    "mins": 28,
+    "km": 24
+   },
+   "salgados": {
+    "mins": 27,
+    "km": 15
+   },
+   "balaia": {
+    "mins": 6,
+    "km": 3
+   },
+   "pine-cliffs": {
+    "mins": 6,
+    "km": 3
+   },
+   "victoria-els-club": {
+    "mins": 19,
+    "km": 8
+   },
+   "vilamoura-millennium": {
+    "mins": 14,
+    "km": 8
+   },
+   "vilamoura-laguna": {
+    "mins": 14,
+    "km": 8
+   },
+   "vilamoura-old-course": {
+    "mins": 17,
+    "km": 11
+   },
+   "vilamoura-pinhal": {
+    "mins": 20,
+    "km": 12
+   },
+   "vila-sol": {
+    "mins": 20,
+    "km": 13
+   },
+   "vale-do-lobo-ocean": {
+    "mins": 32,
+    "km": 21
+   },
+   "vale-do-lobo-royal": {
+    "mins": 32,
+    "km": 21
+   },
+   "quinta-do-lago-south": {
+    "mins": 35,
+    "km": 23
+   },
+   "quinta-do-lago-north": {
+    "mins": 35,
+    "km": 23
+   },
+   "san-lorenzo": {
+    "mins": 39,
+    "km": 25
+   },
+   "ombria": {
+    "mins": 34,
+    "km": 25
+   },
+   "pinheiros-altos": {
+    "mins": 35,
+    "km": 25
+   },
+   "quinta-do-lago-laranjal": {
+    "mins": 31,
+    "km": 23
+   },
+   "benamor": {
+    "mins": 55,
+    "km": 65
+   },
+   "quinta-de-cima": {
+    "mins": 60,
+    "km": 70
+   },
+   "quinta-da-ria": {
+    "mins": 60,
+    "km": 70
+   },
+   "monte-rei": {
+    "mins": 77,
+    "km": 85
+   },
+   "castro-marim": {
+    "mins": 61,
+    "km": 84
+   },
+   "quinta-do-vale": {
+    "mins": 58,
+    "km": 83
+   }
+  }
+ },
+ "faro": {
+  "lat": 37.0175,
+  "lng": -7.934,
+  "drive": {
+   "santo-antonio": {
+    "mins": 79,
+    "km": 102
+   },
+   "espiche": {
+    "mins": 74,
+    "km": 95
+   },
+   "boavista": {
+    "mins": 66,
+    "km": 90
+   },
+   "palmares": {
+    "mins": 65,
+    "km": 82
+   },
+   "penina-resort": {
+    "mins": 56,
+    "km": 73
+   },
+   "penina-championship": {
+    "mins": 56,
+    "km": 73
+   },
+   "morgado": {
+    "mins": 60,
+    "km": 71
+   },
+   "alto-golf": {
+    "mins": 63,
+    "km": 74
+   },
+   "alamos": {
+    "mins": 67,
+    "km": 77
+   },
+   "pestana-ferragudo": {
+    "mins": 54,
+    "km": 66
+   },
+   "gramacho": {
+    "mins": 54,
+    "km": 64
+   },
+   "vale-da-pinta": {
+    "mins": 53,
+    "km": 63
+   },
+   "vale-de-milho": {
+    "mins": 58,
+    "km": 61
+   },
+   "silves": {
+    "mins": 54,
+    "km": 62
+   },
+   "amendoeira-oconnor": {
+    "mins": 45,
+    "km": 51
+   },
+   "amendoeira-faldo": {
+    "mins": 45,
+    "km": 51
+   },
+   "salgados": {
+    "mins": 49,
+    "km": 49
+   },
+   "balaia": {
+    "mins": 44,
+    "km": 38
+   },
+   "pine-cliffs": {
+    "mins": 42,
+    "km": 35
+   },
+   "victoria-els-club": {
+    "mins": 43,
+    "km": 33
+   },
+   "vilamoura-millennium": {
+    "mins": 36,
+    "km": 26
+   },
+   "vilamoura-laguna": {
+    "mins": 36,
+    "km": 26
+   },
+   "vilamoura-old-course": {
+    "mins": 32,
+    "km": 23
+   },
+   "vilamoura-pinhal": {
+    "mins": 32,
+    "km": 23
+   },
+   "vila-sol": {
+    "mins": 29,
+    "km": 21
+   },
+   "vale-do-lobo-ocean": {
+    "mins": 31,
+    "km": 19
+   },
+   "vale-do-lobo-royal": {
+    "mins": 31,
+    "km": 19
+   },
+   "quinta-do-lago-south": {
+    "mins": 29,
+    "km": 17
+   },
+   "quinta-do-lago-north": {
+    "mins": 29,
+    "km": 17
+   },
+   "san-lorenzo": {
+    "mins": 31,
+    "km": 18
+   },
+   "ombria": {
+    "mins": 37,
+    "km": 30
+   },
+   "pinheiros-altos": {
+    "mins": 27,
+    "km": 16
+   },
+   "quinta-do-lago-laranjal": {
+    "mins": 22,
+    "km": 13
+   },
+   "benamor": {
+    "mins": 43,
+    "km": 43
+   },
+   "quinta-de-cima": {
+    "mins": 49,
+    "km": 48
+   },
+   "quinta-da-ria": {
+    "mins": 49,
+    "km": 48
+   },
+   "monte-rei": {
+    "mins": 66,
+    "km": 63
+   },
+   "castro-marim": {
+    "mins": 50,
+    "km": 62
+   },
+   "quinta-do-vale": {
+    "mins": 46,
+    "km": 60
+   }
+  }
+ },
+ "sagres": {
+  "lat": 37.0086,
+  "lng": -8.94,
+  "drive": {
+   "santo-antonio": {
+    "mins": 19,
+    "km": 18
+   },
+   "espiche": {
+    "mins": 37,
+    "km": 30
+   },
+   "boavista": {
+    "mins": 34,
+    "km": 31
+   },
+   "palmares": {
+    "mins": 50,
+    "km": 38
+   },
+   "penina-resort": {
+    "mins": 51,
+    "km": 50
+   },
+   "penina-championship": {
+    "mins": 51,
+    "km": 50
+   },
+   "morgado": {
+    "mins": 60,
+    "km": 59
+   },
+   "alto-golf": {
+    "mins": 57,
+    "km": 57
+   },
+   "alamos": {
+    "mins": 67,
+    "km": 65
+   },
+   "pestana-ferragudo": {
+    "mins": 59,
+    "km": 62
+   },
+   "gramacho": {
+    "mins": 62,
+    "km": 68
+   },
+   "vale-da-pinta": {
+    "mins": 61,
+    "km": 67
+   },
+   "vale-de-milho": {
+    "mins": 67,
+    "km": 70
+   },
+   "silves": {
+    "mins": 62,
+    "km": 67
+   },
+   "amendoeira-oconnor": {
+    "mins": 64,
+    "km": 74
+   },
+   "amendoeira-faldo": {
+    "mins": 64,
+    "km": 74
+   },
+   "salgados": {
+    "mins": 69,
+    "km": 77
+   },
+   "balaia": {
+    "mins": 75,
+    "km": 88
+   },
+   "pine-cliffs": {
+    "mins": 79,
+    "km": 91
+   },
+   "victoria-els-club": {
+    "mins": 87,
+    "km": 94
+   },
+   "vilamoura-millennium": {
+    "mins": 82,
+    "km": 95
+   },
+   "vilamoura-laguna": {
+    "mins": 82,
+    "km": 95
+   },
+   "vilamoura-old-course": {
+    "mins": 83,
+    "km": 101
+   },
+   "vilamoura-pinhal": {
+    "mins": 86,
+    "km": 103
+   },
+   "vila-sol": {
+    "mins": 85,
+    "km": 109
+   },
+   "vale-do-lobo-ocean": {
+    "mins": 89,
+    "km": 110
+   },
+   "vale-do-lobo-royal": {
+    "mins": 89,
+    "km": 110
+   },
+   "quinta-do-lago-south": {
+    "mins": 91,
+    "km": 111
+   },
+   "quinta-do-lago-north": {
+    "mins": 91,
+    "km": 111
+   },
+   "san-lorenzo": {
+    "mins": 94,
+    "km": 114
+   },
+   "ombria": {
+    "mins": 89,
+    "km": 108
+   },
+   "pinheiros-altos": {
+    "mins": 91,
+    "km": 113
+   },
+   "quinta-do-lago-laranjal": {
+    "mins": 87,
+    "km": 114
+   },
+   "benamor": {
+    "mins": 109,
+    "km": 147
+   },
+   "quinta-de-cima": {
+    "mins": 115,
+    "km": 152
+   },
+   "quinta-da-ria": {
+    "mins": 115,
+    "km": 152
+   },
+   "monte-rei": {
+    "mins": 131,
+    "km": 167
+   },
+   "castro-marim": {
+    "mins": 116,
+    "km": 166
+   },
+   "quinta-do-vale": {
+    "mins": 113,
+    "km": 165
+   }
+  }
+ }
+}

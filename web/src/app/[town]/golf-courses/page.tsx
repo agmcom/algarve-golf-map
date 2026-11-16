@@ -14,6 +14,8 @@ import { PRICE_SEASON, PRICE_LAST_CHECKED } from '@/lib/prices'
 import { TownMapClient } from '@/components/TownMapClient'
 import { NearbyHotels } from '@/components/NearbyHotels'
 import type { Course } from '@/types/database'
+import { NEAR_TOWN_PAGES } from '@/data/near-towns'
+import { NearTownView, nearTownMetadata } from './NearTownView'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
@@ -99,13 +101,13 @@ function buildFaqs(
     const hiP = prices.get(hi.id)!
     faqs.push({
       q: `What is the cheapest golf course in ${label}?`,
-      a: `${lo.name} has the lowest visitor green fee in ${label}, from €${loP.from} for ${lo.holes} holes in the ${PRICE_SEASON} season. The most expensive is ${hi.name}, from €${hiP.from}${hiP.to != null && hiP.to !== hiP.from ? ` and up to €${hiP.to} in its busiest months` : ''}.`,
+      a: `${lo.name} has the lowest visitor green fee in ${label}, from €${loP.from} for ${lo.holes === 27 ? 18 : lo.holes} holes in the ${PRICE_SEASON} season. The most expensive is ${hi.name}, from €${hiP.from}${hiP.to != null && hiP.to !== hiP.from ? ` and up to €${hiP.to} in its busiest months` : ''}.`,
     })
   } else if (priced.length === 1) {
     const p = prices.get(priced[0].id)!
     faqs.push({
       q: `How much does it cost to play golf in ${label}?`,
-      a: `A visitor round at ${priced[0].name} costs ${priceText(p)} for ${priced[0].holes} holes in the ${PRICE_SEASON} season, depending on the month.`,
+      a: `A visitor round at ${priced[0].name} costs ${priceText(p)} for ${priced[0].holes === 27 ? 18 : priced[0].holes} holes in the ${PRICE_SEASON} season, depending on the month.`,
     })
   }
 
@@ -156,7 +158,7 @@ function buildFaqs(
 export const revalidate = 3600
 
 export async function generateStaticParams() {
-  return TOWN_PAGES.map(t => ({ town: t.slug }))
+  return [...TOWN_PAGES, ...NEAR_TOWN_PAGES].map(t => ({ town: t.slug }))
 }
 
 export async function generateMetadata({
@@ -165,6 +167,8 @@ export async function generateMetadata({
   params: Promise<{ town: string }>
 }): Promise<Metadata> {
   const { town: slug } = await params
+  const nearTown = NEAR_TOWN_PAGES.find(t => t.slug === slug)
+  if (nearTown) return nearTownMetadata(nearTown)
   const townPage = TOWN_PAGES.find(t => t.slug === slug)
   if (!townPage) return {}
 
@@ -210,6 +214,8 @@ export default async function TownPage({
   params: Promise<{ town: string }>
 }) {
   const { town: slug } = await params
+  const nearTown = NEAR_TOWN_PAGES.find(t => t.slug === slug)
+  if (nearTown) return <NearTownView town={nearTown} />
   const townPage = TOWN_PAGES.find(t => t.slug === slug)
   if (!townPage) notFound()
 
@@ -259,6 +265,7 @@ export default async function TownPage({
   const faqs = buildFaqs(townPage.label, courses, prices, nearby, nearbyAll.length)
 
   const pageUrl = `${BASE}/${slug}/golf-courses`
+  const stayNearby = NEAR_TOWN_PAGES.filter(t => t.related.some(r => r.href === `/${slug}/golf-courses`))
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -459,6 +466,21 @@ export default async function TownPage({
                     {nearbyPrices.get(c.id) && <>from <strong style={{ color: '#222' }}>€{nearbyPrices.get(c.id)!.from}</strong> · </>}
                     ~{mins} min{courses.length > 1 ? ` from ${from.name}` : ''}
                   </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Nearby towns without their own course page */}
+        {stayNearby.length > 0 && (
+          <section style={sectionWrap}>
+            <h2 style={sectionTitle}>Staying near {townPage.label}?</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {stayNearby.map(t => (
+                <Link key={t.slug} href={`/${t.slug}/golf-courses`} style={compareRow}>
+                  <span style={{ ...compareName, whiteSpace: 'normal' }}>📍 Golf near {t.label}</span>
+                  <span style={compareMeta}>Courses by drive time →</span>
                 </Link>
               ))}
             </div>

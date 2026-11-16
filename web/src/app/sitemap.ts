@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { getCourseSitemapRows, getShopSitemapRows, getPublishedGuidePosts, getCourseSlugsWithGreenFees, getCourseSlugsWithReviews } from '@/lib/queries'
 import { MIN_REVIEWS_TO_INDEX } from '@/lib/reviews'
 import { TOWN_PAGES } from '@/lib/towns'
+import { NEAR_TOWN_PAGES } from '@/data/near-towns'
 import { RESORT_PAGES } from '@/lib/resorts'
 import { COURSE_RATINGS } from '@/data/course-ratings'
 import { SCORECARDS } from '@/data/scorecards'
@@ -95,7 +96,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  const townUrls: MetadataRoute.Sitemap = TOWN_PAGES.map(t => ({
+  const townUrls: MetadataRoute.Sitemap = [...TOWN_PAGES, ...NEAR_TOWN_PAGES].map(t => ({
     url: `${BASE}/${t.slug}/golf-courses`,
     changeFrequency: 'weekly',
     priority: 0.8,
