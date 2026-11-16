@@ -292,7 +292,7 @@ export default async function NineHoleCoursesPage() {
             and Carvoeiro, one is on the historic Penina estate near Portimão,
             and Amendoeira&apos;s floodlit Academy course is a short drive inland
             near Silves. For the full picture, browse{' '}
-            <A href="/#courses">every golf course in the Algarve</A> or read the{' '}
+            <A href="/courses">every golf course in the Algarve</A> or read the{' '}
             <A href="/guide">Algarve golf guide</A>.
           </p>
         </div>

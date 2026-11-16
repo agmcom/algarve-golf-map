@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
 const LINKS = [
+  { href: '/courses', label: 'All golf courses' },
   { href: '/guide', label: 'Guide' },
   { href: '/club-rental', label: 'Club rental' },
   { href: '/shops', label: 'Golf shops' },

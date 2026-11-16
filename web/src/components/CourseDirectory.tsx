@@ -49,6 +49,9 @@ export function CourseDirectory({ courses }: Props) {
           {courses.length} courses across the Algarve — from Lagos to Vila Real de Santo António
         </p>
         <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+          <Link href="/courses" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+            Full list of Algarve golf courses →
+          </Link>
           <Link href="/golf-resorts" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
             Browse Golf Resorts in the Algarve →
           </Link>

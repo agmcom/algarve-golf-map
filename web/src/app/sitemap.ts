@@ -133,6 +133,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    { url: `${BASE}/courses`, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/algarve-9-hole-courses`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/driving-ranges`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/golf-academies`, changeFrequency: 'monthly', priority: 0.8 },
