@@ -231,6 +231,18 @@ export default async function AllCoursesPage() {
             <p style={{ fontSize: 12.5, color: '#767676', margin: '12px 0 0' }}>Last checked {LAST_CHECKED}.</p>
           </div>
 
+          <Link
+            href="/algarve-golf-courses-map-pdf"
+            style={{ display: 'flex', alignItems: 'center', gap: 14, background: '#fff', border: '1px solid #ebebeb', borderRadius: 14, padding: '12px 16px', marginBottom: 26, textDecoration: 'none' }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/downloads/algarve-golf-courses-map-preview.jpg" alt="" width={84} height={59} style={{ borderRadius: 6, border: '1px solid #eee', flexShrink: 0 }} />
+            <span style={{ fontSize: 15, lineHeight: 1.45, color: '#333' }}>
+              <strong style={{ color: '#2B6090' }}>Download a printable map (PDF) →</strong>
+              <span style={{ display: 'block', fontSize: 13.5, color: '#6a6a6a' }}>Every course on one A4 page, with towns and Faro Airport.</span>
+            </span>
+          </Link>
+
           <div style={{ fontSize: 15.5, lineHeight: 1.7, color: '#444' }}>
             <h2 style={{ fontSize: 20, fontWeight: 800, color: '#222', margin: '0 0 8px' }}>How we count them</h2>
             <p style={{ margin: '0 0 12px' }}>

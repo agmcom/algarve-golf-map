@@ -136,6 +136,19 @@ export default function RootLayout({
               }
               document.addEventListener('click', trackTransportClick, true);
               document.addEventListener('auxclick', function (e) { if (e.button === 1) trackTransportClick(e); }, true);
+
+              // Download links (e.g. the printable map PDF) carry data-download-click="<file>".
+              function trackDownloadClick(e) {
+                var a = e.target && e.target.closest && e.target.closest('a[data-download-click]');
+                if (!a) return;
+                gtag('event', 'map_pdf_download', {
+                  file_name: a.getAttribute('data-download-click'),
+                  click_source: a.getAttribute('data-download-source') || '',
+                  transport_type: 'beacon'
+                });
+              }
+              document.addEventListener('click', trackDownloadClick, true);
+              document.addEventListener('auxclick', function (e) { if (e.button === 1) trackDownloadClick(e); }, true);
             `,
           }}
         />

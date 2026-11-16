@@ -52,6 +52,9 @@ export function CourseDirectory({ courses }: Props) {
           <Link href="/courses" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
             Full list of Algarve golf courses →
           </Link>
+          <Link href="/algarve-golf-courses-map-pdf" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
+            Printable map (PDF) →
+          </Link>
           <Link href="/golf-resorts" style={{ fontSize: 14, fontWeight: 600, color: '#2B6090', textDecoration: 'none' }}>
             Browse Golf Resorts in the Algarve →
           </Link>
