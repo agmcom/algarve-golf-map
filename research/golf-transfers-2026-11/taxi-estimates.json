@@ -1,0 +1,82 @@
+[
+ {
+  "frm": "Quarteira",
+  "to": "Pestana Vila Sol",
+  "km": 4,
+  "mins": 10,
+  "lo": 5,
+  "hi": 10
+ },
+ {
+  "frm": "Vilamoura marina",
+  "to": "Old Course",
+  "km": 6,
+  "mins": 10,
+  "lo": 10,
+  "hi": 15
+ },
+ {
+  "frm": "Vilamoura marina",
+  "to": "Quinta do Lago South",
+  "km": 15,
+  "mins": 30,
+  "lo": 20,
+  "hi": 25
+ },
+ {
+  "frm": "Almancil",
+  "to": "Vale do Lobo Royal",
+  "km": 6,
+  "mins": 10,
+  "lo": 10,
+  "hi": 15
+ },
+ {
+  "frm": "Albufeira",
+  "to": "Salgados",
+  "km": 10,
+  "mins": 20,
+  "lo": 15,
+  "hi": 20
+ },
+ {
+  "frm": "Carvoeiro",
+  "to": "Gramacho",
+  "km": 4,
+  "mins": 10,
+  "lo": 5,
+  "hi": 10
+ },
+ {
+  "frm": "Portimão",
+  "to": "Penina",
+  "km": 12,
+  "mins": 20,
+  "lo": 15,
+  "hi": 20
+ },
+ {
+  "frm": "Lagos",
+  "to": "Palmares",
+  "km": 7,
+  "mins": 20,
+  "lo": 10,
+  "hi": 15
+ },
+ {
+  "frm": "Tavira",
+  "to": "Benamor",
+  "km": 6,
+  "mins": 15,
+  "lo": 10,
+  "hi": 15
+ },
+ {
+  "frm": "Faro",
+  "to": "Quinta do Lago Laranjal",
+  "km": 13,
+  "mins": 20,
+  "lo": 15,
+  "hi": 25
+ }
+]

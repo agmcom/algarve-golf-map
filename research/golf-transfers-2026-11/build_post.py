@@ -1,0 +1,85 @@
+# "Algarve golf transfers: getting to the course without a car" (topics #38 + #40).
+# Sources checked 17 Nov 2026: Algarserra price table (algarserra.com/algarve-golf-transfers),
+# hotel official sites (Vila Galé Marina, Hotel Quinta do Lago FAQ, Domes Lake, As Cascatas),
+# Uber FAO airport page, AMT taxi tariff (see faro_airport_transfer_series memory), Mapbox drive times.
+import json, os
+HERE = os.path.dirname(os.path.abspath(__file__))
+TAXI = json.load(open(os.path.join(HERE, 'taxi-estimates.json')))
+GT = 'https://gettransfer.tpo.li/9bs77WsA'
+EB = 'https://economybookings.tpo.li/Qf5waAWw'
+P = lambda t: {'type': 'paragraph', 'text': t}
+H2 = lambda t: {'type': 'heading', 'level': 2, 'text': t}
+H3 = lambda t: {'type': 'heading', 'level': 3, 'text': t}
+c = []
+c.append(P("You don't need a hire car to play golf in the Algarve, but you do need a plan for getting to the first tee. The options are a **free hotel golf shuttle** (several hotels in Vilamoura and Quinta do Lago run one), a **private golf transfer** booked in advance, a **taxi** or **Uber**, or staying at a resort where the course is a short walk away. Short trips are cheap: a taxi from Quarteira to Pestana Vila Sol should cost around €5–10. Longer ones add up quickly, so where you stay matters more than anything."))
+
+c.append(H2("Your options at a glance"))
+c.append({'type': 'table', 'caption': 'Getting from your hotel to the golf course',
+  'headers': ['Option', 'Typical cost', 'Best for', 'Watch out for'],
+  'rows': [
+    ['**Hotel golf shuttle**', 'Free at some hotels', 'Vilamoura and Quinta do Lago stays', 'Fixed times, set courses only'],
+    ['**Private golf transfer**', 'From about €30 each way per car', 'Groups, early tee times, longer trips', 'Book the return leg too'],
+    ['**Taxi**', 'Metered; about €5–25 for most short trips', 'Short hops and last-minute plans', 'Fewer taxis in quiet areas early in the morning'],
+    ['**Uber**', 'Varies with demand', 'Main towns: Faro, Vilamoura, Albufeira and more', 'Boot space is not guaranteed: choose UberXL'],
+    ['**Stay on a golf resort**', 'Included: you walk', 'Several rounds on one course', 'You still need transport to play elsewhere'],
+  ],
+  'note': 'Costs checked 17 November 2026. Taxi figures are our own estimates from the official tariff; see below.'})
+
+c.append(H2("Free hotel golf shuttles"))
+c.append(P("Some hotels run their own shuttle to nearby courses, which is the easiest option if your tee times fit its timetable. These are examples we found on the hotels' own websites in November 2026, not a complete list:"))
+c.append(P("**[Vila Galé Marina](https://www.booking.com/hotel/pt/vilagalemarina.html)**, Vilamoura: free transport for golfers to the Old Course, Pinhal, Millennium and Laguna. The hotel also lists Victoria, now [The Els Club](/courses/victoria-els-club), which has since become a private members club."))
+c.append(P("**[Hotel Quinta do Lago](https://www.booking.com/hotel/pt/quintadolago.html)**: a free shuttle to the golf courses within Quinta do Lago, according to the hotel's FAQ. See our [hotels near Quinta do Lago](/guide/hotels-near-quinta-do-lago-golf) for more places to stay there."))
+c.append(P("**[Domes Lake Algarve](https://www.booking.com/hotel/pt/domes-lake-algarve.html)**, Vilamoura: free shuttles to the golf courses, plus paid VIP shuttles, according to the resort's golf page."))
+c.append(P("**[As Cascatas Resort & Spa](https://www.booking.com/hotel/pt/as-cascatas.html)**, Vilamoura: a free shuttle to the [Pinhal](/courses/vilamoura-pinhal) course."))
+c.append(P("Golf package sellers also list transfers or shuttles at hotels such as Tivoli Marina Vilamoura, the Hilton Vilamoura As Cascatas and the Dom Pedro hotels in Vilamoura, but these can depend on the package you buy. Whatever you book, ask the hotel which courses the shuttle serves, what time it leaves and whether you need to reserve a seat."))
+
+c.append(H2("Private golf transfers"))
+c.append(P(f"A private transfer is a car or minibus booked for your group, with room for golf bags. It is the most reliable option for an early tee time or a course more than 20 minutes away. Prices are per vehicle, so they work out cheaper per person in a group of three or four. You can compare transfer quotes on [GetTransfer]({GT}), or book with a local company that specialises in golf."))
+c.append(P("To give you an idea of prices, this is what Algarserra, a transfer company based in Vilamoura, publishes for one-way trips from Vilamoura:"))
+c.append({'type': 'table', 'caption': 'Golf transfer prices from Vilamoura (one way, per vehicle)',
+  'headers': ['Course', 'Up to 4 golfers', 'Up to 8 golfers'],
+  'rows': [
+    ['[Vilamoura courses](/vilamoura/golf-courses) and [Pestana Vila Sol](/courses/vila-sol)', '€30.00', '€30.50'],
+    ['[Quinta do Lago](/courses/quinta-do-lago-south), [Pinheiros Altos](/courses/pinheiros-altos), [Vale do Lobo](/courses/vale-do-lobo-royal)', '€32.50', '€35.50'],
+    ['[Salgados](/courses/salgados)', '€35.00', '€43.00'],
+    ['[Amendoeira](/courses/amendoeira-faldo)', '€42.50', '€48.00'],
+    ['[Vale da Pinta](/courses/vale-da-pinta), [Silves](/courses/silves), [Vale de Milho](/courses/vale-de-milho)', '€57.50', '€64.00'],
+    ['[Palmares](/courses/palmares)', '€57.50', '€86.50'],
+    ['[Penina](/courses/penina-championship), [Morgado](/courses/morgado), [Alto Golf](/courses/alto-golf)', '€62.50', '€75.00'],
+    ['[Benamor](/courses/benamor)', '€67.50', '€76.50'],
+    ['[Boavista](/courses/boavista), [Espiche](/courses/espiche)', '€72.50', '€86.50'],
+    ['[Quinta da Ria](/courses/quinta-da-ria), [Quinta de Cima](/courses/quinta-de-cima)', '€75.00', '€76.50'],
+    ['[Monte Rei](/courses/monte-rei)', '€77.50', '€76.50'],
+  ],
+  'note': "Source: Algarserra's published golf transfer prices, \"prices each way\", including taxes and tolls, checked 17 November 2026. Other companies charge differently, and some quote per person."})
+c.append(P("Remember to book the return leg as well: most rounds take four to five hours, and a driver won't normally wait at the course. If you plan to play the same course several times, ask for a price for the whole week."))
+
+c.append(H2("Taxis"))
+c.append(P("Taxis in Portugal are metered, so there is no fixed price per trip. A new national taxi tariff came into force on 23 October 2026, and taxi meters have until January 2027 to switch over, so for now the same journey can cost a little more or less depending on the taxi. These are our estimates for some typical hotel-to-course trips, from a weekday daytime trip on the new tariff up to a weekend trip:"))
+rows = [[f"{t['frm']} → {t['to']}", f"{t['km']} km, about {t['mins']} min", f"€{t['lo']}–{t['hi']}" if t['lo'] != t['hi'] else f"about €{t['lo']}"] for t in TAXI]
+c.append({'type': 'table', 'caption': 'Estimated taxi fares, one way',
+  'headers': ['Trip', 'Distance and time', 'Estimated fare'],
+  'rows': rows,
+  'note': 'Our estimate, not a quote: distance and time by road from the town centre (Mapbox, no traffic), fares from the new tariff (€2 start, €0.58 per km, €0.28 per minute on weekday daytime; the per-km and per-minute part is 1.5 times higher on weekend days) up to the old night and weekend tariff with the luggage supplement. Rounded to the nearest €5.'})
+c.append(P("For an early tee time, book the taxi the evening before through your hotel reception, and for the trip back ask the clubhouse to call one when you finish. With three or four golf bags, ask for a larger car or an estate."))
+
+c.append(H2("Uber and Bolt"))
+c.append(P("Uber has operated in the Algarve since 2016, when it launched in Faro, Vilamoura and Albufeira, and it now covers the main towns. Drivers are easier to find in the busy central areas than in small villages or very early in the morning. Uber's own advice is that boot space is not guaranteed, so with golf bags choose **UberXL** and message the driver to check your bags will fit. Bolt also operates in the Algarve, including at Faro Airport."))
+
+c.append(H2("Stay where you can walk to the first tee"))
+c.append(P("The simplest way to play without a car is to stay at a resort with its own course, so the first tee is a short walk from your room. Our list of [Algarve hotels with a golf course on site](/guide/algarve-hotels-with-a-golf-course-on-site) covers them. If you want to play a few different courses, choose a base with several courses close together: from Quarteira or Almancil, seven to nine courses are within about 15 minutes. Our guide to [where to stay in the Algarve for golf](/guide/where-to-stay-in-the-algarve-for-golf) compares every base."))
+c.append({'type': 'findYourBase', 'title': 'Choose a base close to your courses',
+  'text': 'Tick the courses you want to play in **Find Your Base** and the map shows the area where they are all a short drive away, with the hotels inside it.',
+  'buttonLabel': 'Find your base on the map'})
+
+c.append(H2("Trains and buses"))
+c.append(P("The Algarve's coastal railway stops in the centre of Lagos, Faro and Tavira, but most golf courses are a taxi ride from the nearest station, and timetables rarely suit an early tee time. Albufeira's station is several kilometres outside the town. Local buses are fine for getting around town, but carrying a golf bag on them every day is not practical."))
+
+c.append(H2("Transfers or a hire car?"))
+c.append(P("Transfers make sense if you stay close to the courses you want to play. From Vilamoura, a round at Quinta do Lago costs €65 in transfers there and back, or about €16 each for four golfers. Further away the numbers grow quickly: a round at Penina from Vilamoura costs €125 in transfers, before the green fee. If you plan to play courses in different parts of the Algarve, or you are a couple rather than a four-ball, a hire car is likely to work out cheaper, so compare a quote for your dates."))
+c.append(P(f"You can compare hire car prices at Faro Airport on [EconomyBookings]({EB}). With golf bags, choose an estate car or an SUV with a large boot."))
+
+c.append(H2("Getting from Faro Airport"))
+c.append(P(f"For the first and last journey of your trip, see our guide to [getting from Faro Airport to the Algarve golf courses](/guide/faro-airport-to-algarve-golf-courses), with taxi, transfer and bus options for every area. Transfers with room for golf bags can be booked on [GetTransfer]({GT})."))
+json.dump(c, open(os.path.join(HERE, 'content.json'), 'w'), ensure_ascii=False, indent=1)
+print(len(c), 'blocks')
