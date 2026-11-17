@@ -77,7 +77,7 @@ c.append(P("The Algarve's coastal railway stops in the centre of Lagos, Faro and
 
 c.append(H2("Transfers or a hire car?"))
 c.append(P("Transfers make sense if you stay close to the courses you want to play. From Vilamoura, a round at Quinta do Lago costs €65 in transfers there and back, or about €16 each for four golfers. Further away the numbers grow quickly: a round at Penina from Vilamoura costs €125 in transfers, before the green fee. If you plan to play courses in different parts of the Algarve, or you are a couple rather than a four-ball, a hire car is likely to work out cheaper, so compare a quote for your dates."))
-c.append(P(f"You can compare hire car prices at Faro Airport on [EconomyBookings]({EB}). With golf bags, choose an estate car or an SUV with a large boot."))
+c.append(P(f"You can compare hire car prices at Faro Airport on [EconomyBookings]({EB}). With golf bags, choose an estate car or an SUV with a large boot. Our [Faro car hire guide](/guide/faro-car-hire-for-golfers) covers which cars fit golf bags, deposits and tolls."))
 
 c.append(H2("Getting from Faro Airport"))
 c.append(P(f"For the first and last journey of your trip, see our guide to [getting from Faro Airport to the Algarve golf courses](/guide/faro-airport-to-algarve-golf-courses), with taxi, transfer and bus options for every area. Transfers with room for golf bags can be booked on [GetTransfer]({GT})."))
