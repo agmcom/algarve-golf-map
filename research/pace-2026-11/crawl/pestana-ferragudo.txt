@@ -1,0 +1,9 @@
+FETCHED:
+  https://pestanaferragudo.com/ 5862
+  https://pestanaferragudo.com/privacy-policy/ 34005
+  https://pestanaferragudo.com/cookie-policy 13001
+  https://pestanaferragudo.com/privacy-policy 34007
+  https://pestanaferragudo.com/terms-and-conditions/ 12284
+  https://pestanaferragudo.com/cookie-policy/ 13001
+
+HITS:

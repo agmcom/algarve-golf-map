@@ -1,0 +1,14 @@
+FETCHED:
+  https://castromarimresort.com/en/ 2480
+  https://castromarimresort.com/en/golf/ 2980
+  https://castromarimresort.com/en/golf/academy/ 2154
+  https://castromarimresort.com/wp-content/uploads/2026/01/RACK-RATE-PUBLIC-2026-act.pdf 2403
+  https://castromarimresort.com/wp-content/uploads/2022/05/East_Algarve_Membershp.pdf 2
+  https://castromarimresort.com/en/golf 2980
+  https://castromarimresort.com/en/holidays ERR <urlopen error _ssl.c:1112: The handshake operation timed ou
+  https://castromarimresort.com/pt-pt/golfe/ 3177
+  https://castromarimresort.com/golfe/academia/ 2154
+  https://castromarimresort.com/wp-content/uploads/2019/03/scorecard.pdf 14302
+  https://castromarimresort.com/pt-pt/golfe/academia/ 2250
+
+HITS:

@@ -1,0 +1,82 @@
+{
+ "pestana": {
+  "pages": 30,
+  "hits": 18
+ },
+ "pestana-ferragudo": {
+  "pages": 6,
+  "hits": 0
+ },
+ "alto-golf": {
+  "pages": 13,
+  "hits": 0
+ },
+ "amendoeira": {
+  "pages": 22,
+  "hits": 0
+ },
+ "balaia": {
+  "pages": 30,
+  "hits": 3
+ },
+ "benamor": {
+  "pages": 30,
+  "hits": 3
+ },
+ "boavista": {
+  "pages": 30,
+  "hits": 15
+ },
+ "castro-marim": {
+  "pages": 11,
+  "hits": 0
+ },
+ "espiche": {
+  "pages": 30,
+  "hits": 1
+ },
+ "monte-rei": {
+  "pages": 13,
+  "hits": 6
+ },
+ "morgado-alamos": {
+  "pages": 3,
+  "hits": 0
+ },
+ "ombria": {
+  "pages": 14,
+  "hits": 4
+ },
+ "palmares": {
+  "pages": 25,
+  "hits": 1
+ },
+ "penina": {
+  "pages": 30,
+  "hits": 0
+ },
+ "pine-cliffs": {
+  "pages": 30,
+  "hits": 6
+ },
+ "pinheiros-altos": {
+  "pages": 4,
+  "hits": 0
+ },
+ "quinta-do-lago": {
+  "pages": 21,
+  "hits": 12
+ },
+ "salgados": {
+  "pages": 30,
+  "hits": 0
+ },
+ "santo-antonio": {
+  "pages": 5,
+  "hits": 0
+ },
+ "vale-de-milho": {
+  "pages": 6,
+  "hits": 0
+ }
+}

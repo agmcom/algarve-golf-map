@@ -13,6 +13,8 @@ import { CoursePriceTable } from '@/components/CoursePriceTable'
 import { CourseBuggies } from '@/components/CourseBuggies'
 import { CourseWalking } from '@/components/CourseWalking'
 import { getWalkingInfo } from '@/data/walking'
+import { getPaceInfo } from '@/data/pace'
+import { CoursePace } from '@/components/CoursePace'
 import { CoursePractice } from '@/components/CoursePractice'
 import { getPracticeGround } from '@/data/practice'
 import { MOCK_COURSES } from '@/data/courses'
@@ -186,6 +188,7 @@ export default async function CoursePage(
   const priceSummary = summarizePrices(applyBuggyFacts(course.slug, course.prices))
   const buggyInfo = getBuggyInfo(course.slug)
   const walkingInfo = getWalkingInfo(course.slug)
+  const paceInfo = getPaceInfo(course.slug)
   const practiceGround = getPracticeGround(course.slug)
   const courseStatus = getCourseStatus(course.slug)
   const unbookable = isUnbookable(course.slug)
@@ -344,6 +347,7 @@ export default async function CoursePage(
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
           ...(course.dress_code ? [{ id: 'dress-code', label: 'Dress Code' }] : []),
           ...(walkingInfo ? [{ id: 'walking', label: 'Walking' }] : []),
+          ...(paceInfo ? [{ id: 'pace-of-play', label: 'Pace of Play' }] : []),
           ...(buggyInfo ? [{ id: 'buggies', label: 'Buggies' }] : []),
           { id: 'reviews', label: 'Reviews' },
           { id: 'course-map', label: 'Course Map' },
@@ -677,6 +681,8 @@ export default async function CoursePage(
               )}
 
               {walkingInfo && <CourseWalking info={walkingInfo} />}
+
+              {paceInfo && <CoursePace info={paceInfo} />}
 
               {buggyInfo && <CourseBuggies info={buggyInfo} phone={course.phone} />}
 

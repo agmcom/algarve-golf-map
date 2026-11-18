@@ -1,0 +1,33 @@
+FETCHED:
+  https://penina.com/golf/golf-courses/sir-henry-cotton-championship-course/sir-henry-cotton-championship-course-rules-specifications 7491
+  https://penina.com/golf/golf-courses/resort-course 5419
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/ 6259
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/sir-henry-cotton-championship-course-rules-specifications 7491
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/sir-henry-cotton-championship-course-rules-specifications/ 7491
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/sir-henry-cotton-championship-course-walkthrough/ 10692
+  https://www.penina.com/media/4666093/pn_factsheet_hotel_en_24.pdf 4580
+  https://www.penina.com/penina-hotel/the-algarve/history-of-golf-in-the-algarve/ 8566
+  https://www.penina.com/penina-hotel/the-algarve/local-activities-near-to-penina-hotel/ria-de-alvor-nature-reserve/ 10900
+  https://www.penina.com/penina-hotel/the-algarve/local-activities-near-to-penina-hotel/portimão-the-best-golf-in-the-algarve/ ERR 'ascii' codec can't encode character '\xe3' in position 74: 
+  https://www.penina.com/penina-hotel/the-algarve/jjw-golf-courses-in-the-algarve/ 5226
+  https://www.penina.com/penina-hotel/the-algarve/jjw-golf-courses-in-the-algarve/san-lorenzo-golf-course/ 6815
+  https://www.penina.com/penina-hotel/the-algarve/jjw-golf-courses-in-the-algarve/pinheiros-altos-golf-course/ 6611
+  https://www.penina.com/golf/golf-courses/resort-course/ 5419
+  https://www.penina.com/golf/golf-courses/academy-course/ 4757
+  https://www.penina.com/media/4666499/pgh-football-package-2024-25.pdf 49
+  https://www.penina.com/golf/golf-courses/ 5341
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/sir-henry-cotton-championship-course-history/ 8503
+  https://www.penina.com/golf/penina-golf-academy/ 4771
+  https://www.penina.com/offers/penina-golf-tournaments/ 4043
+  https://www.penina.com/media/4630856/calend%C3%A1rio-eventos-2024-2025.pdf 537
+  https://www.penina.com/golf/golf-pro-students-package/ 4287
+  https://www.penina.com/media/4676114/pn_kangaroo_xmas_fv_lr.pdf 672
+  https://www.penina.com/leisure/kids-kangaroo-club/rates-timetable/ 5437
+  https://www.penina.com/media/4690884/pn_footgolf_brochure.pdf 3577
+  https://www.jjwhotels.com/media/861791/jjwh-836-football-promotion-fact-sheet-en.pdf ERR HTTP Error 404: Not Found
+  https://www.penina.com/offers/best-rate-guaranteed/ 3880
+  https://www.penina.com/offers/golf-packages-at-penina/ 4182
+  https://www.penina.com/media/4488761/a-pgh-football-package-2022-23.pdf 82
+  https://www.penina.com/terms-conditions/ 24415
+
+HITS:

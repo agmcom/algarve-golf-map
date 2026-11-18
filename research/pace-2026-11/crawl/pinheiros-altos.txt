@@ -1,0 +1,7 @@
+FETCHED:
+  https://www.pinheirosaltos.com/ 1433
+  https://www.pinheirosaltos.com/golf-courses-and-facilities/golf-titles-and-membership.aspx 3740
+  https://www.pinheirosaltos.com/cookie-policy 8009
+  https://www.pinheirosaltos.com/terms-and-conditions 23957
+
+HITS:

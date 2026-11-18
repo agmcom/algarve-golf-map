@@ -1,0 +1,25 @@
+FETCHED:
+  https://www.amendoeiraresort.com/en/golf/ 6707
+  https://www.amendoeiraresort.com/pt/golfe/ 7250
+  https://www.amendoeiraresort.com/en/bookcore/agency/login/ 622
+  https://www.amendoeiraresort.com/en/bookcore/partempresas/login-empresa/ 622
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/scorecard2/Faldo_Scorecard.pdf 282
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/amendorules/REGRAS_LOCAIS_PORT_.pdf 1577
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/scorecard/Oconnor_Jnr.__Scorecard.pdf 165
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/agr_members/AGR_Membership_2027.pdf 13751
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf 3499
+  https://www.amendoeiraresort.com/en/privacy-policy/ 19622
+  https://www.amendoeiraresort.com/en/cookies/ 916
+  https://www.amendoeiraresort.com/en/golf/None ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/pt/bookcore/agency/login/ 720
+  https://www.amendoeiraresort.com/pt/bookcore/partempresas/login-empresa/ 720
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/scorecard/Oconnor_Jnr.__Scorecard.pdf" ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/agr_members/AGR_Subscrição_2027.pdf ERR 'ascii' codec can't encode characters in position 55-56: ord
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf 3997
+  https://www.amendoeiraresort.com/pt/golfe/None ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/en/bookcore/agency/login/None ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/en/bookcore/partempresas/login-empresa/None ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/en/cookies-policy/ 916
+  https://www.amendoeiraresort.com/en/privacy-policy/None ERR HTTP Error 404: Not Found
+
+HITS:

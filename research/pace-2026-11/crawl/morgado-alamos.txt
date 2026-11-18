@@ -1,0 +1,6 @@
+FETCHED:
+  https://www.morgadogolfhotel.com/en/morgado_golf.html 3026
+  https://www.nauhotels.com/en/golf/alamos-golf 4552
+  https://assets.milestoneinternet.com/highgate-hotels/pt-sgehr-sociedade-gestora-e.pdf 116036
+
+HITS:
