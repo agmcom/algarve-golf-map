@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-near-faro-airport': {
+    title: 'Golf courses near Faro Airport: play on arrival or departure day',
+    description: 'The closest golf courses to Faro Airport, from Laranjal 20 minutes away, plus tee-time planning around your flight, airport luggage lockers and club hire.',
+  },
   'golf-stag-do-in-the-algarve': {
     title: 'Golf stag do in the Algarve: Albufeira, Vilamoura and planning tips',
     description: 'Plan a golf stag do in the Algarve: Albufeira or Vilamoura, group cancellation rules, dress codes, courses for non-golfers and golf costs per person.',
