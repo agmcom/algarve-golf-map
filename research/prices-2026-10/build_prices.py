@@ -55,9 +55,10 @@ for m, p in BEN.items():
     if p == 66:
         add('benamor', m, 'twilight', 18, 59, src='Benamor official green-fee page (internet rate)')
 
-# Pine Cliffs 2025/26 price list, visitor 9 holes. High: 1–20 Nov, Feb–May, 15 Sep–Oct €76 · Low €57.
+# Pine Cliffs 2026/27 price list (raw/pine-cliffs/, checked 18 Nov 2026), visitor 9 holes.
+# High: 1–20 Nov 2026, Feb–May 2027, 15 Sep–20 Nov 2027 €79 · Low: 21 Nov–Jan, Jun–14 Sep €59 (split months = low).
 for m in ALL:
-    add('pine-cliffs', m, 'standard', 9, 76 if m in (2, 3, 4, 5, 10) else 57, src='Pine Cliffs official 2025/26 price list')
+    add('pine-cliffs', m, 'standard', 9, 79 if m in (2, 3, 4, 5, 10) else 59, src='Pine Cliffs official 2026/27 price list')
 
 # Balaia 2025–26 green-fee rates PDF: visitor daily fee €50 (unlimited play that day).
 for m in ALL:

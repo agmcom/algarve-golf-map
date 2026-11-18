@@ -86,8 +86,8 @@ const COPY: Record<string, ReactNode> = {
       </p>
       <p>
         The club&apos;s local rules let players without a handicap play, as long
-        as they use the red tees, and on the 2025-26 price list nine holes cost
-        visitors €57 in the low season. The course belongs to the five-star{' '}
+        as they use the red tees, and on the 2026-27 price list nine holes cost
+        visitors €59 in the low season. The course belongs to the five-star{' '}
         <A href="/golf-resorts/pine-cliffs">Pine Cliffs Resort</A>, so it pairs
         naturally with a stay there. For a fuller schedule, it sits a short drive
         from the 18-hole layouts covered on our{' '}

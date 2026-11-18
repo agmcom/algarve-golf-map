@@ -1,0 +1,390 @@
+[
+ {
+  "type": "paragraph",
+  "text": "A golf stag do in the Algarve works best when the golf is booked like a group trip, not added as an afterthought. Base yourselves in **Albufeira** if the nights out matter most, or **Vilamoura** if the golf does. Book tee times in four-balls and check each club's group cancellation deadline before you collect anyone's money. And make sure the group knows the dress code: matching stag T-shirts and fancy dress won't get you onto any of the courses whose dress codes we checked."
+ },
+ {
+  "type": "paragraph",
+  "text": "This guide is for whoever is organising it. It covers where to stay, which courses suit a mixed group, the club rules that catch stag groups out, and what the golf costs per person. **Last checked: November 2026.**"
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Albufeira or Vilamoura?"
+ },
+ {
+  "type": "paragraph",
+  "text": "**Albufeira** is the Algarve's party town, with its nightlife centred on \"the Strip\", Avenida Sá Carneiro in Montechoro. The nearest full 18-hole course, [Salgados](/courses/salgados), is 17 minutes from the old town, and there are two short 9-hole courses within 20 minutes. **Vilamoura** is quieter at night, with bars and restaurants around the marina and a casino, but it has more golf on the doorstep: five courses that take visitors."
+ },
+ {
+  "type": "table",
+  "caption": "Courses within about 25 minutes of Albufeira",
+  "headers": [
+   "Course",
+   "Drive from Albufeira",
+   "Holes",
+   "From",
+   "Handicap"
+  ],
+  "rows": [
+   [
+    "[Balaia](/courses/balaia)",
+    "13 min",
+    "9 (par 3)",
+    "€50 day fee",
+    "Asked for, no limit published"
+   ],
+   [
+    "[Salgados](/courses/salgados)",
+    "17 min",
+    "18",
+    "€78",
+    "28 men, 36 ladies"
+   ],
+   [
+    "[Pine Cliffs](/courses/pine-cliffs)",
+    "18 min",
+    "9",
+    "€59",
+    "Not needed (red tees)"
+   ],
+   [
+    "[Vilamoura Laguna](/courses/vilamoura-laguna) and [Millennium](/courses/vilamoura-millennium)",
+    "24 min",
+    "18",
+    "€88",
+    "28 men, 36 ladies"
+   ],
+   [
+    "[Amendoeira](/courses/amendoeira-faldo), buggy included",
+    "25 min",
+    "18",
+    "€100",
+    "28 men, 36 ladies"
+   ]
+  ],
+  "note": "Lowest visitor green fee for one round. Drive times from Albufeira old town without traffic (Mapbox). Pine Cliffs: 2026/27 price list; Balaia: 2025/26 price list; the others: each club's online booking, October 2026. Not a complete list: see Albufeira golf courses on our map for all of them."
+ },
+ {
+  "type": "paragraph",
+  "text": "If you stay in Albufeira and want 18 holes, Salgados is the obvious choice: it's the nearest full course, it's flat, and it's one of the cheapest in this part of the Algarve. If you stay in Vilamoura, [Laguna](/courses/vilamoura-laguna) and [Millennium](/courses/vilamoura-millennium) are the cheapest of its courses. Our guides to the [cheapest golf near Albufeira](/guide/cheapest-golf-near-albufeira) and the [cheapest golf in Vilamoura](/guide/cheapest-golf-in-vilamoura) compare every course month by month, and [where to stay in the Algarve for golf](/guide/where-to-stay-in-the-algarve-for-golf) compares the other bases."
+ },
+ {
+  "type": "card",
+  "slug": "salgados",
+  "refType": "course",
+  "withPhoto": true
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Booking golf for a stag group"
+ },
+ {
+  "type": "paragraph",
+  "text": "**Tee times come in fours.** Courses send players out in four-balls, so a group of 8 needs two tee times in a row and a group of 12 needs three. If your numbers don't divide by four, expect to be paired with other golfers. Vilamoura Golf is the strictest we found: it always pairs players into four-balls, and if anyone refuses to be paired, they aren't allowed to play and don't get a refund. It only guarantees a group of its own if you ask in advance and pay the green fees needed to fill the four-ball."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Groups have longer cancellation deadlines.** Free cancellation for a big group can end a month or more before you play. These are the published deadlines at some clubs:"
+ },
+ {
+  "type": "table",
+  "caption": "Free cancellation by group size at some Algarve clubs",
+  "headers": [
+   "Club",
+   "Small groups",
+   "Larger groups"
+  ],
+  "rows": [
+   [
+    "[Vale do Lobo](/courses/vale-do-lobo-royal)",
+    "Up to 12 golfers: 48 hours",
+    "Over 12 golfers: 21 days"
+   ],
+   [
+    "[Monte Rei](/courses/monte-rei)",
+    "Up to 4 players: 15 days",
+    "5 to 23 players: 30 days. 24 or more: at the club's discretion"
+   ],
+   [
+    "[Boavista](/courses/boavista)",
+    "Up to 4 players: 48 hours",
+    "5 to 15 players: 72 hours. More than 15: 15 days"
+   ],
+   [
+    "[Espiche](/courses/espiche)",
+    "Up to 4 players: 72 hours",
+    "5 to 15 players: 15 days. More than 16: 30 days"
+   ],
+   [
+    "[Ombria](/courses/ombria)",
+    "Up to 8 players: 5 days",
+    "9 to 16 players: 15 days. More than 16: 30 days"
+   ],
+   [
+    "[Quinta da Ria](/courses/quinta-da-ria) and [Quinta de Cima](/courses/quinta-de-cima)",
+    "Up to 7 players: 48 hours to 15 days, by season",
+    "8 to 23 players: 15 to 45 days, by season"
+   ],
+   [
+    "[Quinta do Vale](/courses/quinta-do-vale)",
+    "Up to 7 players: 7 or 15 days, by season",
+    "8 to 23 players: 30 or 45 days, by season"
+   ],
+   [
+    "Vilamoura Golf ([Laguna](/courses/vilamoura-laguna), [Millennium](/courses/vilamoura-millennium), [Pinhal](/courses/vilamoura-pinhal), [Old Course](/courses/vilamoura-old-course))",
+    "15 days in January, February, July, August, November and December; 45 days in other months (2027 rounds)",
+    "No separate group deadline published"
+   ]
+  ],
+  "note": "Source: each club's published booking conditions, checked 18 November 2026. Some clubs also charge a small cancellation fee. Check the conditions shown when you book, as they can change."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Expect to pay up front.** Quinta do Lago, Quinta da Ria and Quinta do Vale take full payment when you book, and Monte Rei asks for full payment to guarantee a booking. Monte Rei and Vilamoura Golf both say they don't refund for delayed or cancelled flights, so it's worth telling everyone to get travel insurance. If it rains, see [what happens if it rains on your Algarve golf trip](/guide/what-happens-if-it-rains-on-your-algarve-golf-trip)."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Collect names and handicaps early.** Some clubs ask for each player's handicap when you book, and you'll need them anyway to split the group into four-balls. Our guide to [how to book tee times in the Algarve](/guide/how-to-book-tee-times-in-the-algarve) explains how each course takes bookings."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Dress codes: what the stag can't wear"
+ },
+ {
+  "type": "paragraph",
+  "text": "This is the part of the planning that's easiest to overlook. Matching T-shirts and fancy dress are popular on stag dos, but every club whose dress code we checked either bans T-shirts on the course or asks for a collared shirt, and some say so in very plain terms:"
+ },
+ {
+  "type": "paragraph",
+  "text": "**Vilamoura Golf:** no sports shorts, beachwear, blue denim, cargo shorts or T-shirts. Its rules say that if you're not properly dressed, you won't be allowed on the course."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Pine Cliffs:** no denim, beachwear, tops, T-shirts or **football-style shirts**."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Salgados:** players wearing T-shirts, lounge, gym or beach wear, **offensive items**, or clothes with holes will need to change before they play."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Quinta do Vale:** no swim shorts, shirts without a collar, T-shirts, jeans, trainers or leggings."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Ombria:** shirts must have a collar and sleeves (except for ladies), and no jeans, swimming trunks or short Bermudas."
+ },
+ {
+  "type": "paragraph",
+  "text": "What works everywhere is a **collared golf shirt**, golf trousers or tailored shorts, and **golf shoes with soft spikes**. If you want the group to match on the course, order printed collared polos rather than T-shirts, and keep the design clean, since Salgados, for one, asks players with offensive items to change. Save the fancy dress for the evening."
+ },
+ {
+  "type": "paragraph",
+  "text": "Trainers aren't allowed at clubs such as Boavista, Espiche and Quinta do Vale, so anyone without golf shoes should hire a pair. Pine Cliffs, for example, hires golf shoes for €18."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Behaviour, drink and pace of play"
+ },
+ {
+  "type": "paragraph",
+  "text": "Clubs expect groups to keep up and behave, and several say in their rules that they can turn you away or send you off without a refund:"
+ },
+ {
+  "type": "paragraph",
+  "text": "**Vilamoura Golf** can refuse entry to anyone who doesn't behave appropriately, causes a disturbance, disturbs other players, or turns up drunk."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Ombria** doesn't allow any alcohol on the course except drinks bought from the club, so no coolers or your own cans. Staff can refuse to serve anyone who seems drunk, and players who don't follow staff instructions are asked to leave without a refund."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Quinta do Lago, Quinta da Ria and Quinta do Vale** say that not following the course rules or the ranger's instructions can mean being removed from the course without a refund."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Pace of play is enforced too.** Ombria and Monte Rei expect 18 holes in 4 hours 30 minutes. At Pine Cliffs, nine holes should take 2 hours, and players must pick up once they reach double par on a hole. Salgados expects you to keep up with the group in front."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Don't be late.** Quinta do Lago, Quinta da Ria and Quinta do Vale ask you to check in 30 minutes before your tee time, and if you're late you may lose your slot without a refund. After a big night, an early tee time is the one most likely to go wrong, so think about the timing when you book."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Buggies and hire clubs"
+ },
+ {
+  "type": "paragraph",
+  "text": "**A buggy takes two.** Vilamoura Golf and Boavista allow two players and two bags per buggy, so a group of eight needs four. Book them with the tee times. Among clubs that publish prices, a buggy for 18 holes costs €48 at Benamor, €50 at Salgados and €55 at Pestana's courses, so about €25 each for two players sharing. [Laguna](/courses/vilamoura-laguna)'s Laguna on Wheels offer includes a shared buggy on new bookings made by 31 December 2026, with some dates excluded. See our [golf buggy hire guide](/guide/golf-buggy-hire-in-the-algarve)."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Check who can drive.** Boavista, Monte Rei and Ombria don't let anyone under 18 drive a buggy, and Quinta do Vale only lets driving licence holders drive one."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Everyone needs their own clubs.** Boavista, Ombria and Pine Cliffs all say each player must have their own bag and clubs, so two players can't share a set. Salgados hires a premium Callaway set with a sleeve of balls for €50 for 18 holes, and Pine Cliffs hires a full set for €30 for nine holes. For a big group, flying everyone's clubs can cost more than hiring: compare prices in our [golf club hire comparison](/club-rental) and our guide to [hiring golf clubs at Faro Airport](/guide/hiring-golf-clubs-at-faro-airport)."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "When not everyone plays golf"
+ },
+ {
+  "type": "paragraph",
+  "text": "Most stag groups mix keen golfers, occasional players and people who've never played. That matters, because most 18-hole courses in the Algarve ask for a **handicap certificate**, usually up to 28 for men and 36 for ladies. Anyone without one can't normally play there on their own."
+ },
+ {
+  "type": "paragraph",
+  "text": "Near Albufeira, [Pine Cliffs](/courses/pine-cliffs) is the course everyone can play: it's a 9-hole clifftop course, and players without a handicap can play from the red tees. [Balaia](/courses/balaia) is an easy 9-hole par-3 course, but it asks for a handicap, so check with the club first. Further west, [Penina Resort](/courses/penina-resort) near Portimão and [Vale de Milho](/courses/vale-de-milho) in Carvoeiro are also 9-hole courses that don't need one. Our guide to [handicap rules in the Algarve](/guide/do-you-need-a-handicap-to-play-golf-in-the-algarve) covers every course."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Non-golfers who want to come along** should ask the club first. Vale do Lobo, for example, lets players' guests follow them on the course if Golf Reception agrees, as long as they follow the same dress code and join only at the 1st or 10th tee."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Formats that suit a mixed group"
+ },
+ {
+  "type": "paragraph",
+  "text": "A full medal round with everyone counting every shot is slow, and no fun for beginners. Two formats work better for a stag group:"
+ },
+ {
+  "type": "paragraph",
+  "text": "**Texas scramble:** everyone in the four-ball tees off, the team picks the best shot, and everyone plays the next shot from there. It's an informal team format, not part of the Rules of Golf, but it keeps the weaker players in the game and the round moving."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Stableford:** each player scores points on each hole against their handicap, and once you can't score any more points on a hole, you can pick up. It's an official format in the Rules of Golf, and it fits clubs that want you to pick up, such as Pine Cliffs at double par."
+ },
+ {
+  "type": "paragraph",
+  "text": "Whatever format you play, each player still has to meet the course's own handicap rule."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Example: three nights in Albufeira, two rounds"
+ },
+ {
+  "type": "paragraph",
+  "text": "Here's one way to fit the golf around a three-night stag do in Albufeira. It's just an example: you could swap either round for a course in Vilamoura."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Day 1, arrive:** Faro Airport to Albufeira by minivan. In October 2026 we found pre-booked minivans for about €64 per vehicle each way. If you land early, Salgados sells twilight rounds from €47 in January, July and August."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Day 2, the main round:** 18 holes at Salgados, with a late-morning tee time."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Day 3, the short round:** nine holes at Pine Cliffs, which everyone can play, with or without a handicap."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Day 4:** home."
+ },
+ {
+  "type": "table",
+  "caption": "Golf cost per person: January, July or August",
+  "headers": [
+   "Item",
+   "Per person"
+  ],
+  "rows": [
+   [
+    "Salgados green fee, 18 holes",
+    "€78"
+   ],
+   [
+    "Buggy at Salgados, shared by two (€50)",
+    "€25"
+   ],
+   [
+    "Pine Cliffs green fee, 9 holes",
+    "€59"
+   ],
+   [
+    "**Golf total**",
+    "**€162**"
+   ],
+   [
+    "Club hire at both courses, if needed",
+    "€80"
+   ],
+   [
+    "**Total with hire clubs**",
+    "**€242**"
+   ]
+  ],
+  "note": "Salgados: online booking, October 2026 (lowest rate, January, July and August); buggy and Callaway club hire (€50) from its published prices. Pine Cliffs: 2026/27 price list, low-season visitor rate (21 November 2026 to 31 January 2027 and 1 June to 14 September 2027); €79 in high season; club hire €30 for nine holes. Not included: flights, accommodation, transfers, food and drink."
+ },
+ {
+  "type": "paragraph",
+  "text": "In spring and autumn the same two rounds cost more: Salgados goes up to €139 and Pine Cliffs to €79. For the rest of the trip, see [how much a golf trip to Albufeira costs](/guide/how-much-does-a-golf-trip-to-albufeira-cost) and [Faro Airport to Albufeira with golf clubs](/guide/faro-airport-to-albufeira-with-golf-clubs). If you're staying in Vilamoura instead, minivans from the airport were about €44 when we checked; see [Faro Airport to Vilamoura with golf clubs](/guide/faro-airport-to-vilamoura-with-golf-clubs)."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Booking through a stag company?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Stag-party companies often sell golf as one activity among many. That's fine, but check exactly what you're buying before you pay: **which course**, **how many holes**, whether it's a **par-3 course** or a full 18-hole course, and whether clubs, buggies and transfers are included. Then check that course's handicap rule and dress code against your group, as the rules above still apply."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Golf stag do in the Algarve: common questions"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Is Albufeira or Vilamoura better for a golf stag do?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Albufeira has the bigger nightlife, with Salgados and two short courses within about 20 minutes. Vilamoura has more golf close by, with five courses that take visitors, and quieter evenings around the marina. If the golf is the main event, Vilamoura is easier; if the nights out are, Albufeira."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Can we wear matching stag shirts on the course?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Not if they're T-shirts: Vilamoura Golf, Pine Cliffs, Salgados, Quinta do Vale and Boavista are among the clubs that don't allow them. Printed collared golf polos are the safer choice, as long as the design isn't offensive."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Can people who don't play golf join a golf stag do?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Yes, on the right course. Pine Cliffs near Albufeira lets players without a handicap play from the red tees, and Penina Resort and Vale de Milho don't need one either. Most 18-hole courses ask for a handicap certificate."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "How far ahead should we book?"
+ },
+ {
+  "type": "paragraph",
+  "text": "As early as you can for a big group, but check the cancellation deadline first: at some clubs, free cancellation for groups ends 30 days or more before you play."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Organising a bigger group or a golf society?** Our guide to [Algarve golf trips for groups and golf societies](/guide/algarve-golf-trips-for-groups-and-golf-societies) covers resort villas, minivans and booking several tee times together, and [golf transfers without a car](/guide/algarve-golf-transfers-without-a-car) explains how to get the group to the course and back."
+ }
+]
