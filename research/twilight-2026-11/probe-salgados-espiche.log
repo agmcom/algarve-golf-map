@@ -1,0 +1,7 @@
+salgados_1 2026-12-02 {'first_twilight': '13:36', 'last_non_twilight': '13:04', 'last_slot': '16:32', 'twilight_rates': {'26 GF Public Twilight - MSP Direct Online': 51, '26 GF Jnr Twilight - Online': 22}}
+salgados_1 2027-03-17 {'first_twilight': '13:36', 'last_non_twilight': '13:04', 'last_slot': '16:32', 'twilight_rates': {'26 GF Jnr Twilight - Online': 50}}
+salgados_1 2027-06-16 {'first_twilight': '16:00', 'last_non_twilight': '15:36', 'last_slot': '17:36', 'twilight_rates': {'26 GF Jnr Twilight - Online': 50}}
+espiche_1 2026-12-02 {'first_twilight': '14:00', 'last_non_twilight': '13:33', 'last_slot': '14:36', 'twilight_rates': {'Visitor - Twilight': 49}}
+espiche_1 2027-03-17 {'first_twilight': '15:30', 'last_non_twilight': '15:03', 'last_slot': '15:30', 'twilight_rates': {'Visitor - Twilight': 79}}
+espiche_1 2027-06-16 {'first_twilight': '15:30', 'last_non_twilight': '15:03', 'last_slot': '16:33', 'twilight_rates': {'Visitor - Twilight': 54}}
+ombria_1 2026-12-02 {'first_twilight': '13:30', 'last_non_twilight': '13:00', 'last_slot': '15:30', 'twilight_rates': {'Twilight Online': 99}}

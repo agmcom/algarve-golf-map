@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'twilight-golf-in-the-algarve': {
+    title: 'Twilight golf in the Algarve: times, prices and daylight',
+    description: 'Algarve twilight green fees from €35, start times from 1pm to 4pm by course, and the latest tee time to finish 18 holes before dark in every month.',
+  },
   'where-to-stay-in-the-algarve-for-golf': {
     title: 'Where to stay in the Algarve for golf: best bases compared',
     description: 'Which Algarve base puts the most golf courses within 15 or 30 minutes? Vilamoura, Almancil, Albufeira, Lagos, Tavira and more compared, with hotels.',

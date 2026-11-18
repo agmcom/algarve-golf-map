@@ -1,0 +1,54 @@
+{
+ "ombria_1": {
+  "2026-12-02": {
+   "first_twilight": "13:30",
+   "last_non_twilight": "13:00",
+   "last_slot": "15:30",
+   "twilight_rates": {
+    "Twilight Online": 99
+   }
+  },
+  "2027-06-16": {
+   "first_twilight": "13:30",
+   "last_non_twilight": "13:00",
+   "last_slot": "15:30",
+   "twilight_rates": {
+    "Twilight Online": 176
+   }
+  }
+ },
+ "morgadoalamos_1": {
+  "2026-12-02": {
+   "first_twilight": "14:06",
+   "last_non_twilight": "12:36",
+   "last_slot": "16:03",
+   "twilight_rates": {
+    "MO GF Twilight Desk/ Online Desconto ( Sem Buggy/ No buggy) MO": 66
+   }
+  },
+  "2027-06-16": {
+   "first_twilight": null,
+   "last_non_twilight": null,
+   "last_slot": null,
+   "twilight_rates": {}
+  }
+ },
+ "morgadoalamos_2": {
+  "2026-12-02": {
+   "first_twilight": "13:03",
+   "last_non_twilight": "12:36",
+   "last_slot": "16:03",
+   "twilight_rates": {
+    "AL GF Twilight Desk/ Online Desconto ( Sem Buggy/ No buggy)": 66
+   }
+  },
+  "2027-06-16": {
+   "first_twilight": "14:06",
+   "last_non_twilight": "13:30",
+   "last_slot": "16:03",
+   "twilight_rates": {
+    "AL GF Twilight Desk/ Online Desconto ( Sem Buggy/ No buggy)": 66
+   }
+  }
+ }
+}

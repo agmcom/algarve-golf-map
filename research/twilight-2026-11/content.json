@@ -1,0 +1,300 @@
+[
+ {
+  "type": "paragraph",
+  "text": "Twilight golf means booking a late tee time for a cheaper green fee. In the Algarve, twilight rates start between about **1pm and 4pm**, depending on the course and the time of year, and they can cost less than half the standard price: **€35 at Santo António**, **€50 at Alto Golf** and **€60 at Vila Sol**, against €140 or more for a standard round at Vila Sol. The catch is daylight. From **April to September** you have time for 18 holes. From **November to February** the sun sets between about 5.15pm and 6.15pm, and a tee time much after 1pm won't get you round 18 holes before dark."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "When does twilight start, and what does it cost?"
+ },
+ {
+  "type": "paragraph",
+  "text": "These are examples from each club's official price list or its own online booking, not a full list of every course with a twilight rate. Some clubs change the start time through the year, others keep one time all year."
+ },
+ {
+  "type": "table",
+  "caption": "Twilight green fees for 18 holes",
+  "headers": [
+   "Course",
+   "Twilight from",
+   "Twilight price",
+   "Standard round"
+  ],
+  "rows": [
+   [
+    "[Santo António](/courses/santo-antonio/green-fees)",
+    "1.30pm",
+    "**€35**",
+    "€57–€68"
+   ],
+   [
+    "[Alto Golf](/courses/alto-golf/green-fees)",
+    "3pm",
+    "**€50**",
+    "€75–€140"
+   ],
+   [
+    "[Gramacho](/courses/gramacho/green-fees) and [Vale da Pinta](/courses/vale-da-pinta/green-fees)",
+    "3.30pm",
+    "**€55**",
+    "€95–€180"
+   ],
+   [
+    "[Silves](/courses/silves/green-fees)",
+    "3.30pm",
+    "**€55**",
+    "€95–€180"
+   ],
+   [
+    "[Vila Sol](/courses/vila-sol/green-fees)",
+    "3.30pm",
+    "**€60**",
+    "€140–€215"
+   ],
+   [
+    "[Pestana Ferragudo](/courses/pestana-ferragudo/green-fees)",
+    "1.30pm",
+    "**€80**",
+    "€130–€230"
+   ],
+   [
+    "[Benamor](/courses/benamor/green-fees)",
+    "About 1pm or 2pm",
+    "**€59** (December, January and June to August only)",
+    "€66–€103"
+   ],
+   [
+    "[Espiche](/courses/espiche/green-fees)",
+    "2pm in winter, 3.30pm from spring",
+    "€49–€79",
+    "€65–€99"
+   ],
+   [
+    "[Salgados](/courses/salgados/green-fees)",
+    "About 1.30pm in winter, 4pm in summer",
+    "€47–€99",
+    "€78–€139"
+   ],
+   [
+    "[Vale do Lobo](/courses/vale-do-lobo-royal/green-fees) (Royal and Ocean)",
+    "1pm in winter, 3pm to 3.30pm the rest of the year",
+    "€76–€101 online",
+    "€116–€171 online"
+   ],
+   [
+    "[Monte Rei](/courses/monte-rei/green-fees)",
+    "1pm to 3pm, by season",
+    "€195–€240",
+    "€190–€312"
+   ]
+  ],
+  "note": "Sources: Pestana Golf price list (checked 18 November 2026); Santo António 2026 rates; Benamor internet rates; Vale do Lobo Twilight & Sunset schedule; online booking at Espiche, Salgados, Vale do Lobo and Monte Rei, sampled October and November 2026. Standard round = lowest visitor price for 18 holes across the year. Prices change, and clubs that sell online adjust them day by day."
+ },
+ {
+  "type": "paragraph",
+  "text": "Pestana lists a single twilight time and price for each of its courses, with no seasonal change. Its twilight buggy costs €40. At Vale do Lobo the twilight start moves through the year: **1pm from mid-November to January**, 1.30pm in February, 2pm in March, 3.30pm from the end of March to 20 May, 3pm from late May to mid-September, 3.30pm again until late October and 2pm until mid-November. Vale do Lobo also sells a later **Sunset** rate, from 3pm in winter, rising to 5pm from April to late October, at the same price as twilight."
+ },
+ {
+  "type": "paragraph",
+  "text": "Penina's last published visitor price list, for 2024/25, had a twilight green fee after 2.30pm. The club hasn't published a newer one, so ask Penina for the current rate."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Can you finish 18 holes?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Vale do Lobo, for example, asks golfers to play 18 holes in **4 hours 30 minutes or less**. Counting back 4 hours 30 minutes from last light (the end of civil twilight, about half an hour after sunset) gives the latest tee time that still lets you finish a full round:"
+ },
+ {
+  "type": "table",
+  "caption": "Daylight for a twilight round, central Algarve (mid-month)",
+  "headers": [
+   "Month",
+   "Sunset",
+   "Last light",
+   "Latest tee time for 18 holes"
+  ],
+  "rows": [
+   [
+    "January",
+    "17:37",
+    "18:06",
+    "13:35"
+   ],
+   [
+    "February",
+    "18:11",
+    "18:38",
+    "14:05"
+   ],
+   [
+    "March",
+    "18:39",
+    "19:05",
+    "14:35"
+   ],
+   [
+    "April",
+    "20:06",
+    "20:33",
+    "16:00"
+   ],
+   [
+    "May",
+    "20:32",
+    "21:01",
+    "16:30"
+   ],
+   [
+    "June",
+    "20:53",
+    "21:24",
+    "16:50"
+   ],
+   [
+    "July",
+    "20:52",
+    "21:22",
+    "16:50"
+   ],
+   [
+    "August",
+    "20:25",
+    "20:53",
+    "16:20"
+   ],
+   [
+    "September",
+    "19:41",
+    "20:07",
+    "15:35"
+   ],
+   [
+    "October",
+    "18:56",
+    "19:22",
+    "14:50"
+   ],
+   [
+    "November",
+    "17:23",
+    "17:51",
+    "13:20"
+   ],
+   [
+    "December",
+    "17:16",
+    "17:45",
+    "13:15"
+   ]
+  ],
+  "note": "Calculated for Vilamoura on the 15th of each month, Portugal time. The clocks go forward on the last Sunday of March and back on the last Sunday of October, so light ends about an hour earlier in late October than in mid-October. The west and east of the Algarve differ by only a few minutes."
+ },
+ {
+  "type": "paragraph",
+  "text": "**April to September:** easy. Twilight usually starts between 3pm and 4pm and there is light until 8pm or later, enough for a full round at a normal pace."
+ },
+ {
+  "type": "paragraph",
+  "text": "**March and October:** usually fine if you take one of the first twilight tee times. Watch the last week of October, when the clocks go back and last light comes about an hour earlier."
+ },
+ {
+  "type": "paragraph",
+  "text": "**November to February:** be careful. Last light is around 5.45–6.40pm, so you need to tee off by about 1.15pm in December and 2pm in February. At Vale do Lobo, where twilight starts at 1pm in midwinter, the first slot leaves just enough light for 18 holes at a steady pace. With a 1.30pm start, as at Santo António and Pestana Ferragudo, you have about four and a quarter hours in December, so you'll need to play quickly. A 3.30pm twilight tee time in winter leaves about two and a half hours of light: enough for nine holes or a few more, not a full round. If that is all you want, it is still cheap golf, but book it knowing you won't finish."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Where the saving is biggest"
+ },
+ {
+  "type": "paragraph",
+  "text": "At Pestana's courses the twilight price stays the same all year while the standard rate rises in spring and autumn, so twilight saves most in **March, April and October**, Pestana's premium months. At Vila Sol, for example, a twilight round is €60 against €215 for a standard round in those months. In December or January the gap is smaller: Alto Golf is €75 for a standard round and €50 at twilight."
+ },
+ {
+  "type": "paragraph",
+  "text": "At clubs with dynamic pricing the saving follows the season too. On the dates we checked, Salgados charged €47 at twilight against €78 for a standard round in January, July and August, and €99 against €139 in spring and autumn. Monte Rei is the exception: its twilight round saved €48–€72 in spring and summer, but in November the twilight rate was €5 more than the standard one. Benamor's afternoon rate only applies in its low season and saves €7."
+ },
+ {
+  "type": "card",
+  "refType": "course",
+  "slug": "vila-sol",
+  "withPhoto": true
+ },
+ {
+  "type": "card",
+  "refType": "course",
+  "slug": "salgados",
+  "withPhoto": true
+ },
+ {
+  "type": "card",
+  "refType": "course",
+  "slug": "santo-antonio",
+  "withPhoto": true
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Tips for booking a twilight tee time"
+ },
+ {
+  "type": "paragraph",
+  "text": "**Check the start time when you book.** Twilight times change through the year at many clubs, and the price list doesn't always say so. The booking engine only shows the twilight price from the right time onwards."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Take the first twilight slot in winter.** In December, every half hour later is a few holes you may not finish."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Consider a buggy.** On a hilly course a buggy helps you keep up and finish before dark. Pestana's twilight buggy is €40, cheaper than its standard €55."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Use it on the day you arrive.** A twilight round on the afternoon you land turns a two-round weekend into three. See our [golf weekend guide](/guide/golf-weekend-in-the-algarve)."
+ },
+ {
+  "type": "paragraph",
+  "text": "**Not every club sells twilight online.** On the dates we checked, the Vilamoura courses run by Dom Pedro, the Quinta do Lago courses, Palmares and Boavista showed no twilight rate in their own online booking. Some may still offer late-afternoon prices by phone or at the desk, so ask. For more ways to save, see [the cheapest golf courses in the Algarve](/guide/the-cheapest-golf-courses-in-the-algarve) and [how to book tee times](/guide/how-to-book-tee-times-in-the-algarve)."
+ },
+ {
+  "type": "paragraph",
+  "text": "Want to play after dark instead? See [night golf in the Algarve](/guide/night-golf-in-the-algarve)."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Frequently asked questions"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "What time does twilight golf start in the Algarve?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Between about 1pm and 4pm, depending on the course and the season. In winter some clubs start twilight at 1pm or 1.30pm; in summer it is usually 3pm to 4pm. Pestana's courses keep the same time all year: 1.30pm at Ferragudo, 3pm at Alto Golf and 3.30pm at Gramacho, Vale da Pinta, Silves and Vila Sol."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Can I play 18 holes on a twilight round in winter?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Only with an early twilight tee time. In December last light is around 5.45pm, so you need to start by about 1.15pm to play 18 holes in four and a half hours. From April to September there is plenty of light for a full round."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Where is the cheapest twilight golf in the Algarve?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Among the courses we checked, Santo António near Salema at €35, then Alto Golf at €50 and Pestana's Gramacho, Vale da Pinta and Silves courses at €55. Salgados and Espiche can be cheaper on some dates, as their online prices change with the season."
+ }
+]
