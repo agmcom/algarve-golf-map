@@ -1,0 +1,194 @@
+   Normal Climatológica – Faro 1991-2020
+  Número da estação: 554 Latitude: 37.0166N Longitude: 7.9719W Altitude: 5.0 m
+Região Climática: Baixo Alentejo e Sotavento Algarvio
+Versão: 1.0 de 2024
+Jan Fev Mar Abr Mai Jun Jul Ago
+TT[°C] 12.3 12.9 14.9 16.6 19.3 22.3 24.5 24.6 TX[°C] 16.3 17.0 18.9 20.7 23.5 26.8 29.4 29.2
+Set Out Nov Dez Ano
+22.4 19.6 15.7 13.4 18.2 26.4 23.3 19.6 17.1 22.3 18.3 15.8 11.9 9.7 14.0
+                                                                  TN[°C] 8.3 TX≥25°C 0.0
+TX≥30°C 0.0 TX≥35°C 0.0 TN≥20°C 0.0 TN<0°C 0.0
+8.8 10.8 12.4 15.0 17.8 19.6 19.9
+                    0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+2.1 9.5 0.0 1.2 0.0 0.0 0.0 1.2 0.0 0.0
+Número de dias [dias]
+19.4 27.8 28.8
+19.6 7.2 0.3 0.0
+3.2 0.3 0.0 0.0 35.5
+115.2
+                 5.3 0.3 6.2 0.0
+13.1 12.4
+1.6 1.1 0.0
+12.9 14.9 7.7 0.0 0.0 0.0
+0.0 0.0 0.0 3.1 1.7 0.0 0.0 44.7 0.0 0.0 0.0 0.0
+35.6 28.6 23.1 44.3
+                                                     Extremos da Temperatura do ar [°C] MaiorTX 21.9 22.9 28.9 30.1 37.1 37.5 44.3 39.6 35.2
+                                  Dia 28 27 23 28 14 24 25 01 04 22 01 07 Ano 2003 1997 1992 1992 2012 2017 2004 2003 2009 2014 2009 2018
+25/07/2004
+                 MenorTX 9.3 8.0 9.1 15.2 13.9 19.6 21.2 21.1 19.1 16.0 12.4 10.9 8.0
+                 Dia 27 12 01 10 02 13 29 25 22 18 23 16 Ano 2005 2010 2005 2018 2004 1992 2014 2002 1994 2012 2013 2001
+12/02/2010
+                 MaiorTN 16.9 15.8 18.4 19.7 23.7 26.8 32.0 27.4 25.5 22.7 21.1 17.8 32.0
+                 Dia 04 25 30 28 14 17 26 03 04 20/2014 01 14 Ano 1996 2010 1995 2010 2012 2017 2004 2018 2016 15/2017 1995 2015
+26/07/2004
+                 MenorTN 0.2 -0.3 2.3 4.8 6.7 11.4 13.6 14.4 9.9 7.8 3.0 1.2 -0.3
+                Dia 09 05 02 11 01 04/1992 11 26 23 28 23 28 Ano 2009 2012 1993 1998 2001 11/1995 1993 1993 1994 1993 1991 2004
+05/02/2012
+              1
+
+   Normal Climatológica – Faro 1991-2020
+ Número da estação: 554 Latitude: 37.0166N Longitude: 7.9719W Altitude: 5.0 m
+Região Climática: Baixo Alentejo e Sotavento Algarvio
+Versão: 1.0 de 2024
+               Jan
+Fev
+Mar
+Abr
+Mai
+Jun
+Jul
+Ago
+Set
+Out
+Nov
+Dez
+Ano
+             Prec [mm]
+49.3
+41.9
+46.8
+39.0
+26.2
+5.1
+0.9
+3.0
+21.5
+56.0
+75.5
+90.0
+455.1
+   Número de dias [dias]
+               P≥1mm
+6.0
+5.4
+5.6
+5.3
+3.8
+0.8
+0.2
+0.2
+1.9
+6.0
+6.6
+7.0
+48.9
+              P≥10mm
+1.8
+1.4
+1.6
+1.3
+0.7
+0.2
+0.0
+0.1
+0.7
+2.0
+2.7
+3.2
+15.6
+              P≥20mm
+0.6
+0.5
+0.6
+0.4
+0.3
+0.0
+0.0
+0.0
+0.3
+0.6
+1.1
+1.2
+5.6
+              P≥30mm
+0.1
+0.2
+0.2
+0.0
+0.1
+0.0
+0.0
+0.0
+0.2
+0.3
+0.4
+0.7
+2.2
+   Extremos da Precipitação [mm]
+               Maior P
+41.3
+57.9
+45.0
+47.9
+51.3
+20.4
+8.1
+53.9
+58.2
+56.1
+79.1
+90.0
+90.0
+              Dia Ano
+27/2000 04/2010
+09 1996
+09 2008
+19 2011
+30 2018
+28 2005
+25 2007
+29 2001
+20 2020
+01 1993
+23 1992
+23/12/1992
+                        21 2004
+Instituto Português do Mar e da Atmosfera, I. P. Divisão de Clima e Alterações Climáticas
+clima@ipma.pt
+Observações
+Série híbrida.
+Contactos
+  Rua C ao Aeroporto Humberto Delgado
+ 1749-077 Lisboa
+ Portugal
+  2
+
+   Normal Climatológica – Faro 1991-2020
+Legenda
+Gráficos:
+Tabelas:
+TT [°C]
+TX [°C]
+TN [°C]
+TX ≥ 25 °C [dias] TX ≥ 30 °C [dias] TX ≥ 35 °C [dias] TN ≥ 20 °C [dias] TN < 0 °C [dias] Maior TX [°C] Menor TX [°C] Maior TN [°C] Menor TN [°C] Prec [mm]
+P ≥ 1 mm [dias] P≥10mm[dias] P≥20mm[dias] P≥30mm[dias] Maior P [mm]
+Médias da temperatura média, máxima e mínima mensal e da precipitação total no período de 1991- 2020
+Valores médios mensais e somas mensais de diferentes elementos climatológicos. Valores ausentes (sem medições ou período de medição muito curto) são indicados com "-"
+Média da Temperatura Média Diária do ar
+Média da Temperatura Máxima Diária do ar
+Média da Temperatura Mínima Diária do ar
+Número médio de dias com Temperatura máxima do ar superior ou igual a 25 °C – Dias de verão Número médio de dias com Temperatura máxima do ar superior ou igual a 30 °C – Dias quentes Número médio de dias com Temperatura máxima do ar superior ou igual a 35 °C – Dias muito quentes Número médio de dias com Temperatura mínima do ar superior ou igual a 20 °C – Noites tropicais Número médio de dias com Temperatura mínima do ar inferior a 0 °C – Dias de geada
+Maior valor da Temperatura Máxima Diária do ar
+Menor valor da Temperatura Máxima Diária do ar
+Maior valor da Temperatura Mínima Diária do ar
+Menor valor da Temperatura Mínima Diária do ar
+Média da quantidade de Precipitação Total
+Número médio de dias com Precipitação superior ou igual a 1 mm – Dias de chuva
+Número médio de dias com Precipitação superior ou igual a 10 mm – Dias chuvosos
+Número médio de dias com Precipitação superior ou igual a 20 mm – Dias muito chuvosos
+Número médio de dias com Precipitação superior ou igual a 30 mm – Dias extremamente chuvosos Maior valor da quantidade de Precipitação Diária
+Foram usadas para o cálculo das normais 1991-2020 séries homogéneas de dados de temperatura do ar e de precipitação.
+A seleção dos indicadores está de acordo com o recomendado pela Organização Meteorológica Mundial (WMO-No. 1203). Os valores podem mudar devido a atualizações contínuas de controlo de qualidade e homogeneidade.
+A série é composta por dados observados (estações clássicas e automáticas) e dados modelados através de procedimentos numéricos baseados na modelação parametrizada para a escala local com o modelo WRF.
+3
+

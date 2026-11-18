@@ -1,0 +1,92 @@
+FETCHED:
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/ 6259
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/sir-henry-cotton-championship-course-walkthrough/ 10692
+  https://www.penina.com/media/4666093/pn_factsheet_hotel_en_24.pdf 4580
+  https://www.penina.com/penina-hotel/the-algarve/history-of-golf-in-the-algarve/ 8566
+  https://www.penina.com/penina-hotel/the-algarve/local-activities-near-to-penina-hotel/ria-de-alvor-nature-reserve/ 10900
+  https://www.penina.com/penina-hotel/the-algarve/local-activities-near-to-penina-hotel/portimão-the-best-golf-in-the-algarve/ ERR 'ascii' codec can't encode character '\xe3' in position 74: 
+  https://www.penina.com/penina-hotel/the-algarve/jjw-golf-courses-in-the-algarve/ 5226
+  https://www.penina.com/penina-hotel/the-algarve/jjw-golf-courses-in-the-algarve/san-lorenzo-golf-course/ 6815
+  https://www.penina.com/penina-hotel/the-algarve/jjw-golf-courses-in-the-algarve/pinheiros-altos-golf-course/ 6611
+  https://www.penina.com/golf/golf-courses/resort-course/ 5419
+  https://www.penina.com/golf/golf-courses/academy-course/ 4757
+  https://www.penina.com/media/4666499/pgh-football-package-2024-25.pdf 49
+  https://www.penina.com/golf/golf-courses/ 5341
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/sir-henry-cotton-championship-course-history/ 8503
+  https://www.penina.com/golf/golf-courses/sir-henry-cotton-championship-course/sir-henry-cotton-championship-course-rules-specifications/ 7491
+  https://www.penina.com/golf/penina-golf-academy/ 4771
+  https://www.penina.com/offers/penina-golf-tournaments/ 4043
+  https://www.penina.com/media/4630856/calend%C3%A1rio-eventos-2024-2025.pdf 537
+  https://www.penina.com/golf/golf-pro-students-package/ 4287
+  https://www.penina.com/media/4676114/pn_kangaroo_xmas_fv_lr.pdf 672
+  https://www.penina.com/leisure/kids-kangaroo-club/rates-timetable/ 5437
+  https://www.penina.com/media/4690884/pn_footgolf_brochure.pdf 3577
+  https://www.jjwhotels.com/media/861791/jjwh-836-football-promotion-fact-sheet-en.pdf ERR HTTP Error 404: Not Found
+  https://www.penina.com/offers/best-rate-guaranteed/ 3880
+  https://www.penina.com/offers/golf-packages-at-penina/ 4182
+  https://www.penina.com/media/4488761/a-pgh-football-package-2022-23.pdf 82
+  https://www.penina.com/media/4666496/2024_2025-pgc_visitors-price-list.pdf 2865
+  https://www.penina.com/media/4666033/2024_2025-pgh_residents-price-list.pdf 1461
+  https://www.penina.com/terms-conditions/ 24415
+  https://www.penina.com/hotel-policies/ 8614
+
+HITS:
+
+[https://www.penina.com/media/4666496/2024_2025-pgc_visitors-price-list.pdf]
+de;
+–
+The use of soft spikes are mandatory;
+–
+Handicap certificate is required (Men: 28 / Ladies: 36);
+–
+The use of private buggies, trolleys or electric trolleys may be charged at 50% of the course rental rate;
+–
+Golf carts can be restricted due to weather conditions;
+–
+All subject to availability.
+PRICE LIST – VISITORS
+Penina Golf Courses | Tel.: +351 282 420 223/4 | penina-golf@jjwhotels.com
+PRICE LIST – VISITORS
+2024/2025
+Online Green Fee
+Green Fee – 18 Holes 121€ 96€ 85€
+Green Fee – 9 Holes 79€ 60€ 48€
+Resort Golf Course – 18 Holes 51€ 49€
+Resort Golf Course – 9 Holes 32€ 30€
+* Green Fee 
+
+[https://www.penina.com/media/4666496/2024_2025-pgc_visitors-price-list.pdf]
+de;
+–
+The use of soft spikes are mandatory;
+–
+Handicap certificate is required (Men: 28 / Ladies: 36);
+–
+The use of private buggies, trolleys or electric trolleys may be charged at 50% of
+the course rental rate;
+–
+Golf carts can be restricted due to weather conditions;
+–
+All subject to availability.
+Penina Golf Courses | Tel.: +351 282 420 223/4 | penina-golf@jjwhotels.com
+PRICE LIST – VISITORS
+2024/2025
+
+
+[https://www.penina.com/media/4666033/2024_2025-pgh_residents-price-list.pdf]
+de;
+–
+The use of soft spikes are mandatory;
+–
+Handicap certificate is required (Men: 28 / Ladies: 36);
+–
+The use of private buggies, trolleys or electric trolleys may
+be charged at 50% of the course rental rate;
+–
+Golf carts can be restricted due to weather conditions;
+–
+All subject to availability.
+
+
+[https://www.penina.com/hotel-policies/]
+ behaviour of guests, who must take all steps for corrective action as requested by the Hotel. In the event of failure to comply with management requests, the Hotel may terminate the booking or stop any event immediately without being liable for any refund or compensation. It is the policy of the Hotel not to discriminate on the grounds of race, colour, nationality, creed, sex, marital status, age, ethnic origin or disability. Guests, employees and all sub-contractors are expected to adhere to this policy and the Hotel may, without incurring any liability to the guest, remove from the Hotel an

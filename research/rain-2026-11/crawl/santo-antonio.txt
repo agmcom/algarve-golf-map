@@ -1,0 +1,19 @@
+FETCHED:
+  https://www.saresorts.com/ 2428
+  https://www.saresorts.com/golf.html 4254
+  https://www.saresorts.com/pt/golf.html 3995
+  https://webbox-assets.siteminder.com/assets/dlfyrswchjblukgy/83f0a354-f815-428c-98cb-c4c6ed8bfc93.pdf 1322
+  https://webbox-assets.siteminder.com/assets/dlfyrswchjblukgy/19e5d6ba-eb14-43ff-af3d-ea81e4ed2be6.pdf 1966
+
+HITS:
+
+[https://webbox-assets.siteminder.com/assets/dlfyrswchjblukgy/19e5d6ba-eb14-43ff-af3d-ea81e4ed2be6.pdf]
+IPS INCLUDE:
+Special buggy hire (30€)
+10% off at Spike Bar & Restaurants
+10% off at the Golf Shop (clothing & selected items)
+10% off on Gym Membership
+CNIG Card (when joining FPGC and Federation)
+Guest member green fee at tenant rates
+Free 18 holes vouchers: 2 for singles, 4 for couples
+

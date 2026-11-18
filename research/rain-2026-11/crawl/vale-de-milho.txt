@@ -1,0 +1,9 @@
+FETCHED:
+  https://valedemilhogolf.com/ 2332
+  https://valedemilhogolf.com/restaurant/ 1456
+  https://valedemilhogolf.com/book/ 1485
+  https://valedemilhogolf.com/fees/ 3963
+  https://valedemilhogolf.com/membership/ 2141
+  https://valedemilhogolf.com/contact/ 994
+
+HITS:

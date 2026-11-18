@@ -1,0 +1,16 @@
+FETCHED:
+  https://www.pinheirosaltos.com/ 1433
+  https://www.pinheirosaltos.com/golf-courses-and-facilities/golf-titles-and-membership.aspx 3740
+  https://www.pinheirosaltos.com/cookie-policy 8009
+  https://www.pinheirosaltos.com/terms-and-conditions 23957
+  https://www.pinheirosaltos.com/news-and-events 6820
+  https://www.pinheirosaltos.com/media/3909959/152 pinheiros altos members newsletter december 2016 - 3.pdf ERR URL can't contain control characters. '/media/3909959/152 pi
+  https://www.pinheirosaltos.com/media/3907598/151 pinheiros altos members newsletter november 2016.pdf ERR URL can't contain control characters. '/media/3907598/151 pi
+  https://www.pinheirosaltos.com/media/3905984/150 pinheiros altos members newsletter october 2016.pdf ERR URL can't contain control characters. '/media/3905984/150 pi
+  https://www.pinheirosaltos.com/media/3904959/149 pinheiros altos members newsletter september 2016.pdf ERR URL can't contain control characters. '/media/3904959/149 pi
+  https://www.pinheirosaltos.com/media/3903841/148 pinheiros altos members newsletter august 2016.pdf ERR URL can't contain control characters. '/media/3903841/148 pi
+  https://www.pinheirosaltos.com/media/3893044/143 pinheiros altos members newsletter march 2016.pdf ERR URL can't contain control characters. '/media/3893044/143 pi
+  https://www.pinheirosaltos.com/media/3890465/142 pinheiros altos members newsletter february 2016.pdf ERR URL can't contain control characters. '/media/3890465/142 pi
+  https://www.pinheirosaltos.com/media/3888531/141 pinheiros altos members newsletter january 2016.pdf ERR URL can't contain control characters. '/media/3888531/141 pi
+
+HITS:

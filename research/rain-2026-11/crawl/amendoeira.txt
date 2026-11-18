@@ -1,0 +1,457 @@
+FETCHED:
+  https://www.amendoeiraresort.com/en/golf/ 6707
+  https://www.amendoeiraresort.com/pt/golfe/ 7250
+  https://www.amendoeiraresort.com/en/bookcore/agency/login/ 622
+  https://www.amendoeiraresort.com/en/bookcore/partempresas/login-empresa/ 622
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/scorecard2/Faldo_Scorecard.pdf 282
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/amendorules/REGRAS_LOCAIS_PORT_.pdf 1577
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/scorecard/Oconnor_Jnr.__Scorecard.pdf 165
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/agr_members/AGR_Membership_2027.pdf 13751
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf 3499
+  https://www.amendoeiraresort.com/en/privacy-policy/ 19622
+  https://www.amendoeiraresort.com/en/cookies/ 916
+  https://www.amendoeiraresort.com/en/golf/None ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/pt/bookcore/agency/login/ 720
+  https://www.amendoeiraresort.com/pt/bookcore/partempresas/login-empresa/ 720
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/scorecard/Oconnor_Jnr.__Scorecard.pdf" ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/agr_members/AGR_Subscrição_2027.pdf ERR 'ascii' codec can't encode characters in position 55-56: ord
+  https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf 3997
+  https://www.amendoeiraresort.com/pt/golfe/None ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/en/bookcore/agency/login/None ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/en/bookcore/partempresas/login-empresa/None ERR HTTP Error 404: Not Found
+  https://www.amendoeiraresort.com/en/cookies-policy/ 916
+  https://www.amendoeiraresort.com/en/privacy-policy/None ERR HTTP Error 404: Not Found
+
+HITS:
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/amendorules/REGRAS_LOCAIS_PORT_.pdf]
+ deve ser adotado se um árbitro não estiver imediatamente disponível. O jogador
+deve de relatar a situação á Comissão Técnica antes de devolver o cartão de resultados
+• CABOS ELÉTRICOS AEREOS
+Se uma bola bate numa linha ou cabo aéreo, a pancada será cancelada e repetida, sem penalidade e
+a bola não for recuperável imediatamente pode ser substituída.
+
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/agr_members/AGR_Membership_2027.pdf]
+IRD CAMPAIGN – BOOK UNTIL 31 OCT 2026
+New Member: the month of December 2026 will be courtesy to play as a member already
+Renewal: discounted rate as highlighted on the membership chart
+INCLUSIONS ON THE MEMBERSHIP
+Green fee Buggy Token F&B Pro Shop Vouchers
+Guests
+Guest Green fee CNIG FPG
+Premium Included Free Free 20% 20% 12 € 87|€ 98|€ 105 Yes Yes
+Silver € 55|€ 60|€ 70 Free Free 20% 20% 3 € 87|€ 98|€ 105 Yes Yes
+Trimestral Included Free Free 20% 20% 3 € 87|€ 98|€ 105 No No
+Junior Included No Free 20% 20% 0 € 87|€ 98|€ 105 Yes Yes
+P&P Included No No 10% 10% 0 Not applicable No No
+NEXTSWING 3
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/agr_members/AGR_Membership_2027.pdf]
+er members’ names.
+4.2 - When checking in all members must present their card at reception for confirmation.
+4.3 - At the Amendoeira Golf Resort golf courses, members may book tee times 60 days in advance, subject to availability.
+4.4 - A member can cancel the reservation up to 24 hours in advance. If not, it will be registered as a no-show and will be
+charged € 60 per greenfee as penalty.
+4.5. Members are entitled to daily tee times in the morning and some in the afternoon on alternate courses, except on
+Club tournament days (twice a week).
+4.6 - Guest price is according with the season (low,
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/agr_members/AGR_Membership_2027.pdf]
+ in 3 consecutive months.
+5.2 – Pitch & Putt membership has unlimited use of the Antonio Parreira Afonso course only. It does not include the
+illumination, as it must be paid according to the price.
+5.3 - Juniors up to 18 years old (inclusive)
+5.4 - Vouchers are personal and non-transferable.
+5.5 - MDL (Morgado da Lameira) reserves the right to use the members’ tee times on one or both golf courses if required.
+I confirm that all of the information I have supplied is true and accurate. My signature below indicates that I understand and agree
+that Morgado da Lameira, SA. has the right to rescin
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/agr_members/AGR_Membership_2027.pdf]
+orgado da Lameira, SA. has the right to rescind my membership and/or playing privileges at anytime for conduct deemed
+unreasonable or for repeat offense of rules and/or policies set forth by the golf course and/or its employees. I also understand no
+refund of my membership will be given for any reason, and that my membership is non-transferable.
+www.amendoeiraresort.com
+Morgado da Lameira, 8365-006 Alcantarilha – Portugal Algarve
+T. +351 282 320 820 | E. reception@amendoeiraresort.com
+PRIVACY POLICY ON THE COLLECTION AND TREATMENT OF PERSONAL DATA
+(in accordance with the EU Regulation 2016/679
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+nits) and package bookings, the
+remaining 80% of the total amount must be paid no later than 14 days before
+the arrival date.
+The following payment methods are accepted:
+• Credit card (Visa, Mastercard and American Express);
+• Bank transfer;
+• Cash;
+CANCELLATIONS, NO-SHOWS AND REFUNDS
+The applicable cancellation conditions are those set out for the rate or package
+booked.
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do no
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+the
+remaining 80% of the total amount must be paid no later than 14 days before
+the arrival date.
+The following payment methods are accepted:
+• Credit card (Visa, Mastercard and American Express);
+• Bank transfer;
+• Cash;
+CANCELLATIONS, NO-SHOWS AND REFUNDS
+The applicable cancellation conditions are those set out for the rate or package
+booked.
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refu
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+e total amount must be paid no later than 14 days before
+the arrival date.
+The following payment methods are accepted:
+• Credit card (Visa, Mastercard and American Express);
+• Bank transfer;
+• Cash;
+CANCELLATIONS, NO-SHOWS AND REFUNDS
+The applicable cancellation conditions are those set out for the rate or package
+booked.
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refund.
+Early departure
+Sho
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+nt methods are accepted:
+• Credit card (Visa, Mastercard and American Express);
+• Bank transfer;
+• Cash;
+CANCELLATIONS, NO-SHOWS AND REFUNDS
+The applicable cancellation conditions are those set out for the rate or package
+booked.
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refund.
+Early departure
+Should guests choose not to use the full duration of their booking or leave the
+accommodation bef
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+xpress);
+• Bank transfer;
+• Cash;
+CANCELLATIONS, NO-SHOWS AND REFUNDS
+The applicable cancellation conditions are those set out for the rate or package
+booked.
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refund.
+Early departure
+Should guests choose not to use the full duration of their booking or leave the
+accommodation before the scheduled departure date, no refund will be given for
+any unuse
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+
+• Cash;
+CANCELLATIONS, NO-SHOWS AND REFUNDS
+The applicable cancellation conditions are those set out for the rate or package
+booked.
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refund.
+Early departure
+Should guests choose not to use the full duration of their booking or leave the
+accommodation before the scheduled departure date, no refund will be given for
+any unused services.
+COMPLAINTS
+Am
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+ion conditions are those set out for the rate or package
+booked.
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refund.
+Early departure
+Should guests choose not to use the full duration of their booking or leave the
+accommodation before the scheduled departure date, no refund will be given for
+any unused services.
+COMPLAINTS
+Amendoeira Golf Resort will make every effort to resolve immediately an
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+ those set out for the rate or package
+booked.
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refund.
+Early departure
+Should guests choose not to use the full duration of their booking or leave the
+accommodation before the scheduled departure date, no refund will be given for
+any unused services.
+COMPLAINTS
+Amendoeira Golf Resort will make every effort to resolve immediately any
+complaint or cla
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+
+Where applicable:
+• Cancellations made up to 7 days before arrival are eligible for a full refund of
+the deposit;
+• Cancellations made less than 7 days in advance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refund.
+Early departure
+Should guests choose not to use the full duration of their booking or leave the
+accommodation before the scheduled departure date, no refund will be given for
+any unused services.
+COMPLAINTS
+Amendoeira Golf Resort will make every effort to resolve immediately any
+complaint or claim made by any guest.
+Should a guest wish to m
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+vance and no-shows are non-
+refundable;
+• Non-refundable rates do not entitle guests to any refund.
+Early departure
+Should guests choose not to use the full duration of their booking or leave the
+accommodation before the scheduled departure date, no refund will be given for
+any unused services.
+COMPLAINTS
+Amendoeira Golf Resort will make every effort to resolve immediately any
+complaint or claim made by any guest.
+Should a guest wish to make a complaint or claim, they should contact the
+resort’s reception, which will take the necessary steps to resolve the issue.
+Amendoeira Golf Resort accepts
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+iability in cases where the complaint or
+claim is made after the guest has checked out of the resort.
+TAXES
+Unless expressly stated otherwise, all legally applicable taxes, including VAT at
+the prevailing rate, are included in the reservation price.
+REFUND
+If customers choose not to use the full duration of their booking, no refund will
+be made.
+
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_EN.pdf]
+ecked out of the resort.
+TAXES
+Unless expressly stated otherwise, all legally applicable taxes, including VAT at
+the prevailing rate, are included in the reservation price.
+REFUND
+If customers choose not to use the full duration of their booking, no refund will
+be made.
+
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+ pacotes, os
+restantes 80% do valor total devem ser pagos o mais tardar 14 dias antes da
+data de chegada.
+São aceites os seguintes métodos de pagamento:
+• Cartão de crédito (Visa, Mastercard e American Express);
+• Transferência bancária;
+• Dinheiro;
+CANCELAMENTOS, NÃO COMPARECIMENTOS E REEMBOLSOS
+As condições de cancelamento aplicáveis são as estabelecidas para a tarifa ou
+pacote reservado.
+Quando aplicável:
+• Os cancelamentos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não s
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+otal devem ser pagos o mais tardar 14 dias antes da
+data de chegada.
+São aceites os seguintes métodos de pagamento:
+• Cartão de crédito (Visa, Mastercard e American Express);
+• Transferência bancária;
+• Dinheiro;
+CANCELAMENTOS, NÃO COMPARECIMENTOS E REEMBOLSOS
+As condições de cancelamento aplicáveis são as estabelecidas para a tarifa ou
+pacote reservado.
+Quando aplicável:
+• Os cancelamentos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não são reembolsáveis;
+• As tarifas não re
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+ tardar 14 dias antes da
+data de chegada.
+São aceites os seguintes métodos de pagamento:
+• Cartão de crédito (Visa, Mastercard e American Express);
+• Transferência bancária;
+• Dinheiro;
+CANCELAMENTOS, NÃO COMPARECIMENTOS E REEMBOLSOS
+As condições de cancelamento aplicáveis são as estabelecidas para a tarifa ou
+pacote reservado.
+Quando aplicável:
+• Os cancelamentos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não são reembolsáveis;
+• As tarifas não reembolsáveis não dão direito
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+édito (Visa, Mastercard e American Express);
+• Transferência bancária;
+• Dinheiro;
+CANCELAMENTOS, NÃO COMPARECIMENTOS E REEMBOLSOS
+As condições de cancelamento aplicáveis são as estabelecidas para a tarifa ou
+pacote reservado.
+Quando aplicável:
+• Os cancelamentos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não são reembolsáveis;
+• As tarifas não reembolsáveis não dão direito a qualquer reembolso aos
+hóspedes.
+Saída antecipada
+Caso os hóspedes optem por não utilizar a duração 
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+;
+• Dinheiro;
+CANCELAMENTOS, NÃO COMPARECIMENTOS E REEMBOLSOS
+As condições de cancelamento aplicáveis são as estabelecidas para a tarifa ou
+pacote reservado.
+Quando aplicável:
+• Os cancelamentos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não são reembolsáveis;
+• As tarifas não reembolsáveis não dão direito a qualquer reembolso aos
+hóspedes.
+Saída antecipada
+Caso os hóspedes optem por não utilizar a duração total da sua reserva ou
+abandonem o alojamento antes da data de parti
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+OMPARECIMENTOS E REEMBOLSOS
+As condições de cancelamento aplicáveis são as estabelecidas para a tarifa ou
+pacote reservado.
+Quando aplicável:
+• Os cancelamentos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não são reembolsáveis;
+• As tarifas não reembolsáveis não dão direito a qualquer reembolso aos
+hóspedes.
+Saída antecipada
+Caso os hóspedes optem por não utilizar a duração total da sua reserva ou
+abandonem o alojamento antes da data de partida prevista, não será concedido
+qu
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+cidas para a tarifa ou
+pacote reservado.
+Quando aplicável:
+• Os cancelamentos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não são reembolsáveis;
+• As tarifas não reembolsáveis não dão direito a qualquer reembolso aos
+hóspedes.
+Saída antecipada
+Caso os hóspedes optem por não utilizar a duração total da sua reserva ou
+abandonem o alojamento antes da data de partida prevista, não será concedido
+qualquer reembolso pelos serviços não utilizados.
+RECLAMAÇÕES
+O Amendoeira Golf Resor
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+servado.
+Quando aplicável:
+• Os cancelamentos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não são reembolsáveis;
+• As tarifas não reembolsáveis não dão direito a qualquer reembolso aos
+hóspedes.
+Saída antecipada
+Caso os hóspedes optem por não utilizar a duração total da sua reserva ou
+abandonem o alojamento antes da data de partida prevista, não será concedido
+qualquer reembolso pelos serviços não utilizados.
+RECLAMAÇÕES
+O Amendoeira Golf Resort envidará todos os esforços par
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+ntos efetuados até 7 dias antes da chegada dão direito a um
+reembolso total do depósito;
+• Os cancelamentos efetuados com menos de 7 dias de antecedência e as
+ausências não são reembolsáveis;
+• As tarifas não reembolsáveis não dão direito a qualquer reembolso aos
+hóspedes.
+Saída antecipada
+Caso os hóspedes optem por não utilizar a duração total da sua reserva ou
+abandonem o alojamento antes da data de partida prevista, não será concedido
+qualquer reembolso pelos serviços não utilizados.
+RECLAMAÇÕES
+O Amendoeira Golf Resort envidará todos os esforços para resolver
+imediatamente qualquer reclama
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+fas não reembolsáveis não dão direito a qualquer reembolso aos
+hóspedes.
+Saída antecipada
+Caso os hóspedes optem por não utilizar a duração total da sua reserva ou
+abandonem o alojamento antes da data de partida prevista, não será concedido
+qualquer reembolso pelos serviços não utilizados.
+RECLAMAÇÕES
+O Amendoeira Golf Resort envidará todos os esforços para resolver
+imediatamente qualquer reclamação ou queixa apresentada por qualquer
+hóspede.
+Caso um hóspede pretenda apresentar uma reclamação ou queixa, deverá
+contactar a receção do resort, que tomará as medidas necessárias para
+resolver a sit
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+ue a reclamação ou queixa seja apresentada após o hóspede ter feito o
+check-out do resort.
+IMPOSTOS
+Salvo indicação expressa em contrário, todos os impostos legalmente
+aplicáveis, incluindo o IVA à taxa em vigor, estão incluídos no preço da reserva.
+REEMBOLSO
+Caso os clientes optem por não utilizar a totalidade do período da sua reserva,
+não será efetuado qualquer reembolso.
+
+
+[https://www.amendoeiraresort.com/uploads/files/cms_apps/pdf/termsandconditions/TC_PT.pdf]
+xpressa em contrário, todos os impostos legalmente
+aplicáveis, incluindo o IVA à taxa em vigor, estão incluídos no preço da reserva.
+REEMBOLSO
+Caso os clientes optem por não utilizar a totalidade do período da sua reserva,
+não será efetuado qualquer reembolso.
+

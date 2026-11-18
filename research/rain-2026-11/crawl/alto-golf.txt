@@ -1,0 +1,16 @@
+FETCHED:
+  https://altoclub.com/ 3998
+  https://altoclub.com/tariff 2377
+  https://altoclub.com/rentals 5497
+  https://altoclub.com/sales 1763
+  https://altoclub.com/services 3896
+  https://altoclub.com/rentals/va-t2-12b26 2562
+  https://altoclub.com/sales/va-v3-1221-sales 2333
+  https://altoclub.com/sales/va-t2-10352-sales 2145
+  https://altoclub.com/sales/va-t2-12g31-sales 2100
+  https://altoclub.com/sales/va-t2-10396-sales 2164
+  https://altoclub.com/sales/va-t2-10357-sales 2106
+  https://altoclub.com/contact-us?topic=service 1903
+  https://altoclub.com/privacy 2763
+
+HITS:

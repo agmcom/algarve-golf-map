@@ -1,0 +1,36 @@
+FETCHED:
+  https://www.boavistaresort.pt/en/Menu/Golf/About-the-Course.aspx 4328
+  https://www.boavistaresort.pt/en/Menu/Golf/Tariff.aspx 3441
+  https://www.boavistaresort.pt/en/Menu/Golf/Services.aspx 3248
+  https://www.boavistaresort.pt/en/Menu/Golf/Members.aspx 2162
+  https://www.boavistaresort.pt/en/Menu/Events/Corporate.aspx 2571
+  https://www.boavistaresort.pt/Files/Golf/G Rules UK.pdf ERR URL can't contain control characters. '/Files/Golf/G Rules U
+  https://www.boavistaresort.pt/Files/Golf/Score 2026.pdf ERR URL can't contain control characters. '/Files/Golf/Score 202
+  https://www.boavistaresort.pt/Files/Golf/slope rating.pdf ERR URL can't contain control characters. '/Files/Golf/slope rat
+  https://www.boavistaresort.pt/Images/Golf/Gallery/13.jpg 32384
+  https://www.boavistaresort.pt/Images/Golf/Gallery/14.jpg 28137
+  https://www.boavistaresort.pt/Images/Golf/Gallery/15.jpg 25640
+  https://www.boavistaresort.pt/Images/Golf/Gallery/16.jpg 35401
+  https://www.boavistaresort.pt/Images/Golf/Gallery/17.jpg 34374
+  https://www.boavistaresort.pt/Images/Golf/Gallery/18.jpg 33769
+  https://www.boavistaresort.pt/Images/Golf/Gallery/19.jpg 23208
+  https://www.boavistaresort.pt/Images/Golf/Gallery/20.jpg 28220
+  https://www.boavistaresort.pt/Images/Golf/Gallery/21.jpg 25073
+  https://www.boavistaresort.pt/Images/Golf/Gallery/22.jpg 35103
+  https://www.boavistaresort.pt/Images/Golf/Gallery/23.jpg 35173
+  https://www.boavistaresort.pt/Images/Golf/Gallery/24.jpg 23947
+  https://www.boavistaresort.pt/Images/Golf/Gallery/25.jpg 28428
+  https://www.boavistaresort.pt/Images/Golf/Gallery/26.jpg 29223
+  https://www.boavistaresort.pt/Images/Golf/Gallery/27.jpg 31826
+  https://www.boavistaresort.pt/Images/Golf/Gallery/28.jpg 28412
+  https://www.boavistaresort.pt/Images/Golf/Gallery/29.jpg 32756
+  https://www.boavistaresort.pt/Images/Golf/Gallery/30.jpg 25589
+  https://www.boavistaresort.pt/Images/Golf/Gallery/31.jpg 35685
+  https://www.boavistaresort.pt/Images/Golf/Gallery/32.jpg 22169
+  https://www.boavistaresort.pt/Images/Golf/Gallery/33.jpg 35274
+  https://www.boavistaresort.pt/Images/Golf/Gallery/34.jpg 25740
+
+HITS:
+
+[https://www.boavistaresort.pt/en/Menu/Golf/About-the-Course.aspx]
+ Boavista Golf & Spa Book Now Accommodation Bela Colina Holidays Typologies Two Bedroom Standard Townhouse Three Bedroom Premium Townhouse Promotions Vouchers Location Golf About the Course Tariff Services Tee Time Reservations Members Essential Fitness & Spa Essential Fitness and Spa Promotions & Packages Treatments Fitness & Activities Restaurants Clubhouse Restaurant La Bistro Restaurant Events Events and Promotions Weddings Corporate Contacts Real Estate Accommodation Golf Check-In Check-Out
