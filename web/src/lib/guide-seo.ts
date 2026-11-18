@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'the-easiest-golf-courses-in-the-algarve': {
+    title: 'Easiest golf courses in the Algarve: official slope ratings',
+    description: 'The Algarve\'s easiest 18-hole golf courses on the official FPG slope ratings, from Pestana Ferragudo (118), plus tees, handicap rules and hills.',
+  },
   'what-happens-if-it-rains-on-your-algarve-golf-trip': {
     title: 'Rain and golf in the Algarve: refunds and rain vouchers',
     description: 'Do you get your green fee back if it rains in the Algarve? Club rain-voucher rules, cancellation deadlines and how many rainy days to expect each month.',

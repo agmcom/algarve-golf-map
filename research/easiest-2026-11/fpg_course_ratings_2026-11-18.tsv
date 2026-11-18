@@ -1,0 +1,899 @@
+course	sex	tee	par	cr	slope
+Álamos Golf	Homens	BRANCAS	71	70.6	132
+Álamos Golf	Homens	AMARELAS	71	67.8	126
+Álamos Golf	Homens	VERMELHAS	71	64.4	119
+Álamos Golf	Homens	VERDES	71	61.7	115
+Álamos Golf	Homens	ROXAS	71	58.3	107
+Álamos Golf	Senhoras	AMARELAS	71	73.1	133
+Álamos Golf	Senhoras	VERMELHAS	71	68.5	123
+Álamos Golf	Senhoras	VERDES	71	64.7	115
+Álamos Golf	Senhoras	ROXAS	71	60.5	106
+Aldeia dos Capuchos	Homens	BRANCAS	58	57.2	93
+Aldeia dos Capuchos	Homens	AMARELAS	58	55.8	91
+Aldeia dos Capuchos	Homens	VERMELHAS	58	55	89
+Aldeia dos Capuchos	Senhoras	BRANCAS	58	58	97
+Aldeia dos Capuchos	Senhoras	AMARELAS	58	56.1	93
+Aldeia dos Capuchos	Senhoras	VERMELHAS	58	55	90
+Alto Golf	Homens	DOURADAS	70	65.5	121
+Alto Golf	Homens	BRANCAS	70	70.4	130
+Alto Golf	Homens	AMARELAS	70	69.1	128
+Alto Golf	Homens	VERMELHAS	70	66.7	123
+Alto Golf	Senhoras	DOURADAS	70	70	122
+Alto Golf	Senhoras	AMARELAS	70	74.4	131
+Alto Golf	Senhoras	VERMELHAS	70	71.5	124
+Amarante	Homens	BRANCAS	68	67	130
+Amarante	Homens	AMARELAS	68	64.8	126
+Amarante	Homens	VERMELHAS	68	62.8	122
+Amarante	Homens	ROXAS	68	59.2	113
+Amarante	Senhoras	AMARELAS	68	69.6	128
+Amarante	Senhoras	VERMELHAS	68	66.5	121
+Amarante	Senhoras	ROXAS	68	60.2	110
+Balaia Golf Village	Homens	AMARELAS	54	53.2	84
+Balaia Golf Village	Homens	VERMELHAS	54	52.4	83
+Balaia Golf Village	Senhoras	AMARELAS	54	55.8	83
+Balaia Golf Village	Senhoras	VERMELHAS	54	55	81
+Belas	Homens	BRANCAS	72	72.9	137
+Belas	Homens	AMARELAS	72	71.2	134
+Belas	Homens	AZUIS	72	68.5	128
+Belas	Homens	VERMELHAS	72	65.6	122
+Belas	Homens	VERDES	72	61.6	114
+Belas	Homens	ROXAS	72	60.1	111
+Belas	Senhoras	AMARELAS	72	76.7	143
+Belas	Senhoras	AZUIS	72	73.4	136
+Belas	Senhoras	VERMELHAS	72	69.9	128
+Belas	Senhoras	VERDES	72	63	114
+Belas	Senhoras	ROXAS	72	60.6	111
+Benamor	Homens	BRANCAS	71	68.2	121
+Benamor	Homens	AMARELAS	71	66.7	118
+Benamor	Homens	VERMELHAS	71	64.6	114
+Benamor	Homens	VERDES	71	60.7	106
+Benamor	Homens	ROXAS	71	59.2	103
+Benamor	Senhoras	AMARELAS	71	71.5	123
+Benamor	Senhoras	VERMELHAS	71	69	118
+Benamor	Senhoras	VERDES	71	63.5	108
+Benamor	Senhoras	ROXAS	71	59.9	102
+Boavista	Homens	PRETAS	71	73.4	138
+Boavista	Homens	BRANCAS	71	71.2	135
+Boavista	Homens	AMARELAS	71	68.9	131
+Boavista	Homens	VERMELHAS	71	66.3	126
+Boavista	Senhoras	AMARELAS	71	74.8	136
+Boavista	Senhoras	VERMELHAS	71	71.4	129
+Bom Sucesso	Homens	BRANCAS	72	72.4	134
+Bom Sucesso	Homens	AMARELAS	72	70.6	130
+Bom Sucesso	Homens	AZUIS	72	69.1	127
+Bom Sucesso	Homens	VERMELHAS	72	65.6	120
+Bom Sucesso	Senhoras	AZUIS	72	74.9	135
+Bom Sucesso	Senhoras	VERMELHAS	72	70.7	127
+Campo Real	Homens	PRETAS	72	71.5	136
+Campo Real	Homens	BRANCAS	72	69.8	132
+Campo Real	Homens	AMARELAS	72	68.3	129
+Campo Real	Homens	AZUIS	72	66.7	126
+Campo Real	Homens	VERMELHAS	72	65.3	123
+Campo Real	Homens	VERDES	72	61.3	115
+Campo Real	Homens	ROXAS	72	59.1	110
+Campo Real	Senhoras	BRANCAS	72	75.8	138
+Campo Real	Senhoras	AMARELAS	72	74.2	134
+Campo Real	Senhoras	AZUIS	72	72	130
+Campo Real	Senhoras	VERMELHAS	72	70.4	126
+Campo Real	Senhoras	VERDES	72	63.4	111
+Campo Real	Senhoras	ROXAS	72	60.9	106
+Cantanhede	Homens	PRETAS	57	57.5	91
+Cantanhede	Homens	BRANCAS	54	52.8	73
+Cantanhede	Senhoras	PRETAS	57	58.8	92
+Cantanhede	Senhoras	BRANCAS	54	55.6	72
+Castro Marim-Atlântico+Grouse	Homens	BRANCAS	71	69.8	134
+Castro Marim-Atlântico+Grouse	Homens	AMARELAS	71	68.5	131
+Castro Marim-Atlântico+Grouse	Homens	VERMELHAS	71	65.9	126
+Castro Marim-Atlântico+Grouse	Homens	VERDES	71	62.4	119
+Castro Marim-Atlântico+Grouse	Homens	ROXAS	71	59.3	112
+Castro Marim-Atlântico+Grouse	Senhoras	AMARELAS	72	73.8	138
+Castro Marim-Atlântico+Grouse	Senhoras	VERMELHAS	72	70.8	131
+Castro Marim-Atlântico+Grouse	Senhoras	VERDES	72	65.3	119
+Castro Marim-Atlântico+Grouse	Senhoras	ROXAS	72	59.9	111
+Castro Marim-Grouse+Guadiana	Homens	BRANCAS	72	71.4	133
+Castro Marim-Grouse+Guadiana	Homens	AMARELAS	72	69.8	131
+Castro Marim-Grouse+Guadiana	Homens	VERMELHAS	72	67	125
+Castro Marim-Grouse+Guadiana	Homens	VERDES	72	63.2	117
+Castro Marim-Grouse+Guadiana	Homens	ROXAS	72	59.6	110
+Castro Marim-Grouse+Guadiana	Senhoras	AMARELAS	73	75.6	137
+Castro Marim-Grouse+Guadiana	Senhoras	VERMELHAS	73	72.3	130
+Castro Marim-Grouse+Guadiana	Senhoras	VERDES	73	66.6	118
+Castro Marim-Grouse+Guadiana	Senhoras	ROXAS	73	60.5	109
+Castro Marim-Guadiana+Atlântico	Homens	BRANCAS	71	68.6	128
+Castro Marim-Guadiana+Atlântico	Homens	AMARELAS	71	66.9	126
+Castro Marim-Guadiana+Atlântico	Homens	VERMELHAS	71	65.1	122
+Castro Marim-Guadiana+Atlântico	Homens	VERDES	71	62.4	116
+Castro Marim-Guadiana+Atlântico	Homens	ROXAS	71	59.1	110
+Castro Marim-Guadiana+Atlântico	Senhoras	AMARELAS	73	71.6	130
+Castro Marim-Guadiana+Atlântico	Senhoras	VERMELHAS	73	69.5	125
+Castro Marim-Guadiana+Atlântico	Senhoras	VERDES	73	64.9	116
+Castro Marim-Guadiana+Atlântico	Senhoras	ROXAS	73	59.4	110
+Citygolf	Homens	BRANCAS	54	51	68
+Citygolf	Senhoras	BRANCAS	54	53.2	65
+CostaTerra Golf	Homens	PRETAS	72	76.1	141
+CostaTerra Golf	Homens	BRANCAS	72	73.1	134
+CostaTerra Golf	Homens	AMARELAS	72	70.8	130
+CostaTerra Golf	Homens	AZUIS	72	68.4	125
+CostaTerra Golf	Homens	VERMELHAS	72	65.7	120
+CostaTerra Golf	Senhoras	AMARELAS	72	76.8	136
+CostaTerra Golf	Senhoras	AZUIS	72	73.8	130
+CostaTerra Golf	Senhoras	VERMELHAS	72	70.6	123
+Espiche	Homens	BRANCAS	72	72.1	130
+Espiche	Homens	AMARELAS	72	70.2	126
+Espiche	Homens	VERMELHAS	72	67.9	123
+Espiche	Senhoras	AMARELAS	72	75.5	135
+Espiche	Senhoras	VERMELHAS	72	72.7	129
+Estela	Homens	BRANCAS	72	72.9	132
+Estela	Homens	AMARELAS	72	71.2	128
+Estela	Homens	VERMELHAS	72	68.2	122
+Estela	Homens	VERDES	72	61.4	106
+Estela	Homens	ROXAS	72	59.9	102
+Estela	Senhoras	AMARELAS	72	77.2	134
+Estela	Senhoras	VERMELHAS	72	73.7	126
+Estela	Senhoras	VERDES	72	63.2	106
+Estela	Senhoras	ROXAS	72	60.9	102
+Estoril	Homens	BRANCAS	69	68.2	120
+Estoril	Homens	AMARELAS	69	66.8	117
+Estoril	Homens	AZUIS	69	65.4	115
+Estoril	Homens	VERMELHAS	69	64.2	112
+Estoril	Senhoras	AMARELAS	69	71.8	126
+Estoril	Senhoras	AZUIS	69	70.1	123
+Estoril	Senhoras	VERMELHAS	69	68.6	120
+Estoril Blue Course	Homens	BRANCAS	68	65	113
+Estoril Blue Course	Homens	AMARELAS	68	64.6	113
+Estoril Blue Course	Homens	AZUIS	68	63.6	111
+Estoril Blue Course	Homens	VERMELHAS	68	63.2	110
+Estoril Blue Course	Homens	ROXAS	68	57.4	98
+Estoril Blue Course	Senhoras	BRANCAS	68	70.2	119
+Estoril Blue Course	Senhoras	AMARELAS	68	69.8	117
+Estoril Blue Course	Senhoras	AZUIS	68	68.6	115
+Estoril Blue Course	Senhoras	VERMELHAS	68	68	114
+Estoril Blue Course	Senhoras	ROXAS	68	59.8	97
+Faldo Course	Homens	PRETAS	72	74.5	142
+Faldo Course	Homens	BRANCAS	72	73.1	139
+Faldo Course	Homens	AMARELAS	72	70.9	134
+Faldo Course	Homens	AZUIS	72	68.3	129
+Faldo Course	Homens	VERMELHAS	72	65.1	123
+Faldo Course	Homens	VERDES	72	61.2	114
+Faldo Course	Homens	ROXAS	72	58.3	107
+Faldo Course	Senhoras	AZUIS	72	74.1	130
+Faldo Course	Senhoras	VERMELHAS	72	70.2	122
+Faldo Course	Senhoras	VERDES	72	64.4	112
+Faldo Course	Senhoras	ROXAS	72	60.5	105
+Ferragudo Golf Course	Homens	BRANCAS	72	70.8	118
+Ferragudo Golf Course	Homens	AMARELAS	72	67.7	113
+Ferragudo Golf Course	Homens	VERMELHAS	72	64.6	106
+Ferragudo Golf Course	Senhoras	BRANCAS	72	76.8	131
+Ferragudo Golf Course	Senhoras	AMARELAS	72	73.1	123
+Ferragudo Golf Course	Senhoras	VERMELHAS	72	69.2	115
+Gramacho Golf Course	Homens	PRETAS	72	72.7	132
+Gramacho Golf Course	Homens	BRANCAS	72	69.8	127
+Gramacho Golf Course	Homens	AMARELAS	72	68.1	123
+Gramacho Golf Course	Homens	VERMELHAS	72	65.9	119
+Gramacho Golf Course	Senhoras	AMARELAS	72	73.3	130
+Gramacho Golf Course	Senhoras	VERMELHAS	72	70.6	124
+Guardizela	Homens	BRANCAS	72	70.6	121
+Guardizela	Homens	AMARELAS	72	68.4	116
+Guardizela	Homens	VERMELHAS	72	66.4	113
+Guardizela	Homens	VERDES	72	61.6	102
+Guardizela	Homens	ROXAS	72	59	96
+Guardizela	Senhoras	BRANCAS	72	76.2	137
+Guardizela	Senhoras	AMARELAS	72	73.6	131
+Guardizela	Senhoras	VERMELHAS	72	71.2	126
+Guardizela	Senhoras	VERDES	72	64.2	110
+Guardizela	Senhoras	ROXAS	72	60.8	102
+Jamor	Homens	BRANCAS	70	65.5	109
+Jamor	Homens	AMARELAS	70	63.6	105
+Jamor	Homens	VERMELHAS	70	61.1	100
+Jamor	Homens	ROXAS	70	58.8	96
+Jamor	Senhoras	AZUIS	70	68.3	113
+Jamor	Senhoras	VERMELHAS	70	65.1	100
+Jamor	Senhoras	ROXAS	70	59.9	95
+Lisbon Sports Club	Homens	BRANCAS	69	69.2	127
+Lisbon Sports Club	Homens	AMARELAS	69	67.8	124
+Lisbon Sports Club	Homens	VERMELHAS	69	66	120
+Lisbon Sports Club	Homens	VERDES	69	63.5	115
+Lisbon Sports Club	Homens	ROXAS	69	60	108
+Lisbon Sports Club	Senhoras	BRANCAS	69	74.5	136
+Lisbon Sports Club	Senhoras	AMARELAS	69	72.8	132
+Lisbon Sports Club	Senhoras	VERMELHAS	69	70.5	127
+Lisbon Sports Club	Senhoras	VERDES	69	66.5	118
+Lisbon Sports Club	Senhoras	ROXAS	69	60.5	108
+Miramar	Homens	BRANCAS	70	70	123
+Miramar	Homens	AMARELAS	70	68.4	120
+Miramar	Homens	VERMELHAS	70	66.4	115
+Miramar	Homens	VERDES	70	62.4	106
+Miramar	Homens	ROXAS	70	59.4	98
+Miramar	Senhoras	BRANCAS	70	75.8	129
+Miramar	Senhoras	AMARELAS	70	73.8	125
+Miramar	Senhoras	VERMELHAS	70	71.4	120
+Miramar	Senhoras	VERDES	70	65	107
+Miramar	Senhoras	ROXAS	70	60.2	99
+Montado	Homens	BRANCAS	72	73.2	130
+Montado	Homens	AMARELAS	72	70.9	126
+Montado	Homens	AZUIS	72	69	122
+Montado	Homens	VERMELHAS	72	65.9	116
+Montado	Homens	VERDES	72	60.8	107
+Montado	Homens	ROXAS	72	59.1	103
+Montado	Senhoras	DOURADAS	72	74.9	129
+Montado	Senhoras	AZUIS	72	74.1	128
+Montado	Senhoras	VERMELHAS	72	70.4	120
+Montado	Senhoras	VERDES	72	63.2	108
+Montado	Senhoras	ROXAS	72	60.9	105
+Monte Rei Golf & Country Club	Homens	BRANCAS	72	71.3	138
+Monte Rei Golf & Country Club	Homens	AMARELAS	72	72.9	142
+Monte Rei Golf & Country Club	Homens	AZUIS	72	75.6	147
+Monte Rei Golf & Country Club	Homens	VERMELHAS	72	67	130
+Monte Rei Golf & Country Club	Senhoras	BRANCAS	72	77.6	144
+Monte Rei Golf & Country Club	Senhoras	VERMELHAS	72	72.3	132
+Montebelo Buçaco (19-09)	Homens	BRANCAS	72	72.6	136
+Montebelo Buçaco (19-09)	Homens	AMARELAS	72	69.6	130
+Montebelo Buçaco (19-09)	Homens	VERMELHAS	72	66.7	124
+Montebelo Buçaco (19-09)	Senhoras	AMARELAS	72	74.9	133
+Montebelo Buçaco (19-09)	Senhoras	VERMELHAS	72	71.3	125
+Montebelo Caramulo (1-18)	Homens	BRANCAS	72	74.2	139
+Montebelo Caramulo (1-18)	Homens	AMARELAS	72	71.1	133
+Montebelo Caramulo (1-18)	Homens	VERMELHAS	72	68.3	127
+Montebelo Caramulo (1-18)	Homens	VERDES	72	63.6	115
+Montebelo Caramulo (1-18)	Homens	ROXAS	72	60	107
+Montebelo Caramulo (1-18)	Senhoras	AMARELAS	72	76.4	136
+Montebelo Caramulo (1-18)	Senhoras	VERMELHAS	72	73.1	129
+Montebelo Caramulo (1-18)	Senhoras	VERDES	72	66.3	114
+Montebelo Caramulo (1-18)	Senhoras	ROXAS	72	60.6	106
+Montebelo Estrela (10-27)	Homens	BRANCAS	72	72.7	136
+Montebelo Estrela (10-27)	Homens	AMARELAS	72	70.2	131
+Montebelo Estrela (10-27)	Homens	VERMELHAS	72	67.2	125
+Montebelo Estrela (10-27)	Senhoras	AMARELAS	72	75.5	134
+Montebelo Estrela (10-27)	Senhoras	VERMELHAS	72	71.9	127
+Morgado Golf	Homens	BRANCAS	73	72.8	134
+Morgado Golf	Homens	AMARELAS	73	69.6	127
+Morgado Golf	Homens	AZUIS	73	68.4	125
+Morgado Golf	Homens	VERMELHAS	73	64.8	118
+Morgado Golf	Senhoras	AMARELAS	73	75.7	137
+Morgado Golf	Senhoras	AZUIS	73	74.2	134
+Morgado Golf	Senhoras	VERMELHAS	73	69.8	125
+Ocean Golf Course - Vale do Lobo	Homens	BRANCAS	73	74.1	140
+Ocean Golf Course - Vale do Lobo	Homens	AMARELAS	73	71.5	135
+Ocean Golf Course - Vale do Lobo	Homens	VERMELHAS	73	68.6	129
+Ocean Golf Course - Vale do Lobo	Homens	VERDES	73	63.6	119
+Ocean Golf Course - Vale do Lobo	Homens	ROXAS	73	60.6	112
+Ocean Golf Course - Vale do Lobo	Senhoras	AMARELAS	73	77.3	142
+Ocean Golf Course - Vale do Lobo	Senhoras	VERMELHAS	73	73.7	134
+Ocean Golf Course - Vale do Lobo	Senhoras	VERDES	73	66.3	118
+Ocean Golf Course - Vale do Lobo	Senhoras	ROXAS	73	61.5	113
+O'Connor Jnr Course	Homens	PRETAS	72	74.5	136
+O'Connor Jnr Course	Homens	BRANCAS	72	72.6	133
+O'Connor Jnr Course	Homens	AMARELAS	72	70.7	129
+O'Connor Jnr Course	Homens	AZUIS	72	69.2	126
+O'Connor Jnr Course	Homens	VERMELHAS	72	67.2	122
+O'Connor Jnr Course	Homens	VERDES	72	61.8	111
+O'Connor Jnr Course	Homens	ROXAS	72	58.9	105
+O'Connor Jnr Course	Senhoras	AZUIS	72	74.9	138
+O'Connor Jnr Course	Senhoras	VERMELHAS	72	72.5	132
+O'Connor Jnr Course	Senhoras	VERDES	72	65	116
+O'Connor Jnr Course	Senhoras	ROXAS	72	59.9	108
+Oeiras	Homens	BRANCAS	74	75	135
+Oeiras	Homens	AMARELAS	74	72.4	129
+Oeiras	Homens	AZUIS	74	70.4	125
+Oeiras	Homens	VERMELHAS	74	67.8	119
+Oeiras	Homens	VERDES	74	62.6	109
+Oeiras	Homens	ROXAS	74	58.8	100
+Oeiras	Senhoras	AZUIS	74	76	131
+Oeiras	Senhoras	VERMELHAS	74	72.8	124
+Oeiras	Senhoras	VERDES	74	65.8	109
+Oeiras	Senhoras	ROXAS	74	60.6	97
+Oitavos Dunes Links Golf	Homens	PRETAS	71	73.6	133
+Oitavos Dunes Links Golf	Homens	BRANCAS	71	72	129
+Oitavos Dunes Links Golf	Homens	AMARELAS	71	70.1	126
+Oitavos Dunes Links Golf	Homens	AZUIS	71	68	122
+Oitavos Dunes Links Golf	Homens	VERMELHAS	71	64.5	114
+Oitavos Dunes Links Golf	Senhoras	AMARELAS	71	76	132
+Oitavos Dunes Links Golf	Senhoras	AZUIS	71	73.3	128
+Oitavos Dunes Links Golf	Senhoras	VERMELHAS	71	69	118
+Ombria Golf Course	Homens	BRANCAS	71	71	132
+Ombria Golf Course	Homens	AMARELAS	71	68.6	127
+Ombria Golf Course	Homens	AZUIS	71	66.8	124
+Ombria Golf Course	Homens	VERMELHAS	71	64.7	119
+Ombria Golf Course	Senhoras	BRANCAS	71	76.9	141
+Ombria Golf Course	Senhoras	AMARELAS	71	73.9	135
+Ombria Golf Course	Senhoras	AZUIS	71	71.8	130
+Ombria Golf Course	Senhoras	VERMELHAS	71	69.1	125
+Oporto	Homens	PRETAS	71	70.8	132
+Oporto	Homens	BRANCAS	71	70.5	131
+Oporto	Homens	AMARELAS	71	69.4	129
+Oporto	Homens	VERMELHAS	71	67.2	124
+Oporto	Homens	VERDES	71	62	114
+Oporto	Homens	ROXAS	71	60	107
+Oporto	Senhoras	AMARELAS	71	75	135
+Oporto	Senhoras	VERMELHAS	71	72.4	129
+Oporto	Senhoras	VERDES	71	64.3	112
+Oporto	Senhoras	ROXAS	71	61	107
+Palheiro Golf	Homens	DOURADAS	72	72.3	140
+Palheiro Golf	Homens	BRANCAS	72	71.4	138
+Palheiro Golf	Homens	AMARELAS	72	69.5	134
+Palheiro Golf	Homens	AZUIS	72	67.3	129
+Palheiro Golf	Homens	VERMELHAS	72	64.2	121
+Palheiro Golf	Homens	ROXAS	72	60.1	113
+Palheiro Golf	Senhoras	BRANCAS	72	76.9	142
+Palheiro Golf	Senhoras	AMARELAS	72	74.7	137
+Palheiro Golf	Senhoras	AZUIS	72	72	131
+Palheiro Golf	Senhoras	VERMELHAS	72	68.7	124
+Palheiro Golf	Senhoras	ROXAS	72	62.3	111
+Palmares Golf Alvor - Lagos	Homens	DOURADAS	72	73	132
+Palmares Golf Alvor - Lagos	Homens	BRANCAS	72	74.1	134
+Palmares Golf Alvor - Lagos	Homens	AMARELAS	72	71.9	130
+Palmares Golf Alvor - Lagos	Homens	AZUIS	72	69.9	125
+Palmares Golf Alvor - Lagos	Homens	VERMELHAS	72	66.5	119
+Palmares Golf Alvor - Lagos	Homens	VERDES	72	61.6	109
+Palmares Golf Alvor - Lagos	Homens	ROXAS	72	58.9	101
+Palmares Golf Alvor - Lagos	Senhoras	AZUIS	72	75.6	133
+Palmares Golf Alvor - Lagos	Senhoras	VERMELHAS	72	71.4	125
+Palmares Golf Alvor - Lagos	Senhoras	LARANJAS	72	73.7	130
+Palmares Golf Alvor - Lagos	Senhoras	VERDES	72	64	109
+Palmares Golf Alvor - Lagos	Senhoras	ROXAS	72	59.6	102
+Palmares Golf Lagos - Praia	Homens	BRANCAS	72	72	129
+Palmares Golf Lagos - Praia	Homens	AMARELAS	72	69.7	125
+Palmares Golf Lagos - Praia	Homens	AZUIS	72	68	121
+Palmares Golf Lagos - Praia	Homens	VERMELHAS	72	64.8	115
+Palmares Golf Lagos - Praia	Senhoras	DOURADAS	72	72.3	128
+Palmares Golf Lagos - Praia	Senhoras	AZUIS	72	73.3	130
+Palmares Golf Lagos - Praia	Senhoras	VERMELHAS	72	69.3	121
+Palmares Golf Praia - Alvor	Homens	BRANCAS	72	72.8	133
+Palmares Golf Praia - Alvor	Homens	AMARELAS	72	70.4	128
+Palmares Golf Praia - Alvor	Homens	AZUIS	72	68.3	124
+Palmares Golf Praia - Alvor	Homens	VERMELHAS	72	65.2	118
+Palmares Golf Praia - Alvor	Homens	VERDES	72	61.2	110
+Palmares Golf Praia - Alvor	Homens	ROXAS	72	58.5	101
+Palmares Golf Praia - Alvor	Senhoras	AZUIS	72	74	130
+Palmares Golf Praia - Alvor	Senhoras	VERMELHAS	72	70.1	122
+Palmares Golf Praia - Alvor	Senhoras	VERDES	72	64	109
+Palmares Golf Praia - Alvor	Senhoras	ROXAS	72	59.4	101
+Paredes - Aqueduto	Homens	AMARELAS	54	54	84
+Paredes - Aqueduto	Homens	VERMELHAS	54	53.2	83
+Paredes - Aqueduto	Homens	ROXAS	54	53.2	82
+Paredes - Aqueduto	Senhoras	AMARELAS	54	56.8	86
+Paredes - Aqueduto	Senhoras	VERMELHAS	54	56.2	84
+Paredes - Aqueduto	Senhoras	ROXAS	54	56	84
+Penha Longa Atlantic Championship	Homens	BRANCAS	72	72.2	129
+Penha Longa Atlantic Championship	Homens	AMARELAS	72	69.8	125
+Penha Longa Atlantic Championship	Homens	AZUIS	72	69.4	124
+Penha Longa Atlantic Championship	Homens	VERMELHAS	72	67.7	119
+Penha Longa Atlantic Championship	Senhoras	AMARELAS	72	75.6	135
+Penha Longa Atlantic Championship	Senhoras	AZUIS	72	75.2	134
+Penha Longa Atlantic Championship	Senhoras	VERMELHAS	72	72.8	130
+Penha Longa Atlantic North (19-9)	Homens	BRANCAS	71	68.8	122
+Penha Longa Atlantic North (19-9)	Homens	AMARELAS	71	66.5	118
+Penha Longa Atlantic North (19-9)	Homens	VERMELHAS	71	64.7	114
+Penha Longa Atlantic North (19-9)	Senhoras	AZUIS	71	71.4	126
+Penha Longa Atlantic North (19-9)	Senhoras	VERMELHAS	71	69.1	121
+Penha Longa Atlantic South (10-27)	Homens	BRANCAS	71	69.8	125
+Penha Longa Atlantic South (10-27)	Homens	AMARELAS	71	67.3	121
+Penha Longa Atlantic South (10-27)	Homens	VERMELHAS	71	65.2	116
+Penha Longa Atlantic South (10-27)	Senhoras	AZUIS	71	72.2	129
+Penha Longa Atlantic South (10-27)	Senhoras	VERMELHAS	71	69.5	124
+Penha Longa Mosteiro	Homens	BRANCAS	70	66.4	118
+Penha Longa Mosteiro	Homens	AMARELAS	70	64	114
+Penha Longa Mosteiro	Homens	VERMELHAS	70	62.2	110
+Penha Longa Mosteiro	Homens	VERDES	70	59.6	103
+Penha Longa Mosteiro	Homens	ROXAS	70	58	100
+Penha Longa Mosteiro	Senhoras	AZUIS	70	68.4	121
+Penha Longa Mosteiro	Senhoras	VERMELHAS	70	65.8	115
+Penha Longa Mosteiro	Senhoras	VERDES	70	61.6	106
+Penha Longa Mosteiro	Senhoras	ROXAS	70	60	103
+Penina Golf Course	Homens	BRANCAS	73	73.7	143
+Penina Golf Course	Homens	AMARELAS	73	71.5	138
+Penina Golf Course	Homens	AZUIS	73	69.3	134
+Penina Golf Course	Homens	VERMELHAS	73	67.8	131
+Penina Golf Course	Homens	VERDES	73	65.7	127
+Penina Golf Course	Senhoras	DOURADAS	73	76.6	141
+Penina Golf Course	Senhoras	AMARELAS	73	77.4	144
+Penina Golf Course	Senhoras	AZUIS	73	74.8	138
+Penina Golf Course	Senhoras	VERMELHAS	73	72.9	134
+Penina Golf Course	Senhoras	LARANJAS	73	74.7	138
+Penina Golf Course	Senhoras	VERDES	73	70.4	129
+Penina Resort Course	Homens	AMARELAS	71	70.3	122
+Penina Resort Course	Homens	VERMELHAS	71	67.4	116
+Penina Resort Course	Homens	VERDES	71	61.1	103
+Penina Resort Course	Homens	ROXAS	71	57.9	97
+Penina Resort Course	Senhoras	AMARELAS	71	76.2	134
+Penina Resort Course	Senhoras	VERMELHAS	71	72.8	126
+Penina Resort Course	Senhoras	VERDES	71	64.4	108
+Penina Resort Course	Senhoras	ROXAS	71	60	98
+PGA Aroeira No.1	Homens	PRETAS	71	73	130
+PGA Aroeira No.1	Homens	BRANCAS	72	72.1	128
+PGA Aroeira No.1	Homens	AMARELAS	72	70.6	125
+PGA Aroeira No.1	Homens	AZUIS	72	69.4	123
+PGA Aroeira No.1	Homens	VERMELHAS	72	67.8	119
+PGA Aroeira No.1	Senhoras	AZUIS	72	75.1	125
+PGA Aroeira No.1	Senhoras	VERMELHAS	72	73.2	121
+PGA Aroeira No.2	Homens	BRANCAS	72	73	133
+PGA Aroeira No.2	Homens	AMARELAS	72	70.7	128
+PGA Aroeira No.2	Homens	AZUIS	72	68.1	123
+PGA Aroeira No.2	Homens	VERMELHAS	72	65.5	117
+PGA Aroeira No.2	Homens	VERDES	72	59.8	108
+PGA Aroeira No.2	Homens	ROXAS	72	59.2	99
+PGA Aroeira No.2	Senhoras	AZUIS	72	73.1	127
+PGA Aroeira No.2	Senhoras	VERMELHAS	72	69.8	120
+PGA Aroeira No.2	Senhoras	VERDES	72	62.2	104
+PGA Aroeira No.2	Senhoras	ROXAS	72	59.6	99
+Pine Cliffs	Homens	BRANCAS	64	63	107
+Pine Cliffs	Homens	AMARELAS	64	61.6	104
+Pine Cliffs	Homens	VERMELHAS	64	60.3	102
+Pine Cliffs	Homens	ROXAS	64	57.8	97
+Pine Cliffs	Senhoras	AMARELAS	64	64.9	110
+Pine Cliffs	Senhoras	VERMELHAS	64	62.3	105
+Pine Cliffs	Senhoras	ROXAS	64	58.3	96
+Pinheirinho	Homens	PRETAS	72	73.8	136
+Pinheirinho	Homens	BRANCAS	72	71.5	131
+Pinheirinho	Homens	AMARELAS	72	69.7	128
+Pinheirinho	Homens	AZUIS	72	67.5	123
+Pinheirinho	Homens	VERMELHAS	72	64.7	118
+Pinheirinho	Senhoras	AMARELAS	72	75.5	135
+Pinheirinho	Senhoras	AZUIS	72	72.8	130
+Pinheirinho	Senhoras	VERMELHAS	72	69.3	123
+Pinheiros Altos-Corks/Olives	Homens	BRANCAS	72	73	137
+Pinheiros Altos-Corks/Olives	Homens	AMARELAS	72	71	133
+Pinheiros Altos-Corks/Olives	Homens	AZUIS	72	69.2	130
+Pinheiros Altos-Corks/Olives	Homens	VERMELHAS	72	67.3	126
+Pinheiros Altos-Corks/Olives	Homens	VERDES	72	62.7	116
+Pinheiros Altos-Corks/Olives	Homens	ROXAS	72	60.1	111
+Pinheiros Altos-Corks/Olives	Senhoras	AZUIS	72	74.9	139
+Pinheiros Altos-Corks/Olives	Senhoras	VERMELHAS	72	72.7	134
+Pinheiros Altos-Corks/Olives	Senhoras	VERDES	72	65.9	120
+Pinheiros Altos-Corks/Olives	Senhoras	ROXAS	72	61.4	112
+Pinheiros Altos-Olives/Pines	Homens	BRANCAS	72	72.2	139
+Pinheiros Altos-Olives/Pines	Homens	AMARELAS	72	70	135
+Pinheiros Altos-Olives/Pines	Homens	AZUIS	72	67.9	131
+Pinheiros Altos-Olives/Pines	Homens	VERMELHAS	72	65.8	127
+Pinheiros Altos-Olives/Pines	Homens	VERDES	72	62.2	119
+Pinheiros Altos-Olives/Pines	Homens	ROXAS	72	59.4	114
+Pinheiros Altos-Olives/Pines	Senhoras	AZUIS	72	73.2	141
+Pinheiros Altos-Olives/Pines	Senhoras	VERMELHAS	72	70.6	136
+Pinheiros Altos-Olives/Pines	Senhoras	VERDES	72	64.9	123
+Pinheiros Altos-Olives/Pines	Senhoras	ROXAS	72	60.2	116
+Pinheiros Altos-Original Course	Homens	BRANCAS	72	73.2	141
+Pinheiros Altos-Original Course	Homens	AMARELAS	72	71.2	137
+Pinheiros Altos-Original Course	Homens	AZUIS	72	69.1	132
+Pinheiros Altos-Original Course	Homens	VERMELHAS	72	67.3	129
+Pinheiros Altos-Original Course	Senhoras	AZUIS	72	74.7	141
+Pinheiros Altos-Original Course	Senhoras	VERMELHAS	72	72.5	136
+Pinheiros Altos-Pines/Corks	Homens	BRANCAS	72	73	135
+Pinheiros Altos-Pines/Corks	Homens	AMARELAS	72	70.9	131
+Pinheiros Altos-Pines/Corks	Homens	AZUIS	72	68.7	126
+Pinheiros Altos-Pines/Corks	Homens	VERMELHAS	72	66.3	121
+Pinheiros Altos-Pines/Corks	Senhoras	AZUIS	72	74.2	137
+Pinheiros Altos-Pines/Corks	Senhoras	VERMELHAS	72	71.4	130
+Pinta Course	Homens	PRETAS	71	72.2	132
+Pinta Course	Homens	BRANCAS	71	69.9	127
+Pinta Course	Homens	AMARELAS	71	67.7	122
+Pinta Course	Homens	VERMELHAS	71	65.8	119
+Pinta Course	Homens	VERDES	71	61.5	110
+Pinta Course	Homens	ROXAS	71	59	104
+Pinta Course	Senhoras	AMARELAS	71	73.3	130
+Pinta Course	Senhoras	VERMELHAS	71	71	125
+Pinta Course	Senhoras	VERDES	71	64.3	111
+Pinta Course	Senhoras	ROXAS	71	60.1	105
+Ponte de Lima	Homens	BRANCAS	71	70.4	133
+Ponte de Lima	Homens	AMARELAS	71	68.8	129
+Ponte de Lima	Homens	AZUIS	71	68.1	128
+Ponte de Lima	Homens	VERMELHAS	71	64.7	121
+Ponte de Lima	Homens	VERDES	71	63.6	119
+Ponte de Lima	Homens	ROXAS	71	60.6	111
+Ponte de Lima	Senhoras	AZUIS	71	73.7	131
+Ponte de Lima	Senhoras	VERMELHAS	71	69.4	122
+Ponte de Lima	Senhoras	VERDES	71	67.3	117
+Ponte de Lima	Senhoras	ROXAS	71	62	107
+Porto Santo Golfe	Homens	BRANCAS	72	73.9	137
+Porto Santo Golfe	Homens	AMARELAS	72	71.7	133
+Porto Santo Golfe	Homens	VERMELHAS	72	68.7	127
+Porto Santo Golfe	Homens	VERDES	72	62.4	114
+Porto Santo Golfe	Homens	ROXAS	72	58.5	106
+Porto Santo Golfe	Senhoras	AMARELAS	72	78.1	141
+Porto Santo Golfe	Senhoras	VERMELHAS	72	74.5	133
+Porto Santo Golfe	Senhoras	VERDES	72	65.9	114
+Porto Santo Golfe	Senhoras	ROXAS	72	60.8	104
+Praia d'El-Rey Golf	Homens	PRETAS	73	73.9	131
+Praia d'El-Rey Golf	Homens	BRANCAS	73	72.5	128
+Praia d'El-Rey Golf	Homens	AMARELAS	73	70.3	123
+Praia d'El-Rey Golf	Homens	AZUIS	73	67.7	118
+Praia d'El-Rey Golf	Homens	VERMELHAS	73	65.8	114
+Praia d'El-Rey Golf	Senhoras	AMARELAS	73	76.1	131
+Praia d'El-Rey Golf	Senhoras	AZUIS	73	72.9	124
+Praia d'El-Rey Golf	Senhoras	VERMELHAS	73	70.7	119
+Quinta da Barca	Homens	BRANCAS	62	61.5	105
+Quinta da Barca	Homens	AMARELAS	62	60.5	103
+Quinta da Barca	Homens	AZUIS	62	60.5	103
+Quinta da Barca	Homens	VERMELHAS	62	59.3	100
+Quinta da Barca	Senhoras	BRANCAS	62	64.7	108
+Quinta da Barca	Senhoras	AMARELAS	62	62.6	103
+Quinta da Barca	Senhoras	AZUIS	62	62.6	103
+Quinta da Barca	Senhoras	VERMELHAS	62	60.7	99
+Quinta da Beloura	Homens	BRANCAS	72	70.8	127
+Quinta da Beloura	Homens	AMARELAS	72	69.1	124
+Quinta da Beloura	Homens	VERMELHAS	72	66.6	119
+Quinta da Beloura	Senhoras	BRANCAS	72	76.9	135
+Quinta da Beloura	Senhoras	AMARELAS	72	74.8	131
+Quinta da Beloura	Senhoras	VERMELHAS	72	71.7	124
+Quinta da Marinha	Homens	BRANCAS	71	71.1	134
+Quinta da Marinha	Homens	AMARELAS	71	69.6	131
+Quinta da Marinha	Homens	AZUIS	71	67.6	127
+Quinta da Marinha	Homens	VERMELHAS	71	65.7	123
+Quinta da Marinha	Senhoras	AMARELAS	71	75.1	134
+Quinta da Marinha	Senhoras	AZUIS	71	72.6	129
+Quinta da Marinha	Senhoras	VERMELHAS	71	70.3	124
+Quinta da Ria	Homens	BRANCAS	72	71.8	128
+Quinta da Ria	Homens	AMARELAS	72	71.1	127
+Quinta da Ria	Homens	AZUIS	72	68.5	121
+Quinta da Ria	Homens	VERMELHAS	72	66.8	117
+Quinta da Ria	Senhoras	AMARELAS	72	77.2	131
+Quinta da Ria	Senhoras	AZUIS	72	73.9	124
+Quinta da Ria	Senhoras	VERMELHAS	72	71.9	120
+Quinta de Cima	Homens	BRANCAS	72	74	129
+Quinta de Cima	Homens	AMARELAS	72	72	125
+Quinta de Cima	Homens	AZUIS	72	69.3	120
+Quinta de Cima	Homens	VERMELHAS	72	66.7	114
+Quinta de Cima	Senhoras	AZUIS	72	74.5	129
+Quinta de Cima	Senhoras	VERMELHAS	72	71.3	122
+Quinta do Fojo	Homens	BRANCAS	60	58.1	102
+Quinta do Fojo	Senhoras	BRANCAS	60	59.1	100
+Quinta do Lago Laranjal	Homens	DOURADAS	72	71.1	130
+Quinta do Lago Laranjal	Homens	PRETAS	72	74.3	136
+Quinta do Lago Laranjal	Homens	BRANCAS	72	67.1	122
+Quinta do Lago Laranjal	Homens	LARANJAS	72	62	111
+Quinta do Lago Laranjal	Homens	VERDES	72	65.8	119
+Quinta do Lago Laranjal	Senhoras	DOURADAS	72	77.3	142
+Quinta do Lago Laranjal	Senhoras	BRANCAS	72	72.4	132
+Quinta do Lago Laranjal	Senhoras	LARANJAS	72	64.8	115
+Quinta do Lago Laranjal	Senhoras	VERDES	72	70.8	128
+Quinta do Lago Norte	Homens	DOURADAS	72	70.1	128
+Quinta do Lago Norte	Homens	PRETAS	72	72.8	133
+Quinta do Lago Norte	Homens	BRANCAS	72	66	119
+Quinta do Lago Norte	Homens	VERDES	72	64.6	116
+Quinta do Lago Norte	Senhoras	DOURADAS	72	76.1	136
+Quinta do Lago Norte	Senhoras	BRANCAS	72	71.1	125
+Quinta do Lago Norte	Senhoras	VERDES	72	69.2	122
+Quinta do Lago Sul	Homens	DOURADAS	72	71.1	134
+Quinta do Lago Sul	Homens	PRETAS	72	73.7	139
+Quinta do Lago Sul	Homens	BRANCAS	72	67.3	126
+Quinta do Lago Sul	Homens	VERDES	72	66.6	125
+Quinta do Lago Sul	Senhoras	DOURADAS	72	77.5	138
+Quinta do Lago Sul	Senhoras	BRANCAS	72	72.9	129
+Quinta do Lago Sul	Senhoras	VERDES	72	72	127
+Quinta do Peru	Homens	BRANCAS	72	71.9	141
+Quinta do Peru	Homens	AMARELAS	72	69.8	136
+Quinta do Peru	Homens	AZUIS	72	69	134
+Quinta do Peru	Homens	VERMELHAS	72	64.6	124
+Quinta do Peru	Homens	VERDES	72	61.7	120
+Quinta do Peru	Homens	ROXAS	72	58.5	112
+Quinta do Peru	Senhoras	BRANCAS	72	78.3	149
+Quinta do Peru	Senhoras	AMARELAS	72	75.8	144
+Quinta do Peru	Senhoras	AZUIS	72	74.7	141
+Quinta do Peru	Senhoras	VERMELHAS	72	69.5	128
+Quinta do Peru	Senhoras	VERDES	72	64.8	120
+Quinta do Peru	Senhoras	ROXAS	72	60.5	111
+Quinta do Vale	Homens	PRETAS	72	74.1	134
+Quinta do Vale	Homens	BRANCAS	72	71.9	130
+Quinta do Vale	Homens	AMARELAS	72	70.6	127
+Quinta do Vale	Homens	AZUIS	72	69.1	124
+Quinta do Vale	Homens	VERMELHAS	72	67.2	120
+Quinta do Vale	Homens	VERDES	72	62.5	111
+Quinta do Vale	Homens	ROXAS	72	61	108
+Quinta do Vale	Senhoras	BRANCAS	72	78.3	140
+Quinta do Vale	Senhoras	AMARELAS	72	76.6	137
+Quinta do Vale	Senhoras	AZUIS	72	74.7	133
+Quinta do Vale	Senhoras	VERMELHAS	72	72.4	128
+Quinta do Vale	Senhoras	VERDES	72	64.9	112
+Quinta do Vale	Senhoras	ROXAS	72	62.4	110
+Quinta dos Reis Olives Golf Course	Homens	BRANCAS	56	52.4	72
+Quinta dos Reis Olives Golf Course	Senhoras	BRANCAS	56	55.4	76
+Ribagolfe Lakes	Homens	PRETAS	72	75.6	134
+Ribagolfe Lakes	Homens	BRANCAS	72	74.3	132
+Ribagolfe Lakes	Homens	AMARELAS	72	72.3	128
+Ribagolfe Lakes	Homens	AZUIS	72	69.5	122
+Ribagolfe Lakes	Homens	VERMELHAS	72	68.1	119
+Ribagolfe Lakes	Senhoras	AZUIS	72	75.3	128
+Ribagolfe Lakes	Senhoras	VERMELHAS	72	73.6	124
+Ribagolfe Oaks	Homens	BRANCAS	72	72.6	128
+Ribagolfe Oaks	Homens	AMARELAS	72	70.3	123
+Ribagolfe Oaks	Homens	AZUIS	72	67.9	118
+Ribagolfe Oaks	Homens	VERMELHAS	72	66.5	116
+Ribagolfe Oaks	Homens	VERDES	72	61.3	105
+Ribagolfe Oaks	Homens	ROXAS	72	58.6	100
+Ribagolfe Oaks	Senhoras	AZUIS	72	73.5	126
+Ribagolfe Oaks	Senhoras	VERMELHAS	72	71.9	123
+Ribagolfe Oaks	Senhoras	VERDES	72	64	106
+Ribagolfe Oaks	Senhoras	ROXAS	72	59.6	97
+Royal Golf Course - Vale do Lobo	Homens	BRANCAS	72	72.7	133
+Royal Golf Course - Vale do Lobo	Homens	AMARELAS	72	70.7	129
+Royal Golf Course - Vale do Lobo	Homens	VERMELHAS	72	66.7	121
+Royal Golf Course - Vale do Lobo	Senhoras	AMARELAS	72	76.4	140
+Royal Golf Course - Vale do Lobo	Senhoras	VERMELHAS	72	71.6	129
+Royal Óbidos	Homens	PRETAS	72	75.1	140
+Royal Óbidos	Homens	BRANCAS	72	73.7	137
+Royal Óbidos	Homens	AMARELAS	72	71.6	133
+Royal Óbidos	Homens	AZUIS	72	69.1	128
+Royal Óbidos	Homens	VERMELHAS	72	66.9	124
+Royal Óbidos	Senhoras	AZUIS	72	74.4	134
+Royal Óbidos	Senhoras	VERMELHAS	72	71.7	129
+Salgados Golf	Homens	BRANCAS	72	73.2	129
+Salgados Golf	Homens	AMARELAS	72	71.2	124
+Salgados Golf	Homens	AZUIS	72	68.6	119
+Salgados Golf	Homens	VERMELHAS	72	66.5	115
+Salgados Golf	Homens	VERDES	72	63.1	108
+Salgados Golf	Homens	ROXAS	72	59.4	99
+Salgados Golf	Senhoras	AMARELAS	72	77	130
+Salgados Golf	Senhoras	AZUIS	72	74	124
+Salgados Golf	Senhoras	VERMELHAS	72	71.3	119
+Salgados Golf	Senhoras	VERDES	72	66.4	108
+Salgados Golf	Senhoras	ROXAS	72	61.5	97
+San Lorenzo Golf Course	Homens	BRANCAS	72	72	134
+San Lorenzo Golf Course	Homens	AMARELAS	72	70.3	130
+San Lorenzo Golf Course	Homens	VERMELHAS	72	66.9	124
+San Lorenzo Golf Course	Senhoras	AMARELAS	72	76.3	135
+San Lorenzo Golf Course	Senhoras	VERMELHAS	72	72.2	126
+Santo Antonio Golf	Homens	BRANCAS	71	70.9	129
+Santo Antonio Golf	Homens	AMARELAS	71	68.9	125
+Santo Antonio Golf	Homens	VERMELHAS	71	65.8	118
+Santo Antonio Golf	Senhoras	AMARELAS	71	74.2	134
+Santo Antonio Golf	Senhoras	VERMELHAS	71	70.3	125
+Santo da Serra - Desertas-Serras	Homens	DOURADAS	72	72.5	139
+Santo da Serra - Desertas-Serras	Homens	BRANCAS	72	69.9	134
+Santo da Serra - Desertas-Serras	Homens	AMARELAS	72	67.3	129
+Santo da Serra - Desertas-Serras	Homens	VERMELHAS	72	65	124
+Santo da Serra - Desertas-Serras	Homens	VERDES	72	63.4	118
+Santo da Serra - Desertas-Serras	Homens	ROXAS	72	60.5	112
+Santo da Serra - Desertas-Serras	Senhoras	BRANCAS	72	75.4	136
+Santo da Serra - Desertas-Serras	Senhoras	AMARELAS	72	72.3	130
+Santo da Serra - Desertas-Serras	Senhoras	VERMELHAS	72	69.5	124
+Santo da Serra - Desertas-Serras	Senhoras	VERDES	72	66.7	118
+Santo da Serra - Desertas-Serras	Senhoras	ROXAS	72	61.4	112
+Santo da Serra - Machico-Desertas	Homens	DOURADAS	72	74.2	141
+Santo da Serra - Machico-Desertas	Homens	BRANCAS	72	71.3	135
+Santo da Serra - Machico-Desertas	Homens	AMARELAS	72	68.6	131
+Santo da Serra - Machico-Desertas	Homens	VERMELHAS	72	65.9	125
+Santo da Serra - Machico-Desertas	Homens	VERDES	72	63.4	117
+Santo da Serra - Machico-Desertas	Homens	ROXAS	72	60.4	110
+Santo da Serra - Machico-Desertas	Senhoras	BRANCAS	72	77.5	137
+Santo da Serra - Machico-Desertas	Senhoras	AMARELAS	72	74.3	131
+Santo da Serra - Machico-Desertas	Senhoras	VERMELHAS	72	71	124
+Santo da Serra - Machico-Desertas	Senhoras	VERDES	72	67.1	116
+Santo da Serra - Machico-Desertas	Senhoras	ROXAS	72	61.6	109
+Santo da Serra - Serras-Machico	Homens	DOURADAS	72	73.5	141
+Santo da Serra - Serras-Machico	Homens	BRANCAS	72	71	137
+Santo da Serra - Serras-Machico	Homens	AMARELAS	72	68.7	132
+Santo da Serra - Serras-Machico	Homens	VERMELHAS	72	65.9	126
+Santo da Serra - Serras-Machico	Homens	VERDES	72	63.4	118
+Santo da Serra - Serras-Machico	Homens	ROXAS	72	60.5	112
+Santo da Serra - Serras-Machico	Senhoras	BRANCAS	72	76.9	141
+Santo da Serra - Serras-Machico	Senhoras	AMARELAS	72	74	136
+Santo da Serra - Serras-Machico	Senhoras	VERMELHAS	72	70.7	128
+Santo da Serra - Serras-Machico	Senhoras	VERDES	72	66.4	119
+Santo da Serra - Serras-Machico	Senhoras	ROXAS	72	61.4	113
+Santo da Serra - Serras-Serras	Homens	DOURADAS	72	71.8	139
+Santo da Serra - Serras-Serras	Homens	BRANCAS	72	69.6	135
+Santo da Serra - Serras-Serras	Homens	AMARELAS	72	67.4	130
+Santo da Serra - Serras-Serras	Homens	VERMELHAS	72	65	125
+Santo da Serra - Serras-Serras	Homens	VERDES	72	63.4	119
+Santo da Serra - Serras-Serras	Homens	ROXAS	72	60.6	114
+Santo da Serra - Serras-Serras	Senhoras	BRANCAS	72	74.8	140
+Santo da Serra - Serras-Serras	Senhoras	AMARELAS	72	72	135
+Santo da Serra - Serras-Serras	Senhoras	VERMELHAS	72	69.2	125
+Santo da Serra - Serras-Serras	Senhoras	VERDES	72	66	121
+Santo da Serra - Serras-Serras	Senhoras	ROXAS	72	61.2	115
+Santo Estevão Golf	Homens	BRANCAS	73	73.4	132
+Santo Estevão Golf	Homens	AMARELAS	73	71.7	128
+Santo Estevão Golf	Homens	AZUIS	73	69.1	123
+Santo Estevão Golf	Homens	VERMELHAS	73	66.8	118
+Santo Estevão Golf	Homens	VERDES	73	60.4	105
+Santo Estevão Golf	Homens	ROXAS	73	58.3	99
+Santo Estevão Golf	Senhoras	AZUIS	73	74.9	126
+Santo Estevão Golf	Senhoras	VERMELHAS	73	72.1	120
+Santo Estevão Golf	Senhoras	VERDES	73	63.1	101
+Santo Estevão Golf	Senhoras	ROXAS	73	60.5	96
+Silves Golf Course	Homens	BRANCAS	70	69.2	120
+Silves Golf Course	Homens	AMARELAS	70	67.6	116
+Silves Golf Course	Homens	VERMELHAS	70	65	112
+Silves Golf Course	Senhoras	BRANCAS	70	75.1	131
+Silves Golf Course	Senhoras	AMARELAS	70	73.1	126
+Silves Golf Course	Senhoras	VERMELHAS	70	69.9	120
+Terceira	Homens	BRANCAS	72	72.4	138
+Terceira	Homens	AMARELAS	72	71	135
+Terceira	Homens	VERMELHAS	72	67.1	127
+Terceira	Homens	VERDES	72	62.4	116
+Terceira	Homens	ROXAS	72	59	108
+Terceira	Senhoras	AMARELAS	72	76.7	140
+Terceira	Senhoras	VERMELHAS	72	71.9	130
+Terceira	Senhoras	VERDES	72	64.7	114
+Terceira	Senhoras	ROXAS	72	60.5	110
+Terras da Comporta Dunas Golf Course	Homens	DOURADAS	71	74.4	140
+Terras da Comporta Dunas Golf Course	Homens	BRANCAS	71	72.7	136
+Terras da Comporta Dunas Golf Course	Homens	AMARELAS	71	63.7	116
+Terras da Comporta Dunas Golf Course	Homens	AZUIS	71	61.6	111
+Terras da Comporta Dunas Golf Course	Homens	LARANJAS	71	66.7	123
+Terras da Comporta Dunas Golf Course	Homens	VERDES	71	70.2	131
+Terras da Comporta Dunas Golf Course	Senhoras	AMARELAS	71	68.3	118
+Terras da Comporta Dunas Golf Course	Senhoras	AZUIS	71	64.7	111
+Terras da Comporta Dunas Golf Course	Senhoras	LARANJAS	71	71.7	127
+Terras da Comporta Dunas Golf Course	Senhoras	VERDES	71	76.1	136
+Terras da Comporta Torre Golf Course	Homens	DOURADAS	72	75.3	141
+Terras da Comporta Torre Golf Course	Homens	BRANCAS	72	73.1	136
+Terras da Comporta Torre Golf Course	Homens	AMARELAS	72	66.2	122
+Terras da Comporta Torre Golf Course	Homens	AZUIS	72	61.9	113
+Terras da Comporta Torre Golf Course	Homens	LARANJAS	72	68.7	127
+Terras da Comporta Torre Golf Course	Homens	VERDES	72	71	132
+Terras da Comporta Torre Golf Course	Senhoras	AMARELAS	72	71.1	126
+Terras da Comporta Torre Golf Course	Senhoras	AZUIS	72	65	113
+Terras da Comporta Torre Golf Course	Senhoras	LARANJAS	72	74.2	132
+Terras da Comporta Torre Golf Course	Senhoras	VERDES	72	77.1	138
+The Els Club Vilamoura	Homens	PRETAS	72	75.5	137
+The Els Club Vilamoura	Homens	BRANCAS	72	73	132
+The Els Club Vilamoura	Homens	AMARELAS	72	71.1	128
+The Els Club Vilamoura	Homens	AZUIS	72	69.2	123
+The Els Club Vilamoura	Homens	VERMELHAS	72	65.7	117
+The Els Club Vilamoura	Senhoras	AMARELAS	72	77	134
+The Els Club Vilamoura	Senhoras	AZUIS	72	74.4	129
+The Els Club Vilamoura	Senhoras	VERMELHAS	72	70.2	120
+THE ONE Hills Lisbon City Golf	Homens	BRANCAS	58	58.2	97
+THE ONE Hills Lisbon City Golf	Homens	AMARELAS	58	57.5	96
+THE ONE Hills Lisbon City Golf	Homens	VERMELHAS	58	56.9	94
+THE ONE Hills Lisbon City Golf	Senhoras	BRANCAS	58	59.3	105
+THE ONE Hills Lisbon City Golf	Senhoras	AMARELAS	58	58.4	103
+THE ONE Hills Lisbon City Golf	Senhoras	VERMELHAS	58	57.5	101
+Troia Golf	Homens	DOURADAS	72	71.5	133
+Troia Golf	Homens	BRANCAS	72	73.3	137
+Troia Golf	Homens	AMARELAS	72	70.8	132
+Troia Golf	Homens	AZUIS	72	68.5	127
+Troia Golf	Homens	VERMELHAS	72	66.1	122
+Troia Golf	Homens	VERDES	72	61.5	112
+Troia Golf	Homens	ROXAS	72	59.3	106
+Troia Golf	Senhoras	AMARELAS	72	76.5	135
+Troia Golf	Senhoras	AZUIS	72	73.8	129
+Troia Golf	Senhoras	VERMELHAS	72	70.8	123
+Troia Golf	Senhoras	LARANJAS	72	71.2	124
+Troia Golf	Senhoras	VERDES	72	63.7	109
+Troia Golf	Senhoras	ROXAS	72	61.1	104
+Vale Pisão	Homens	PRETAS	74	74.4	140
+Vale Pisão	Homens	BRANCAS	74	72.6	137
+Vale Pisão	Homens	AMARELAS	74	70.2	131
+Vale Pisão	Homens	AZUIS	74	67.2	125
+Vale Pisão	Homens	VERMELHAS	74	65	121
+Vale Pisão	Homens	VERDES	74	61.8	115
+Vale Pisão	Homens	ROXAS	74	60	111
+Vale Pisão	Senhoras	AMARELAS	74	76.4	137
+Vale Pisão	Senhoras	AZUIS	74	72.8	129
+Vale Pisão	Senhoras	VERMELHAS	74	70.2	123
+Vale Pisão	Senhoras	VERDES	74	64.8	112
+Vale Pisão	Senhoras	ROXAS	74	61.6	109
+Verdegolf - Batalha A+B	Homens	BRANCAS	72	74.4	140
+Verdegolf - Batalha A+B	Homens	AMARELAS	72	72.8	137
+Verdegolf - Batalha A+B	Homens	VERMELHAS	72	69.2	129
+Verdegolf - Batalha A+B	Homens	VERDES	72	63.2	114
+Verdegolf - Batalha A+B	Homens	ROXAS	72	59.3	107
+Verdegolf - Batalha A+B	Senhoras	AMARELAS	72	79.2	141
+Verdegolf - Batalha A+B	Senhoras	VERMELHAS	72	74.6	131
+Verdegolf - Batalha A+B	Senhoras	VERDES	72	66	113
+Verdegolf - Batalha A+B	Senhoras	ROXAS	72	61	106
+Verdegolf - Batalha B+C	Homens	BRANCAS	72	73.6	136
+Verdegolf - Batalha B+C	Homens	AMARELAS	72	72.4	133
+Verdegolf - Batalha B+C	Homens	VERMELHAS	72	68.8	125
+Verdegolf - Batalha B+C	Homens	VERDES	72	63.3	112
+Verdegolf - Batalha B+C	Homens	ROXAS	72	59.3	104
+Verdegolf - Batalha B+C	Senhoras	AMARELAS	72	79	133
+Verdegolf - Batalha B+C	Senhoras	VERMELHAS	72	74.6	124
+Verdegolf - Batalha B+C	Senhoras	VERDES	72	66.7	107
+Verdegolf - Batalha B+C	Senhoras	ROXAS	72	61.4	100
+Verdegolf - Batalha C+A	Homens	BRANCAS	72	74.2	139
+Verdegolf - Batalha C+A	Homens	AMARELAS	72	73	136
+Verdegolf - Batalha C+A	Homens	VERMELHAS	72	69.2	128
+Verdegolf - Batalha C+A	Homens	VERDES	72	63.1	114
+Verdegolf - Batalha C+A	Homens	ROXAS	72	59.1	106
+Verdegolf - Batalha C+A	Senhoras	AMARELAS	72	79.8	139
+Verdegolf - Batalha C+A	Senhoras	VERMELHAS	72	75	129
+Verdegolf - Batalha C+A	Senhoras	VERDES	72	66.5	111
+Verdegolf - Batalha C+A	Senhoras	ROXAS	72	61.4	104
+Verdegolf - Furnas	Homens	BRANCAS	72	72.6	138
+Verdegolf - Furnas	Homens	AMARELAS	72	71.5	135
+Verdegolf - Furnas	Homens	VERMELHAS	72	68.2	129
+Verdegolf - Furnas	Homens	VERDES	72	62.8	116
+Verdegolf - Furnas	Homens	ROXAS	72	59.6	109
+Verdegolf - Furnas	Senhoras	AMARELAS	72	77.4	139
+Verdegolf - Furnas	Senhoras	VERMELHAS	72	73.4	131
+Verdegolf - Furnas	Senhoras	VERDES	72	65.4	114
+Verdegolf - Furnas	Senhoras	ROXAS	72	61.3	109
+Vidago	Homens	BRANCAS	71	72.2	138
+Vidago	Homens	AMARELAS	71	70.9	135
+Vidago	Homens	VERMELHAS	71	66.5	127
+Vidago	Senhoras	AMARELAS	71	75.7	149
+Vidago	Senhoras	VERMELHAS	71	70.3	137
+Vidago Palace	Homens	DOURADAS	72	72	132
+Vidago Palace	Homens	BRANCAS	72	74.9	138
+Vidago Palace	Homens	AMARELAS	72	72.9	134
+Vidago Palace	Homens	AZUIS	72	70.6	129
+Vidago Palace	Homens	VERMELHAS	72	67.4	123
+Vidago Palace	Homens	VERDES	72	63.8	116
+Vidago Palace	Homens	ROXAS	72	61	107
+Vidago Palace	Senhoras	DOURADAS	72	78	141
+Vidago Palace	Senhoras	AZUIS	72	76.1	138
+Vidago Palace	Senhoras	VERMELHAS	72	72.1	129
+Vidago Palace	Senhoras	VERDES	72	66.5	117
+Vidago Palace	Senhoras	ROXAS	72	62.1	108
+Vila Sol - Challenge / Prestige (10-27)	Homens	DOURADAS	72	65.3	122
+Vila Sol - Challenge / Prestige (10-27)	Homens	BRANCAS	72	72.6	137
+Vila Sol - Challenge / Prestige (10-27)	Homens	AMARELAS	72	71	134
+Vila Sol - Challenge / Prestige (10-27)	Homens	VERMELHAS	72	68.2	128
+Vila Sol - Challenge / Prestige (10-27)	Homens	VERDES	72	61.6	114
+Vila Sol - Challenge / Prestige (10-27)	Homens	ROXAS	72	58.7	109
+Vila Sol - Challenge / Prestige (10-27)	Senhoras	DOURADAS	72	69.6	124
+Vila Sol - Challenge / Prestige (10-27)	Senhoras	AMARELAS	72	76.5	139
+Vila Sol - Challenge / Prestige (10-27)	Senhoras	VERMELHAS	72	73.1	132
+Vila Sol - Challenge / Prestige (10-27)	Senhoras	VERDES	72	63.9	112
+Vila Sol - Challenge / Prestige (10-27)	Senhoras	ROXAS	72	60.4	104
+Vila Sol - Prestige / Prime (19-9)	Homens	DOURADAS	72	65	119
+Vila Sol - Prestige / Prime (19-9)	Homens	BRANCAS	72	73.2	136
+Vila Sol - Prestige / Prime (19-9)	Homens	AMARELAS	72	71.5	132
+Vila Sol - Prestige / Prime (19-9)	Homens	VERMELHAS	72	68.5	127
+Vila Sol - Prestige / Prime (19-9)	Homens	VERDES	72	61.8	113
+Vila Sol - Prestige / Prime (19-9)	Homens	ROXAS	72	59	107
+Vila Sol - Prestige / Prime (19-9)	Senhoras	DOURADAS	72	69.8	121
+Vila Sol - Prestige / Prime (19-9)	Senhoras	AMARELAS	72	77.7	138
+Vila Sol - Prestige / Prime (19-9)	Senhoras	VERMELHAS	72	74.2	130
+Vila Sol - Prestige / Prime (19-9)	Senhoras	VERDES	72	64.9	110
+Vila Sol - Prestige / Prime (19-9)	Senhoras	ROXAS	72	61.4	102
+Vila Sol - Prime / Challenge (1-18)	Homens	DOURADAS	72	66.1	119
+Vila Sol - Prime / Challenge (1-18)	Homens	BRANCAS	72	73.8	135
+Vila Sol - Prime / Challenge (1-18)	Homens	AMARELAS	72	71.9	131
+Vila Sol - Prime / Challenge (1-18)	Homens	VERMELHAS	72	68.9	125
+Vila Sol - Prime / Challenge (1-18)	Homens	VERDES	72	62	112
+Vila Sol - Prime / Challenge (1-18)	Homens	ROXAS	72	59.1	106
+Vila Sol - Prime / Challenge (1-18)	Senhoras	DOURADAS	72	71	124
+Vila Sol - Prime / Challenge (1-18)	Senhoras	AMARELAS	72	78	140
+Vila Sol - Prime / Challenge (1-18)	Senhoras	VERMELHAS	72	74.5	132
+Vila Sol - Prime / Challenge (1-18)	Senhoras	VERDES	72	65	112
+Vila Sol - Prime / Challenge (1-18)	Senhoras	ROXAS	72	61.4	104
+Vilamoura - Laguna	Homens	BRANCAS	72	71.8	135
+Vilamoura - Laguna	Homens	AMARELAS	72	70.6	132
+Vilamoura - Laguna	Homens	AZUIS	72	69.8	130
+Vilamoura - Laguna	Homens	VERMELHAS	72	66.1	123
+Vilamoura - Laguna	Homens	VERDES	72	62.2	115
+Vilamoura - Laguna	Homens	ROXAS	72	59.2	109
+Vilamoura - Laguna	Senhoras	AZUIS	72	76.3	139
+Vilamoura - Laguna	Senhoras	VERMELHAS	72	71.8	129
+Vilamoura - Laguna	Senhoras	VERDES	72	66.1	117
+Vilamoura - Laguna	Senhoras	ROXAS	72	60.9	106
+Vilamoura - Millennium	Homens	BRANCAS	72	72.6	130
+Vilamoura - Millennium	Homens	AMARELAS	72	70.7	127
+Vilamoura - Millennium	Homens	AZUIS	72	69.4	123
+Vilamoura - Millennium	Homens	VERMELHAS	72	65.9	116
+Vilamoura - Millennium	Homens	VERDES	72	62	109
+Vilamoura - Millennium	Homens	ROXAS	72	58.6	101
+Vilamoura - Millennium	Senhoras	AMARELAS	72	76.6	137
+Vilamoura - Millennium	Senhoras	AZUIS	72	74.8	134
+Vilamoura - Millennium	Senhoras	VERMELHAS	72	70.8	124
+Vilamoura - Millennium	Senhoras	VERDES	72	65	113
+Vilamoura - Millennium	Senhoras	ROXAS	72	60.5	102
+Vilamoura - Old Course	Homens	BRANCAS	73	73.1	136
+Vilamoura - Old Course	Homens	AMARELAS	73	71.4	133
+Vilamoura - Old Course	Homens	AZUIS	73	70.4	131
+Vilamoura - Old Course	Homens	VERMELHAS	73	67.3	125
+Vilamoura - Old Course	Senhoras	AZUIS	73	76.4	135
+Vilamoura - Old Course	Senhoras	VERMELHAS	73	72.5	127
+Vilamoura - Pinhal	Homens	PRETAS	72	73.6	139
+Vilamoura - Pinhal	Homens	BRANCAS	72	74	140
+Vilamoura - Pinhal	Homens	AMARELAS	72	72	136
+Vilamoura - Pinhal	Homens	AZUIS	72	70.6	133
+Vilamoura - Pinhal	Homens	VERMELHAS	72	68.5	129
+Vilamoura - Pinhal	Homens	VERDES	72	62.9	118
+Vilamoura - Pinhal	Homens	ROXAS	72	60	109
+Vilamoura - Pinhal	Senhoras	DOURADAS	72	75.8	139
+Vilamoura - Pinhal	Senhoras	AZUIS	72	76.6	137
+Vilamoura - Pinhal	Senhoras	VERMELHAS	72	74.1	131
+Vilamoura - Pinhal	Senhoras	VERDES	72	66.2	114
+Vilamoura - Pinhal	Senhoras	ROXAS	72	61.1	108
+West Cliffs	Homens	PRETAS	72	74.5	147
+West Cliffs	Homens	BRANCAS	72	72.3	142
+West Cliffs	Homens	AMARELAS	72	70.3	138
+West Cliffs	Homens	AZUIS	72	68.2	134
+West Cliffs	Homens	VERMELHAS	72	65.8	129
+West Cliffs	Senhoras	AMARELAS	72	76	140
+West Cliffs	Senhoras	AZUIS	72	73.4	136
+West Cliffs	Senhoras	VERMELHAS	72	70.4	129
