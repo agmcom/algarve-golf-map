@@ -3,12 +3,12 @@
 #   parsed by parse_fpg.py) = identical to the 9 Nov copy; web/src/data/course-ratings.ts matches it for all 46 loops.
 #   Tables below are generated from course-ratings.ts (junior Green/Purple tees excluded).
 # - Par and lengths: official scorecards (research/scorecards-2026-11): Ferragudo 5,841 m (card also: handicap 28/36,
-#   round max 4h30), Silves 5,592 m (28/36 on card), Benamor 5,497 m (official hole-by-hole page; DB says 5,456),
+#   round max 4h30), Silves 5,592 m (28/36 on card), Benamor 5,497 m (official hole-by-hole page; DB corrected from 5,456 on 2026-11-18),
 #   Quinta da Ria 6,053 m, Quinta de Cima 6,586 m, Salgados 6,033 m, Alto 5,432 m; Espiche 5,890 m (fact sheet);
 #   Santo António ~5,700 m (no official card; third-party 5,712 m).
 # - Handicap limits: Ferragudo + Silves cards 28/36; Benamor online terms 28/36; Salgados site 28/36; Alto card 36/36;
-#   Quinta da Ria 36/36 (Robinson page + club FPG form, see verified_course_facts); Quinta de Cima: club publishes none
-#   (third parties say 28/36, our DB says 36/36 -> unresolved, not stated); Santo António: none published.
+#   Quinta da Ria + Quinta de Cima 36/36 (Robinson Quinta da Ria club-details page, saved in sources/; QdC scorecard silent);
+#   Santo António: none published.
 #   No handicap: Pine Cliffs (red tees), Penina Resort, Vale de Milho. Balaia: handicap required, no limit.
 # - Walking: web/src/data/walking.ts (sources inside). Vale do Lobo tee rule: valedolobo.golfmanager.com/system/page/condicoes.
 import json, os, re, math
@@ -69,7 +69,7 @@ c.append(P(f"[Benamor](/courses/benamor) near Tavira, laid out from Sir Henry Co
 
 c.append(H2("Four more at 128 or 129"))
 c.append(P("Four courses sit close behind, and they couldn't be more different:"))
-c.append(P("[Quinta da Ria](/courses/quinta-da-ria) (128) near Vila Nova de Cacela is laid out on gently sloping ground running down towards the Ria Formosa, and accepts handicaps up to 36 for men and ladies. Its sister course [Quinta de Cima](/courses/quinta-de-cima) (129) is the longest course on this list at 6,586 metres from the white tees, but also fairly flat. We couldn't find a handicap limit published by the club for Quinta de Cima, so check when you book."))
+c.append(P("[Quinta da Ria](/courses/quinta-da-ria) (128) near Vila Nova de Cacela is laid out on gently sloping ground running down towards the Ria Formosa, and accepts handicaps up to 36 for men and ladies. Its sister course [Quinta de Cima](/courses/quinta-de-cima) (129) is the longest course on this list at 6,586 metres from the white tees, but also fairly flat, and it also accepts handicaps up to 36 for men and ladies, according to the Robinson resort on the estate."))
 c.append(P("[Salgados](/courses/salgados) (129) near Albufeira is one of the easiest courses in the Algarve to walk, but it has plenty of water and is exposed to the wind. Its handicap limit is 28 for men and 36 for ladies. [Santo António](/courses/santo-antonio) (129) near Salema is the opposite: the club itself recommends a buggy for its hills, and it doesn't publish a handicap limit."))
 c.append(card('salgados'))
 
@@ -84,7 +84,7 @@ c.append(H3("What it means for your handicap"))
 c.append(P(f"Under the World Handicap System, your course handicap is your Handicap Index multiplied by the slope and divided by 113, plus the difference between the course rating and par. A golfer with a Handicap Index of 18 gets a course handicap of **{ex_ferragudo}** from the yellow tees at Pestana Ferragudo (slope 113, course rating 67.7, par 72), against **{ex_monterei}** from the longest tees at Monte Rei, the Algarve's hardest course. Each course's slope rating page has a calculator."))
 
 c.append(H2("Easiest to get onto: handicap rules"))
-c.append(P("If you don't have a handicap, or yours is high, the rating matters less than the club's rules. Most Algarve courses ask for a handicap certificate, usually up to 28 for men and 36 for ladies. Among the courses in our table, [Alto Golf](/courses/alto-golf) and [Quinta da Ria](/courses/quinta-da-ria) accept handicaps up to 36 for men and ladies. Three courses need no handicap at all: [Penina Resort](/courses/penina-resort), [Vale de Milho](/courses/vale-de-milho) and [Pine Cliffs](/courses/pine-cliffs), where players without a handicap play from the red tees. Our guide to [handicap rules in the Algarve](/guide/do-you-need-a-handicap-to-play-golf-in-the-algarve) has the details for every course."))
+c.append(P("If you don't have a handicap, or yours is high, the rating matters less than the club's rules. Most Algarve courses ask for a handicap certificate, usually up to 28 for men and 36 for ladies. Among the courses in our table, [Alto Golf](/courses/alto-golf), [Quinta da Ria](/courses/quinta-da-ria) and [Quinta de Cima](/courses/quinta-de-cima) accept handicaps up to 36 for men and ladies. Three courses need no handicap at all: [Penina Resort](/courses/penina-resort), [Vale de Milho](/courses/vale-de-milho) and [Pine Cliffs](/courses/pine-cliffs), where players without a handicap play from the red tees. Our guide to [handicap rules in the Algarve](/guide/do-you-need-a-handicap-to-play-golf-in-the-algarve) has the details for every course."))
 
 c.append(H2("Short courses"))
 c.append(P("Some 9-hole courses are rated as two loops of nine. [Balaia](/courses/balaia), a par-3 course near Albufeira, has the lowest slope in the Algarve: 83 to 84 for men. [Pine Cliffs](/courses/pine-cliffs), a 9-hole clifftop course, is rated 102 to 107 for men, and [Penina Resort](/courses/penina-resort) 116 to 122. [Vale de Milho](/courses/vale-de-milho) in Carvoeiro, a 9-hole par-3 course, has no FPG rating. See [the Algarve's 9-hole courses](/algarve-9-hole-courses)."))
