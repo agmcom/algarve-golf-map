@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'how-long-does-a-round-of-golf-take-in-the-algarve': {
+    title: 'How long does a round of golf take in the Algarve? Pace of play',
+    description: 'Official pace-of-play targets at Algarve golf courses, from 4h20 to 4h40 for 18 holes, what golfers say about slow play and how to get round faster.',
+  },
   'golf-near-faro-airport': {
     title: 'Golf courses near Faro Airport: play on arrival or departure day',
     description: 'The closest golf courses to Faro Airport, from Laranjal 20 minutes away, plus tee-time planning around your flight, airport luggage lockers and club hire.',

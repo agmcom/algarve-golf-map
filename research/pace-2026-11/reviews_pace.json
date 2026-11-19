@@ -1,0 +1,633 @@
+{
+ "amendoeira-faldo": {
+  "reviews": 67,
+  "mention_slow": 12,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   5.0,
+   5.0,
+   5.0,
+   5.5,
+   6.0,
+   6.0,
+   6.0
+  ],
+  "years": {
+   "2022": 13,
+   "2023": 27,
+   "2024": 15,
+   "2025": 9,
+   "2026": 3
+  }
+ },
+ "alto-golf": {
+  "reviews": 73,
+  "mention_slow": 12,
+  "mention_good_pace": 2,
+  "round_times_mentioned": [
+   4.0,
+   5.0
+  ],
+  "years": {
+   "2022": 1,
+   "2023": 20,
+   "2024": 22,
+   "2025": 21,
+   "2026": 9
+  }
+ },
+ "vilamoura-pinhal": {
+  "reviews": 76,
+  "mention_slow": 11,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   4.0,
+   4.5,
+   5.5
+  ],
+  "years": {
+   "2022": 17,
+   "2023": 19,
+   "2024": 14,
+   "2025": 19,
+   "2026": 7
+  }
+ },
+ "gramacho": {
+  "reviews": 71,
+  "mention_slow": 10,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.5
+  ],
+  "years": {
+   "2022": 1,
+   "2023": 27,
+   "2024": 16,
+   "2025": 15,
+   "2026": 12
+  }
+ },
+ "amendoeira-oconnor": {
+  "reviews": 73,
+  "mention_slow": 10,
+  "mention_good_pace": 3,
+  "round_times_mentioned": [
+   5.0,
+   6.0
+  ],
+  "years": {
+   "2019": 6,
+   "2020": 2,
+   "2021": 7,
+   "2022": 20,
+   "2023": 16,
+   "2024": 12,
+   "2025": 6,
+   "2026": 4
+  }
+ },
+ "quinta-do-lago-north": {
+  "reviews": 77,
+  "mention_slow": 10,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   4.0,
+   5.0
+  ],
+  "years": {
+   "2017": 1,
+   "2018": 3,
+   "2019": 8,
+   "2020": 5,
+   "2021": 12,
+   "2022": 11,
+   "2023": 13,
+   "2024": 13,
+   "2025": 7,
+   "2026": 4
+  }
+ },
+ "silves": {
+  "reviews": 79,
+  "mention_slow": 10,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.0,
+   3.0,
+   4.0,
+   5.0
+  ],
+  "years": {
+   "2023": 33,
+   "2024": 24,
+   "2025": 16,
+   "2026": 6
+  }
+ },
+ "quinta-da-ria": {
+  "reviews": 58,
+  "mention_slow": 7,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   4.0,
+   5.0,
+   5.5
+  ],
+  "years": {
+   "2016": 3,
+   "2017": 10,
+   "2018": 3,
+   "2019": 11,
+   "2020": 1,
+   "2021": 5,
+   "2022": 12,
+   "2023": 7,
+   "2024": 2,
+   "2025": 4
+  }
+ },
+ "vale-do-lobo-ocean": {
+  "reviews": 72,
+  "mention_slow": 8,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.0,
+   4.5,
+   5.0
+  ],
+  "years": {
+   "2023": 16,
+   "2024": 29,
+   "2025": 19,
+   "2026": 8
+  }
+ },
+ "vilamoura-millennium": {
+  "reviews": 74,
+  "mention_slow": 8,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.0,
+   4.0,
+   5.0,
+   5.0
+  ],
+  "years": {
+   "2022": 10,
+   "2023": 23,
+   "2024": 20,
+   "2025": 16,
+   "2026": 5
+  }
+ },
+ "pine-cliffs": {
+  "reviews": 75,
+  "mention_slow": 8,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [],
+  "years": {
+   "2022": 18,
+   "2023": 24,
+   "2024": 20,
+   "2025": 9,
+   "2026": 4
+  }
+ },
+ "quinta-de-cima": {
+  "reviews": 30,
+  "mention_slow": 3,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [],
+  "years": {
+   "2016": 4,
+   "2017": 4,
+   "2018": 3,
+   "2019": 8,
+   "2020": 1,
+   "2022": 5,
+   "2023": 3,
+   "2024": 1,
+   "2025": 1
+  }
+ },
+ "quinta-do-lago-south": {
+  "reviews": 72,
+  "mention_slow": 7,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   4.0,
+   4.0,
+   4.0,
+   4.25,
+   5.0,
+   5.0
+  ],
+  "years": {
+   "2020": 2,
+   "2021": 8,
+   "2022": 16,
+   "2023": 12,
+   "2024": 15,
+   "2025": 16,
+   "2026": 3
+  }
+ },
+ "san-lorenzo": {
+  "reviews": 72,
+  "mention_slow": 7,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   5.0,
+   5.0
+  ],
+  "years": {
+   "2022": 17,
+   "2023": 16,
+   "2024": 11,
+   "2025": 23,
+   "2026": 5
+  }
+ },
+ "boavista": {
+  "reviews": 67,
+  "mention_slow": 6,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   5.0
+  ],
+  "years": {
+   "2022": 13,
+   "2023": 17,
+   "2024": 11,
+   "2025": 21,
+   "2026": 5
+  }
+ },
+ "vila-sol": {
+  "reviews": 80,
+  "mention_slow": 7,
+  "mention_good_pace": 2,
+  "round_times_mentioned": [
+   3.0,
+   3.0,
+   3.0,
+   4.0,
+   5.3
+  ],
+  "years": {
+   "2022": 20,
+   "2023": 22,
+   "2024": 19,
+   "2025": 15,
+   "2026": 4
+  }
+ },
+ "alamos": {
+  "reviews": 70,
+  "mention_slow": 6,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   3.0
+  ],
+  "years": {
+   "2021": 4,
+   "2022": 17,
+   "2023": 12,
+   "2024": 18,
+   "2025": 14,
+   "2026": 5
+  }
+ },
+ "palmares": {
+  "reviews": 71,
+  "mention_slow": 6,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   5.0,
+   5.0
+  ],
+  "years": {
+   "2022": 19,
+   "2023": 28,
+   "2024": 13,
+   "2025": 8,
+   "2026": 3
+  }
+ },
+ "salgados": {
+  "reviews": 72,
+  "mention_slow": 6,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   4.0,
+   6.0
+  ],
+  "years": {
+   "2024": 17,
+   "2025": 47,
+   "2026": 8
+  }
+ },
+ "castro-marim": {
+  "reviews": 72,
+  "mention_slow": 6,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   4.0
+  ],
+  "years": {
+   "2018": 17,
+   "2019": 16,
+   "2020": 6,
+   "2021": 6,
+   "2022": 15,
+   "2023": 6,
+   "2024": 3,
+   "2025": 2,
+   "2026": 1
+  }
+ },
+ "vale-da-pinta": {
+  "reviews": 75,
+  "mention_slow": 6,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   5.0
+  ],
+  "years": {
+   "2020": 9,
+   "2021": 2,
+   "2022": 21,
+   "2023": 16,
+   "2024": 11,
+   "2025": 15,
+   "2026": 1
+  }
+ },
+ "benamor": {
+  "reviews": 53,
+  "mention_slow": 4,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [],
+  "years": {
+   "2016": 5,
+   "2017": 10,
+   "2018": 5,
+   "2019": 7,
+   "2021": 7,
+   "2022": 6,
+   "2023": 2,
+   "2024": 3,
+   "2025": 6,
+   "2026": 2
+  }
+ },
+ "victoria-els-club": {
+  "reviews": 81,
+  "mention_slow": 6,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.0,
+   3.0,
+   5.0,
+   5.0
+  ],
+  "years": {
+   "2019": 1,
+   "2020": 5,
+   "2021": 12,
+   "2022": 41,
+   "2023": 22
+  }
+ },
+ "vale-do-lobo-royal": {
+  "reviews": 68,
+  "mention_slow": 5,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   4.0,
+   4.0,
+   4.5,
+   5.0,
+   5.0
+  ],
+  "years": {
+   "2023": 25,
+   "2024": 21,
+   "2025": 14,
+   "2026": 8
+  }
+ },
+ "vilamoura-laguna": {
+  "reviews": 72,
+  "mention_slow": 5,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   3.5
+  ],
+  "years": {
+   "2019": 8,
+   "2020": 5,
+   "2021": 1,
+   "2022": 11,
+   "2023": 13,
+   "2024": 18,
+   "2025": 12,
+   "2026": 4
+  }
+ },
+ "santo-antonio": {
+  "reviews": 72,
+  "mention_slow": 5,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   3.0
+  ],
+  "years": {
+   "2020": 2,
+   "2021": 6,
+   "2022": 21,
+   "2023": 14,
+   "2024": 15,
+   "2025": 13,
+   "2026": 1
+  }
+ },
+ "penina-championship": {
+  "reviews": 73,
+  "mention_slow": 5,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.0,
+   4.0
+  ],
+  "years": {
+   "2022": 18,
+   "2023": 16,
+   "2024": 17,
+   "2025": 15,
+   "2026": 7
+  }
+ },
+ "morgado": {
+  "reviews": 79,
+  "mention_slow": 5,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.0,
+   5.0
+  ],
+  "years": {
+   "2022": 21,
+   "2023": 16,
+   "2024": 21,
+   "2025": 17,
+   "2026": 4
+  }
+ },
+ "vilamoura-old-course": {
+  "reviews": 67,
+  "mention_slow": 4,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [],
+  "years": {
+   "2022": 22,
+   "2023": 25,
+   "2024": 12,
+   "2025": 6,
+   "2026": 2
+  }
+ },
+ "ombria": {
+  "reviews": 54,
+  "mention_slow": 3,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [],
+  "years": {
+   "2023": 18,
+   "2024": 15,
+   "2025": 14,
+   "2026": 7
+  }
+ },
+ "quinta-do-vale": {
+  "reviews": 72,
+  "mention_slow": 4,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [],
+  "years": {
+   "2018": 4,
+   "2019": 22,
+   "2020": 8,
+   "2021": 7,
+   "2022": 11,
+   "2023": 5,
+   "2024": 5,
+   "2025": 7,
+   "2026": 3
+  }
+ },
+ "monte-rei": {
+  "reviews": 62,
+  "mention_slow": 3,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.0
+  ],
+  "years": {
+   "2016": 6,
+   "2017": 8,
+   "2018": 3,
+   "2019": 4,
+   "2020": 5,
+   "2021": 5,
+   "2022": 10,
+   "2023": 9,
+   "2024": 7,
+   "2025": 3,
+   "2026": 2
+  }
+ },
+ "pinheiros-altos": {
+  "reviews": 69,
+  "mention_slow": 3,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [],
+  "years": {
+   "2022": 21,
+   "2023": 10,
+   "2024": 18,
+   "2025": 18,
+   "2026": 2
+  }
+ },
+ "balaia": {
+  "reviews": 70,
+  "mention_slow": 3,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [],
+  "years": {
+   "2019": 1,
+   "2020": 5,
+   "2021": 11,
+   "2022": 24,
+   "2023": 12,
+   "2024": 12,
+   "2025": 4,
+   "2026": 1
+  }
+ },
+ "espiche": {
+  "reviews": 74,
+  "mention_slow": 3,
+  "mention_good_pace": 0,
+  "round_times_mentioned": [
+   3.0
+  ],
+  "years": {
+   "2023": 14,
+   "2024": 27,
+   "2025": 28,
+   "2026": 5
+  }
+ },
+ "quinta-do-lago-laranjal": {
+  "reviews": 75,
+  "mention_slow": 3,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   4.0,
+   4.0,
+   4.0,
+   5.0
+  ],
+  "years": {
+   "2022": 20,
+   "2023": 24,
+   "2024": 17,
+   "2025": 12,
+   "2026": 2
+  }
+ },
+ "penina-resort": {
+  "reviews": 61,
+  "mention_slow": 1,
+  "mention_good_pace": 1,
+  "round_times_mentioned": [
+   4.0
+  ],
+  "years": {
+   "2016": 10,
+   "2017": 5,
+   "2018": 5,
+   "2019": 3,
+   "2021": 7,
+   "2022": 7,
+   "2023": 6,
+   "2024": 9,
+   "2025": 5,
+   "2026": 4
+  }
+ }
+}
