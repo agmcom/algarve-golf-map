@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'common-mistakes-on-an-algarve-golf-trip': {
+    title: 'Algarve golf trip mistakes to avoid: 13 things that catch golfers out',
+    description: 'Handicap limits, tee times, cancellation deadlines, buggy rules, winter twilight, rain vouchers and flight-day timing: common Algarve golf trip mistakes and how to avoid them.',
+  },
   'how-long-does-a-round-of-golf-take-in-the-algarve': {
     title: 'How long does a round of golf take in the Algarve? Pace of play',
     description: 'Official pace-of-play targets at Algarve golf courses, from 4h20 to 4h40 for 18 holes, what golfers say about slow play and how to get round faster.',
