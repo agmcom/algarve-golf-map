@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-courses-near-conrad-algarve': {
+    title: 'Golf courses near Conrad Algarve: drive times, green fees and packages',
+    description: 'Quinta do Lago North and South are 6 minutes from Conrad Algarve. Drive times and green fees for the nearest courses, plus Quinta do Lago golf packages with transfers.',
+  },
   'rainy-day-in-the-algarve-golf-simulators-and-indoor-things-to-do': {
     title: 'Golf simulators in the Algarve and what to do on a rainy day',
     description: 'Indoor golf simulators in Vilamoura, Alvor, Salgados and Quinta da Ria, covered practice bays, and rainy-day ideas in the Algarve with prices and opening hours.',
