@@ -1,0 +1,200 @@
+[
+ {
+  "type": "paragraph",
+  "text": "W Algarve sits on the cliffs above Praia da Galé, west of Albufeira, and the closest golf course is right next door: [Salgados](/courses/salgados) is about **7 minutes** away by car. Within about 25 minutes you also have the two Amendoeira courses, designed by Nick Faldo and Christy O'Connor Jr., and two short 9-hole courses at Balaia and Pine Cliffs. The hotel has no course of its own. **Last checked: November 2026.**"
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Golf courses closest to W Algarve"
+ },
+ {
+  "type": "table",
+  "caption": "Drive times and green fees from W Algarve",
+  "headers": [
+   "Course",
+   "Drive from the hotel",
+   "Holes",
+   "Visitor green fee (2026/27)"
+  ],
+  "rows": [
+   [
+    "[Salgados](/courses/salgados)",
+    "7 min (3 km)",
+    "18 holes",
+    "€78 to €139"
+   ],
+   [
+    "[Balaia](/courses/balaia)",
+    "19 min (11 km)",
+    "9 holes, all par 3",
+    "€50"
+   ],
+   [
+    "[Amendoeira Faldo](/courses/amendoeira-faldo) and [O'Connor](/courses/amendoeira-oconnor)",
+    "22 min (13 km)",
+    "18 holes each",
+    "€100 to €212"
+   ],
+   [
+    "[Pine Cliffs](/courses/pine-cliffs)",
+    "25 min (15 km)",
+    "9 holes",
+    "€59 to €79"
+   ],
+   [
+    "[Vilamoura Laguna](/courses/vilamoura-laguna) and [Millennium](/courses/vilamoura-millennium)",
+    "30 min (22 km)",
+    "18 holes",
+    "€88 to €136"
+   ],
+   [
+    "[Vilamoura Old Course](/courses/vilamoura-old-course)",
+    "31 min (23 km)",
+    "18 holes",
+    "€215 to €301"
+   ],
+   [
+    "[Silves](/courses/silves)",
+    "31 min (19 km)",
+    "18 holes",
+    "€95 to €180"
+   ],
+   [
+    "[Vale da Pinta](/courses/vale-da-pinta) and [Gramacho](/courses/gramacho)",
+    "31–33 min (25–26 km)",
+    "18 holes",
+    "€95 to €180"
+   ]
+  ],
+  "note": "Not a complete list. Drive times without traffic (Mapbox), checked November 2026. Green fees are the lowest and highest standard visitor rates for the 2026/27 season, from each club's own online booking or price list, for the holes shown. The 18-hole courses ask for a handicap certificate, up to 28 for men and 36 for ladies; see the notes below for Balaia and Pine Cliffs."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "The nearest courses at a glance"
+ },
+ {
+  "type": "paragraph",
+  "text": "Slope ratings are from the Portuguese Golf Federation for the back tees: the higher the number, the harder the course for an average golfer."
+ },
+ {
+  "type": "paragraph",
+  "text": "**[Salgados](/courses/salgados)** (par 72, 6,033 m, slope 129): a 1994 Pedro de Vasconcelos design on the flat wetlands behind Praia da Galé. One of the easiest courses in the Algarve to walk, but there's plenty of water and it's exposed to the wind. Twilight rounds start at €47 and an 18-hole buggy costs €50. See the [Salgados scorecard](/courses/salgados/scorecard)."
+ },
+ {
+  "type": "paragraph",
+  "text": "**[Amendoeira Faldo](/courses/amendoeira-faldo)** (par 72, 6,598 m, slope 142): Nick Faldo's course climbs the hillside and is the hardest of the courses near the hotel. The online green fee includes a buggy, if one is available."
+ },
+ {
+  "type": "paragraph",
+  "text": "**[O'Connor](/courses/amendoeira-oconnor)** (par 72, 6,708 m, slope 136): the sister course at Amendoeira, by Christy O'Connor Jr., stays down in the valley on flat ground among orange groves, with the same buggy-included green fee. Compare the two in [Amendoeira Faldo vs O'Connor](/guide/amendoeira-faldo-vs-o-connor-which-silves-golf-course-should-you-play)."
+ },
+ {
+  "type": "paragraph",
+  "text": "**[Balaia](/courses/balaia)** (9 holes, par 27, 984 m): a short course of par 3s near Albufeira, €50 to play. The resort's guest information says a handicap is required, without giving a limit, so check with the club if you've only just started."
+ },
+ {
+  "type": "paragraph",
+  "text": "**[Pine Cliffs](/courses/pine-cliffs)** (9 holes, par 32, 2,227 m): a Martin Hawtree course on the cliffs at Olhos de Água, famous for its 6th hole, the Devil's Parlour, played across the clifftop. You don't need a handicap: players without one tee off from the red markers. The club allows 2 hours for nine holes and lists trolleys but no buggies on its price list. Compare it with Balaia in [Balaia vs Pine Cliffs](/guide/balaia-vs-pine-cliffs-which-quick-round-near-albufeira-should-you-play)."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Golf at W Algarve"
+ },
+ {
+  "type": "paragraph",
+  "text": "W Algarve doesn't have its own course, and we couldn't find a golf package on its official website. Salgados sells stay-and-play packages only with the three Marriott hotels on its own estate, The Westin Salgados Beach Resort, Marriott Residences Salgados Resort and Algarve Marriott Salgados Golf Resort & Spa, so as a W guest you book your rounds directly with the clubs. Ask the hotel when you book whether it can arrange tee times or transport to the courses."
+ },
+ {
+  "type": "hotel",
+  "name": "W Algarve",
+  "lat": 37.0796637,
+  "lng": -8.301115,
+  "tier": "Luxury",
+  "text": "A five-star resort on the cliffs above Praia da Galé, rated **8.9 on Booking.com**, with Salgados about 7 minutes away and Amendoeira about 22.",
+  "perks": [
+   "Clifftop above Praia da Galé",
+   "Five-star resort",
+   "Spa",
+   "Salgados 7 minutes away"
+  ],
+  "rating": 8.9,
+  "ratingSource": "Booking.com",
+  "driveMin": 7,
+  "distanceKm": 3.3,
+  "bookingUrl": "https://www.booking.com/hotel/pt/w-hotels-algarve.html"
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Which course to play from W Algarve"
+ },
+ {
+  "type": "paragraph",
+  "text": "**For the shortest drive,** Salgados is next door and has the lowest green fees of the 18-hole courses in the table. Read [Salgados vs Amendoeira](/guide/salgados-vs-amendoeira-which-golf-course-near-albufeira-should-you-play) if you're choosing between the two."
+ },
+ {
+  "type": "paragraph",
+  "text": "**For a two-course day out,** Amendoeira has the Faldo and O'Connor courses side by side, about 22 minutes away."
+ },
+ {
+  "type": "paragraph",
+  "text": "**For a quick round,** Balaia and Pine Cliffs are 9-hole courses within 25 minutes. See [the cheapest golf near Albufeira](/guide/cheapest-golf-near-albufeira) for more ideas."
+ },
+ {
+  "type": "paragraph",
+  "text": "**For more variety,** Vilamoura and the Pestana courses near Carvoeiro and Silves are about half an hour away."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Getting there"
+ },
+ {
+  "type": "paragraph",
+  "text": "W Algarve is about **47 minutes and 50 km from Faro Airport** by car, without traffic. Our guide to [Faro Airport to Albufeira with golf clubs](/guide/faro-airport-to-albufeira-with-golf-clubs) compares taxis, transfers and car hire, and [Faro car hire for golfers](/guide/faro-car-hire-for-golfers) covers which cars fit golf bags. For other hotels in the area, see [hotels near Salgados golf course](/guide/hotels-near-salgados-golf-course)."
+ },
+ {
+  "type": "heading",
+  "level": 2,
+  "text": "Golf near W Algarve: common questions"
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "What is the closest golf course to W Algarve?"
+ },
+ {
+  "type": "paragraph",
+  "text": "Salgados, about 7 minutes away by car. Balaia, a 9-hole par-3 course, is about 19 minutes away, and the two Amendoeira courses about 22."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Does W Algarve have its own golf course?"
+ },
+ {
+  "type": "paragraph",
+  "text": "No. The nearest course is Salgados, on the neighbouring Herdade dos Salgados estate."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Does W Algarve sell golf packages?"
+ },
+ {
+  "type": "paragraph",
+  "text": "We couldn't find one on its official website, and Salgados' own stay-and-play packages are for its three on-site Marriott hotels. Book rounds directly with the clubs, and ask the hotel about tee times and transport."
+ },
+ {
+  "type": "heading",
+  "level": 3,
+  "text": "Do I need a handicap to play near W Algarve?"
+ },
+ {
+  "type": "paragraph",
+  "text": "At the 18-hole courses, yes: they ask for a certificate of up to 28 for men and 36 for ladies. At Pine Cliffs you don't need one, and Balaia asks for one without giving a limit. See [do you need a handicap to play golf in the Algarve?](/guide/do-you-need-a-handicap-to-play-golf-in-the-algarve)"
+ }
+]

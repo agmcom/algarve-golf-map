@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-courses-near-w-algarve': {
+    title: 'Golf courses near W Algarve: Salgados, Amendoeira and more',
+    description: 'Salgados is 7 minutes from W Algarve. Drive times, green fees and handicap rules for the nearest courses, from Amendoeira to the 9-hole Balaia and Pine Cliffs.',
+  },
   'golf-courses-near-conrad-algarve': {
     title: 'Golf courses near Conrad Algarve: drive times, green fees and packages',
     description: 'Quinta do Lago North and South are 6 minutes from Conrad Algarve. Drive times and green fees for the nearest courses, plus Quinta do Lago golf packages with transfers.',
