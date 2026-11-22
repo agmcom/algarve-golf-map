@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-courses-near-vila-vita-parc': {
+    title: 'Golf courses near Vila Vita Parc: Salgados, Amendoeira and Pestana',
+    description: 'Vila Vita Parc has a driving range, golf simulator and pitch and putt. Drive times, green fees and handicap rules for Salgados, Amendoeira, Silves and the Pestana courses.',
+  },
   'golf-courses-near-hilton-vilamoura': {
     title: 'Golf courses near Hilton Vilamoura: Pinhal, Old Course and more',
     description: 'Hilton Vilamoura As Cascatas overlooks Pinhal, with the Old Course, Vila Sol, Laguna and Millennium within 7 minutes. Drive times, green fees and golf packages.',
