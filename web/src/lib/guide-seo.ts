@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-courses-near-tivoli-marina-vilamoura': {
+    title: 'Golf courses near Tivoli Marina Vilamoura: drive times and green fees',
+    description: 'Pinhal is 10 minutes from Tivoli Marina Vilamoura, with Laguna, Millennium and the Old Course about 12. Drive times, green fees, course notes and golf transfers.',
+  },
   'golf-courses-near-tivoli-alvor': {
     title: 'Golf courses near Tivoli Alvor: Alto Golf, Penina and more',
     description: 'Alto Golf is 5 minutes from Tivoli Alvor and Penina 16. Drive times, green fees and handicap rules for the nearest courses to this all-inclusive Alvor resort.',
