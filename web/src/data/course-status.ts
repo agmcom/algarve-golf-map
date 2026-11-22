@@ -50,11 +50,12 @@ export const COURSE_STATUS: Record<string, CourseStatus> = {
     badge: 'Private members club',
     headline: 'Private club: not open to the public',
     detail:
-      'The Els Club Vilamoura is a private members club. Membership is only for people proposed by its founder members or invited by the club. Guests of the Victoria Golf Resort & Spa hotel can book a round through the club’s guest page, with conditions (including a minimum 3-night stay). The club publishes no green fees for other visitors.',
-    checked: '2026-11-16',
+      'The Els Club Vilamoura is a private members club. Membership is only for people proposed by its founder members or invited by the club. The club’s guest page offers rounds only to guests of the neighbouring Victoria Golf Resort & Spa hotel (minimum 3-night stay), but that hotel closed on 15 October 2026 for a renovation and is due to reopen as Fairmont Vilamoura in 2028, so for now there is no published way for visitors to play. The club publishes no green fees for other visitors.',
+    checked: '2026-11-22',
     sources: [
       { label: 'The Els Club official website', url: 'https://www.theelsclubvilamoura.com/' },
       { label: 'Guest booking conditions', url: 'https://www.theelsclubvilamoura.com/guests/' },
+      { label: 'Victoria Golf Resort & Spa (temporary closure notice)', url: 'https://www.victoriaresortvilamoura.com/' },
     ],
   },
   'monte-rei': {
