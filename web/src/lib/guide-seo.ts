@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-courses-near-dona-filipa-hotel': {
+    title: 'Golf courses near the Dona Filipa Hotel, Vale do Lobo',
+    description: 'The Dona Filipa is 2 minutes from Vale do Lobo Royal and Ocean, with Quinta do Lago 12 minutes away. Drive times, green fees, free golf transfers and golf packages.',
+  },
   'golf-courses-near-vila-vita-parc': {
     title: 'Golf courses near Vila Vita Parc: Salgados, Amendoeira and Pestana',
     description: 'Vila Vita Parc has a driving range, golf simulator and pitch and putt. Drive times, green fees and handicap rules for Salgados, Amendoeira, Silves and the Pestana courses.',
