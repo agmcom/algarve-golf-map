@@ -213,7 +213,7 @@ export default async function GuidePostPage(
       />
 
       <div style={{ minHeight: '100vh', background: '#f9f9f9', fontFamily: 'var(--font-body)' }}>
-        <SiteHeader showBackToMap />
+        <SiteHeader back={{ href: '/guide', label: 'Back to guides', shortLabel: 'Guides' }} />
 
         {/* Hero */}
         <div style={{ position: 'relative', height: 360, background: '#d4e6c3', overflow: 'hidden' }}>
