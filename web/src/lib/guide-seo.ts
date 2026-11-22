@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-courses-near-tivoli-alvor': {
+    title: 'Golf courses near Tivoli Alvor: Alto Golf, Penina and more',
+    description: 'Alto Golf is 5 minutes from Tivoli Alvor and Penina 16. Drive times, green fees and handicap rules for the nearest courses to this all-inclusive Alvor resort.',
+  },
   'golf-courses-near-dona-filipa-hotel': {
     title: 'Golf courses near the Dona Filipa Hotel, Vale do Lobo',
     description: 'The Dona Filipa is 2 minutes from Vale do Lobo Royal and Ocean, with Quinta do Lago 12 minutes away. Drive times, green fees, free golf transfers and golf packages.',
