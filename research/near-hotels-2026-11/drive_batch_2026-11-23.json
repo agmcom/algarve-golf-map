@@ -1,0 +1,278 @@
+{
+ "tivoli-carvoeiro": {
+  "vale-de-milho": [
+   5,
+   2
+  ],
+  "gramacho": [
+   15,
+   7
+  ],
+  "vale-da-pinta": [
+   14,
+   6
+  ],
+  "pestana-ferragudo": [
+   24,
+   14
+  ],
+  "silves": [
+   25,
+   11
+  ],
+  "amendoeira-faldo": [
+   28,
+   22
+  ],
+  "amendoeira-oconnor": [
+   28,
+   22
+  ],
+  "salgados": [
+   33,
+   25
+  ],
+  "alto-golf": [
+   32,
+   21
+  ],
+  "penina-championship": [
+   28,
+   21
+  ],
+  "penina-resort": [
+   28,
+   21
+  ],
+  "_airport": [
+   60,
+   67
+  ]
+ },
+ "pestana-palm-gardens": {
+  "vale-de-milho": [
+   3,
+   1
+  ],
+  "gramacho": [
+   12,
+   6
+  ],
+  "vale-da-pinta": [
+   12,
+   6
+  ],
+  "pestana-ferragudo": [
+   21,
+   13
+  ],
+  "silves": [
+   22,
+   11
+  ],
+  "amendoeira-faldo": [
+   25,
+   21
+  ],
+  "amendoeira-oconnor": [
+   25,
+   21
+  ],
+  "salgados": [
+   31,
+   25
+  ],
+  "alto-golf": [
+   30,
+   20
+  ],
+  "penina-championship": [
+   25,
+   20
+  ],
+  "penina-resort": [
+   25,
+   20
+  ],
+  "_airport": [
+   57,
+   66
+  ]
+ },
+ "pestana-alvor-praia": {
+  "alto-golf": [
+   6,
+   2
+  ],
+  "penina-championship": [
+   18,
+   10
+  ],
+  "penina-resort": [
+   18,
+   10
+  ],
+  "pestana-ferragudo": [
+   22,
+   10
+  ],
+  "vale-da-pinta": [
+   25,
+   16
+  ],
+  "gramacho": [
+   26,
+   16
+  ],
+  "morgado": [
+   28,
+   16
+  ],
+  "alamos": [
+   32,
+   18
+  ],
+  "palmares": [
+   29,
+   18
+  ],
+  "_airport": [
+   63,
+   76
+  ]
+ },
+ "jupiter-albufeira": {
+  "balaia": [
+   8,
+   4
+  ],
+  "pine-cliffs": [
+   13,
+   7
+  ],
+  "salgados": [
+   19,
+   11
+  ],
+  "vilamoura-laguna": [
+   19,
+   12
+  ],
+  "vilamoura-millennium": [
+   19,
+   12
+  ],
+  "vilamoura-old-course": [
+   23,
+   16
+  ],
+  "vilamoura-pinhal": [
+   26,
+   17
+  ],
+  "vila-sol": [
+   26,
+   18
+  ],
+  "amendoeira-faldo": [
+   23,
+   21
+  ],
+  "amendoeira-oconnor": [
+   23,
+   21
+  ],
+  "_airport": [
+   42,
+   39
+  ]
+ },
+ "epic-sana": {
+  "pine-cliffs": [
+   7,
+   3
+  ],
+  "balaia": [
+   11,
+   5
+  ],
+  "vilamoura-laguna": [
+   14,
+   7
+  ],
+  "vilamoura-millennium": [
+   14,
+   7
+  ],
+  "vilamoura-old-course": [
+   17,
+   10
+  ],
+  "vilamoura-pinhal": [
+   20,
+   11
+  ],
+  "vila-sol": [
+   20,
+   12
+  ],
+  "salgados": [
+   31,
+   18
+  ],
+  "vale-do-lobo-royal": [
+   32,
+   20
+  ],
+  "vale-do-lobo-ocean": [
+   33,
+   20
+  ],
+  "_airport": [
+   40,
+   35
+  ]
+ },
+ "four-seasons-vilamoura": {
+  "vilamoura-pinhal": [
+   5,
+   2
+  ],
+  "vilamoura-old-course": [
+   8,
+   4
+  ],
+  "vilamoura-laguna": [
+   10,
+   5
+  ],
+  "vilamoura-millennium": [
+   10,
+   5
+  ],
+  "vila-sol": [
+   9,
+   4
+  ],
+  "vale-do-lobo-royal": [
+   21,
+   10
+  ],
+  "vale-do-lobo-ocean": [
+   21,
+   10
+  ],
+  "pine-cliffs": [
+   23,
+   12
+  ],
+  "balaia": [
+   25,
+   15
+  ],
+  "_airport": [
+   35,
+   25
+  ]
+ }
+}

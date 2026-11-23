@@ -3,6 +3,30 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-courses-near-four-seasons-vilamoura': {
+    title: "Golf courses near Four Seasons Vilamoura: Pinhal, Old Course and more",
+    description: "Four Seasons Vilamoura overlooks Pinhal, with the Old Course, Vila Sol, Laguna and Millennium within 10 minutes. Drive times, green fees and golf breaks.",
+  },
+  'golf-courses-near-epic-sana-algarve': {
+    title: "Golf courses near EPIC SANA Algarve: Pine Cliffs, Vilamoura and more",
+    description: "Pine Cliffs is 7 minutes from EPIC SANA Algarve, and Laguna and Millennium about 14. Drive times, green fees and course notes.",
+  },
+  'golf-courses-near-jupiter-albufeira': {
+    title: "Golf courses near Jupiter Albufeira: Balaia, Pine Cliffs and more",
+    description: "Balaia is 8 minutes from Jupiter Albufeira and Pine Cliffs 13, with Salgados and Vilamoura about 19. Drive times, green fees and tips for golfers.",
+  },
+  'golf-courses-near-pestana-alvor-praia': {
+    title: "Golf courses near Pestana Alvor Praia: Alto Golf, Penina and more",
+    description: "Alto Golf is 6 minutes from Pestana Alvor Praia and Penina 18. Drive times, green fees, handicap rules and course notes.",
+  },
+  'golf-courses-near-pestana-palm-gardens': {
+    title: "Golf courses near Pestana Palm Gardens: Gramacho and Vale da Pinta",
+    description: "Gramacho and Vale da Pinta are 12 minutes from Pestana Palm Gardens, with guest golf benefits. Drive times, green fees and course notes.",
+  },
+  'golf-courses-near-tivoli-carvoeiro': {
+    title: "Golf courses near Tivoli Carvoeiro: Vale de Milho, Gramacho and more",
+    description: "Vale de Milho is 5 minutes from Tivoli Carvoeiro and the Pestana Carvoeiro courses about 15. Drive times, green fees, course notes and golf discounts.",
+  },
   'golf-courses-near-tivoli-marina-vilamoura': {
     title: 'Golf courses near Tivoli Marina Vilamoura: drive times and green fees',
     description: 'Pinhal is 10 minutes from Tivoli Marina Vilamoura, with Laguna, Millennium and the Old Course about 12. Drive times, green fees, course notes and golf transfers.',
