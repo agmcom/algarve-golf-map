@@ -225,7 +225,7 @@ export const PRACTICE_GROUNDS: PracticeGround[] = [
     items: [
       { label: 'Practice range', detail: 'Next to the clubhouse; the club presents it mainly as a place to work on your short game.' },
     ],
-    balls: { price: 'Bucket of 24 balls €2, 48 balls €4; a spare club to practise with €10 (2025-26)', source: { label: 'Balaia green-fee rates 2025-26 (PDF)', url: 'https://www.balaiagolfvillage.com/media/f2qggqu4/golf-fees-2025-1.pdf' } },
+    balls: { price: '48 practice balls €4; a club to practise with €10 (2026-27)', source: { label: 'Balaia green fees and rental 2026-27 (PDF)', url: 'https://www.balaiagolfclub.com/media/qydkke13/golfe-fees-2026-2027.pdf' } },
     sources: [
       { label: 'Balaia Golf Club', url: 'https://www.balaiagolfvillage.com/en/balaia-golf-club/' },
       { label: 'Balaia green-fee rates 2025-26 (PDF)', url: 'https://www.balaiagolfvillage.com/media/f2qggqu4/golf-fees-2025-1.pdf' },

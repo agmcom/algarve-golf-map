@@ -1,0 +1,78 @@
+{
+ "id": "42a62893-d6bf-4b7c-abfa-a7355f6f10e5",
+ "title": "The Algarve's best par-3 golf courses",
+ "slug": "the-algarve-s-best-par-3-golf-courses",
+ "excerpt": "Two courses where every hole is a par 3, plus one clifftop course with a famous exception — the Algarve's short-game and beginner-friendly rounds, with real par, length and price for each.",
+ "hero_image_url": "https://lltyahomlgnigxdtidys.supabase.co/storage/v1/object/public/guide-images/hero/par3-courses-1789736682149.jpg",
+ "hero_image_alt": "A golfer putting on the green at Balaia, a par-3 golf course near Albufeira",
+ "published": true,
+ "created_at": "2026-09-18T13:05:08.107038+00:00",
+ "updated_at": "2026-11-06T15:21:22.89423+00:00",
+ "categories": [
+  "courses",
+  "travel-planner"
+ ],
+ "content": [
+  {
+   "text": "Not every round in the Algarve needs to be five hours and eighteen full-length holes. A par-3 course is the fastest way to sharpen your short game, introduce a beginner to golf without intimidating them, or fit in a round on a travel day. This guide compares two genuine all-par-3 courses and a clifftop nine that is home to the region's most famous par 3. They aren't the only short options: Amendoeira, for example, has a nine-hole par-3 Academy course, covered in our guide to [night golf in the Algarve](/guide/night-golf-in-the-algarve).",
+   "type": "paragraph"
+  },
+  {
+   "text": "Vale de Milho — the purest short-game test",
+   "type": "heading",
+   "level": 2
+  },
+  {
+   "text": "Every one of Vale de Milho's nine holes is a par 3, ranging from around 60 to 160 metres, on a hillside above Carvoeiro with sea views from several tees. Dave Thomas — Ryder Cup player and designer of more than 40 courses, including the Belfry — laid it out in 1990, and it's held up as one of the best dedicated short-game venues in the Algarve, not just a beginner's course. A second nine-hole loop with different tee positions is available if you want to play on.",
+   "type": "paragraph"
+  },
+  {
+   "slug": "vale-de-milho",
+   "type": "card",
+   "refType": "course",
+   "withPhoto": true
+  },
+  {
+   "text": "Balaia: short holes in a resort setting",
+   "type": "heading",
+   "level": 2
+  },
+  {
+   "text": "Balaia's nine holes are also all par 3, running from 58 to 160 metres through the grounds of the Balaia Golf Village resort near Albufeira. The short holes make it a relaxed first stop for newer golfers and juniors, and there is a practice range next to the clubhouse if you want to warm up before you play. Note that the resort's guest information says a handicap is required, without giving a limit, so check with the club if you have only just started. On the club's 2025-26 price list, a visitor's day green fee is **€50**.",
+   "type": "paragraph"
+  },
+  {
+   "slug": "balaia",
+   "type": "card",
+   "refType": "course",
+   "withPhoto": true
+  },
+  {
+   "text": "The [Balaia Golf Village Resort](https://www.booking.com/hotel/pt/balaia-golf-village.html) sits right on the course, so it's easy to fit in a few holes before breakfast.",
+   "type": "paragraph"
+  },
+  {
+   "text": "Pine Cliffs: four par 3s and one that will test you",
+   "type": "heading",
+   "level": 2
+  },
+  {
+   "text": "Pine Cliffs isn't a pure par-3 course, as four of its nine holes are par 3s and the rest are short par 4s, but it earns its place here for the **Devil's Parlour**, the par-3 sixth, which the club describes as a 197-metre carry over a ravine, to a green perched on the cliff edge. Martin Hawtree designed the course for what's now the Pine Cliffs Resort, and the club's local rules let players without a handicap play from the red tees, so it is genuinely open to newer golfers, even with that one dramatic exception.",
+   "type": "paragraph"
+  },
+  {
+   "slug": "pine-cliffs",
+   "type": "card",
+   "refType": "course",
+   "withPhoto": false
+  },
+  {
+   "text": "Staying at the [Pine Cliffs Residence](https://www.booking.com/hotel/pt/pine-cliffs-residence.html) puts the course, and that cliff-edge tee shot, right outside your door.",
+   "type": "paragraph"
+  },
+  {
+   "text": "Looking for more nine-hole options beyond pure par-3 golf? See our full guide to the [Algarve's 9-hole courses](/algarve-9-hole-courses), which also covers Penina Resort.",
+   "type": "paragraph"
+  }
+ ]
+}

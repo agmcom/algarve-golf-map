@@ -60,9 +60,10 @@ for m, p in BEN.items():
 for m in ALL:
     add('pine-cliffs', m, 'standard', 9, 79 if m in (2, 3, 4, 5, 10) else 59, src='Pine Cliffs official 2026/27 price list')
 
-# Balaia 2025–26 green-fee rates PDF: visitor daily fee €50 (unlimited play that day).
+# Balaia 2026-27 green-fee price list (research/par3-2026-11/balaia_fees_2026-27.pdf, updated 2026-10-29): counter rate €55 for 9/18 holes
+# (resort guests €45, juniors under 14 €40). Replaces the 2025-26 €50 day fee.
 for m in ALL:
-    add('balaia', m, 'standard', 9, 50, src='Balaia official 2025-26 rates (day fee)')
+    add('balaia', m, 'standard', 9, 55, src='Balaia official 2026-27 price list')
 
 # Vale de Milho fees page: 9 holes €22.
 for m in ALL:

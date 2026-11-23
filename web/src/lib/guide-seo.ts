@@ -237,7 +237,8 @@ export const GUIDE_SEO: Record<string, { title?: string; description?: string }>
     description: 'Salgados by the beach or Amendoeira\'s Faldo and O\'Connor courses inland: green fees, handicap, practice facilities and which round suits you.',
   },
   'the-algarve-s-best-par-3-golf-courses': {
-    description: 'The Algarve\'s all par-3 courses, plus one clifftop course with a famous exception: short, beginner-friendly rounds with real par, length and price.',
+    title: 'Par 3 golf in the Algarve: par-3 and pitch and putt courses, prices 2026/27',
+    description: 'Par-3 and short golf courses in the Algarve: Vale de Milho, Balaia, the floodlit Amendoeira Academy and Pine Cliffs, with prices, handicap rules and the closest to Albufeira and Vilamoura.',
   },
   'the-best-ocean-view-golf-courses-in-the-algarve': {
     description: 'Six Algarve courses where the Atlantic is part of the round, from clifftop par 3s to fairways that run along the sand. Where to find real ocean views.',

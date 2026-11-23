@@ -33,7 +33,7 @@ H3 = lambda t: {'type': 'heading', 'level': 3, 'text': t}
 # slug -> (display name, holes label, price holes, glance paragraph)
 COURSES = {
  'salgados': ('Salgados', '18 holes', 18, "**{L}** (par 72, 6,033 m, slope 129): flat and one of the easiest courses in the Algarve to walk, on the wetlands behind Praia da Galé, but with plenty of water and exposed to the wind. Twilight rounds start at €47."),
- 'balaia': ('Balaia', '9 holes, all par 3', 9, "**{L}** (9 holes, par 27, 984 m): a short course of par 3s, €50 to play. The resort says a handicap is required, without giving a limit."),
+ 'balaia': ('Balaia', '9 holes, all par 3', 9, "**{L}** (9 holes, par 27, 984 m): a short course of par 3s, €55 to play on the club's 2026-27 price list. The resort says a handicap is required, without giving a limit."),
  'pine-cliffs': ('Pine Cliffs', '9 holes', 9, "**{L}** (9 holes, par 32, 2,227 m): Martin Hawtree's clifftop course at Olhos de Água, famous for its 6th, the Devil's Parlour. No handicap needed: players without one tee off from the red markers."),
  'amendoeira-faldo': ('Amendoeira Faldo', '18 holes', 18, "**{L}** (par 72, 6,598 m, slope 142): Nick Faldo's course climbs the hillside and is one of the hardest in the area. The online green fee includes a buggy, if one is available."),
  'amendoeira-oconnor': ("Amendoeira O'Connor", '18 holes', 18, "**{L}** (par 72, 6,708 m, slope 136): Christy O'Connor Jr.'s sister course stays flat in the valley among orange groves, with the same buggy-included green fee."),

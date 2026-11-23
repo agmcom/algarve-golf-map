@@ -123,8 +123,8 @@ const COPY: Record<string, ReactNode> = {
         1,000 metres, so it is one of the most approachable places to play on
         the central Algarve coast. The resort&apos;s guest information says a
         handicap is required, without giving a limit, so check with the club if
-        you have only just started. On the 2025-26 price list a visitor&apos;s day
-        green fee is €50.
+        you have only just started. On the 2026-27 price list a visitor&apos;s
+        green fee is €55.
       </p>
       <p>
         The course sits inside the self-catering{' '}
