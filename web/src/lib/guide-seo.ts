@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'stay-and-play-golf-packages-in-the-algarve': {
+    title: "Stay and play golf packages in the Algarve: prices and what\u2019s included",
+    description: "Stay and play packages from Vale do Lobo, Monte Rei, Conrad, Ombria, Penina, Pine Cliffs and more: what they include, 2026/27 prices from \u20ac188, and how they compare.",
+  },
   'golf-with-kids-in-the-algarve': {
     title: "Golf with kids in the Algarve: junior green fees, rules and camps",
     description: "Junior green fees from \u20ac15, age and buggy rules, short courses with no handicap, junior lessons and summer camps, and family-friendly golf hotels in the Algarve.",
