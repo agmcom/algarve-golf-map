@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'golf-with-kids-in-the-algarve': {
+    title: "Golf with kids in the Algarve: junior green fees, rules and camps",
+    description: "Junior green fees from \u20ac15, age and buggy rules, short courses with no handicap, junior lessons and summer camps, and family-friendly golf hotels in the Algarve.",
+  },
   'golf-in-the-algarve-at-christmas-and-new-year': {
     title: 'Golf in the Algarve at Christmas and New Year: which courses have tee times',
     description: 'Algarve golf courses with online tee times on 24, 25, 26 and 31 December and 1 January, festive golf events at Pine Cliffs and Quinta do Lago, and winter golf tips.',
