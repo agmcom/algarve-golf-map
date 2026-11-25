@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'solo-golf-in-the-algarve': {
+    title: "Solo golf in the Algarve: booking, pairing and costs",
+    description: "Travelling alone? Which Algarve golf clubs let one player book online, where you'll be paired into a four, buggy costs for one, and societies to join.",
+  },
   'stay-and-play-golf-packages-in-the-algarve': {
     title: "Stay and play golf packages in the Algarve: prices and what\u2019s included",
     description: "Stay and play packages from Vale do Lobo, Monte Rei, Conrad, Ombria, Penina, Pine Cliffs and more: what they include, 2026/27 prices from \u20ac188, and how they compare.",
