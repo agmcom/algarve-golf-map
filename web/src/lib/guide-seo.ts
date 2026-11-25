@@ -3,6 +3,10 @@
 // The visible headline and excerpt on the site are unchanged. Posts not listed here
 // fall back to their own title and excerpt (see guide/[slug]/page.tsx).
 export const GUIDE_SEO: Record<string, { title?: string; description?: string }> = {
+  'mini-golf-in-the-algarve': {
+    title: "Mini golf in the Algarve: Vilamoura, Albufeira, Alvor, Lagos",
+    description: "Mini golf and crazy golf in the Algarve: prices and opening times in Vilamoura, Alvor, Lagos, Albufeira and more, what's closed this winter, and footgolf.",
+  },
   'solo-golf-in-the-algarve': {
     title: "Solo golf in the Algarve: booking, pairing and costs",
     description: "Travelling alone? Which Algarve golf clubs let one player book online, where you'll be paired into a four, buggy costs for one, and societies to join.",
