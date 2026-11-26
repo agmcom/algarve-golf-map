@@ -22,7 +22,7 @@ values
   ('Carvoeiro Golf Shop', 'carvoeiro-golf-shop', 'Carvoeiro', 'west',
     ST_SetSRID(ST_MakePoint(-8.468070, 37.100959), 4326)::geography,
     'R. dos Pescadores 131, Loja 3, 8400-512 Carvoeiro', '{Nike,Puma,Adidas,Ashworth,Wilson,FootJoy,TaylorMade}', '{repair,custom_fitting}', true, false,
-    'https://carvoeiro-golf-shop.com', '+351916513275', null, true),
+    'http://carvoeiro-golf-shop.com/', '+351916513275', null, true),
 
   ('18 Store Golf Shop', '18-store-golf-shop', 'Lagoa', 'west',
     ST_SetSRID(ST_MakePoint(-8.513933, 37.135310), 4326)::geography,

@@ -18,10 +18,20 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
+// Tells Google the site's name, so results show "Algarve Golf Map" instead of the domain.
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Algarve Golf Map',
+  alternateName: ['AlgarveGolfMap', 'algarvegolfmap.com'],
+  url: 'https://www.algarvegolfmap.com/',
+}
+
 export default async function HomePage() {
   const [courses, airports] = await Promise.all([getCourses(), getAirports()])
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }} />
       <div style={{ height: '100svh', position: 'relative' }}>
         <HomeClient courses={courses} hotels={[]} shops={[]} airports={airports} />
       </div>

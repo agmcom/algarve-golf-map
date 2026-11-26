@@ -340,10 +340,10 @@ export default async function CoursePage(
         <CourseNav sections={[
           ...(course.blurb ? [{ id: 'about', label: 'About' }] : []),
           { id: 'facilities', label: 'Facilities' },
+          { id: 'nearby-hotels', label: 'Nearby Hotels' },
+          { id: 'getting-there', label: 'Getting There' },
           ...(practiceGround ? [{ id: 'practice', label: 'Practice' }] : []),
           ...(academyForCourse(course.slug) ? [{ id: 'academy', label: 'Golf Academy' }] : []),
-          { id: 'getting-there', label: 'Getting There' },
-          { id: 'nearby-hotels', label: 'Nearby Hotels' },
           ...(course.onsite_hotel ? [{ id: 'onsite-hotel', label: 'On-site Hotel' }] : []),
           ...(course.dress_code ? [{ id: 'dress-code', label: 'Dress Code' }] : []),
           ...(walkingInfo ? [{ id: 'walking', label: 'Walking' }] : []),
@@ -475,43 +475,28 @@ export default async function CoursePage(
                 )}
               </section>
 
-              {practiceGround && (
-                <CoursePractice
-                  ground={practiceGround}
-                  courseSlug={course.slug}
-                  courseName={course.name}
-                  courseNames={Object.fromEntries(MOCK_COURSES.map(c => [c.slug, c.name]))}
-                />
+              {/* Nearby Hotels */}
+              {hotels.length > 0 && (
+                <section id="nearby-hotels" style={{ marginBottom: 36 }}>
+                  <h2 style={sectionTitle}>Nearby Hotels</h2>
+                  <NearbyHotels hotels={hotels} onsiteHotelId={course.onsite_hotel_id ?? null} />
+                  <a
+                    href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent('hotels near ' + course.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-hotel-click="course_hotel_search"
+                    style={{
+                      display: 'block', textAlign: 'center', marginTop: 14,
+                      padding: '12px 0', borderRadius: 12,
+                      border: '1.5px solid #2B6090', color: '#2B6090',
+                      fontSize: 14, fontWeight: 600, textDecoration: 'none',
+                      background: '#eef7f2',
+                    }}
+                  >
+                    Search all hotels near {course.town} →
+                  </a>
+                </section>
               )}
-
-              {/* Golf academy summary → full academy page */}
-              {(() => {
-                const academy = academyForCourse(course.slug)
-                if (!academy) return null
-                return (
-                  <section id="academy" style={{ marginBottom: 36 }}>
-                    <h2 style={sectionTitle}>Golf Academy</h2>
-                    <Link href={`/golf-academies/${academy.slug}`} style={{
-                      display: 'block', padding: '16px 18px', borderRadius: 14,
-                      border: '1px solid #ebebeb', background: '#fff', textDecoration: 'none',
-                    }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'baseline', flexWrap: 'wrap' }}>
-                        <strong style={{ fontSize: 16, color: '#222' }}>{academy.name}</strong>
-                        <span style={{ fontSize: 14, fontWeight: 700, color: '#222' }}>
-                          {academy.lessonFrom ? `Lessons from €${academy.lessonFrom.price} / ${academy.lessonFrom.duration}` : 'Price on request'}
-                        </span>
-                      </div>
-                      <p style={{ fontSize: 14.5, color: '#555', margin: '8px 0 0', lineHeight: 1.6 }}>{academy.tagline}</p>
-                      <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 10, fontSize: 12.5, color: '#6a6a6a' }}>
-                        {academy.beginnerProgramme && <span>✓ Beginner programme</span>}
-                        {academy.juniors && <span>✓ Junior lessons</span>}
-                        {academy.lessonFrom && academy.priceStatus !== 'current' && <span>{PRICE_STATUS_LABEL[academy.priceStatus]}</span>}
-                      </div>
-                      <div style={{ marginTop: 12, fontSize: 14, fontWeight: 600, color: '#2B6090' }}>See the full academy page →</div>
-                    </Link>
-                  </section>
-                )
-              })()}
 
               {/* Getting There */}
               <section id="getting-there" style={{ marginBottom: 36 }}>
@@ -573,28 +558,43 @@ export default async function CoursePage(
                 </div>
               </section>
 
-              {/* Nearby Hotels */}
-              {hotels.length > 0 && (
-                <section id="nearby-hotels" style={{ marginBottom: 36 }}>
-                  <h2 style={sectionTitle}>Nearby Hotels</h2>
-                  <NearbyHotels hotels={hotels} onsiteHotelId={course.onsite_hotel_id ?? null} />
-                  <a
-                    href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent('hotels near ' + course.name)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-hotel-click="course_hotel_search"
-                    style={{
-                      display: 'block', textAlign: 'center', marginTop: 14,
-                      padding: '12px 0', borderRadius: 12,
-                      border: '1.5px solid #2B6090', color: '#2B6090',
-                      fontSize: 14, fontWeight: 600, textDecoration: 'none',
-                      background: '#eef7f2',
-                    }}
-                  >
-                    Search all hotels near {course.town} →
-                  </a>
-                </section>
+              {practiceGround && (
+                <CoursePractice
+                  ground={practiceGround}
+                  courseSlug={course.slug}
+                  courseName={course.name}
+                  courseNames={Object.fromEntries(MOCK_COURSES.map(c => [c.slug, c.name]))}
+                />
               )}
+
+              {/* Golf academy summary → full academy page */}
+              {(() => {
+                const academy = academyForCourse(course.slug)
+                if (!academy) return null
+                return (
+                  <section id="academy" style={{ marginBottom: 36 }}>
+                    <h2 style={sectionTitle}>Golf Academy</h2>
+                    <Link href={`/golf-academies/${academy.slug}`} style={{
+                      display: 'block', padding: '16px 18px', borderRadius: 14,
+                      border: '1px solid #ebebeb', background: '#fff', textDecoration: 'none',
+                    }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'baseline', flexWrap: 'wrap' }}>
+                        <strong style={{ fontSize: 16, color: '#222' }}>{academy.name}</strong>
+                        <span style={{ fontSize: 14, fontWeight: 700, color: '#222' }}>
+                          {academy.lessonFrom ? `Lessons from €${academy.lessonFrom.price} / ${academy.lessonFrom.duration}` : 'Price on request'}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: 14.5, color: '#555', margin: '8px 0 0', lineHeight: 1.6 }}>{academy.tagline}</p>
+                      <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 10, fontSize: 12.5, color: '#6a6a6a' }}>
+                        {academy.beginnerProgramme && <span>✓ Beginner programme</span>}
+                        {academy.juniors && <span>✓ Junior lessons</span>}
+                        {academy.lessonFrom && academy.priceStatus !== 'current' && <span>{PRICE_STATUS_LABEL[academy.priceStatus]}</span>}
+                      </div>
+                      <div style={{ marginTop: 12, fontSize: 14, fontWeight: 600, color: '#2B6090' }}>See the full academy page →</div>
+                    </Link>
+                  </section>
+                )
+              })()}
 
               {/* On-site Hotel */}
               {course.onsite_hotel && (

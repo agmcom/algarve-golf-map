@@ -56,3 +56,13 @@ create policy "public can read zones"
 -- Trips: owner only (phase 2 — no auth yet, skip for now)
 -- alter table trips enable row level security;
 -- alter table trip_days enable row level security;
+
+-- Airports (always public, read-only) — added 2026-10-23 after Supabase rls_disabled_in_public alert
+alter table airports enable row level security;
+create policy "public can read airports"
+  on airports for select
+  using (true);
+
+-- Trips: unused so far — lock down completely (no policies = no public access)
+alter table trips enable row level security;
+alter table trip_days enable row level security;

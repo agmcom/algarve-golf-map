@@ -14,13 +14,17 @@ interface TopBarProps {
   rightSlot?: React.ReactNode
 }
 
+// Chip order on the map (most relevant first):
+// Top 10 (only when enough reviews) · Price · Men/Ladies handicap · Faro Airport · these quick chips · More filters
 const QUICK_FILTERS = [
-  { key: 'top_rated',    label: 'Top 10' },
-  { key: 'clubs_rental', label: 'Clubs rental' },
-  { key: 'under_100',    label: 'Under €100' },
-  { key: 'under_150',    label: 'Under €150' },
-  { key: 'ocean_view',   label: 'Ocean view' },
   { key: 'onsite_hotel', label: 'On-site hotel' },
+  { key: 'clubs_rental', label: 'Clubs rental' },
+  { key: 'ocean_view',   label: 'Ocean view' },
+]
+
+const PRICE_OPTIONS = [
+  { key: 'under_100', label: 'Under €100' },
+  { key: 'under_150', label: 'Under €150' },
 ]
 
 const FARO_OPTIONS = [
@@ -95,7 +99,34 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
   const hcpLadiesButtonRef = useRef<HTMLButtonElement>(null)
   const hcpLadiesDropdownRef = useRef<HTMLDivElement>(null)
 
+  const [priceOpen, setPriceOpen] = useState(false)
+  const [pricePos, setPricePos] = useState<{ top: number; left: number } | null>(null)
+  const priceButtonRef = useRef<HTMLButtonElement>(null)
+  const priceDropdownRef = useRef<HTMLDivElement>(null)
+
   const activeFaroKey = FARO_OPTIONS.find(o => activeFilters.has(o.key))?.key ?? null
+  const activePriceKey = PRICE_OPTIONS.find(o => activeFilters.has(o.key))?.key ?? null
+
+  const openPrice = useCallback(() => {
+    if (priceButtonRef.current) {
+      const rect = priceButtonRef.current.getBoundingClientRect()
+      setPricePos({ top: rect.bottom + 8, left: rect.left })
+    }
+    setPriceOpen(v => !v)
+  }, [])
+
+  useEffect(() => {
+    if (!priceOpen) return
+    function onMouseDown(e: MouseEvent) {
+      const target = e.target as Node
+      if (
+        priceButtonRef.current && !priceButtonRef.current.contains(target) &&
+        priceDropdownRef.current && !priceDropdownRef.current.contains(target)
+      ) setPriceOpen(false)
+    }
+    document.addEventListener('mousedown', onMouseDown)
+    return () => document.removeEventListener('mousedown', onMouseDown)
+  }, [priceOpen])
 
   const openFaro = useCallback(() => {
     if (faroButtonRef.current) {
@@ -231,23 +262,22 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
           {/* Row 2: Filter chips */}
           <div className="pointer-events-auto overflow-hidden">
             <div className="flex no-scrollbar items-center" style={{ overflowX: 'auto', gap: isMobile ? 6 : 8 }}>
-              {QUICK_FILTERS.filter(f => f.key !== 'top_rated' || showTop10).map(f => (
+              {showTop10 && (
                 <FilterChip
-                  key={f.key}
-                  label={f.label}
-                  active={activeFilters.has(f.key)}
-                  onClick={() => onToggleFilter(f.key)}
+                  label="Top 10"
+                  active={activeFilters.has('top_rated')}
+                  onClick={() => onToggleFilter('top_rated')}
                 />
-              ))}
+              )}
 
-              {/* Faro Airport distance filter */}
+              {/* Price filter */}
               <FilterChip
-                label={activeFaroKey ? `✈ Faro · ${FARO_OPTIONS.find(o => o.key === activeFaroKey)?.label}` : '✈ Faro Airport'}
-                active={!!activeFaroKey}
-                onClick={openFaro}
-                buttonRef={faroButtonRef}
+                label={activePriceKey ? `Price · ${PRICE_OPTIONS.find(o => o.key === activePriceKey)?.label}` : 'Price'}
+                active={!!activePriceKey}
+                onClick={openPrice}
+                buttonRef={priceButtonRef}
                 suffix={
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: faroOpen ? 'rotate(180deg)' : 'none' }}>
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: priceOpen ? 'rotate(180deg)' : 'none' }}>
                     <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 }
@@ -279,6 +309,28 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
                 }
               />
 
+              {/* Faro Airport distance filter */}
+              <FilterChip
+                label={activeFaroKey ? `✈ Faro · ${FARO_OPTIONS.find(o => o.key === activeFaroKey)?.label}` : '✈ Faro Airport'}
+                active={!!activeFaroKey}
+                onClick={openFaro}
+                buttonRef={faroButtonRef}
+                suffix={
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: 4, flexShrink: 0, transition: 'transform .15s', transform: faroOpen ? 'rotate(180deg)' : 'none' }}>
+                    <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                }
+              />
+
+              {QUICK_FILTERS.map(f => (
+                <FilterChip
+                  key={f.key}
+                  label={f.label}
+                  active={activeFilters.has(f.key)}
+                  onClick={() => onToggleFilter(f.key)}
+                />
+              ))}
+
               {/* More filters chip */}
               <FilterChip
                 label={moreActiveCount > 0 ? `Filters · ${moreActiveCount}` : 'More filters'}
@@ -297,63 +349,33 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
         </div>
       </div>
 
+      {priceOpen && pricePos && (
+        <ChoiceDropdown
+          dropdownRef={priceDropdownRef}
+          pos={pricePos}
+          title="Green fee from"
+          icon="€"
+          options={PRICE_OPTIONS}
+          activeFilters={activeFilters}
+          activeKey={activePriceKey}
+          onToggle={onToggleFilter}
+          onClose={() => setPriceOpen(false)}
+        />
+      )}
+
       {/* Faro Airport dropdown */}
       {faroOpen && faroPos && (
-        <div
-          ref={faroDropdownRef}
-          style={{ position: 'fixed', top: faroPos.top, left: faroPos.left, zIndex: 9999 }}
-        >
-          <div style={{
-            background: '#fff', border: '1px solid #ebebeb',
-            borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,.13)',
-            padding: '12px 14px', minWidth: 190,
-          }}>
-            <div style={{ fontSize: 10.5, fontWeight: 700, color: '#6a6a6a', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: 10 }}>
-              From Faro Airport
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              {FARO_OPTIONS.map(o => {
-                const isActive = activeFilters.has(o.key)
-                return (
-                  <button
-                    key={o.key}
-                    onClick={() => {
-                      FARO_OPTIONS.forEach(opt => { if (opt.key !== o.key && activeFilters.has(opt.key)) onToggleFilter(opt.key) })
-                      onToggleFilter(o.key)
-                      setFaroOpen(false)
-                    }}
-                    style={{
-                      display: 'flex', alignItems: 'center', gap: 10,
-                      padding: '8px 12px', borderRadius: 10, border: 'none',
-                      background: isActive ? '#2B6090' : 'transparent',
-                      color: isActive ? '#fff' : '#222',
-                      fontSize: 13, fontWeight: 500, cursor: 'pointer',
-                      textAlign: 'left', fontFamily: 'var(--font-body)',
-                      transition: 'background .1s',
-                    }}
-                  >
-                    <span style={{ fontSize: 15 }}>✈</span>
-                    {o.label}
-                  </button>
-                )
-              })}
-              {activeFaroKey && (
-                <button
-                  onClick={() => { onToggleFilter(activeFaroKey); setFaroOpen(false) }}
-                  style={{
-                    marginTop: 4, padding: '6px 12px', borderRadius: 10,
-                    border: 'none', background: 'none', cursor: 'pointer',
-                    fontSize: 12, fontWeight: 500, color: '#2B6090',
-                    textAlign: 'left', fontFamily: 'var(--font-body)',
-                    borderTop: '1px solid #f0f0f0', paddingTop: 10,
-                  }}
-                >
-                  Clear
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
+        <ChoiceDropdown
+          dropdownRef={faroDropdownRef}
+          pos={faroPos}
+          title="From Faro Airport"
+          icon="✈"
+          options={FARO_OPTIONS}
+          activeFilters={activeFilters}
+          activeKey={activeFaroKey}
+          onToggle={onToggleFilter}
+          onClose={() => setFaroOpen(false)}
+        />
       )}
 
       {/* Men's HCP input panel */}
@@ -403,6 +425,74 @@ export function TopBar({ activeFilters, onToggleFilter, onClearFilters, hcpMen, 
         </div>
       )}
     </>
+  )
+}
+
+// Single-choice dropdown (Price, Faro Airport): picking one option clears the others.
+function ChoiceDropdown({ dropdownRef, pos, title, icon, options, activeFilters, activeKey, onToggle, onClose }: {
+  dropdownRef: React.RefObject<HTMLDivElement | null>
+  pos: { top: number; left: number }
+  title: string
+  icon: string
+  options: { key: string; label: string }[]
+  activeFilters: Set<string>
+  activeKey: string | null
+  onToggle: (key: string) => void
+  onClose: () => void
+}) {
+  return (
+    <div ref={dropdownRef} style={{ position: 'fixed', top: pos.top, left: pos.left, zIndex: 9999 }}>
+      <div style={{
+        background: '#fff', border: '1px solid #ebebeb',
+        borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,.13)',
+        padding: '12px 14px', minWidth: 190,
+      }}>
+        <div style={{ fontSize: 10.5, fontWeight: 700, color: '#6a6a6a', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: 10 }}>
+          {title}
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          {options.map(o => {
+            const isActive = activeFilters.has(o.key)
+            return (
+              <button
+                key={o.key}
+                onClick={() => {
+                  options.forEach(opt => { if (opt.key !== o.key && activeFilters.has(opt.key)) onToggle(opt.key) })
+                  onToggle(o.key)
+                  onClose()
+                }}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: 10,
+                  padding: '8px 12px', borderRadius: 10, border: 'none',
+                  background: isActive ? '#2B6090' : 'transparent',
+                  color: isActive ? '#fff' : '#222',
+                  fontSize: 13, fontWeight: 500, cursor: 'pointer',
+                  textAlign: 'left', fontFamily: 'var(--font-body)',
+                  transition: 'background .1s',
+                }}
+              >
+                <span style={{ fontSize: 15 }}>{icon}</span>
+                {o.label}
+              </button>
+            )
+          })}
+          {activeKey && (
+            <button
+              onClick={() => { onToggle(activeKey); onClose() }}
+              style={{
+                marginTop: 4, padding: '6px 12px', borderRadius: 10,
+                border: 'none', background: 'none', cursor: 'pointer',
+                fontSize: 12, fontWeight: 500, color: '#2B6090',
+                textAlign: 'left', fontFamily: 'var(--font-body)',
+                borderTop: '1px solid #f0f0f0', paddingTop: 10,
+              }}
+            >
+              Clear
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
   )
 }
 

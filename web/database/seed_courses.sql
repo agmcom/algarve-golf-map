@@ -177,7 +177,7 @@ insert into courses (
 
 -- ── LAGOS / OESTE ────────────────────────────────────────────────────────────
 
-('Boavista Golf',           'boavista',                'Lagos', 'west', make_point(-8.689, 37.113),
+('Boavista Golf',           'boavista',                'Lagos', 'west', make_point(-8.7073, 37.1029),
   18, 71, 'Howard Swan', 2000,
   false, false, false, true, true, false, '{}', null,
   null, false, true, 4.30, 184,
