@@ -134,7 +134,7 @@ function unavailableText(s: ReturnType<typeof stats>): string {
   return joinNames(parts)
 }
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export async function generateMetadata(): Promise<Metadata> {
   const s = stats(toRows(await getCourses()))

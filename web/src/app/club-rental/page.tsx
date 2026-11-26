@@ -10,7 +10,7 @@ const BASE = 'https://www.algarvegolfmap.com'
 const H1 = 'Golf club hire and rental in the Algarve'
 const FARO_GUIDE = '/guide/hiring-golf-clubs-at-faro-airport'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 async function getRentalProviders() {
   const shops = await getShops()

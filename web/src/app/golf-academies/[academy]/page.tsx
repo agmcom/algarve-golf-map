@@ -13,7 +13,7 @@ import { GraduationCap, Users, Baby, Cpu, Goal } from 'lucide-react'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export function generateStaticParams() {
   return ACADEMIES.map(a => ({ academy: a.slug }))

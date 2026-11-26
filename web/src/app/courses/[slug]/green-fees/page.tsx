@@ -18,7 +18,7 @@ import type { Course } from '@/types/database'
 const SITE_URL = 'https://www.algarvegolfmap.com'
 const PEXELS_FALLBACK = 'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=1400&h=600&fit=crop'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export async function generateStaticParams() {
   const slugs = await getCourseSlugsWithGreenFees()

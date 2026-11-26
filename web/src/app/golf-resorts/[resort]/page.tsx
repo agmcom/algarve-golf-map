@@ -45,7 +45,7 @@ function metaDescription(text: string): string {
   return `${truncated.slice(0, truncated.lastIndexOf(' '))}…`
 }
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export async function generateStaticParams() {
   return RESORT_PAGES.map(r => ({ resort: r.slug }))

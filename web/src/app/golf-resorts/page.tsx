@@ -14,7 +14,7 @@ const PEXELS_FALLBACK =
 
 const TITLE = 'Golf Resorts in the Algarve'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 const REGION_LABEL: Record<string, string> = { west: 'West', central: 'Central', east: 'East' }
 

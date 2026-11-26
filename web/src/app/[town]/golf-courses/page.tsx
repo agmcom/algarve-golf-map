@@ -155,7 +155,7 @@ function buildFaqs(
   return faqs
 }
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export async function generateStaticParams() {
   return [...TOWN_PAGES, ...NEAR_TOWN_PAGES].map(t => ({ town: t.slug }))

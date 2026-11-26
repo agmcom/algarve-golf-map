@@ -41,7 +41,7 @@ const ACADEMY = {
   blurb: 'A floodlit nine-hole, par-27 course of short par 3s between the Faldo and O\'Connor courses at Amendoeira Golf Resort. The resort says it is the only floodlit nine-hole course in Portugal.',
 }
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export function generateMetadata(): Metadata {
   const url = `${BASE}/algarve-9-hole-courses`

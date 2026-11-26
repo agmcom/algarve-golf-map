@@ -13,8 +13,9 @@ import { isUnbookable } from '@/data/course-status'
 
 const BASE = 'https://www.algarvegolfmap.com'
 
-// Regenerate hourly so guide/course/shop slug changes reach the sitemap without a redeploy.
-export const revalidate = 3600
+// Regenerate daily so guide/course/shop slug changes reach the sitemap without a redeploy
+// (sooner with scripts/revalidate.mjs /sitemap.xml).
+export const revalidate = 86400
 
 // <lastmod> must be the date a page's content really changed, or Google ignores it. Pages
 // built from the database use the row's updated_at. For content that lives in code, bump the

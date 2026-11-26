@@ -7,7 +7,7 @@ import { ReviewForm } from '@/components/ReviewForm'
 import { SiteHeader } from '@/components/SiteHeader'
 
 // The month dropdown is built from today's date.
-export const revalidate = 3600
+export const revalidate = 86400
 
 const MONTHS_BACK = 24
 

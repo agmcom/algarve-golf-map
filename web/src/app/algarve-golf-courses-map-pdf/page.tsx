@@ -19,7 +19,7 @@ const PDF_SIZE = '0.4 MB'
 const H1 = 'Algarve golf courses map (PDF)'
 const SEO_TITLE = 'Algarve golf courses map PDF: free printable map'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export async function generateMetadata(): Promise<Metadata> {
   const courses = await getCourses()

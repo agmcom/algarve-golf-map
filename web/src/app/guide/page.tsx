@@ -9,7 +9,7 @@ const TITLE = 'Algarve Golf Guide: Tips for Your Trip'
 const PEXELS_FALLBACK =
   'https://images.pexels.com/photos/6048946/pexels-photo-6048946.jpeg?auto=compress&cs=tinysrgb&w=640&h=400&fit=crop'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 type Post = Awaited<ReturnType<typeof getPublishedGuidePosts>>[number]
 

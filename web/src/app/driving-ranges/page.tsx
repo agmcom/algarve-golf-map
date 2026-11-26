@@ -41,7 +41,7 @@ function A({ href, children }: { href: string; children: ReactNode }) {
   )
 }
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export function generateMetadata(): Metadata {
   const url = `${BASE}/driving-ranges`

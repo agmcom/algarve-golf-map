@@ -12,7 +12,7 @@ const TITLE = 'Golf academies in the Algarve'
 const DESCRIPTION =
   'Every Algarve golf academy we could verify: lesson prices, beginner schools, PGA professionals and which courses each one serves.'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export function generateMetadata(): Metadata {
   const url = `${BASE}/golf-academies`
